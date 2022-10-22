@@ -1,0 +1,300 @@
+.App ::-webkit-scrollbar-track {
+  background-color: red;
+}
+.nav {
+  position: fixed;
+  top: 0;
+  background-image: linear-gradient(to right, white, #a7d7f6, #0e4e97);
+  @apply flex flex-row justify-between w-[98%] h-[5rem] ml-[1rem] items-center;
+}
+.navs {
+  @apply flex flex-row justify-center  items-center font-serif text-[1.3rem]
+  mr-[4rem];
+}
+.navs p {
+  @apply w-[7rem] flex flex-col justify-center  items-center text-center h-[13vh];
+}
+.navs p:hover {
+  @apply bg-[#0f0326] text-[white];
+}
+.logo1 {
+  background-image: -webkit-radial-gradient(white, #a7d7f6, #0e4e97, #f57f80);
+  @apply p-[2rem] w-[98%] ml-[1rem];
+}
+.logo1 img {
+  @apply w-[70%] h-[85vh]  mt-[5rem] rounded-[100%] ml-[15%];
+}
+.company-info {
+  background-image: url("./asset/nordwood-themes-R53t-Tg6J4c-unsplash.jpg");
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  width: 98%;
+  margin-left: 1rem;
+  height: 100vh;
+}
+.rent {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  align-items: center;
+  place-items: center;
+  background-image: url("./asset/annie-spratt-0ZPSX_mQ3xI-unsplash.jpg");
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  /* background-image: -webkit-radial-gradient(white, #a7d7f6, #0e4e97); */
+  margin-top: 5rem;
+  width: 98%;
+  padding: 2rem;
+  margin-left: 1rem;
+}
+.hiring {
+  background-color: white;
+  border-radius: 25px 0px 0px 0px;
+  border: 4px double #f57f80;
+  @apply flex  flex-col  justify-center  items-center  m-[1rem];
+}
+.hiring img {
+  max-width: 100%;
+  height: 15rem;
+  object-fit: contain;
+  align-items: center;
+  border-radius: 20px 0px 0px 0px;
+}
+.clueVideo {
+  margin: 3rem 0px;
+  @apply flex flex-wrap  gap-[2rem] w-[98%] ml-[1rem] rounded-[15px];
+}
+.show_room {
+  @apply mt-[5rem];
+}
+.clueVideo video {
+  border-image: url("./asset/cdc-jjrXvzbqC5E-unsplash.jpg");
+  padding: 5px;
+  border-radius: 1rem;
+  border-style: ridge;
+}
+.clueImg {
+  margin: 3rem 0px;
+  @apply flex flex-wrap  gap-[2rem] w-[98%] ml-[1rem];
+}
+.clueImg img {
+  border: 5px double #f57f80;
+  @apply w-[18%] rounded-[10px];
+}
+.cleaning_product {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  align-items: center;
+  place-items: center;
+  /* background-image: url("./asset/nordwood-themes-R53t-Tg6J4c-unsplash.jpg");
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-attachment: fixed; */
+  background-image: -webkit-radial-gradient(white, #a7d7f6, #0e4e97);
+
+  width: 98%;
+  padding: 2rem;
+  margin-left: 1rem;
+}
+
+.first {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin: 1rem;
+  background-color: white;
+  border-radius: 25px 0px 0px 0px;
+  border: 4px double #f57f80;
+}
+.first p,
+.hiring p {
+  background-color: hsl(216deg 72% 23%);
+  @apply text-[1.4rem] text-[white] w-[100%]   text-center;
+}
+.first i {
+  @apply flex  flex-col ml-[10rem] font-serif bg-[#a7d7f6];
+  padding: 0px 10px;
+}
+.first img {
+  max-width: 100%;
+  height: 15rem;
+  object-fit: contain;
+  align-items: center;
+}
+.first img:hover {
+  padding-bottom: 1rem;
+}
+.hiring img:hover {
+  padding-bottom: 1rem;
+}
+
+.home {
+  @apply ml-[2rem] font-serif text-[1.3rem];
+}
+.fumigation {
+  @apply w-[5rem];
+}
+.wast {
+  @apply w-[5rem] rounded-[70%];
+}
+.commercial {
+  @apply w-[5rem];
+}
+.disinfection {
+  @apply w-[5rem];
+}
+.domestic {
+  @apply w-[5rem];
+}
+.services p {
+  @apply text-[1.3rem];
+}
+.services {
+  background-image: url("./asset/nordwood-themes-R53t-Tg6J4c-unsplash.jpg");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-size: cover;
+  @apply w-[98%] h-[120vh] ml-[1rem] mt-[5rem];
+}
+.h1 {
+  @apply pt-[5rem];
+}
+.services img {
+  @apply h-[7rem] mt-4;
+}
+.services p {
+  @apply w-[100%];
+}
+h1 {
+  @apply text-center  text-[#0e4e97]  font-serif;
+}
+.environment {
+  @apply text-center;
+}
+.services h3 {
+  @apply text-[#0e4e97] text-[1.4rem] font-serif;
+}
+.service1 {
+  @apply flex flex-row  gap-[2rem]  ml-[1rem] mt-[3rem];
+}
+.service2 {
+  @apply flex flex-row  gap-[2rem]  ml-[1rem] mt-[3rem];
+}
+form {
+  border: 3px double rgb(143, 113, 108);
+  border-radius: 25px 0px;
+  @apply flex flex-col w-[30vw] h-[77vh] bg-[#eff3f5]
+    justify-center p-4;
+}
+form input {
+  border-radius: 15px 0px;
+  border: hidden;
+  @apply p-[0.5rem] w-[95%] ml-2 m-[0.25rem];
+}
+.form input:focus {
+  outline: none;
+}
+.form textarea:focus {
+  outline: none;
+}
+.form textarea {
+  border-radius: 20px 0px;
+  @apply p-[4rem] w-[95%] ml-2;
+}
+.form textarea::-webkit-scrollbar {
+  display: none;
+}
+form button {
+  border-radius: 15px 0px;
+  @apply bg-[#a7d7f6] w-[95%] ml-[0.5rem] text-[1.3rem] font-serif p-[0.5rem] mt-[1.5rem];
+}
+form button:focus {
+  outline: none;
+}
+form label {
+  @apply ml-[1.3rem] text-[gray];
+}
+.contact-align {
+  @apply flex flex-col bg-[#a7d7f6]   w-[98%] ml-[1rem];
+}
+.text {
+  @apply text-center text-[1.7rem]  mt-[3rem]  font-serif text-[#0e4e97];
+}
+.contact {
+  padding: 5rem 0px;
+  @apply flex flex-row gap-[13rem] mt-[rem]  justify-center  w-[98%] h-[100vh] ml-[1rem];
+}
+.address p {
+  line-height: 2rem;
+  @apply text-[1.2rem]  tracking-[0.20rem];
+}
+footer {
+  @apply w-[98%] ml-[1rem];
+}
+.footer {
+  padding: 7rem 0px;
+  @apply flex flex-row  gap-[5rem] justify-center bg-[#0f0326];
+}
+.footer ul {
+  @apply mt-10;
+}
+footer li {
+  line-height: 2.7rem;
+  @apply text-[#a7d7f6] font-serif  text-[1.2rem];
+}
+.footer li:hover {
+  border-bottom: 1px solid rgba(21, 195, 201, 0.884);
+}
+footer img {
+  @apply w-[2rem] h-[2rem]  rounded-[100%];
+}
+.media {
+  border-top: 0.25px solid grey;
+  @apply bg-[#0f0326] flex  flex-row h-[8rem] mb-[0.5rem] gap-[10rem];
+}
+.twitter {
+  background-image: linear-gradient(to right, white, #a7d7f6, #0e4e97);
+  @apply flex flex-row items-center gap-4 w-[14vw] h-[2rem]  rounded-[15px];
+}
+.whatsapp {
+  background-image: linear-gradient(to right, white, #a7d7f6, #0e4e97);
+  @apply flex flex-row items-center gap-4 w-[14vw] h-[2rem]  rounded-[15px];
+}
+.contact1 {
+  background-image: linear-gradient(to right, white, #a7d7f6, #0e4e97);
+  @apply flex flex-row items-center  gap-4 w-[14vw] h-[2rem]  rounded-[15px];
+}
+.facebook {
+  background-image: linear-gradient(to right, white, #a7d7f6, #0e4e97);
+  @apply flex flex-row items-center gap-4 w-[14vw] h-[2rem]  rounded-[15px];
+}
+.instagram {
+  background-image: linear-gradient(to right, white, #a7d7f6, #0e4e97);
+  @apply flex flex-row items-center gap-4 w-[14vw] h-[2rem]  rounded-[15px];
+}
+.email {
+  background-image: linear-gradient(to right, white, #a7d7f6, #0e4e97);
+  @apply flex flex-row items-center gap-4 w-[14vw] h-[2rem]  rounded-[15px];
+}
+.media1,
+.media2 {
+  @apply flex  flex-col gap-[0.55rem] mt-2;
+}
+.logo {
+  border: 1px solid red;
+  @apply w-[5rem] h-[5rem] rounded-[100%];
+}
+.home {
+  background-image: linear-gradient(white, #a7d7f6, #0e4e97, #f57f80);
+  border-radius: 15px 0px 20px 15px;
+  @apply flex flex-row items-center w-[14rem]  h-[3rem];
+}
+.styleLogo {
+  @apply font-serif ml-[7px] tracking-[0.5rem] text-[1.5rem];
+}
