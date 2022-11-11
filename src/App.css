@@ -1,12 +1,23 @@
-.App ::-webkit-scrollbar-track {
-  background-color: red;
+.App {
+  justify-content: center;
+  align-items: center;
+  width: 98%;
+  margin-left: 1rem;
+  background-image: url("./asset/annie-spratt-X4l3CjcDvic-unsplash.jpg");
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
 }
 .nav {
   position: fixed;
   top: 0;
-  background-image: linear-gradient(to right, white, #a7d7f6, #0e4e97);
-  @apply flex flex-row justify-between w-[98%] h-[5rem] ml-[1rem] items-center;
+  background-image: linear-gradient(to right, white, #a7d7f6);
+  @apply flex flex-row justify-between w-[98%]  ml-[1rem] h-[5rem] items-center z-[1];
 }
+/* .nav::-webkit-scrollbar {
+  display: none;
+} */
 .navs {
   @apply flex flex-row justify-center  items-center font-serif text-[1.3rem]
   mr-[4rem];
@@ -18,11 +29,14 @@
   @apply bg-[#0f0326] text-[white];
 }
 .logo1 {
-  background-image: -webkit-radial-gradient(white, #a7d7f6, #0e4e97, #f57f80);
-  @apply p-[2rem] w-[98%] ml-[1rem];
+  background-image: url("./asset/neven-krcmarek-HWbxSLvmSww-unsplash.jpg");
+  background-position: top;
+  background-repeat: repeat;
+  background-size: cover;
+  @apply mt-[5.1rem] w-[100%] h-[65vh] flex flex-col justify-center items-center text-left;
 }
-.logo1 img {
-  @apply w-[70%] h-[85vh]  mt-[5rem] rounded-[100%] ml-[15%];
+.logo1 h1 {
+  @apply font-serif tracking-[5px] text-[#0e4e97];
 }
 .company-info {
   background-image: url("./asset/nordwood-themes-R53t-Tg6J4c-unsplash.jpg");
@@ -30,9 +44,15 @@
   background-size: cover;
   background-repeat: no-repeat;
   background-attachment: fixed;
-  width: 98%;
-  margin-left: 1rem;
-  height: 100vh;
+  width: 100%;
+}
+.cleaning_equip {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  align-items: center;
+  place-items: center;
+  width: 100%;
+  padding: 1rem;
 }
 .rent {
   display: grid;
@@ -44,14 +64,11 @@
   background-size: cover;
   background-repeat: no-repeat;
   background-attachment: fixed;
-  /* background-image: -webkit-radial-gradient(white, #a7d7f6, #0e4e97); */
   margin-top: 5rem;
-  width: 98%;
+  width: 100%;
   padding: 2rem;
-  margin-left: 1rem;
 }
 .hiring {
-  background-color: white;
   border-radius: 25px 0px 0px 0px;
   border: 4px double #f57f80;
   @apply flex  flex-col  justify-center  items-center  m-[1rem];
@@ -63,42 +80,71 @@
   align-items: center;
   border-radius: 20px 0px 0px 0px;
 }
+.consultance {
+  margin-top: 5rem;
+  @apply w-[100%] h-[100vh];
+}
+.drainage {
+  margin-top: 5rem;
+  @apply w-[100%] h-[100vh];
+}
+.trainning {
+  margin-top: 5rem;
+  @apply w-[100%] flex flex-row;
+}
+.trainning img {
+  background-image: url("./asset/cdc-jjrXvzbqC5E-unsplash.jpg");
+  background-position: top;
+  background-repeat: repeat;
+  background-size: cover;
+  /* background-attachment: fixed; */
+  @apply w-[100%] h-[50vh] flex flex-col  justify-center items-center mt-[5rem] ml-[1rem];
+}
+.event {
+  margin-top: 5rem;
+  @apply w-[100%] mb-[2rem] flex  flex-row gap-[1rem];
+}
 .clueVideo {
   margin: 3rem 0px;
-  @apply flex flex-wrap  gap-[2rem] w-[98%] ml-[1rem] rounded-[15px];
+  @apply flex flex-col justify-end gap-[2rem] w-[100%] rounded-[15px];
 }
 .show_room {
+  background-image: -webkit-radial-gradient(white, #a7d7f6, #0e4e97);
+  width: 100%;
+  padding: 2rem;
   @apply mt-[5rem];
+}
+.show_room input {
+  border-radius: 15px;
+  background-image: linear-gradient(to right, white, #a7d7f6);
+  @apply w-[50%] h-[2.5rem] m-[1rem] bg-[white];
+}
+.show_room input:focus {
+  outline: none;
+}
+.clue {
+  @apply mt-[5rem] w-[100%];
 }
 .clueVideo video {
   border-image: url("./asset/cdc-jjrXvzbqC5E-unsplash.jpg");
   padding: 5px;
   border-radius: 1rem;
-  border-style: ridge;
+  margin-top: 2rem;
 }
 .clueImg {
-  margin: 3rem 0px;
-  @apply flex flex-wrap  gap-[2rem] w-[98%] ml-[1rem];
+  padding-bottom: 3rem;
+  @apply flex flex-wrap  gap-[2rem] w-[100%];
 }
 .clueImg img {
   border: 5px double #f57f80;
   @apply w-[18%] rounded-[10px];
 }
+
 .cleaning_product {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
   align-items: center;
   place-items: center;
-  /* background-image: url("./asset/nordwood-themes-R53t-Tg6J4c-unsplash.jpg");
-  background-position: center;
-  background-size: cover;
-  background-repeat: no-repeat;
-  background-attachment: fixed; */
-  background-image: -webkit-radial-gradient(white, #a7d7f6, #0e4e97);
-
-  width: 98%;
-  padding: 2rem;
-  margin-left: 1rem;
 }
 
 .first {
@@ -117,14 +163,17 @@
   @apply text-[1.4rem] text-[white] w-[100%]   text-center;
 }
 .first i {
-  @apply flex  flex-col ml-[10rem] font-serif bg-[#a7d7f6];
+  @apply flex  flex-col ml-[11.4rem] font-serif bg-[#a7d7f6];
   padding: 0px 10px;
 }
 .first img {
-  max-width: 100%;
-  height: 15rem;
+  /* width: 100rem; */
+  height: 20rem;
   object-fit: contain;
   align-items: center;
+}
+.first_class_img {
+  @apply w-[20rem] object-contain items-center;
 }
 .first img:hover {
   padding-bottom: 1rem;
@@ -138,9 +187,6 @@
 }
 .fumigation {
   @apply w-[5rem];
-}
-.wast {
-  @apply w-[5rem] rounded-[70%];
 }
 .commercial {
   @apply w-[5rem];
@@ -156,23 +202,31 @@
 }
 .services {
   background-image: url("./asset/nordwood-themes-R53t-Tg6J4c-unsplash.jpg");
-  background-position: center;
-  background-repeat: no-repeat;
   background-attachment: fixed;
   background-size: cover;
-  @apply w-[98%] h-[120vh] ml-[1rem] mt-[5rem];
-}
-.h1 {
-  @apply pt-[5rem];
-}
-.services img {
-  @apply h-[7rem] mt-4;
-}
-.services p {
   @apply w-[100%];
 }
-h1 {
-  @apply text-center  text-[#0e4e97]  font-serif;
+.service {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-gap: 1.5rem;
+}
+.service div {
+  @apply flex flex-row;
+}
+.services img {
+  @apply w-[20%] h-[7rem] m-[2rem] mt-4;
+}
+.services p {
+  padding-right: 1rem;
+  @apply w-[100%] font-light;
+}
+.services h3 {
+  @apply font-extrabold tracking-[2px];
+}
+.h1 {
+  @apply text-center text-[#0e4e97] pb-[3.5rem]
+    font-serif;
 }
 .environment {
   @apply text-center;
@@ -181,21 +235,24 @@ h1 {
   @apply text-[#0e4e97] text-[1.4rem] font-serif;
 }
 .service1 {
-  @apply flex flex-row  gap-[2rem]  ml-[1rem] mt-[3rem];
+  @apply flex flex-row  gap-[2rem]  ml-[1rem] mt-[2rem];
 }
 .service2 {
-  @apply flex flex-row  gap-[2rem]  ml-[1rem] mt-[3rem];
+  @apply flex flex-row  gap-[2rem]  ml-[1rem] mt-[2rem];
 }
 form {
   border: 3px double rgb(143, 113, 108);
   border-radius: 25px 0px;
-  @apply flex flex-col w-[30vw] h-[77vh] bg-[#eff3f5]
+  background-image: url("./asset/neven-krcmarek-HWbxSLvmSww-unsplash.jpg");
+  background-position: bottom;
+  background-size: cover;
+  @apply flex flex-col w-[30vw] h-[79vh]
     justify-center p-4;
 }
 form input {
   border-radius: 15px 0px;
   border: hidden;
-  @apply p-[0.5rem] w-[95%] ml-2 m-[0.25rem];
+  @apply p-[0.5rem] bg-[#dee5e9] w-[95%] ml-2 m-[0.25rem];
 }
 .form input:focus {
   outline: none;
@@ -205,7 +262,7 @@ form input {
 }
 .form textarea {
   border-radius: 20px 0px;
-  @apply p-[4rem] w-[95%] ml-2;
+  @apply p-[4rem] w-[95%] ml-2  bg-[#e5edf3];
 }
 .form textarea::-webkit-scrollbar {
   display: none;
@@ -218,24 +275,27 @@ form button:focus {
   outline: none;
 }
 form label {
-  @apply ml-[1.3rem] text-[gray];
+  @apply ml-[1.3rem] text-[1.3rem];
 }
 .contact-align {
-  @apply flex flex-col bg-[#a7d7f6]   w-[98%] ml-[1rem];
+  @apply flex flex-col w-[100%];
 }
 .text {
-  @apply text-center text-[1.7rem]  mt-[3rem]  font-serif text-[#0e4e97];
+  @apply text-center text-[1.9rem]  mt-[3rem]  font-serif;
+}
+.contact-align {
+  @apply mt-[4rem];
 }
 .contact {
   padding: 5rem 0px;
-  @apply flex flex-row gap-[13rem] mt-[rem]  justify-center  w-[98%] h-[100vh] ml-[1rem];
+  @apply flex flex-row gap-[13rem] mt-[rem]  justify-center  w-[100%] h-[100vh];
 }
 .address p {
   line-height: 2rem;
   @apply text-[1.2rem]  tracking-[0.20rem];
 }
 footer {
-  @apply w-[98%] ml-[1rem];
+  @apply w-[100%];
 }
 .footer {
   padding: 7rem 0px;
@@ -256,45 +316,366 @@ footer img {
 }
 .media {
   border-top: 0.25px solid grey;
-  @apply bg-[#0f0326] flex  flex-row h-[8rem] mb-[0.5rem] gap-[10rem];
+  @apply bg-[#0f0326] flex  flex-row h-[8rem] gap-[1rem] mb-[1rem] w-[40%];
 }
-.twitter {
-  background-image: linear-gradient(to right, white, #a7d7f6, #0e4e97);
-  @apply flex flex-row items-center gap-4 w-[14vw] h-[2rem]  rounded-[15px];
+.media a {
+  @apply mt-[2.5rem];
 }
-.whatsapp {
-  background-image: linear-gradient(to right, white, #a7d7f6, #0e4e97);
-  @apply flex flex-row items-center gap-4 w-[14vw] h-[2rem]  rounded-[15px];
-}
-.contact1 {
-  background-image: linear-gradient(to right, white, #a7d7f6, #0e4e97);
-  @apply flex flex-row items-center  gap-4 w-[14vw] h-[2rem]  rounded-[15px];
-}
-.facebook {
-  background-image: linear-gradient(to right, white, #a7d7f6, #0e4e97);
-  @apply flex flex-row items-center gap-4 w-[14vw] h-[2rem]  rounded-[15px];
-}
-.instagram {
-  background-image: linear-gradient(to right, white, #a7d7f6, #0e4e97);
-  @apply flex flex-row items-center gap-4 w-[14vw] h-[2rem]  rounded-[15px];
-}
-.email {
-  background-image: linear-gradient(to right, white, #a7d7f6, #0e4e97);
-  @apply flex flex-row items-center gap-4 w-[14vw] h-[2rem]  rounded-[15px];
-}
-.media1,
-.media2 {
-  @apply flex  flex-col gap-[0.55rem] mt-2;
+.media a .facebook {
+  @apply ml-[2rem];
 }
 .logo {
   border: 1px solid red;
-  @apply w-[5rem] h-[5rem] rounded-[100%];
+  @apply w-[4rem] h-[3rem] rounded-[100%];
 }
 .home {
-  background-image: linear-gradient(white, #a7d7f6, #0e4e97, #f57f80);
-  border-radius: 15px 0px 20px 15px;
-  @apply flex flex-row items-center w-[14rem]  h-[3rem];
+  background-image: linear-gradient(white, #a7d7f6, #0e4e97);
+  border-radius: 35px 0px 20px 35px;
+  @apply flex flex-row items-center w-[10rem]  h-[2rem];
 }
 .styleLogo {
-  @apply font-serif ml-[7px] tracking-[0.5rem] text-[1.5rem];
+  @apply font-serif ml-[5px] tracking-[0.2rem] text-[1.5rem];
+}
+.details {
+  @apply flex flex-row w-[100%] h-[100vh] mt-[5rem];
+}
+.product_map {
+  @apply flex flex-col justify-center items-center w-[80%];
+}
+.details main {
+  @apply flex flex-row justify-center items-center  w-[100%] m-[2rem];
+}
+.items_count {
+  @apply mt-[14rem] flex flex-col justify-center items-center w-[40%] mb-[15rem];
+}
+.countButton {
+  @apply flex flex-row;
+}
+.countButton button {
+  @apply w-[3rem] border-[1px] border-slate-400 m-[2px] text-[1.5rem];
+}
+.items_count button:focus {
+  outline: none;
+}
+.clearButton {
+  @apply w-[60%] border-[1px] border-slate-400 p-[0.25rem] rounded-[10px] m-[0.5rem] text-[1.3rem];
+}
+.details aside {
+  @apply w-[28%] mt-[2rem];
+}
+.domestic,
+.disinfect,
+.plank,
+.pest,
+.wast,
+.commercial {
+  @apply w-[100%] mt-[5rem];
+}
+.pest_map {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  align-items: center;
+  background-color: rgba(255, 255, 255, 0.3);
+  @apply w-[65%] m-[1rem] gap-[1.5rem] p-[2rem];
+}
+.pest_map p {
+  @apply text-[1.3rem] font-serif font-semibold p-[0.5rem];
+}
+.pest_map a {
+  border-radius: 10px;
+  background-color: white;
+  box-shadow: 1px 1px 15px 3px #a7d7f6;
+}
+.pest_map img {
+  border-radius: 10px 0px 0px 0px;
+  @apply w-[35rem]  h-[13em];
+}
+.pest_map a:hover {
+  transform: scale(1.1);
+}
+
+.slider {
+  margin: 0.5rem 0px;
+  overflow: hidden;
+  @apply w-[90%] h-[98vh] ml-[4.5rem] pb-[2rem];
+}
+
+.image {
+  position: relative;
+  float: left;
+  margin: 0px 17rem;
+  @apply flex  flex-row  justify-center items-center  w-[51vw]  h-[70vh];
+}
+.image img {
+  @apply w-[auto] h-[100%] rounded-[5px];
+}
+.slide-container {
+  @apply w-[84000px] h-[73vh];
+  position: relative;
+  margin: 0px 0px 0px -9900px;
+  animation-name: slide_image;
+  animation-duration: 60s;
+  animation-direction: normal;
+  animation-play-state: inherit;
+  animation-iteration-count: infinite;
+  animation-delay: 15s;
+  animation-fill-mode: both;
+}
+@keyframes slide_image {
+  0% {
+    left: 0px;
+  }
+  5% {
+    left: 0px;
+  }
+  10% {
+    left: 1200px;
+  }
+  15% {
+    left: 1200px;
+  }
+  20% {
+    left: 2400px;
+  }
+  25% {
+    left: 2400px;
+  }
+  30% {
+    left: 3600px;
+  }
+  35% {
+    left: 3600px;
+  }
+  40% {
+    left: 4800px;
+  }
+  45% {
+    left: 4800px;
+  }
+  50% {
+    left: 6000px;
+  }
+  55% {
+    left: 6000px;
+  }
+  60% {
+    left: 7200px;
+  }
+  65% {
+    left: 7200px;
+  }
+  70% {
+    left: 8400px;
+  }
+  75% {
+    left: 8400px;
+  }
+  80% {
+    left: 9600px;
+  }
+  85% {
+    left: 9600px;
+  }
+  90% {
+    left: 10800px;
+  }
+  95% {
+    left: 10800px;
+  }
+  100% {
+    left: 10800px;
+  }
+}
+.Advert {
+  text-align: center;
+  font-size: 2rem;
+  font-weight: 700;
+  padding: 0.5rem;
+  background-image: linear-gradient(white, #a7d7f6);
+}
+.getIntouch {
+  margin: 30px auto;
+  @apply flex flex-col items-center border-2
+    w-[15%] rounded-[10px] p-[0.65rem] text-[1.5rem] bg-[#0e4e97] text-[white];
+}
+.getIntouch:hover {
+  background-color: transparent;
+  color: black;
+}
+.profile_wrap {
+  @apply flex flex-row gap-[1rem];
+}
+.c_profile {
+  @apply flex flex-col text-left border-[1px] h-[100vh];
+}
+.c_profile p {
+  margin: 1rem 20px;
+  @apply text-[1.3rem];
+}
+.demo {
+  @apply flex flex-col items-center border-[1px] h-[100vh];
+}
+.display_frame {
+  @apply w-[80%] h-[80%] mt-[4rem] rounded-[15px];
+  background-image: url("./asset/cdc-jjrXvzbqC5E-unsplash.jpg");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  animation: change infinite;
+  animation-duration: 60s;
+  animation-delay: 5s;
+}
+@keyframes change {
+  0% {
+    background-image: url("./asset/312150053_1090676514947704_4342979459506156222_n.jpg");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: contain;
+  }
+  10% {
+    background-image: url("https://www.umontpellier.fr/wp-content/uploads/2022/08/Moustique-The-conversation.jpg");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: contain;
+  }
+  20% {
+    background-image: url("./asset/311952227_439547654988570_2103885009283433665_n.jpg");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: contain;
+  }
+  30% {
+    background-image: url("https://upload.wikimedia.org/wikipedia/commons/thumb/8/87/Bed_bug%2C_Cimex_lectularius.jpg/1200px-Bed_bug%2C_Cimex_lectularius.jpg");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: contain;
+  }
+  40% {
+    background-image: url("https://www.collinsdictionary.com/images/full/termite_303633596.jpg");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: contain;
+  }
+  50% {
+    background-image: url("./asset/ed-van-duijn-UUdJ-0LQs0M-unsplash.jpg");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: contain;
+  }
+  60% {
+    background-image: url("https://upload.wikimedia.org/wikipedia/commons/thumb/b/bd/Apodemus_sylvaticus_bosmuis.jpg/310px-Apodemus_sylvaticus_bosmuis.jpg");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: contain;
+  }
+}
+.borda {
+  border-left: 5rem solid black;
+  @apply h-[6rem] w-[1rem];
+}
+.base {
+  @apply w-[30%] h-[3rem] bg-[black];
+}
+.ants p,
+.spider p,
+.rodents p,
+.bedbugs p,
+.cockroache p,
+.mosquitoe p,
+.termites p {
+  @apply text-[1.3rem];
+}
+.ants li,
+.spider li,
+.rodents li,
+.bedbugs li,
+.cockroache li,
+.mosquitoe li,
+.termites li {
+  list-style: none;
+  @apply text-[1.1rem] font-serif p-[1rem];
+}
+.ants b,
+.spider b,
+.rodents b,
+.bedbugs b,
+.cockroache b,
+.mosquit0e b,
+.termites b {
+  @apply font-extrabold text-[1.1rem] ml-[1rem];
+}
+.dropdown {
+  position: relative;
+  display: block;
+}
+.dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: rgba(255, 255, 255, 0.9);
+  min-width: 160px;
+  box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+  padding: 12px 1px;
+  align-items: center;
+  color: gray;
+}
+.dropdown-content li {
+  border-bottom: 1px solid lightgray;
+  @apply text-[1rem] m-[0.5rem];
+}
+.dropdown-content li:hover {
+  @apply bg-[lightgray];
+}
+.dropdown:hover .dropdown-content {
+  @apply flex  flex-col;
+}
+.subdropdown {
+  position: relative;
+  display: block;
+}
+.subdropdown-content {
+  display: none;
+  position: absolute;
+  background-color: rgba(255, 255, 255, 0.9);
+  min-width: 160px;
+  box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+  padding: 12px 10px;
+  align-items: left;
+  color: gray;
+  left: 9.7rem;
+  top: -1rem;
+}
+.subdropdown-content li:hover {
+  @apply bg-[lightgray];
+}
+.subdropdown:hover .subdropdown-content {
+  @apply flex flex-col;
+}
+.frame img {
+  @apply w-[100%] h-[60vh] mt-[2.5rem] rounded-[15px] items-center;
+}
+.pest_class {
+  background-image: url("https://assets-us-01.kc-usercontent.com/338e61a8-25d7-0035-f3a0-cea86e563aa1/b1f9189b-5ada-40ca-b8e9-445b5120f86e/procare-homepage-mosquito-control.jpg?w=760&h=480&auto=format&fit=crop");
+  background-position: top;
+  background-repeat: repeat;
+  background-size: cover;
+  /* background-attachment: fixed; */
+  @apply w-[65%] h-[100vh] flex flex-col  justify-center items-center;
+}
+.pest_class img {
+  @apply ml-[75%] w-[15%] h-[40vh] rounded-[100%];
+}
+.cleaningBg {
+  background-image: url("./asset/cdc-jjrXvzbqC5E-unsplash.jpg");
+  background-position: center;
+  background-repeat: repeat;
+  background-size: cover;
+  /* background-attachment: fixed; */
+  @apply w-[100%] h-[50vh] flex flex-col  justify-center items-center mt-[3rem] ml-[1rem];
+}
+.cleaningBg h4 {
+  margin-top: 17rem;
+  background-color: rgba(0, 0, 0, 0.4);
+  color: white;
+  width: 100%;
+  text-align: right;
 }

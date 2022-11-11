@@ -1,6 +1,12 @@
 import React from "react";
 import { Link } from "react-router-dom";
-
+import { SiFacebook } from "react-icons/si";
+import { AiOutlineMail } from "react-icons/ai";
+import { MdPhoneInTalk } from "react-icons/md";
+import { BsWhatsapp } from "react-icons/bs";
+import { BsInstagram } from "react-icons/bs";
+import { FiTwitter } from "react-icons/fi";
+import { BiCopyright } from "react-icons/bi";
 const Footer = () => {
   return (
     <footer>
@@ -8,36 +14,36 @@ const Footer = () => {
         <ul>
           <h5>Cleaning Service</h5>
           <li>
-            <a href="">Domestic,Office,Hotel Cleaning</a>
+            <a href="Domestic_cleaning">Domestic,Office,Hotel Cleaning</a>
           </li>
           <li>
-            <a href="">Fumigation and Pest Control</a>
+            <a href="Pest_control">Fumigation and Pest Control</a>
           </li>
           <li>
-            <a href=""> Wast Management</a>
+            <a href="Wast_management"> Wast Management</a>
           </li>
           <li>
-            <a href="">Drainage Maintainance Service</a>
+            <a href="Drainage">Drainage Maintainance Service</a>
           </li>
           <li>
-            <a href="">Event Hygienic Maintainace service</a>
+            <a href="Event_maintainance">Event Hygienic Maintainace service</a>
           </li>
         </ul>
         <ul>
           <h5>Our Specification</h5>
-          <a href="#">
+          <a href="Service">
             <li> General Cleaning Service</li>
           </a>
-          <a href="#">
+          <a href="Show_Room">
             <li> Product Sales</li>
           </a>
-          <a href="#">
+          <a href="Hire">
             <li> Hiring of Equipment</li>
           </a>
-          <a href="#">
+          <a href="Consultance">
             <li>Consultation Service</li>
           </a>
-          <a href="#">
+          <a href="Trainning">
             <li> Trainning Services</li>
           </a>
         </ul>
@@ -53,94 +59,207 @@ const Footer = () => {
         </ul>
         <ul>
           <h5>Domestic Service</h5>
-          <li>
-            <a href="">Toilet </a>
-          </li>
-          <li>
-            <a href="">Kitchen </a>
-          </li>
-          <li>
-            <a href="">Bed Room</a>
-          </li>
-          <li>
-            <a href="">Wardrobe</a>
-          </li>
-          <li>
-            <a href="">Sitting Room</a>
-          </li>
+
+          <a href="Toilet">
+            <li>Toilet </li>
+          </a>
+
+          <a href="Kitchen">
+            <li>Kitchen </li>
+          </a>
+
+          <a href="Bed_Room">
+            <li>Bed Room </li>
+          </a>
+
+          <a href="Wardrobe">
+            <li>Wardrobe </li>
+          </a>
+
+          <a href="Sitting_Room">
+            <li>Sitting Room </li>
+          </a>
         </ul>
         <ul>
           <h5>Information</h5>
-          <li>
-            <a href="">Terms & Condition</a>
-          </li>
-          <li>
-            <a href="">Privacy Policy</a>
-          </li>
-          <li></li>
-          <li></li>
-          <li></li>
+          <a href="Terms">
+            <li>Terms & Condition </li>
+          </a>
+          <a href="Policy">
+            <li>Privacy Policy </li>
+          </a>
         </ul>
       </div>
-      <div className="media">
-        <div className="media1">
-          <div className="facebook">
-            <a href="http://" target="_blank" rel="noopener noreferrer">
-              <img
-                src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQswY2vcSlXIUEvM5dxVvc3llEw-9AHa5FjVA&usqp=CAU"
-                alt="facebook"
-              />
-            </a>
-            <p>Facebook</p>
-          </div>
-          <div className="twitter">
-            <a href="http://" target="_blank" rel="noopener noreferrer">
-              <img
-                src="https://toppng.com/uploads/preview/twitter-logo-11549680523gyu1fhgduu.png"
-                alt="twitter"
-              />
-            </a>
-            <p>Twitter</p>
-          </div>
-          <div className="instagram">
-            <a href="http://" target="_blank" rel="noopener noreferrer">
-              <img
-                src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTyy2cGG6pe-CuLx9q6PESihqFPwKOYonezyg&usqp=CAU"
-                alt="instagram"
-              />
-            </a>
-            <p>Instagram</p>
-          </div>
+      <div style={{ display: "flex", flexDirection: "row" }}>
+        <div className="media">
+          <a
+            href="http://"
+            target="_blank"
+            title="Facebook"
+            rel="noopener noreferrer"
+          >
+            <SiFacebook
+              style={{
+                color: "black",
+                width: "25px",
+                height: "25px",
+                borderRadius: "50%",
+                fill: "rgb(255,255,255,0.3)",
+              }}
+              className="facebook"
+            />
+          </a>
+
+          <a
+            href="http://"
+            target="_blank"
+            title="Twitter"
+            rel="noopener noreferrer"
+          >
+            <FiTwitter
+              style={{
+                color: "black",
+                width: "25px",
+                height: "25px",
+                className: "twitter",
+                borderRadius: "50%",
+                fill: "rgb(255,255,255,0.3)",
+              }}
+            />
+          </a>
+
+          <a
+            href="http://"
+            target="_blank"
+            title="Instagram"
+            rel="noopener noreferrer"
+          >
+            <BsInstagram
+              style={{
+                color: "black",
+                width: "25px",
+                height: "25px",
+                className: "instagram",
+                fill: "rgb(255,255,255,0.3)",
+              }}
+            />
+          </a>
+
+          <a
+            href="http://"
+            target="_blank"
+            title="Email"
+            rel="noopener noreferrer"
+          >
+            <AiOutlineMail
+              style={{
+                color: "black",
+                width: "25px",
+                height: "25px",
+                className: "mail",
+                borderRadius: "50%",
+                fill: "rgb(255,255,255,0.3)",
+              }}
+            />
+          </a>
+
+          <a
+            href="http://"
+            target="_blank"
+            title="whatsApp"
+            rel="noopener noreferrer"
+          >
+            <BsWhatsapp
+              style={{
+                color: "black",
+                width: "25px",
+                height: "25px",
+                className: "whatsApp",
+                borderRadius: "50%",
+                fill: "rgb(255,255,255,0.3)",
+              }}
+            />
+          </a>
+
+          <a
+            href="http://"
+            target="_blank"
+            title="+234(0)8144632165"
+            rel="noopener noreferrer"
+          >
+            <MdPhoneInTalk
+              style={{
+                color: "black",
+                width: "25px",
+                height: "25px",
+                borderRadius: "50%",
+                className: "contact",
+                fill: "rgb(255,255,255,0.3)",
+              }}
+            />
+          </a>
         </div>
-        <div className="media2">
-          <div className="email">
-            {" "}
-            <a href="http://" target="_blank" rel="noopener noreferrer">
-              <img
-                src="https://i0.wp.com/bigtechquestion.com/wp-content/uploads/2018/10/Gmail-header.png?w=1320&ssl=1"
-                alt="email"
-              />
-            </a>
-            <p>Email</p>
+        <div
+          style={{
+            width: "60%",
+            backgroundColor: "#0f0326",
+            height: "8rem",
+            borderTop: "0.25px solid grey",
+            color: "gray",
+          }}
+        >
+          <div
+            style={{
+              marginTop: "2.2rem",
+              textAlign: "center",
+              display: "inline-flex",
+            }}
+          >
+            <BiCopyright style={{ marginTop: "4px", marginRight: "5px" }} />{" "}
+            <p>
+              2022 INAMURAHMAN ENVIRONMENTAL HYGIENIC VENTURE.All Right Reserved
+              | BN:3466674
+            </p>
           </div>
-          <div className="whatsapp">
-            <a href="http://" target="_blank" rel="noopener noreferrer">
-              <img
-                src="https://png.pngtree.com/element_our/sm/20180626/sm_5b321c99945a2.png"
-                alt="whatsapp"
+          <div style={{ display: "flex", flexDirection: "row" }}>
+            <p style={{ marginLeft: "8rem", marginRight: "1rem" }}>
+              web design by: Mikail Abdulraheem
+            </p>
+            <a
+              href="http://"
+              target="_blank"
+              title="Facebook"
+              rel="noopener noreferrer"
+            >
+              <SiFacebook
+                style={{
+                  color: "black",
+                  width: "25px",
+                  height: "25px",
+                  borderRadius: "50%",
+                  fill: "rgb(255,255,255,0.5)",
+                  marginRight: "1rem",
+                }}
+                className="facebook"
               />
             </a>
-            <p>WhatsApp</p>
-          </div>
-          <div className="contact1">
-            <a href="http://" target="_blank" rel="noopener noreferrer">
-              <img
-                title="contact"
-                src="https://png.pngtree.com/png-vector/20191027/ourmid/pngtree-calling-telephone-line-icon-vector-png-image_1885981.jpg"
-                alt="contact"
+            <a
+              href="http://abdulraheemmukaila6@gmail.com"
+              target="_blank"
+              title="Email"
+              rel="noopener noreferrer"
+            >
+              <AiOutlineMail
+                style={{
+                  color: "black",
+                  width: "25px",
+                  height: "25px",
+                  borderRadius: "50%",
+                  fill: "rgb(255,255,255,0.5)",
+                }}
+                className="mail"
               />
             </a>
-            <p>+234(0)8144632165</p>
           </div>
         </div>
       </div>

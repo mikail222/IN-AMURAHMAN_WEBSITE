@@ -10,16 +10,16 @@ body {
   -moz-osx-font-smoothing: grayscale;
 }
 h1 {
-  @apply text-[2.7rem];
+  @apply text-[2.9rem];
 }
 h2 {
-  @apply text-[2.5rem] text-[#0e4e97] font-serif;
+  @apply text-[2.5rem] font-serif;
 }
 h3 {
-  @apply text-[2.3rem] text-[#f57f80] font-serif;
+  @apply text-[2.3rem] font-serif;
 }
 h4 {
-  @apply text-[1.7rem] text-[#0e4e97] font-serif;
+  @apply text-[1.7rem] font-serif;
 }
 h5 {
   @apply text-[1.5rem] text-[white] font-serif;

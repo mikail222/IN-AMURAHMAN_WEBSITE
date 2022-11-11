@@ -8,7 +8,7 @@ import img4 from "./asset/310758677_840223477133728_5120667289649907055_n.jpg";
 import img5 from "./asset/311941788_6202308913117033_3212476714928537297_n.jpg";
 const Clues = () => {
   return (
-    <div>
+    <div className="clue">
       <div className="clueVideo">
         <video src={video1} width="250" controls muted autoPlay></video>
         <video src={video2} width="250" controls muted autoPlay></video>

@@ -2,29 +2,18 @@ import React from "react";
 import { useState } from "react";
 import { Link } from "react-router-dom";
 
-const Contact = () => {
-  const [user, setUser] = useState([]);
-
-  const handleSubmit = (e) => {
-    e.preventDefault();
-    const details = e.target;
-    const add = {
-      Name: details.fullName.value,
-      email: details.mail.value,
-      contact: details.number.value,
-      message: details.msg.value,
-    };
-    setUser(user.concat(add));
-    details.reset();
-  };
-  console.log(user);
+const Contact = ({ handleSubmit }) => {
   return (
     <div className="contact-align">
       <p className="text">
-        Form feed back and request please kindly fill the form below
+        For feedback and request please kindly fill the form below
       </p>
+      <i style={{ textAlign: "center", marginTop: "1rem" }}>
+        or get in tounch on our social medial official handle bellow
+      </i>
       <div className="contact">
         <div className="address">
+          <h2>IREHV</h2>
           <h3>IN'AMURAHMAN </h3>
           <h4>ENVIRONMENTAL HYGIENIC VENTURE</h4>
           <p>beside Blue-Mist Water, </p>
