@@ -3,11 +3,7 @@
   align-items: center;
   width: 98%;
   margin-left: 1rem;
-  background-image: url("./asset/annie-spratt-X4l3CjcDvic-unsplash.jpg");
-  background-position: center;
-  background-size: cover;
-  background-repeat: no-repeat;
-  background-attachment: fixed;
+  background-color: rgba(255, 255, 255, 0.5);
 }
 .nav {
   position: fixed;
@@ -90,15 +86,75 @@
 }
 .trainning {
   margin-top: 5rem;
-  @apply w-[100%] flex flex-row;
+  @apply w-[90%] flex flex-row;
+}
+.trainning main {
+  @apply ml-[2rem];
+}
+.trainning p,
+.commercial p {
+  @apply text-[1.3rem];
 }
 .trainning img {
-  background-image: url("./asset/cdc-jjrXvzbqC5E-unsplash.jpg");
-  background-position: top;
+  @apply w-[100%] h-[60vh] flex flex-col  justify-center items-center mt-[5rem] ml-[1rem];
+}
+.main {
+  background-image: url("./asset/s-o-c-i-a-l-c-u-t-1RT4txDDAbM-unsplash.jpg");
+  background-position: bottom;
   background-repeat: repeat;
   background-size: cover;
-  /* background-attachment: fixed; */
-  @apply w-[100%] h-[50vh] flex flex-col  justify-center items-center mt-[5rem] ml-[1rem];
+  @apply w-[100%] h-[62vh] flex flex-col  justify-center items-center mt-[5rem] ml-[1rem];
+}
+.main h3 {
+  margin-top: 7rem;
+  background-image: linear-gradient(to right, transparent, transparent, black);
+  color: white;
+  width: 100%;
+  text-align: right;
+  font-style: italic;
+  margin-top: 20rem;
+}
+.commercial p {
+  @apply ml-[2rem];
+}
+.serviceDescription {
+  @apply w-[90%] h-[auto] m-[2rem];
+  background-image: linear-gradient(
+    blue,
+    transparent,
+    white,
+    transparent,
+    blue
+  );
+  margin-bottom: 2rem;
+}
+.serviceDescription div {
+  @apply flex  flex-row items-center  m-[1rem];
+}
+.serviceDescription div p {
+  border-bottom: 1px solid gray;
+  color: black;
+}
+
+.commercial aside {
+  @apply flex flex-col justify-center ml-[2rem];
+}
+.commercialSlideImg {
+  border-top: 2px solid gray;
+  border-bottom: 2px solid gray;
+  background-image: url("./asset/jean-philippe-delberghe-75xPHEQBmvA-unsplash.jpg");
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  @apply flex flex-row overflow-auto w-[95%] h-[80vh]
+    m-[1.5rem] gap-[1.5rem] ml-[2rem] mb-[3rem];
+}
+.commercialSlideImg img {
+  @apply mt-[15px] w-[60%];
+}
+.commercialSlideImg::-webkit-scrollbar {
+  @apply flex-none;
 }
 .event {
   margin-top: 5rem;
@@ -243,7 +299,7 @@
 form {
   border: 3px double rgb(143, 113, 108);
   border-radius: 25px 0px;
-  background-image: url("./asset/neven-krcmarek-HWbxSLvmSww-unsplash.jpg");
+  background-image: url("./asset/peter-f-wolf-XG8eYNYdz54-unsplash.jpg");
   background-position: bottom;
   background-size: cover;
   @apply flex flex-col w-[30vw] h-[79vh]
@@ -674,7 +730,7 @@ footer img {
 }
 .cleaningBg h4 {
   margin-top: 17rem;
-  background-color: rgba(0, 0, 0, 0.4);
+  background-image: linear-gradient(to right, transparent, transparent, black);
   color: white;
   width: 100%;
   text-align: right;

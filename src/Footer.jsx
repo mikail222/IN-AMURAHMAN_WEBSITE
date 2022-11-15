@@ -14,36 +14,36 @@ const Footer = () => {
         <ul>
           <h5>Cleaning Service</h5>
           <li>
-            <a href="Domestic_cleaning">Domestic,Office,Hotel Cleaning</a>
+            <a href="/Domestic_cleaning">Domestic,Office,Hotel Cleaning</a>
           </li>
           <li>
-            <a href="Pest_control">Fumigation and Pest Control</a>
+            <a href="/Pest_control">Fumigation and Pest Control</a>
           </li>
           <li>
-            <a href="Wast_management"> Wast Management</a>
+            <a href="/Wast_management"> Wast Management</a>
           </li>
           <li>
-            <a href="Drainage">Drainage Maintainance Service</a>
+            <a href="/Drainage">Drainage Maintainance Service</a>
           </li>
           <li>
-            <a href="Event_maintainance">Event Hygienic Maintainace service</a>
+            <a href="/Event_maintainance">Event Hygienic Maintainace service</a>
           </li>
         </ul>
         <ul>
           <h5>Our Specification</h5>
-          <a href="Service">
+          <a href="/Service">
             <li> General Cleaning Service</li>
           </a>
-          <a href="Show_Room">
+          <a href="/Show_Room">
             <li> Product Sales</li>
           </a>
-          <a href="Hire">
+          <a href="/Hire">
             <li> Hiring of Equipment</li>
           </a>
-          <a href="Consultance">
+          <a href="/Consultance">
             <li>Consultation Service</li>
           </a>
-          <a href="Trainning">
+          <a href="/Trainning">
             <li> Trainning Services</li>
           </a>
         </ul>
@@ -60,32 +60,32 @@ const Footer = () => {
         <ul>
           <h5>Domestic Service</h5>
 
-          <a href="Toilet">
+          <a href="/Toilet">
             <li>Toilet </li>
           </a>
 
-          <a href="Kitchen">
+          <a href="/Kitchen">
             <li>Kitchen </li>
           </a>
 
-          <a href="Bed_Room">
+          <a href="/Bed_Room">
             <li>Bed Room </li>
           </a>
 
-          <a href="Wardrobe">
+          <a href="/Wardrobe">
             <li>Wardrobe </li>
           </a>
 
-          <a href="Sitting_Room">
+          <a href="/Sitting_Room">
             <li>Sitting Room </li>
           </a>
         </ul>
         <ul>
           <h5>Information</h5>
-          <a href="Terms">
+          <a href="/Terms">
             <li>Terms & Condition </li>
           </a>
-          <a href="Policy">
+          <a href="/Policy">
             <li>Privacy Policy </li>
           </a>
         </ul>

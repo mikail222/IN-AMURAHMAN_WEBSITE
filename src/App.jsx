@@ -187,7 +187,10 @@ const App = () => {
               <Pest_control handleSubmit={handleSubmit} checkList={checkList} />
             }
           />
-          <Route path="Commercial" element={<Commercial />} />
+          <Route
+            path="Commercial"
+            element={<Commercial checkList={checkList} />}
+          />
           <Route
             path="Trainning"
             element={<Trainning handleSubmit={handleSubmit} />}
