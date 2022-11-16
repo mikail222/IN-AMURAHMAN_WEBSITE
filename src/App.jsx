@@ -174,6 +174,10 @@ const App = () => {
             path="Pest_control/Product_detail/:id"
             element={<ProductDetail products={products} />}
           />
+          <Route
+            path="Commercial/Product_detail/:id"
+            element={<ProductDetail products={products} />}
+          />
           <Route path="Wast_management" element={<Wast_managment />} />
           <Route
             path="Domestic_cleaning"

@@ -145,7 +145,7 @@ const Service = () => {
               <p>
                 we help in maintaining your furnitures,Roof and other wooden
                 material that might got sever attack from Termite and other
-                distroyer pest.
+                destroyer pest.
               </p>
             </div>
           </div>
@@ -166,7 +166,7 @@ const Service = () => {
               <h3>Drainage Maintainance</h3>
               <p>
                 abandoning and neglection of Drainage system as been proved to
-                bring sever distruction to people life and property through
+                bring sever distruction to people's life and property through
                 flood and erosion.need help? contact <b>IREHV</b>
               </p>
             </div>
@@ -187,7 +187,7 @@ const Service = () => {
             >
               <h3>Event Hygienic Maintainance</h3>
               <p>
-                Thinking of Hygienic event organization or gathering of
+                Thinking of Hygienic Event organization or gathering of
                 personalities? feel free to employ our service.
               </p>
             </div>
@@ -208,7 +208,7 @@ const Service = () => {
             >
               <h3>Consultance</h3>
               <p>
-                The paramont part of our service is to put you through on how
+                The paramount part of our service is to put you through on how
                 and why you must maintain an hygienic and create enabling
                 Environment,to improve your quality of living
               </p>

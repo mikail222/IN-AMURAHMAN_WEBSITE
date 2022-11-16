@@ -1,6 +1,7 @@
 import React from "react";
 import { useState } from "react";
 import { useParams } from "react-router-dom";
+import { TbCurrencyNaira } from "react-icons/tb";
 
 const ProductDetail = ({ products }) => {
   const [count, setCount] = useState(0);
@@ -16,7 +17,17 @@ const ProductDetail = ({ products }) => {
             <div className="product_map" key={id}>
               <img src={image} alt="" />
               <p style={{ fontSize: "1.5rem" }}>{name}</p>
-              <p style={{ fontSize: "1.3rem" }}>price: # {price}</p>
+              <p
+                style={{
+                  fontSize: "1.5rem",
+                  display: "flex",
+                  flexDirection: "row",
+                  alignItems: "center",
+                }}
+              >
+                price: <TbCurrencyNaira />
+                <b> {price}</b>
+              </p>
             </div>
           ))}
         </div>
@@ -37,8 +48,15 @@ const ProductDetail = ({ products }) => {
           <p style={{ textAlign: "center" }}>
             you have selected <b>{count}</b> items
           </p>
-          <p>
-            Total Amount is <b style={{ fontSize: "1.5rem" }}># {total}</b>
+          <p
+            style={{
+              fontSize: "1.5rem",
+              display: "flex",
+              flexDirection: "row",
+              alignItems: "center",
+            }}
+          >
+            Total Amount is <TbCurrencyNaira /> <b>{total}</b>
           </p>
         </div>
       </main>

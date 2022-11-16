@@ -32,11 +32,10 @@ const Trainning = ({ handleSubmit }) => {
         </p>
         <h4 style={{ marginTop: "2rem" }}>Physical Training</h4>
         <p style={{ marginBottom: "1rem" }}>
-          of course is a physical program were participant have direct acccess
-          to lecturers and experience a better understanding of program
-          accessing the facilities for practical base and as well cordial
-          colaboration within the participant that will facilitate better
-          understanding.
+          of course is a physical program were participant have direct access to
+          lecturers and experience a better understanding of program accessing
+          the facilities for practical base and as well as cordial colaboration
+          within the participant that will facilitate better understanding.
         </p>
       </main>
       <aside style={{ width: "30%" }}>

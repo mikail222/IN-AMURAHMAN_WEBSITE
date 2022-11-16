@@ -3,7 +3,7 @@
   align-items: center;
   width: 98%;
   margin-left: 1rem;
-  background-color: rgba(255, 255, 255, 0.5);
+  background-color: rgba(255, 255, 255, 0.7);
 }
 .nav {
   position: fixed;
@@ -396,7 +396,7 @@ footer img {
   @apply flex flex-row w-[100%] h-[100vh] mt-[5rem];
 }
 .product_map {
-  @apply flex flex-col justify-center items-center w-[80%];
+  @apply flex flex-col justify-center items-center w-[80%] mb-[2rem];
 }
 .details main {
   @apply flex flex-row justify-center items-center  w-[100%] m-[2rem];

@@ -40,8 +40,19 @@ const Commercial = ({ checkList }) => {
           </p>
         </main>
         <aside style={{ width: "30%" }}>
+          <a
+            style={{
+              marginTop: "3rem",
+              textAlign: "center",
+              fontSize: "1.4rem",
+              fontFamily: "serif",
+            }}
+            href="Show_Room"
+          >
+            Check out for our Products{" "}
+          </a>
           {checkList.slice(5, 6).map(({ image, name, id }, i) => (
-            <div style={{ marginTop: "3rem" }} key={i}>
+            <div style={{ marginTop: "0.5rem" }} key={i}>
               <Link className="first" to={`Product_detail/${id}`}>
                 <i>Order Now</i>
                 <img className="first_class_img" src={image} alt="" />
@@ -81,6 +92,10 @@ const Commercial = ({ checkList }) => {
             <div>
               <GiCheckMark />
               <p>Swimming Pool cleaning</p>
+            </div>
+            <div>
+              <GiCheckMark />
+              <p>Factory cleaning & others</p>
             </div>
           </div>
         </aside>{" "}
