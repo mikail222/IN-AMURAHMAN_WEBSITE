@@ -14,38 +14,40 @@ const Footer = () => {
         <ul>
           <h5>Cleaning Service</h5>
           <li>
-            <a href="Domestic_cleaning">Domestic,Office,Hotel Cleaning</a>
+            <Link to="Domestic_cleaning">Domestic,Office,Hotel Cleaning</Link>
           </li>
           <li>
-            <a href="/Pest_control">Fumigation and Pest Control</a>
+            <Link to="/Pest_control">Fumigation and Pest Control</Link>
           </li>
           <li>
-            <a href="/Wast_management"> Wast Management</a>
+            <Link to="/Wast_management"> Wast Management</Link>
           </li>
           <li>
-            <a href="/Drainage">Drainage Maintainance Service</a>
+            <Link to="/Drainage">Drainage Maintainance Service</Link>
           </li>
           <li>
-            <a href="/Event_maintainance">Event Hygienic Maintainace service</a>
+            <Link to="/Event_maintainance">
+              Event Hygienic Maintainace service
+            </Link>
           </li>
         </ul>
         <ul>
           <h5>Our Specification</h5>
-          <a href="/Service">
+          <Link to="/Service">
             <li> General Cleaning Service</li>
-          </a>
-          <a href="/Show_Room">
+          </Link>
+          <Link to="/Show_Room">
             <li> Product Sales</li>
-          </a>
-          <a href="/Hire">
+          </Link>
+          <Link to="/Hire">
             <li> Hiring of Equipment</li>
-          </a>
-          <a href="/Consultance">
+          </Link>
+          <Link to="/Consultance">
             <li>Consultation Service</li>
-          </a>
-          <a href="/Trainning">
+          </Link>
+          <Link to="/Trainning">
             <li> Trainning Services</li>
-          </a>
+          </Link>
         </ul>
         <ul>
           <h5>Product </h5>
@@ -60,34 +62,34 @@ const Footer = () => {
         <ul>
           <h5>Domestic Service</h5>
 
-          <a href="/Toilet">
+          <Link to="/Toilet">
             <li>Toilet </li>
-          </a>
+          </Link>
 
-          <a href="/Kitchen">
+          <Link to="/Kitchen">
             <li>Kitchen </li>
-          </a>
+          </Link>
 
-          <a href="/Bed_Room">
+          <Link to="/Bed_Room">
             <li>Bed Room </li>
-          </a>
+          </Link>
 
-          <a href="/Wardrobe">
+          <Link to="/Wardrobe">
             <li>Wardrobe </li>
-          </a>
+          </Link>
 
-          <a href="/Sitting_Room">
+          <Link to="/Sitting_Room">
             <li>Sitting Room </li>
-          </a>
+          </Link>
         </ul>
         <ul>
           <h5>Information</h5>
-          <a href="/Terms">
+          <Link to="/Terms">
             <li>Terms & Condition </li>
-          </a>
-          <a href="/Policy">
+          </Link>
+          <Link to="/Policy">
             <li>Privacy Policy </li>
-          </a>
+          </Link>
         </ul>
       </div>
       <div style={{ display: "flex", flexDirection: "row" }}>

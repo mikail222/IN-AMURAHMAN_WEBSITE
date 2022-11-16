@@ -54,42 +54,42 @@ const Pest_control = ({ handleSubmit, checkList }) => {
         </div>
         <div style={{ display: "flex", flexDirection: "row" }}>
           <div className="pest_map">
-            <a href="Spider">
+            <Link to="Spider">
               <img src={pest1} alt="" />
               <p>Spider</p>
-            </a>
-            <a href="Ants">
+            </Link>
+            <Link to="Ants">
               <img src={pest2} alt="" />
               <p>Ants</p>
-            </a>
-            <a href="Snakes">
+            </Link>
+            <Link to="Snakes">
               <img src={pest3} alt="" />
               <p>Snakes</p>
-            </a>
-            <a href="Termites">
+            </Link>
+            <Link to="Termites">
               <img src={pest4} alt="" />
               <p>Termites</p>
-            </a>
+            </Link>
             <a href="Scorpion">
               <img src={pest5} alt="" />
               <p>Scorpions</p>
             </a>
-            <a href="Bedbugs">
+            <Link to="Bedbugs">
               <img src={pest6} alt="" />
               <p>Bedbugs</p>
-            </a>
-            <a href="Cockroaches">
+            </Link>
+            <Link to="Cockroaches">
               <img src={pest7} alt="" />
               <p>Cockroaches</p>
-            </a>
-            <a href="Rodents">
+            </Link>
+            <Link to="Rodents">
               <img src={pest8} alt="" />
               <p>Rodents</p>
-            </a>
-            <a href="Flies">
+            </Link>
+            <Link to="Flies">
               <img src={pest9} alt="" />
               <p>Flies</p>
-            </a>
+            </Link>
           </div>
           <div style={{ marginTop: "2rem", marginLeft: "2rem" }}>
             <i style={{ textAlign: "center", marginBottom: "2rem" }}>

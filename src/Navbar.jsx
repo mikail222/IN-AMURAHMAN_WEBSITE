@@ -21,59 +21,61 @@ const Navbar = () => {
                 <Link to="/Domestic_cleaning">Domestic cleaning</Link>
               </li>
               <li>
-                <a href="/Commercial">Commercial cleaning</a>
+                <Link to="/Commercial">Commercial cleaning</Link>
               </li>
               <div className="subdropdown">
                 <li>
-                  <a href="/Pest_control">Pest control</a>
+                  <Link to="/Pest_control">Pest control</Link>
                 </li>
                 <div className="subdropdown-content">
                   <li>
-                    <a href="/Ants">Ant control</a>
+                    <Link to="/Ants">Ant control</Link>
                   </li>
                   <li>
-                    <a href="/Bedbugs">Bedbugs control</a>
+                    <Link to="/Bedbugs">Bedbugs control</Link>
                   </li>
                   <li>
-                    <a href="/Cockroaches">Cockroaches control</a>
+                    <Link to="/Cockroaches">Cockroaches control</Link>
                   </li>
                   <li>
-                    <a href="Mosquitoes">Mosquitoes control</a>
+                    <Link to="Mosquitoes">Mosquitoes control</Link>
                   </li>
                   <li>
-                    <a href="/Rodents">Rodents control</a>
+                    <Link to="/Rodents">Rodents control</Link>
                   </li>
                   <li>
-                    <a href="/Spider">Spider control</a>
+                    <Link to="/Spider">Spider control</Link>
                   </li>
                   <li>
-                    <a href="/Termites">Termites control</a>
+                    <Link to="/Termites">Termites control</Link>
                   </li>
                   <li>
-                    <a href="/Snakes">Snakes control</a>
+                    <Link to="/Snakes">Snakes control</Link>
                   </li>
                 </div>
               </div>
               <li>
-                <a href="/Plank_pest_control"> Plank pest control</a>
+                <Link to="/Plank_pest_control"> Plank pest control</Link>
               </li>
               <li>
-                <a href="/Drainage">Drainage Maintainance</a>
+                <Link to="/Drainage">Drainage Maintainance</Link>
               </li>
               <li>
-                <a href="/Trainning">Training service</a>
+                <Link to="/Trainning">Training service</Link>
               </li>
               <li>
-                <a href="/Event_maintainance">Event hygienic Maintainance</a>
+                <Link to="/Event_maintainance">
+                  Event hygienic Maintainance
+                </Link>
               </li>
               <li>
-                <a href="/Wast_management">Wast Management</a>
+                <Link to="/Wast_management">Wast Management</Link>
               </li>
               <li>
-                <a href="/Disinfect">Disinfect</a>
+                <Link to="/Disinfect">Disinfect</Link>
               </li>
               <li>
-                <a href="/Consultance">Consultance</a>
+                <Link to="/Consultance">Consultance</Link>
               </li>
             </ul>
           </div>

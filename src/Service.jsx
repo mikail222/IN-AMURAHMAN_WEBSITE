@@ -11,7 +11,7 @@ const Service = () => {
         <h1>our services</h1>
       </div>
       <div className="service">
-        <a href="Domestic_cleaning">
+        <Link to="Domestic_cleaning">
           <div>
             <img
               className="domestic"
@@ -34,8 +34,8 @@ const Service = () => {
               </p>
             </div>
           </div>
-        </a>
-        <a href="Commercial">
+        </Link>
+        <Link to="Commercial">
           <div>
             <img
               className="commercial"
@@ -57,8 +57,8 @@ const Service = () => {
               </p>
             </div>
           </div>
-        </a>
-        <a href="Pest_control">
+        </Link>
+        <Link to="Pest_control">
           <div>
             <img
               className="fumigation"
@@ -80,8 +80,8 @@ const Service = () => {
               </p>
             </div>
           </div>
-        </a>
-        <a href="Disinfect">
+        </Link>
+        <Link to="Disinfect">
           <div>
             <img
               className="disinfection"
@@ -104,8 +104,8 @@ const Service = () => {
               </p>
             </div>
           </div>
-        </a>
-        <a href="Wast_management">
+        </Link>
+        <Link to="Wast_management">
           <div>
             <img
               className="wast"
@@ -127,8 +127,8 @@ const Service = () => {
               </p>
             </div>
           </div>
-        </a>
-        <a href="Plank_pest_control">
+        </Link>
+        <Link to="Plank_pest_control">
           <div>
             <img
               src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSHdyIYDf-BQmZL-9MVmmOP2aPgjb1fSIjWCA&usqp=CAU"
@@ -149,8 +149,8 @@ const Service = () => {
               </p>
             </div>
           </div>
-        </a>
-        <a href="Drainage">
+        </Link>
+        <Link to="Drainage">
           <div>
             <img
               src="https://e7.pngegg.com/pngimages/460/273/png-clipart-cleaner-plumbing-cleaning-maid-service-drain-24-hour-service-blue-furniture-thumbnail.png"
@@ -171,8 +171,8 @@ const Service = () => {
               </p>
             </div>
           </div>
-        </a>
-        <a href="Event_Maintainance">
+        </Link>
+        <Link to="Event_Maintainance">
           <div>
             <img
               src="https://e7.pngegg.com/pngimages/268/1005/png-clipart-cleaning-laborer-empresa-mr-power-clean-mr-clean-service-team.png"
@@ -192,8 +192,8 @@ const Service = () => {
               </p>
             </div>
           </div>
-        </a>
-        <a href="Consultance">
+        </Link>
+        <Link to="Consultance">
           <div>
             <img
               src="https://www.pngfind.com/pngs/m/69-698301_thx-mobile-consulting-icon-png-transparent-png.png"
@@ -214,8 +214,8 @@ const Service = () => {
               </p>
             </div>
           </div>
-        </a>
-        <a href="Trainning">
+        </Link>
+        <Link to="Trainning">
           <div>
             <img
               src="http://cdn.onlinewebfonts.com/svg/img_461424.png"
@@ -235,7 +235,7 @@ const Service = () => {
               </p>
             </div>
           </div>
-        </a>
+        </Link>
       </div>
     </div>
   );

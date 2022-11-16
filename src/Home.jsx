@@ -51,9 +51,9 @@ const Home = ({ products }) => {
           ))}
         </div>
         <p className="Advert">place your Advert here</p>
-        <a href="Contact" className="getIntouch">
+        <Link to="Contact" className="getIntouch">
           Get in Touch
-        </a>
+        </Link>
       </div>
       <div className="company-info">
         <div className="">

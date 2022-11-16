@@ -40,17 +40,17 @@ const Commercial = ({ checkList }) => {
           </p>
         </main>
         <aside style={{ width: "30%" }}>
-          <a
+          <Link
             style={{
               marginTop: "3rem",
               textAlign: "center",
               fontSize: "1.4rem",
               fontFamily: "serif",
             }}
-            href="Show_Room"
+            to="Show_Room"
           >
             Check out for our Products{" "}
-          </a>
+          </Link>
           {checkList.slice(5, 6).map(({ image, name, id }, i) => (
             <div style={{ marginTop: "0.5rem" }} key={i}>
               <Link className="first" to={`Product_detail/${id}`}>
