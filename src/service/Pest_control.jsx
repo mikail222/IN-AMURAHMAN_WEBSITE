@@ -54,39 +54,39 @@ const Pest_control = ({ handleSubmit, checkList }) => {
         </div>
         <div style={{ display: "flex", flexDirection: "row" }}>
           <div className="pest_map">
-            <Link to="Spider">
+            <Link to="/Spider">
               <img src={pest1} alt="" />
               <p>Spider</p>
             </Link>
-            <Link to="Ants">
+            <Link to="/Ants">
               <img src={pest2} alt="" />
               <p>Ants</p>
             </Link>
-            <Link to="Snakes">
+            <Link to="/Snakes">
               <img src={pest3} alt="" />
               <p>Snakes</p>
             </Link>
-            <Link to="Termites">
+            <Link to="/Termites">
               <img src={pest4} alt="" />
               <p>Termites</p>
             </Link>
-            <a href="Scorpion">
+            <a href="/Scorpion">
               <img src={pest5} alt="" />
               <p>Scorpions</p>
             </a>
-            <Link to="Bedbugs">
+            <Link to="/Bedbugs">
               <img src={pest6} alt="" />
               <p>Bedbugs</p>
             </Link>
-            <Link to="Cockroaches">
+            <Link to="/Cockroaches">
               <img src={pest7} alt="" />
               <p>Cockroaches</p>
             </Link>
-            <Link to="Rodents">
+            <Link to="/Rodents">
               <img src={pest8} alt="" />
               <p>Rodents</p>
             </Link>
-            <Link to="Flies">
+            <Link to="/Flies">
               <img src={pest9} alt="" />
               <p>Flies</p>
             </Link>

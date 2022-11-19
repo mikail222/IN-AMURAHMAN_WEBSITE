@@ -47,7 +47,7 @@ const Commercial = ({ checkList }) => {
               fontSize: "1.4rem",
               fontFamily: "serif",
             }}
-            to="Show_Room"
+            to="/Show_Room"
           >
             Check out for our Products{" "}
           </Link>
@@ -56,15 +56,12 @@ const Commercial = ({ checkList }) => {
               <Link className="first" to={`Product_detail/${id}`}>
                 <i>Order Now</i>
                 <img className="first_class_img" src={image} alt="" />
-                <p style={{ marginRight: "2rem" }}>{name}</p>
+                <p>{name}</p>
               </Link>
             </div>
           ))}
           <div className="serviceDescription">
-            <h4 style={{ color: "white", margin: "1rem" }}>
-              {" "}
-              0ur Commercial Services are:
-            </h4>
+            <h4 style={{ color: "white" }}> 0ur Commercial Services are:</h4>
             <div>
               <GiCheckMark />
               <p>Resturance cleaning</p>

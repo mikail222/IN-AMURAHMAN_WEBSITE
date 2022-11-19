@@ -13,6 +13,16 @@ body {
   background-size: cover;
   background-repeat: no-repeat;
   background-attachment: fixed;
+  @media screen and (min-width: 320px) {
+    width: 100%;
+    background-color: pink;
+  }
+}
+@media screen and (min-width: 481px) {
+  body {
+    /* width: 100%; */
+    background-color: blue;
+  }
 }
 h1 {
   @apply text-[2.9rem];

@@ -26,7 +26,11 @@ const ProductDetail = ({ products }) => {
                 }}
               >
                 price: <TbCurrencyNaira />
-                <b> {price}</b>
+                <b>
+                  {" "}
+                  {console.log(price)}
+                  {price}
+                </b>
               </p>
             </div>
           ))}

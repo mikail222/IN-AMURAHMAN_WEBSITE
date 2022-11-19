@@ -178,10 +178,14 @@ const App = () => {
             path="Commercial/Product_detail/:id"
             element={<ProductDetail products={products} />}
           />
+          <Route
+            path="Domestic_cleaning/Product_detail/:id"
+            element={<ProductDetail products={products} />}
+          />
           <Route path="Wast_management" element={<Wast_managment />} />
           <Route
             path="Domestic_cleaning"
-            element={<Domestic_cleaning handleSubmit={handleSubmit} />}
+            element={<Domestic_cleaning checkList={checkList} />}
           />
           <Route path="Plank_pest_control" element={<Plank_pest_control />} />
           <Route path="Disinfect" element={<Disinfect />} />

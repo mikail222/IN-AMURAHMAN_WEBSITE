@@ -1,8 +1,8 @@
 .App {
   justify-content: center;
   align-items: center;
-  width: 98%;
-  margin-left: 1rem;
+  /* min-width: 98%; */
+  /* margin-left: 1rem; */
   background-color: rgba(255, 255, 255, 0.7);
 }
 .nav {
@@ -10,13 +10,41 @@
   top: 0;
   background-image: linear-gradient(to right, white, #a7d7f6);
   @apply flex flex-row justify-between w-[98%]  ml-[1rem] h-[5rem] items-center z-[1];
+  @media screen and (max-width: 480px) {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    gap: 5rem;
+  }
 }
 /* .nav::-webkit-scrollbar {
   display: none;
 } */
+/* //  320px — 480px: Mobile devices.
+// 481px — 768px: iPads, Tablets  .
+// 769px — 1024px: Small screens, laptops.
+// 1025px — 1200px: Desktops, large screens.
+// 1201px and more — Extra large screens, TV. */
+
 .navs {
   @apply flex flex-row justify-center  items-center font-serif text-[1.3rem]
   mr-[4rem];
+}
+@media screen and (max-width: 480px) {
+  .navs {
+    flex-direction: column;
+    width: 100%;
+    background-color: pink;
+    color: black;
+    display: block;
+    gap: 4px;
+  }
+}
+@media screen and (min-width: 481px) {
+  .navs {
+    width: 100%;
+    flex-direction: row;
+  }
 }
 .navs p {
   @apply w-[7rem] flex flex-col justify-center  items-center text-center h-[13vh];
@@ -30,9 +58,27 @@
   background-repeat: repeat;
   background-size: cover;
   @apply mt-[5.1rem] w-[100%] h-[65vh] flex flex-col justify-center items-center text-left;
+  @media screen and (max-width: 480px) {
+    width: 100%;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+  }
+}
+@media screen and (max-width: 480px) {
+  .logo1 h4 {
+    text-align: center;
+    justify-content: center;
+  }
 }
 .logo1 h1 {
   @apply font-serif tracking-[5px] text-[#0e4e97];
+}
+@media screen and (max-width: 480px) {
+  .brand {
+    width: 100%;
+    justify-content: center;
+  }
 }
 .company-info {
   background-image: url("./asset/nordwood-themes-R53t-Tg6J4c-unsplash.jpg");
@@ -92,7 +138,8 @@
   @apply ml-[2rem];
 }
 .trainning p,
-.commercial p {
+.commercial p,
+.domestic p {
   @apply text-[1.3rem];
 }
 .trainning img {
@@ -114,9 +161,7 @@
   font-style: italic;
   margin-top: 20rem;
 }
-.commercial p {
-  @apply ml-[2rem];
-}
+
 .serviceDescription {
   @apply w-[90%] h-[auto] m-[2rem];
   background-image: linear-gradient(
@@ -128,15 +173,16 @@
   );
   margin-bottom: 2rem;
 }
-.serviceDescription div {
-  @apply flex  flex-row items-center  m-[1rem];
-}
+
 .serviceDescription div p {
   border-bottom: 1px solid gray;
   color: black;
 }
-
-.commercial aside {
+.serviceDescription div {
+  @apply flex flex-row items-center m-[1rem] gap-[1rem];
+}
+.commercial aside,
+.domestic aside {
   @apply flex flex-col justify-center ml-[2rem];
 }
 .commercialSlideImg {
@@ -189,11 +235,13 @@
 }
 .clueImg {
   padding-bottom: 3rem;
-  @apply flex flex-wrap  gap-[2rem] w-[100%];
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  @apply gap-[2rem] w-[100%];
 }
 .clueImg img {
   border: 5px double #f57f80;
-  @apply w-[18%] rounded-[10px];
+  @apply w-[100%] h-[40vh] rounded-[10px];
 }
 
 .cleaning_product {
@@ -660,6 +708,33 @@ footer img {
 .termites b {
   @apply font-extrabold text-[1.1rem] ml-[1rem];
 }
+.pictorial {
+  @apply cursor-pointer flex flex-col gap-[2rem] ml-[2rem] w-[100%] h-[70vh]  mt-[3rem];
+}
+.pictorial img {
+  @apply w-[100%] h-[60vh]  rounded-md;
+}
+.pictorial p {
+  @apply w-[10rem];
+}
+.pictorial .dropdown {
+  position: relative;
+  display: flex;
+  flex-direction: row;
+}
+.pictorial .dropdown-content {
+  display: none;
+  position: absolute;
+  min-width: 160px;
+  box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+  padding: 12px 1px;
+  align-items: center;
+  color: gray;
+  margin-left: 8rem;
+}
+.pictorial .dropdown:hover .dropdown-content {
+  @apply flex  flex-col z-[1] items-center;
+}
 .dropdown {
   position: relative;
   display: block;
@@ -682,7 +757,7 @@ footer img {
   @apply bg-[lightgray];
 }
 .dropdown:hover .dropdown-content {
-  @apply flex  flex-col;
+  @apply flex  flex-col z-[1];
 }
 .subdropdown {
   position: relative;

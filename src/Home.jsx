@@ -33,7 +33,10 @@ const Home = ({ products }) => {
   return (
     <div>
       <div className="logo1">
-        <div style={{ display: "flex", flexDirection: "row", margin: "0" }}>
+        <div
+          style={{ display: "flex", flexDirection: "row", margin: "0" }}
+          className="brand"
+        >
           {" "}
           <h1>IREHV</h1>
           <p style={{ marginTop: "2rem" }}>BN:3466674</p>
