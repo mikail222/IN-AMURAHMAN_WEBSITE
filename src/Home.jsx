@@ -86,7 +86,7 @@ const Home = ({ products }) => {
               high-quality, professional service and thus enjoys long-term
               relationships, with established clients.
             </p>
-            <p>
+            {/* <p>
               It is a common saying that health is wealth. To be healthy, it
               takes constant effort in watching our surroundings - at least, by
               observing strict hygiene! The life expectancy of man has dropped
@@ -97,7 +97,7 @@ const Home = ({ products }) => {
               under regular attacks and fall sick more often than not, leading
               to sickness and/or death. It is high time we took both preventive
               and proactive measures to forestall a worsening situation.
-            </p>
+            </p> */}
           </main>
           <aside style={{ width: "40%" }} className="demo">
             <div className="display_frame"></div>

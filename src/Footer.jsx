@@ -92,7 +92,10 @@ const Footer = () => {
           </Link>
         </ul>
       </div>
-      <div style={{ display: "flex", flexDirection: "row" }}>
+      <div
+        style={{ display: "flex", flexDirection: "row" }}
+        className="media_class"
+      >
         <div className="media">
           <a
             href="http://"

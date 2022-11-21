@@ -63,10 +63,10 @@
   background-size: cover;
   @apply mt-[5.1rem] w-[100%] h-[65vh] flex flex-col justify-center items-center text-left;
 }
-@media screen and (min-width: 320px) {
+@media screen and (max-width: 480px) {
   .logo1 {
     width: 100%;
-    height: 25vh;
+    height: 35%;
     justify-content: center;
     align-items: center;
     text-align: center;
@@ -102,6 +102,13 @@
   background-attachment: fixed;
   width: 100%;
 }
+@media screen and (max-width: 480px) {
+  .company-info {
+    width: 100vw;
+    height: auto;
+    margin-bottom: 5rem;
+  }
+}
 .cleaning_equip {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
@@ -109,6 +116,16 @@
   place-items: center;
   width: 100%;
   padding: 1rem;
+}
+@media screen and (max-width: 480px) {
+  .cleaning_equip {
+    display: grid;
+    grid-template-columns: repeat(1, 1fr);
+    align-items: center;
+    place-items: center;
+    width: 100vw;
+    padding: 1rem;
+  }
 }
 .rent {
   display: grid;
@@ -275,6 +292,18 @@
   border-radius: 25px 0px 0px 0px;
   border: 4px double #f57f80;
 }
+@media screen and (max-width: 480px) {
+  .first {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    /* margin: 1rem; */
+    background-color: white;
+    border-radius: 25px 0px 0px 0px;
+    border: 4px double #f57f80;
+  }
+}
 .first p,
 .hiring p {
   background-color: hsl(216deg 72% 23%);
@@ -285,8 +314,8 @@
   padding: 0px 10px;
 }
 .first img {
-  /* width: 100rem; */
-  height: 20rem;
+  width: 100%;
+  height: 10rem;
   object-fit: contain;
   align-items: center;
 }
@@ -328,6 +357,12 @@
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   grid-gap: 1.5rem;
+}
+@media screen and (max-width: 480px) {
+  .service {
+    display: flex;
+    flex-direction: column;
+  }
 }
 .service div {
   @apply flex flex-row;
@@ -419,6 +454,13 @@ footer {
   padding: 7rem 0px;
   @apply flex flex-row  gap-[5rem] justify-center bg-[#0f0326];
 }
+@media screen and (max-width: 480px) {
+  .footer {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    padding: 2rem;
+  }
+}
 .footer ul {
   @apply mt-10;
 }
@@ -435,6 +477,12 @@ footer img {
 .media {
   border-top: 0.25px solid grey;
   @apply bg-[#0f0326] flex  flex-row h-[8rem] gap-[1rem] mb-[1rem] w-[40%];
+}
+@media screen and (max-width: 480px) {
+  .media_class {
+    display: flex;
+    flex-direction: column;
+  }
 }
 .media a {
   @apply mt-[2.5rem];
@@ -517,12 +565,26 @@ footer img {
   overflow: hidden;
   @apply w-[90%] h-[98vh] ml-[4.5rem] pb-[2rem];
 }
-
+@media screen and (max-width: 480px) {
+  .slider {
+    width: 90vw;
+    height: 30vh;
+    margin-left: 1.2rem;
+    padding-bottom: 0.5rem;
+  }
+}
 .image {
   position: relative;
   float: left;
   margin: 0px 17rem;
   @apply flex  flex-row  justify-center items-center  w-[51vw]  h-[70vh];
+}
+@media screen and (max-width: 480px) {
+  .image {
+    width: 100vw;
+    height: 30vh;
+    margin: 0px 0.15rem;
+  }
 }
 .image img {
   @apply w-[auto] h-[100%] rounded-[5px];
@@ -623,6 +685,15 @@ footer img {
 .profile_wrap {
   @apply flex flex-row gap-[1rem];
 }
+/* @media screen and (max-width: 480px) {
+  .profile_wrap {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+  }
+} */
 .c_profile {
   @apply flex flex-col text-left border-[1px] h-[100vh];
 }
@@ -630,15 +701,25 @@ footer img {
   margin: 1rem 20px;
   @apply text-[1.3rem];
 }
+@media screen and (max-width: 480px) {
+  .c_profile p {
+    text-align: left;
+  }
+}
 .demo {
   @apply flex flex-col items-center border-[1px] h-[100vh];
 }
+@media screen and (max-width: 480px) {
+  .demo {
+    /* display: none; */
+  }
+}
 .display_frame {
   @apply w-[80%] h-[80%] mt-[4rem] rounded-[15px];
-  background-image: url("./asset/cdc-jjrXvzbqC5E-unsplash.jpg");
+  /* background-image: url("./asset/cdc-jjrXvzbqC5E-unsplash.jpg");
   background-position: center;
   background-repeat: no-repeat;
-  background-size: cover;
+  background-size: cover; */
   animation: change infinite;
   animation-duration: 60s;
   animation-delay: 5s;
