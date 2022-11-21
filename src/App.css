@@ -370,6 +370,13 @@
 .services img {
   @apply w-[20%] h-[7rem] m-[2rem] mt-4;
 }
+@media screen and (max-width: 480px) {
+  .service img {
+    width: 10%;
+    height: 3rem;
+    margin: 1rem;
+  }
+}
 .services p {
   padding-right: 1rem;
   @apply w-[100%] font-light;
@@ -456,9 +463,12 @@ footer {
 }
 @media screen and (max-width: 480px) {
   .footer {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    padding: 2rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin: 0;
+    padding: 0;
   }
 }
 .footer ul {
@@ -685,15 +695,11 @@ footer img {
 .profile_wrap {
   @apply flex flex-row gap-[1rem];
 }
-/* @media screen and (max-width: 480px) {
-  .profile_wrap {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    text-align: center;
+@media screen and (max-width: 480px) {
+  .c_profile {
+    margin-bottom: 10rem;
   }
-} */
+}
 .c_profile {
   @apply flex flex-col text-left border-[1px] h-[100vh];
 }
