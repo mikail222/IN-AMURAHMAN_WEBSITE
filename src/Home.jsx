@@ -33,17 +33,19 @@ const Home = ({ products }) => {
   return (
     <div>
       <div className="logo1">
-        <div
-          style={{ display: "flex", flexDirection: "row", margin: "0" }}
-          className="brand"
-        >
-          {" "}
-          <h1>IREHV</h1>
-          <p style={{ marginTop: "2rem" }}>BN:3466674</p>
+        <div className="overlay">
+          <div
+            style={{ display: "flex", flexDirection: "row", margin: "0" }}
+            className="brand"
+          >
+            {" "}
+            <h1>IREHV</h1>
+            <p style={{ marginTop: "2rem" }}>BN:3466674</p>
+          </div>
+          <h2>INAMURAHMAN</h2>
+          <h4>ENVIROMENTAL HYGIENIC VENTURE</h4>
+          <i>...eradicating environmental hazard</i>
         </div>
-        <h2>INAMURAHMAN</h2>
-        <h4>ENVIROMENTAL HYGIENIC VENTURE</h4>
-        <i>...eradicating environmental hazard</i>
       </div>
       <div className="slider">
         <div className="slide-container">

@@ -8,6 +8,13 @@ import { BsInstagram } from "react-icons/bs";
 import { FiTwitter } from "react-icons/fi";
 import { BiCopyright } from "react-icons/bi";
 const Footer = () => {
+  const style = {
+    // Adding media query..
+    "@media (maxWidth: 4800px)": {
+      display: "flex",
+      flexDirection: "column",
+    },
+  };
   return (
     <footer>
       <div className="footer">
@@ -92,10 +99,7 @@ const Footer = () => {
           </Link>
         </ul>
       </div>
-      <div
-        style={{ display: "flex", flexDirection: "row" }}
-        className="media_class"
-      >
+      <div className="media_class" style={style}>
         <div className="media">
           <a
             href="http://"
@@ -204,15 +208,7 @@ const Footer = () => {
             />
           </a>
         </div>
-        <div
-          style={{
-            width: "60%",
-            backgroundColor: "#0f0326",
-            height: "8rem",
-            borderTop: "0.25px solid grey",
-            color: "gray",
-          }}
-        >
+        <div className="copyright">
           <div
             style={{
               marginTop: "2.2rem",

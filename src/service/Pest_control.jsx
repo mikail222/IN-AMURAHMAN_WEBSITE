@@ -91,14 +91,23 @@ const Pest_control = ({ handleSubmit, checkList }) => {
               <p>Flies</p>
             </Link>
           </div>
-          <div style={{ marginTop: "2rem", marginLeft: "2rem" }}>
-            <i style={{ textAlign: "center", marginBottom: "2rem" }}>
+          <div style={{ marginTop: "2rem", marginLeft: "2rem", width: "30%" }}>
+            <i
+              style={{
+                textAlign: "center",
+                marginBottom: "2rem",
+              }}
+            >
               For Home use and Family protection order now!
             </i>
 
             {checkList.slice(6, 8).map(({ image, name, id }, i) => (
               <div key={i}>
-                <Link className="first" to={`Product_detail/${id}`}>
+                <Link
+                  className="first"
+                  style={{ margin: "2rem" }}
+                  to={`Product_detail/${id}`}
+                >
                   <i>Order Now</i>
                   <img className="first_class_img" src={image} alt="" />
                   <p>{name}</p>

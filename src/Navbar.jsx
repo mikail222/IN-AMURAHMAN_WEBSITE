@@ -107,7 +107,7 @@ const Navbar = () => {
         </div>
       ) : (
         <CgMenuGridR
-          style={{ width: "4rem", height: "2rem" }}
+          style={{ width: "4rem", height: "2rem", marginRight: "2rem" }}
           title="Menu Bar"
           onClick={(e) => setShow(!show)}
           className="menuBar"

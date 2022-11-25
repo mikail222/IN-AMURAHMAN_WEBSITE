@@ -1,17 +1,27 @@
 .App {
   justify-content: center;
   align-items: center;
-  /* min-width: 98%; */
-  /* margin-left: 1rem; */
+  min-width: 98%;
+  margin-left: 1rem;
   background-color: rgba(255, 255, 255, 0.7);
 }
+@media screen and (max-width: 480px) {
+  .App {
+    width: 100%;
+  }
+}
+
 .nav {
-  position: absolute;
+  position: fixed;
   top: 0;
   background-image: linear-gradient(to right, white, #a7d7f6);
-  @apply flex flex-row justify-between w-[98%]  ml-[1rem] h-[5rem] items-center z-[1];
-  @media screen and (max-width: 480px) {
+  @apply flex flex-row justify-between w-[100%]  ml-[1rem] h-[5rem] items-center z-[1];
+}
+@media screen and (max-width: 480px) {
+  .nav {
+    position: fixed;
     width: 100vw;
+    height: 5rem;
     display: flex;
     flex-direction: row;
   }
@@ -28,22 +38,28 @@
 .navs {
   @apply flex flex-row justify-center  items-center font-serif text-[1.3rem];
 }
+
 @media screen and (max-width: 480px) {
   .navs {
     display: flex;
     flex-direction: column;
     float: right;
-    background-color: rgba(255, 255, 255, 0.7);
-    color: black;
+    background-color: rgba(0, 0, 0, 0.7);
+    color: white;
     margin-top: 10rem;
+    width: 48vw;
+    height: 100%;
+    font-size: 1.3rem;
   }
 }
+
 @media screen and (min-width: 481px) {
   .navs {
     width: 100%;
     flex-direction: row;
   }
 }
+
 .navs p {
   @apply w-[7rem] flex flex-col justify-center  items-center text-center  h-[13vh];
 }
@@ -53,25 +69,29 @@
     height: 4vh;
   }
 }
+
 .navs p:hover {
   @apply bg-[#0f0326] text-[white];
 }
+
 .logo1 {
   background-image: url("./asset/neven-krcmarek-HWbxSLvmSww-unsplash.jpg");
   background-position: top;
   background-repeat: repeat;
   background-size: cover;
-  @apply mt-[5.1rem] w-[100%] h-[65vh] flex flex-col justify-center items-center text-left;
+  @apply mt-[5.1rem] w-[100%] h-[65vh] flex flex-col justify-center items-center text-center;
 }
+
 @media screen and (max-width: 480px) {
   .logo1 {
     width: 100%;
-    height: 35%;
+    height: 30vh;
     justify-content: center;
     align-items: center;
     text-align: center;
   }
 }
+
 @media screen and (max-width: 480px) {
   .logo1 h4 {
     text-align: center;
@@ -79,6 +99,7 @@
     font-size: 1rem;
   }
 }
+
 .logo1 h1 {
   @apply font-serif tracking-[5px] text-[#0e4e97];
 }
@@ -87,13 +108,17 @@
     font-size: 2rem;
   }
 }
-
+.overlay:hover {
+  background-color: rgba(0, 0, 0, 0.2);
+  @apply w-[100%] h-[65vh] flex flex-col justify-center items-center text-center z-[1];
+}
 @media screen and (max-width: 480px) {
   .brand {
     width: 100%;
     justify-content: center;
   }
 }
+
 .company-info {
   background-image: url("./asset/nordwood-themes-R53t-Tg6J4c-unsplash.jpg");
   background-position: center;
@@ -102,6 +127,7 @@
   background-attachment: fixed;
   width: 100%;
 }
+
 @media screen and (max-width: 480px) {
   .company-info {
     width: 100vw;
@@ -109,6 +135,7 @@
     margin-bottom: 5rem;
   }
 }
+
 .cleaning_equip {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
@@ -117,6 +144,7 @@
   width: 100%;
   padding: 1rem;
 }
+
 @media screen and (max-width: 480px) {
   .cleaning_equip {
     display: grid;
@@ -127,6 +155,7 @@
     padding: 1rem;
   }
 }
+
 .rent {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
@@ -141,11 +170,13 @@
   width: 100%;
   padding: 2rem;
 }
+
 .hiring {
   border-radius: 25px 0px 0px 0px;
   border: 4px double #f57f80;
   @apply flex  flex-col  justify-center  items-center  m-[1rem];
 }
+
 .hiring img {
   max-width: 100%;
   height: 15rem;
@@ -153,29 +184,36 @@
   align-items: center;
   border-radius: 20px 0px 0px 0px;
 }
+
 .consultance {
   margin-top: 5rem;
   @apply w-[100%] h-[100vh];
 }
+
 .drainage {
   margin-top: 5rem;
   @apply w-[100%] h-[100vh];
 }
+
 .trainning {
   margin-top: 5rem;
   @apply w-[90%] flex flex-row;
 }
+
 .trainning main {
   @apply ml-[2rem];
 }
+
 .trainning p,
 .commercial p,
 .domestic p {
   @apply text-[1.3rem];
 }
+
 .trainning img {
   @apply w-[100%] h-[60vh] flex flex-col  justify-center items-center mt-[5rem] ml-[1rem];
 }
+
 .main {
   background-image: url("./asset/s-o-c-i-a-l-c-u-t-1RT4txDDAbM-unsplash.jpg");
   background-position: bottom;
@@ -183,6 +221,7 @@
   background-size: cover;
   @apply w-[100%] h-[62vh] flex flex-col  justify-center items-center mt-[5rem] ml-[1rem];
 }
+
 .main h3 {
   margin-top: 7rem;
   background-image: linear-gradient(to right, transparent, transparent, black);
@@ -209,13 +248,16 @@
   border-bottom: 1px solid gray;
   color: black;
 }
+
 .serviceDescription div {
   @apply flex flex-row items-center m-[1rem] gap-[1rem];
 }
+
 .commercial aside,
 .domestic aside {
   @apply flex flex-col justify-center ml-[2rem];
 }
+
 .commercialSlideImg {
   border-top: 2px solid gray;
   border-bottom: 2px solid gray;
@@ -227,9 +269,11 @@
   @apply flex flex-row overflow-auto w-[95%] h-[80vh]
     m-[1.5rem] gap-[1.5rem] ml-[2rem] mb-[3rem];
 }
+
 .commercialSlideImg img {
   @apply mt-[15px] w-[60%];
 }
+
 .commercialSlideImg::-webkit-scrollbar {
   @apply flex-none;
 }
@@ -246,6 +290,12 @@
   width: 100%;
   padding: 2rem;
   @apply mt-[5rem];
+}
+@media screen and (max-width: 480px) {
+  .show_room {
+    width: 100vw;
+    height: auto;
+  }
 }
 .show_room input {
   border-radius: 15px;
@@ -281,7 +331,29 @@
   align-items: center;
   place-items: center;
 }
-
+@media screen and (max-width: 480px) {
+  .cleaning_product,
+  .rent {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    object-fit: contain;
+    align-items: center;
+  }
+}
+@media screen and (max-width: 480px) {
+  .cleaning_product img {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 80vw;
+    height: 100%;
+    object-fit: contain;
+    align-items: center;
+  }
+}
 .first {
   display: flex;
   flex-direction: column;
@@ -292,18 +364,7 @@
   border-radius: 25px 0px 0px 0px;
   border: 4px double #f57f80;
 }
-@media screen and (max-width: 480px) {
-  .first {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    /* margin: 1rem; */
-    background-color: white;
-    border-radius: 25px 0px 0px 0px;
-    border: 4px double #f57f80;
-  }
-}
+
 .first p,
 .hiring p {
   background-color: hsl(216deg 72% 23%);
@@ -315,9 +376,17 @@
 }
 .first img {
   width: 100%;
-  height: 10rem;
+  height: 15rem;
   object-fit: contain;
   align-items: center;
+}
+@media screen and (max-width: 480px) {
+  .first img {
+    width: 80vw;
+    height: 35vh;
+    object-fit: contain;
+    align-items: center;
+  }
 }
 .first_class_img {
   @apply w-[20rem] object-contain items-center;
@@ -327,6 +396,18 @@
 }
 .hiring img:hover {
   padding-bottom: 1rem;
+}
+@media screen and (max-width: 480px) {
+  .hiring img {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 80vw;
+    height: 100%;
+    object-fit: contain;
+    align-items: center;
+  }
 }
 
 .home {
@@ -438,17 +519,52 @@ form label {
   @apply ml-[1.3rem] text-[1.3rem];
 }
 .contact-align {
-  @apply flex flex-col w-[100%];
+  @apply flex flex-col w-[100%] mt-[4rem];
 }
 .text {
   @apply text-center text-[1.9rem]  mt-[3rem]  font-serif;
 }
-.contact-align {
-  @apply mt-[4rem];
+@media screen and (max-width: 480px) {
+  .text {
+    font-size: 1.5rem;
+    padding: 2rem;
+  }
+}
+@media screen and (max-width: 480px) {
+  .contact-align {
+    display: flex;
+    flex-direction: column;
+    width: 100vw;
+    height: 100%;
+  }
 }
 .contact {
   padding: 5rem 0px;
-  @apply flex flex-row gap-[13rem] mt-[rem]  justify-center  w-[100%] h-[100vh];
+  @apply flex flex-row gap-[13rem] mt-[5rem]  justify-center  w-[100%] h-[100vh];
+}
+@media screen and (max-width: 480px) {
+  .contact {
+    display: flex;
+    flex-direction: column;
+    width: 100vw;
+    height: 100%;
+  }
+}
+@media screen and (max-width: 480px) {
+  .address {
+    display: flex;
+    flex-direction: column;
+    width: 100vw;
+    height: auto;
+    text-align: center;
+  }
+}
+@media screen and (max-width: 480px) {
+  form {
+    width: 90vw;
+    height: auto;
+    margin-left: 1rem;
+  }
 }
 .address p {
   line-height: 2rem;
@@ -467,8 +583,6 @@ footer {
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    margin: 0;
-    padding: 0;
   }
 }
 .footer ul {
@@ -488,10 +602,27 @@ footer img {
   border-top: 0.25px solid grey;
   @apply bg-[#0f0326] flex  flex-row h-[8rem] gap-[1rem] mb-[1rem] w-[40%];
 }
+
+.media_class {
+  @apply flex  flex-row h-[100%];
+}
 @media screen and (max-width: 480px) {
   .media_class {
+    height: auto;
+  }
+}
+.copyright {
+  width: 60%;
+  background-color: #0f0326;
+  height: 8rem;
+  border-top: 0.25px solid grey;
+  color: gray;
+}
+@media screen and (max-width: 480px) {
+  .copyright {
     display: flex;
     flex-direction: column;
+    align-items: center;
   }
 }
 .media a {
@@ -578,7 +709,7 @@ footer img {
 @media screen and (max-width: 480px) {
   .slider {
     width: 90vw;
-    height: 30vh;
+    height: 55vh;
     margin-left: 1.2rem;
     padding-bottom: 0.5rem;
   }
@@ -676,6 +807,12 @@ footer img {
     left: 10800px;
   }
 }
+@media screen and (max-width: 480px) {
+  .slide-container {
+    width: 42000px;
+    height: 35vh;
+  }
+}
 .Advert {
   text-align: center;
   font-size: 2rem;
@@ -688,6 +825,13 @@ footer img {
   @apply flex flex-col items-center border-2
     w-[15%] rounded-[10px] p-[0.65rem] text-[1.5rem] bg-[#0e4e97] text-[white];
 }
+@media screen and (max-width: 480px) {
+  .getIntouch {
+    width: 40%;
+    height: 8vh;
+    justify-content: center;
+  }
+}
 .getIntouch:hover {
   background-color: transparent;
   color: black;
@@ -696,7 +840,7 @@ footer img {
   @apply flex flex-row gap-[1rem];
 }
 @media screen and (max-width: 480px) {
-  .c_profile {
+  .company-info {
     margin-bottom: 10rem;
   }
 }
@@ -722,10 +866,10 @@ footer img {
 }
 .display_frame {
   @apply w-[80%] h-[80%] mt-[4rem] rounded-[15px];
-  /* background-image: url("./asset/cdc-jjrXvzbqC5E-unsplash.jpg");
+  background-image: url("./asset/cdc-jjrXvzbqC5E-unsplash.jpg");
   background-position: center;
   background-repeat: no-repeat;
-  background-size: cover; */
+  background-size: cover;
   animation: change infinite;
   animation-duration: 60s;
   animation-delay: 5s;

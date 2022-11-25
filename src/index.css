@@ -13,14 +13,14 @@ body {
   background-size: cover;
   background-repeat: no-repeat;
   background-attachment: fixed;
-  @media screen and (min-width: 320px) {
+  /* @media screen and (min-width: 320px) {
     width: 100%;
     background-color: pink;
-  }
+  } */
 }
-@media screen and (min-width: 481px) {
+@media screen and (max-width: 480px) {
   body {
-    /* width: 100%; */
+    width: 100%;
     background-color: blue;
   }
 }
