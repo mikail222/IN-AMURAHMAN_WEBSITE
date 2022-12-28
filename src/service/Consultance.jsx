@@ -3,7 +3,7 @@ import { GiCheckMark } from "react-icons/gi";
 
 const Consultance = ({ handleSubmit }) => {
   return (
-    <div className="consultance" style={{ marginBottom: "2rem" }}>
+    <div className="consultance" style={{ marginBottom: "4rem" }}>
       <main style={{ width: "65%" }}>
         <div className="consultbg">
           <h4>Consultation Service</h4>
@@ -48,6 +48,15 @@ const Consultance = ({ handleSubmit }) => {
         </div>
       </main>
       <aside style={{ width: "35%", marginLeft: "3rem" }}>
+        <div className="drainAdvert">
+          <img
+            src="https://agro4africa.com/wp-content/uploads/2021/10/meat-chicken-breeds.jpg"
+            alt="broilers"
+          />
+
+          <p>For Chicken breeding Consultation service</p>
+          <p>reach out to IREHV</p>
+        </div>
         <div className="serviceDescription" style={{ marginTop: "5rem" }}>
           <h4 style={{ color: "white" }}> 0ur Consultation Services are:</h4>
           <div>
@@ -99,6 +108,15 @@ const Consultance = ({ handleSubmit }) => {
             <textarea name="msg" id="msgs" cols="50" rows="4"></textarea>
             <button>submit</button>
           </form>
+        </div>
+        <div className="drainAdvert">
+          <img
+            src="https://media.istockphoto.com/id/1135314838/photo/repair-of-hydraulic-heating-system-in-the-house.jpg?s=612x612&w=0&k=20&c=Z8-BohVX0_Niqp72nroZzeK3m8C69U2xLcvQYE_iHuA="
+            alt="plumbing"
+          />
+
+          <p>For proffessional plumbing service</p>
+          <p>reach out to IREHV</p>
         </div>
       </aside>
     </div>

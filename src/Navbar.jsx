@@ -102,6 +102,16 @@ const Navbar = () => {
               <Link to="Clues">
                 <p>Clues</p>
               </Link>
+              <Link
+                to="Contact"
+                className="getIntouch"
+                style={{ marginRight: "1.2rem", height: "12vh" }}
+              >
+                <p>
+                  {" "}
+                  <em>Contact us</em>
+                </p>
+              </Link>
             </div>
           </div>
         </div>

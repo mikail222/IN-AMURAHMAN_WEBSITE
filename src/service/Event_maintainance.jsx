@@ -59,7 +59,7 @@ const Event_maintainance = ({ checkList }) => {
         <main style={{ width: "63%", padding: "2rem", marginTop: "3rem" }}>
           {/* <img src={eventImg} alt="" className="eventimg" /> */}
           <div className="event_managemnt">
-            <h4>Event Management cleaning</h4>
+            <h4>Event Management Service</h4>
           </div>
           <div>
             {" "}

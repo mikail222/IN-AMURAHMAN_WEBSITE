@@ -5,7 +5,7 @@ import { Link } from "react-router-dom";
 const Contact = ({ handleSubmit }) => {
   return (
     <div className="contact-align">
-      <p className="text">
+      <p className="text" style={{ color: "#8ccaf3" }}>
         For feedback and request please kindly fill the form below
       </p>
       <i style={{ textAlign: "center", marginTop: "1rem" }}>
@@ -13,8 +13,8 @@ const Contact = ({ handleSubmit }) => {
       </i>
       <div className="contact">
         <div className="address">
-          <h2>IREHV</h2>
-          <h3>IN'AMURAHMAN </h3>
+          <h2 style={{ color: "blue" }}>IREHV</h2>
+          <h3 style={{ color: "#f57f80" }}>IN'AMURAHMAN </h3>
           <h4>ENVIRONMENTAL HYGIENIC VENTURE</h4>
           <p>beside Blue-Mist Water, </p>
           <p> Agbo-Oba Road Ilorin,</p>

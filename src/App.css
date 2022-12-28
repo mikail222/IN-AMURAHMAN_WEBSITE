@@ -211,10 +211,36 @@
   padding: 0.75rem;
 }
 .drainage {
-  margin-top: 5rem;
-  @apply w-[100%] h-[100vh];
+  margin-top: 3rem;
+  @apply w-[100%] mb-[3rem] flex flex-row;
 }
-
+.drainage p {
+  @apply text-[1.3rem] font-serif;
+}
+.drainAdvert {
+  @apply mt-[4rem] ml-[3rem]  text-center w-[80%];
+}
+.drainAdvert p {
+  color: white;
+  background-color: hsl(216deg 72% 23%);
+}
+.drainimg {
+  background-image: url("https://assets.thehansindia.com/h-upload/2021/12/21/1136894-drainage.webp");
+  background-position: center;
+  background-repeat: repeat;
+  background-size: cover;
+  @apply w-[100%] h-[62vh] flex flex-col  justify-center items-center mt-[4rem] ml-[1rem];
+}
+.drainimg h4 {
+  margin-top: 7rem;
+  background-image: linear-gradient(to right, transparent, transparent, black);
+  color: white;
+  width: 100%;
+  text-align: right;
+  font-style: italic;
+  margin-top: 21rem;
+  padding-right: 0.5rem;
+}
 .trainning {
   margin-top: 5rem;
   @apply w-[90%] flex flex-row;
@@ -242,7 +268,7 @@
   @apply w-[100%] h-[62vh] flex flex-col  justify-center items-center mt-[5rem] ml-[1rem];
 }
 
-.main h3 {
+.main h4 {
   margin-top: 7rem;
   background-image: linear-gradient(to right, transparent, transparent, black);
   color: white;
@@ -250,6 +276,7 @@
   text-align: right;
   font-style: italic;
   margin-top: 20rem;
+  padding-right: 0.5rem;
 }
 
 .serviceDescription {
@@ -331,8 +358,8 @@
   transform: scale(1.1);
 }
 .event_managemnt {
-  background-image: url("asset/marc-babin-ecGZWPOvya0-unsplash.jpg");
-  background-position: center;
+  background-image: url("https://e7.pngegg.com/pngimages/268/1005/png-clipart-cleaning-laborer-empresa-mr-power-clean-mr-clean-service-team.png");
+  background-position: top;
   background-repeat: repeat;
   background-size: cover;
   @apply w-[100%] h-[60vh] flex flex-col  justify-center items-center mb-[2rem];
@@ -782,7 +809,7 @@ footer img {
   position: relative;
   float: left;
   margin: 0px 17rem;
-  @apply flex  flex-row  justify-center items-center  w-[51vw]  h-[70vh];
+  @apply flex  flex-row  justify-center items-center  w-[51vw] h-[70vh];
 }
 @media screen and (max-width: 480px) {
   .image {
@@ -792,7 +819,7 @@ footer img {
   }
 }
 .image img {
-  @apply w-[auto] h-[100%] rounded-[5px];
+  @apply w-[100%] h-[100%] rounded-[5px];
 }
 .slide-container {
   @apply w-[84000px] h-[73vh];
@@ -864,9 +891,9 @@ footer img {
   90% {
     left: 10800px;
   }
-  95% {
+  /* 95% {
     left: 10800px;
-  }
+  } */
   100% {
     left: 10800px;
   }
@@ -887,7 +914,7 @@ footer img {
 .getIntouch {
   margin: 30px auto;
   @apply flex flex-col items-center border-2
-    w-[15%] rounded-[10px] p-[0.65rem] text-[1.5rem] bg-[#0e4e97] text-[white];
+    w-[15%] rounded-[10px] p-[0.25rem] text-[1.5rem] bg-[#0e4e97] text-[white];
 }
 @media screen and (max-width: 480px) {
   .getIntouch {
@@ -1118,4 +1145,5 @@ footer img {
   color: white;
   width: 100%;
   text-align: right;
+  padding-right: 0.5rem;
 }

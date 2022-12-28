@@ -19,7 +19,7 @@ const Commercial = ({ checkList }) => {
       >
         <main style={{ width: "65%" }}>
           <div className="main" style={{ marginBottom: "4rem" }}>
-            <h3 style={{}}>Commercial cleaning</h3>
+            <h4 style={{}}>Commercial cleaning</h4>
           </div>
           <p style={{ marginTop: "3rem", lineHeight: "3rem" }}>
             pleasant and healthy environment is an important consideration for a

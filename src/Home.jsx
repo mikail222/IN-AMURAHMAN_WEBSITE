@@ -35,14 +35,20 @@ const Home = ({ products }) => {
       <div className="logo1">
         <div className="overlay">
           <div
-            style={{ display: "flex", flexDirection: "row", margin: "0" }}
+            style={{
+              display: "flex",
+              flexDirection: "row",
+              margin: "0",
+              alignItems: "center",
+              justifyContent: "center",
+            }}
             className="brand"
           >
             {" "}
             <h1>IREHV</h1>
             <p style={{ marginTop: "2rem" }}>BN:3466674</p>
           </div>
-          <h2>INAMURAHMAN</h2>
+          <h2 style={{ color: " #f57f80" }}>INAMURAHMAN</h2>
           <h4>ENVIROMENTAL HYGIENIC VENTURE</h4>
           <i>...eradicating environmental hazard</i>
         </div>
