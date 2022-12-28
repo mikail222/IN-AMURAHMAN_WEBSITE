@@ -203,9 +203,20 @@ const App = () => {
             path="Trainning"
             element={<Trainning handleSubmit={handleSubmit} />}
           />
-          <Route path="Event_maintainance" element={<Event_maintainance />} />
+          <Route
+            path="Event_maintainance"
+            element={<Event_maintainance checkList={checkList} />}
+          />
+
+          <Route
+            path="Event_maintainance/Product_detail/:id"
+            element={<ProductDetail products={products} />}
+          />
           <Route path="Drainage" element={<Drainage />} />
-          <Route path="Consultance" element={<Consultance />} />
+          <Route
+            path="Consultance"
+            element={<Consultance handleSubmit={handleSubmit} />}
+          />
           <Route path="Ants" element={<Ants />} />
           <Route path="Spider" element={<Spider />} />
           <Route path="Rodents" element={<Rodents />} />

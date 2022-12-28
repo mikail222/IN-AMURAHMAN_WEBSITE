@@ -18,7 +18,7 @@ const Domestic_cleaning = ({ checkList }) => {
         <div className="cleaningBg">
           <h4>Domestic cleaning Service</h4>
         </div>
-        <p>
+        <p style={{ marginLeft: "1rem", marginTop: "2rem" }}>
           We are proud of our home cleaning services and we are keen to provide
           an affordable service and ensuring the job is done to the highest
           quality. We are big on customer satisfaction, so we like to work with
@@ -90,7 +90,7 @@ const Domestic_cleaning = ({ checkList }) => {
         ))}
         <div className="serviceDescription">
           <h4 style={{ color: "white", margin: "1rem" }}>
-            Domestic Services Includes:
+            Domestic Services are:
           </h4>
           <Link to="/Sitting_Room">
             <div>

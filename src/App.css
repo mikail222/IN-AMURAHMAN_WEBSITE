@@ -186,10 +186,30 @@
 }
 
 .consultance {
-  margin-top: 5rem;
-  @apply w-[100%] h-[100vh];
+  margin-top: 2rem;
+  @apply w-[100%] flex flex-row;
 }
-
+.consultparag {
+  line-height: 2rem;
+  @apply text-[1.3rem];
+}
+.consultbg {
+  background-image: url("./asset/scott-graham-5fNmWej4tAA-unsplash.jpg");
+  background-position: center;
+  background-repeat: repeat;
+  background-size: cover;
+  @apply w-[100%] h-[62vh] flex flex-col  justify-center items-center mt-[5rem] ml-[1rem];
+}
+.consultbg h4 {
+  margin-top: 7rem;
+  background-image: linear-gradient(to right, transparent, transparent, black);
+  color: white;
+  width: 100%;
+  text-align: right;
+  font-style: italic;
+  margin-top: 20rem;
+  padding: 0.75rem;
+}
 .drainage {
   margin-top: 5rem;
   @apply w-[100%] h-[100vh];
@@ -233,7 +253,7 @@
 }
 
 .serviceDescription {
-  @apply w-[90%] h-[auto] m-[2rem];
+  @apply w-[85%] h-[auto] m-[2rem];
   background-image: linear-gradient(
     blue,
     transparent,
@@ -280,6 +300,50 @@
 .event {
   margin-top: 5rem;
   @apply w-[100%] mb-[2rem] flex  flex-row gap-[1rem];
+}
+.event p {
+  @apply font-serif  text-[1.3rem];
+}
+.eventimg {
+  @apply mt-[2rem] mb-[2rem];
+}
+.event_rent {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  align-items: center;
+  background-color: rgba(255, 255, 255, 0.6);
+  @apply w-[93%] m-[3rem] gap-[2rem] p-[2rem];
+}
+.event_img img {
+  border-radius: 10px 0px 0px 0px;
+  @apply w-[35rem] h-[13rem];
+}
+.event_img p {
+  background-color: whitesmoke;
+  @apply text-[1.3rem];
+}
+.event_img div {
+  border-radius: 10px;
+  background-color: white;
+  box-shadow: 1px 1px 18px 5px #a7d7f6;
+}
+.event_img div:hover {
+  transform: scale(1.1);
+}
+.event_managemnt {
+  background-image: url("asset/marc-babin-ecGZWPOvya0-unsplash.jpg");
+  background-position: center;
+  background-repeat: repeat;
+  background-size: cover;
+  @apply w-[100%] h-[60vh] flex flex-col  justify-center items-center mb-[2rem];
+}
+.event_managemnt h4 {
+  margin-top: 20rem;
+  background-image: linear-gradient(to right, transparent, transparent, black);
+  color: white;
+  width: 100%;
+  text-align: right;
+  padding: 1rem;
 }
 .clueVideo {
   margin: 3rem 0px;
@@ -484,11 +548,11 @@
 form {
   border: 3px double rgb(143, 113, 108);
   border-radius: 25px 0px;
-  background-image: url("./asset/peter-f-wolf-XG8eYNYdz54-unsplash.jpg");
-  background-position: bottom;
+  background-image: url("./asset/neven-krcmarek-HWbxSLvmSww-unsplash.jpg");
+  background-position: top;
   background-size: cover;
   @apply flex flex-col w-[30vw] h-[79vh]
-    justify-center p-4;
+    justify-center p-4  font-serif;
 }
 form input {
   border-radius: 15px 0px;
@@ -502,15 +566,15 @@ form input {
   outline: none;
 }
 .form textarea {
-  border-radius: 20px 0px;
-  @apply p-[4rem] w-[95%] ml-2  bg-[#e5edf3];
+  border-radius: 13px 0px;
+  @apply w-[95%] ml-2  bg-[#e5edf3];
 }
 .form textarea::-webkit-scrollbar {
   display: none;
 }
 form button {
   border-radius: 15px 0px;
-  @apply bg-[#a7d7f6] w-[95%] ml-[0.5rem] text-[1.3rem] font-serif p-[0.5rem] mt-[1.5rem];
+  @apply bg-[#e5edf3] w-[95%] ml-[0.5rem] text-[1.3rem] font-serif p-[0.5rem] mt-[1.5rem];
 }
 form button:focus {
   outline: none;
@@ -1035,7 +1099,7 @@ footer img {
   background-repeat: repeat;
   background-size: cover;
   /* background-attachment: fixed; */
-  @apply w-[65%] h-[100vh] flex flex-col  justify-center items-center;
+  @apply w-[60%] h-[100vh] flex flex-col  justify-center items-center mt-[3rem];
 }
 .pest_class img {
   @apply ml-[75%] w-[15%] h-[40vh] rounded-[100%];

@@ -19,9 +19,12 @@ const Pest_control = ({ handleSubmit, checkList }) => {
             alt=""
           />
         </div>
-        <div style={{ width: "30%", marginLeft: "1.5rem" }} className="form">
+        <div style={{ width: "30%", marginLeft: "5rem" }} className="form">
           <h4 style={{ marginTop: "2rem" }}>Enquiry</h4>
-          <form onSubmit={handleSubmit} style={{ height: "80%" }}>
+          <form
+            onSubmit={handleSubmit}
+            style={{ height: "80%", marginTop: "1rem" }}
+          >
             <label htmlFor="">Full Name</label>
             <input type="text" name="fullName" required />
             <label htmlFor="">Email</label>
@@ -46,6 +49,15 @@ const Pest_control = ({ handleSubmit, checkList }) => {
         property are fully protected. You can be rest assured that our
         professional team will eliminate all pests from your property so that
         you can love where you work, live and play.
+      </p>
+      <p style={{ fontSize: "1.5rem", margin: "2rem" }}>
+        {" "}
+        We provide each individual with professional and effective pest control
+        solutions which ensure the health and hygiene one needs in order to live
+        and work in a safe, hygienic, pest-free environment. Cleaneat Services
+        focuses primarily on the control and eradication of pests common in
+        Nigeria using only environmentally friendly products. Some of these
+        pests include bed bugs, termites, rats, houseflies among others
       </p>
       <div>
         <div style={{ textAlign: "center", marginRight: "30%" }}>

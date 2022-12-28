@@ -18,20 +18,20 @@ const Commercial = ({ checkList }) => {
         style={{ display: "flex", flexDirection: "row" }}
       >
         <main style={{ width: "65%" }}>
-          <div className="main">
+          <div className="main" style={{ marginBottom: "4rem" }}>
             <h3 style={{}}>Commercial cleaning</h3>
           </div>
-          <p style={{ marginTop: "2rem" }}>
+          <p style={{ marginTop: "3rem", lineHeight: "3rem" }}>
             pleasant and healthy environment is an important consideration for a
             productive and happy work force when determining their job
             satisfaction. Your staff deserve the best conditions that can be
-            provided, and Cleaneat offers office cleaning services dedicated to
+            provided, and IRHEV offers office cleaning services dedicated to
             ensuring your staff can focus on your core business and love the
             spaces that they work in. We will work with you to evaluate your
             requirements and to customize our cleaning program to the specific
             concerns of your company or organization
           </p>
-          <p style={{ marginTop: "2rem" }}>
+          <p style={{ marginTop: "3rem", lineHeight: "3rem" }}>
             Our office cleaning service is tailored to each individual customer
             and can include specialist cleaning such as computer and IT
             equipment to prevent the risk of overheating. We can also have
