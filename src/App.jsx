@@ -18,7 +18,7 @@ const App = () => {
     };
     getUser();
   }, []);
-
+  console.log(user);
   return (
     <div>
       <Container user={user} showNav={showNav} setShowNav={setShowNav} />

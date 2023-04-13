@@ -102,7 +102,10 @@ const Container = ({ user, setShowNav, showNav }) => {
             }
           />
           <Route path="/Blog" element={<Blog />} />
-          <Route path="/Reset_Password" element={<Reset_Password />} />
+          <Route
+            path="/Reset_Password"
+            element={<Reset_Password user={user} />}
+          />
 
           <Route
             path="/Login"

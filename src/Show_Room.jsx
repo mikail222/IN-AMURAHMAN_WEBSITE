@@ -24,7 +24,7 @@ const Show_Room = ({
           onChange={handleChange}
         />
         <div className="cleaning_product">
-          {productUpdate.map(({ img, product_name, id }, i) => (
+          {productUpdate?.map(({ img, product_name, id }, i) => (
             <div key={i}>
               <Link className="first" to={`Product_detail/${id}`}>
                 <i>Order Now</i>

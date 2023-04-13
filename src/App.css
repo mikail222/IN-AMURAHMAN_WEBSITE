@@ -69,7 +69,7 @@
 }
 
 .navs p:hover {
-  @apply border-b-[1px] border-[blue];
+  @apply border-b-[1px] text-[blue];
 }
 
 .logo1 {
@@ -579,20 +579,22 @@
   @apply flex flex-row  gap-[2rem]  ml-[1rem] mt-[2rem];
 }
 .form {
-  border: 3px double rgb(143, 113, 108);
+  border: 1px solid rgb(143, 113, 108);
   border-radius: 25px 0px;
   background-color: whitesmoke;
-
-  @apply flex flex-col w-[30vw] h-[100vh]
-    justify-center p-4  font-serif;
+  @apply flex flex-col lg:w-[30vw] h-[100vh]
+    justify-center lg:p-4  font-serif;
 }
 .form input {
-  border-radius: 15px 0px;
-  border: hidden;
+  border-radius: 15px;
+  border: 1px solid gray;
   @apply p-[0.5rem] bg-[#dee5e9] w-[95%] ml-2 m-[0.25rem];
 }
 .form input:focus {
   outline: none;
+}
+.form input::-moz-placeholder {
+  @apply font-serif pl-[0.5rem] text-[0.90rem];
 }
 .form textarea:focus {
   outline: none;
@@ -1216,7 +1218,7 @@ footer img {
 }
 .accessibility {
   background-image: linear-gradient(to bottom, #a7d7f6, #010080);
-  @apply w-[33vw] h-[100vh] rounded-[25px] pb-[5rem] mt-[5%];
+  @apply w-[33vw] h-[100vh] rounded-[25px] pb-[5rem] mt-[2%];
 }
 .accessibility input,
 .travel input {
@@ -1232,7 +1234,7 @@ footer img {
   @apply text-[0.70rem] text-[gray] ml-[10%] mt-[5%] text-left;
 }
 .sign_up_form_container {
-  @apply flex flex-col justify-center items-center  w-[100%] pb-[5rem];
+  @apply flex flex-col justify-center items-center w-[100%] lg:pb-[5rem];
 }
 .styleInputSection {
   @apply bg-[#fafafa] w-[90%] h-[76vh] flex flex-col justify-center rounded-[30px] pb-[10px] border-[#010080] border-[1px];
@@ -1441,7 +1443,7 @@ footer img {
   background-size: cover;
   background-repeat: no-repeat;
   background-position: bottom;
-  @apply w-[50%] h-[80%] rounded-[5%]  mt-[5%] text-white object-contain;
+  @apply w-[85%] lg:w-[50%] h-[80%] rounded-[5%]  lg:mt-[3%] text-white object-contain;
 }
 .modalContainer {
   background-color: rgb(0, 0, 0, 0.5);
@@ -1535,7 +1537,7 @@ nav i {
   @apply flex  flex-row  justify-center  items-center;
 }
 .resetArrow input {
-  @apply outline-0  bg-[transparent] border-b-[1px];
+  @apply w-[50%] lg:w-[100%] outline-0  bg-[transparent] border-b-[1px];
 }
 .resetArrowIcon {
   @apply w-[40px] h-[25px] border-[1px];
@@ -1553,14 +1555,14 @@ nav i {
   background-image: url("https://raw.githubusercontent.com/creativetimofficial/public-assets/master/argon-dashboard-pro/assets/img/signin-ill.jpg");
   background-size: contain;
   background-position: center;
-  @apply w-[58%]  h-[85vh] rounded-[15px] mb-[1rem];
+  @apply hidden  lg:flex w-[58%]  h-[85vh] rounded-[15px] mb-[1rem];
 }
 .productSidebg div {
   background-color: rgb(55, 55, 255, 0.4);
-  @apply w-[100%] h-[100%] rounded-[15px] flex  flex-col justify-center items-center  text-white font-bold;
+  @apply hidden w-[100%] h-[100%] rounded-[15px] lg:flex  flex-col justify-center items-center  text-white font-bold;
 }
 .productUpdateForm {
-  @apply w-[40%] h-[95vh] flex  flex-col justify-center items-center  gap-[0.5rem];
+  @apply w-[80%] mt-[15%] lg:w-[40%] lg:h-[95vh] flex  flex-col justify-center items-center  gap-[0.5rem];
 }
 .productUpdateForm input {
   @apply w-[85%] h-[40px] rounded-[10px]  outline-0 pl-[10px]   border-[1px];

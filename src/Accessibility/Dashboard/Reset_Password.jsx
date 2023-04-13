@@ -6,10 +6,13 @@ import { sendPasswordResetEmail } from "firebase/auth";
 import { auth } from "../../firebaseconfig";
 import { useNavigate } from "react-router-dom";
 
-const Reset_Password = () => {
+const Reset_Password = ({ user }) => {
   const [resetEmail, setResetEmail] = useState(" ");
   const navigate = useNavigate();
+  const getProfileImg = user.filter((email) => email.email === resetEmail);
 
+  console.log(user);
+  console.log(resetEmail);
   const email = resetEmail;
   const handleResetPassword = (e) => {
     sendPasswordResetEmail(auth, email)
@@ -26,7 +29,11 @@ const Reset_Password = () => {
         <div className="modalContainer">
           <img src={irehv1} alt="" className="irehvModal" />
           <img
-            src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQhVCVV2vEZkPS1sMCHgmPsfLpWfr8wb-OubQ&usqp=CAU"
+            src={
+              user
+                ? getProfileImg.img
+                : "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQhVCVV2vEZkPS1sMCHgmPsfLpWfr8wb-OubQ&usqp=CAU"
+            }
             alt=""
             className=" avartaIcon "
           />
