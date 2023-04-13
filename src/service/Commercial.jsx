@@ -9,15 +9,16 @@ import officeimg4 from "../asset/vojtech-bruzek-Yrxr3bsPdS0-unsplash.jpg";
 import officeimg5 from "../asset/ivan-aleksic-PDRFeeDniCk-unsplash.jpg";
 import { GiCheckMark } from "react-icons/gi";
 import { Link } from "react-router-dom";
+import Footer from "../Footer";
 
 const Commercial = ({ checkList }) => {
   return (
     <div>
       <div
         className="commercial"
-        style={{ display: "flex", flexDirection: "row" }}
+        style={{ display: "flex", flexDirection: "row", gap: "1rem" }}
       >
-        <main style={{ width: "65%" }}>
+        <main style={{ width: "75%" }}>
           <div className="main" style={{ marginBottom: "4rem" }}>
             <h4 style={{}}>Commercial cleaning</h4>
           </div>
@@ -39,24 +40,25 @@ const Commercial = ({ checkList }) => {
             the regular stocking of hygiene and paper products and
           </p>
         </main>
-        <aside style={{ width: "30%" }}>
+        <aside>
           <Link
             style={{
-              marginTop: "3rem",
               textAlign: "center",
-              fontSize: "1.4rem",
+              fontSize: "1.3rem",
               fontFamily: "serif",
+              fontWeight: "bold",
+              marginBottom: "1rem",
             }}
             to="/Show_Room"
           >
             Check out for our Products{" "}
           </Link>
-          {checkList.slice(5, 6).map(({ image, name, id }, i) => (
-            <div style={{ marginTop: "0.5rem" }} key={i}>
+          {checkList.slice(5, 6).map(({ img, product_name, id }, i) => (
+            <div style={{ marginLeft: "0.5rem" }} key={i}>
               <Link className="first" to={`Product_detail/${id}`}>
                 <i>Order Now</i>
-                <img className="first_class_img" src={image} alt="" />
-                <p>{name}</p>
+                <img className="first_class_img" src={img} alt="" />
+                <p>{product_name}</p>
               </Link>
             </div>
           ))}
@@ -108,6 +110,7 @@ const Commercial = ({ checkList }) => {
         <img src={officeimg5} alt="" />
         {/* <img src={} alt="" /> */}
       </div>
+      <Footer />
     </div>
   );
 };

@@ -57,16 +57,6 @@ const Footer = () => {
           </Link>
         </ul>
         <ul>
-          <h5>Product </h5>
-          <li>
-            <Link></Link>
-          </li>
-          <li></li>
-          <li></li>
-          <li></li>
-          <li></li>
-        </ul>
-        <ul>
           <h5>Domestic Service</h5>
 
           <Link to="/Toilet">
@@ -209,40 +199,22 @@ const Footer = () => {
           </a>
         </div>
         <div className="copyright">
-          <div
-            style={{
-              marginTop: "2.2rem",
-              textAlign: "center",
-              display: "inline-flex",
-            }}
-          >
-            <BiCopyright style={{ marginTop: "4px", marginRight: "5px" }} />{" "}
+          <div className="BN">
+            <BiCopyright className="BiCopyright" />{" "}
             <p>
               2022 INAMURAHMAN ENVIRONMENTAL HYGIENIC VENTURE.All Right Reserved
               | BN:3466674
             </p>
           </div>
-          <div style={{ display: "flex", flexDirection: "row" }}>
-            <p style={{ marginLeft: "8rem", marginRight: "1rem" }}>
-              web design by: Mikail Abdulraheem
-            </p>
+          <div className="producer">
+            <p>web design by: Mikail Abdulraheem</p>
             <a
               href="http://"
               target="_blank"
               title="Facebook"
               rel="noopener noreferrer"
             >
-              <SiFacebook
-                style={{
-                  color: "black",
-                  width: "25px",
-                  height: "25px",
-                  borderRadius: "50%",
-                  fill: "rgb(255,255,255,0.5)",
-                  marginRight: "1rem",
-                }}
-                className="facebook"
-              />
+              <SiFacebook className="facebook" />
             </a>
             <a
               href="http://abdulraheemmukaila6@gmail.com"
@@ -250,16 +222,7 @@ const Footer = () => {
               title="Email"
               rel="noopener noreferrer"
             >
-              <AiOutlineMail
-                style={{
-                  color: "black",
-                  width: "25px",
-                  height: "25px",
-                  borderRadius: "50%",
-                  fill: "rgb(255,255,255,0.5)",
-                }}
-                className="mail"
-              />
+              <AiOutlineMail className="mail" />
             </a>
           </div>
         </div>

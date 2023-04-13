@@ -1,8 +1,29 @@
+import { addDoc, collection, serverTimestamp } from "firebase/firestore";
 import React from "react";
 import { useState } from "react";
 import { Link } from "react-router-dom";
+import { db } from "./firebaseconfig";
+import Footer from "./Footer";
 
-const Contact = ({ handleSubmit }) => {
+const Contact = () => {
+  const [contactData, setContactData] = useState({});
+
+  const handleChange = (e) => {
+    const newInput = { [e.target.name]: e.target.value };
+    setContactData({ ...contactData, ...newInput });
+  };
+  const contactCollRef = collection(db, "Contact");
+
+  const addContact = async (e) => {
+    e.preventDefault();
+    await addDoc(contactCollRef, {
+      ...contactData,
+      day: new Date().toDateString,
+      timestamp: new Date(),
+    });
+    console.log(new Date());
+  };
+
   return (
     <div className="contact-align">
       <p className="text" style={{ color: "#8ccaf3" }}>
@@ -21,8 +42,8 @@ const Contact = ({ handleSubmit }) => {
           <p> Kwara State,</p>
           <p>Nigeria.</p>
         </div>
-        <div className="form">
-          <form onSubmit={handleSubmit}>
+        <div>
+          <form onChange={(e) => handleChange(e)} className="form">
             <label htmlFor="">Full Name</label>
             <input type="text" name="fullName" required />
             <label htmlFor="">Email</label>
@@ -31,10 +52,13 @@ const Contact = ({ handleSubmit }) => {
             <input type="number" name="number" required />
             <label htmlFor="">Message</label>
             <textarea name="msg" id="msgs" cols="50" rows="4"></textarea>
-            <button>submit</button>
+            <button type="submit" onClick={addContact}>
+              submit
+            </button>
           </form>
         </div>
       </div>
+      <Footer />
     </div>
   );
 };

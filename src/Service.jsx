@@ -1,12 +1,10 @@
 import React from "react";
 import { Link } from "react-router-dom";
+import Footer from "./Footer";
 
 const Service = () => {
   return (
-    <div
-      style={{ paddingTop: "5rem", paddingBottom: "3rem" }}
-      className="services"
-    >
+    <div className="services">
       <div className="h1">
         <h1>our services</h1>
       </div>

@@ -1,6 +1,7 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import eventImg from "../asset/marc-babin-ecGZWPOvya0-unsplash.jpg";
+import Footer from "../Footer";
 
 const Event_maintainance = ({ checkList }) => {
   const hiringItems = [
@@ -101,12 +102,12 @@ const Event_maintainance = ({ checkList }) => {
           >
             <p> Check out for our Products</p>
           </Link>
-          {checkList.slice(3, 6).map(({ image, name, id }, i) => (
+          {checkList.slice(3, 6).map(({ img, product_name, id }, i) => (
             <div style={{ marginTop: "0.5rem" }} key={i}>
               <Link className="first" to={`Product_detail/${id}`}>
                 <i>Order Now</i>
-                <img className="first_class_img" src={image} alt="" />
-                <p>{name}</p>
+                <img className="first_class_img" src={img} alt="" />
+                <p>{product_name}</p>
               </Link>
             </div>
           ))}
@@ -129,6 +130,7 @@ const Event_maintainance = ({ checkList }) => {
           </div>
         </div>
       </div>
+      <Footer />
     </div>
   );
 };

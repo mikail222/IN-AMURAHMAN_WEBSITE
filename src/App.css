@@ -2,44 +2,40 @@
   justify-content: center;
   align-items: center;
   min-width: 98%;
-  margin-left: 1rem;
+  /* margin-left: 1rem; */
   background-color: rgba(255, 255, 255, 0.7);
 }
 @media screen and (max-width: 480px) {
   .App {
     width: 100%;
+    margin: 0;
   }
 }
 
 .nav {
   position: fixed;
   top: 0;
-  background-image: linear-gradient(to right, white, #a7d7f6);
-  @apply flex flex-row justify-between w-[100%]  ml-[1rem] h-[5rem] items-center z-[1];
+  background-color: white;
+  @apply flex flex-row justify-between w-[100%] z-[1] h-[3rem] items-center  border-b-[1px];
 }
 @media screen and (max-width: 480px) {
   .nav {
     position: fixed;
-    width: 100vw;
+    width: 100%;
     height: 5rem;
     display: flex;
     flex-direction: row;
   }
 }
-/* .nav::-webkit-scrollbar {
-  display: none;
-} */
-/* //  320px — 480px: Mobile devices.
-// 481px — 768px: iPads, Tablets  .
-// 769px — 1024px: Small screens, laptops.
-// 1025px — 1200px: Desktops, large screens.
-// 1201px and more — Extra large screens, TV. */
 
+.nav img {
+  @apply w-[10%] h-[20px] ml-[3rem];
+}
 .navs {
-  @apply flex flex-row justify-center  items-center font-serif text-[1.3rem];
+  @apply w-[60%] flex flex-row justify-center  items-center font-serif text-[1rem];
 }
 
-@media screen and (max-width: 480px) {
+/* @media screen and (max-width: 480px) {
   .navs {
     display: flex;
     flex-direction: column;
@@ -47,11 +43,11 @@
     background-color: rgba(0, 0, 0, 0.7);
     color: white;
     margin-top: 10rem;
-    width: 48vw;
+    width: 48%;
     height: 100%;
     font-size: 1.3rem;
   }
-}
+} */
 
 @media screen and (min-width: 481px) {
   .navs {
@@ -59,9 +55,11 @@
     flex-direction: row;
   }
 }
-
+.navimg {
+  @apply ml-[2rem];
+}
 .navs p {
-  @apply w-[7rem] flex flex-col justify-center  items-center text-center  h-[13vh];
+  @apply w-[5.5rem] flex flex-col justify-center  items-center text-center;
 }
 @media screen and (max-width: 480px) {
   .nav p {
@@ -71,21 +69,22 @@
 }
 
 .navs p:hover {
-  @apply bg-[#0f0326] text-[white];
+  @apply border-b-[1px] border-[blue];
 }
 
 .logo1 {
-  background-image: url("./asset/neven-krcmarek-HWbxSLvmSww-unsplash.jpg");
+  background-image: url("https://raw.githubusercontent.com/creativetimofficial/public-assets/master/argon-dashboard-pro/assets/img/signup-cover.jpg");
   background-position: top;
   background-repeat: repeat;
   background-size: cover;
-  @apply mt-[5.1rem] w-[100%] h-[65vh] flex flex-col justify-center items-center text-center;
+  @apply mt-[1rem] w-[100%] h-[80vh] flex flex-col justify-center items-center text-center  text-white;
 }
 
 @media screen and (max-width: 480px) {
   .logo1 {
     width: 100%;
-    height: 30vh;
+    height: 40vh;
+    margin-top: 0;
     justify-content: center;
     align-items: center;
     text-align: center;
@@ -101,16 +100,16 @@
 }
 
 .logo1 h1 {
-  @apply font-serif tracking-[5px] text-[#0e4e97];
+  @apply font-serif tracking-[5px];
 }
 @media screen and (max-width: 480px) {
   .logo1 h1 {
     font-size: 2rem;
   }
 }
-.overlay:hover {
-  background-color: rgba(0, 0, 0, 0.2);
-  @apply w-[100%] h-[65vh] flex flex-col justify-center items-center text-center z-[1];
+.overlay {
+  background-color: rgba(0, 0, 0, 0.3);
+  @apply w-[100%] h-[80vh] flex flex-col justify-center items-center text-center;
 }
 @media screen and (max-width: 480px) {
   .brand {
@@ -130,7 +129,7 @@
 
 @media screen and (max-width: 480px) {
   .company-info {
-    width: 100vw;
+    width: 100%;
     height: auto;
     margin-bottom: 5rem;
   }
@@ -151,7 +150,7 @@
     grid-template-columns: repeat(1, 1fr);
     align-items: center;
     place-items: center;
-    width: 100vw;
+    width: 100%;
     padding: 1rem;
   }
 }
@@ -187,18 +186,24 @@
 
 .consultance {
   margin-top: 2rem;
-  @apply w-[100%] flex flex-row;
+  @apply w-[100%] flex  flex-col lg:flex-row mb-[4rem];
+}
+.consultance aside {
+  @apply w-[35%] ml-[3rem];
+}
+.consultance main {
+  @apply w-[100%] lg:w-[65%];
 }
 .consultparag {
   line-height: 2rem;
-  @apply text-[1.3rem];
+  @apply w-[90%] text-[1.3rem] lg:ml-[1rem] mt-[2rem] flex flex-col gap-[2rem];
 }
 .consultbg {
   background-image: url("./asset/scott-graham-5fNmWej4tAA-unsplash.jpg");
   background-position: center;
   background-repeat: repeat;
   background-size: cover;
-  @apply w-[100%] h-[62vh] flex flex-col  justify-center items-center mt-[5rem] ml-[1rem];
+  @apply w-[100%] h-[62vh] flex flex-col  justify-center items-center lg:mt-[4rem] lg:ml-[1rem];
 }
 .consultbg h4 {
   margin-top: 7rem;
@@ -280,7 +285,7 @@
 }
 
 .serviceDescription {
-  @apply w-[85%] h-[auto] m-[2rem];
+  @apply w-[90%] h-[auto] mx-[2rem];
   background-image: linear-gradient(
     blue,
     transparent,
@@ -302,7 +307,7 @@
 
 .commercial aside,
 .domestic aside {
-  @apply flex flex-col justify-center ml-[2rem];
+  @apply flex flex-col justify-center ml-[1rem];
 }
 
 .commercialSlideImg {
@@ -379,22 +384,24 @@
 .show_room {
   background-image: -webkit-radial-gradient(white, #a7d7f6, #0e4e97);
   width: 100%;
-  padding: 2rem;
-  @apply mt-[5rem];
+  @apply mt-[5rem]  p-[2rem];
 }
 @media screen and (max-width: 480px) {
   .show_room {
-    width: 100vw;
+    width: 100%;
     height: auto;
   }
 }
 .show_room input {
   border-radius: 15px;
   background-image: linear-gradient(to right, white, #a7d7f6);
-  @apply w-[50%] h-[2.5rem] m-[1rem] bg-[white];
+  @apply w-[80%] bg-[transparent]  border-b-[1px] lg:w-[50%] pl-[1rem] h-[2.5rem]  lg:my-[2rem] lg:bg-[white] ml-[1rem];
 }
 .show_room input:focus {
   outline: none;
+}
+.show_room input::placeholder {
+  @apply font-serif text-[1em];
 }
 .clue {
   @apply mt-[5rem] w-[100%];
@@ -439,21 +446,23 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    width: 80vw;
+    width: 80%;
     height: 100%;
     object-fit: contain;
     align-items: center;
   }
 }
+.commercial aside {
+  @apply w-[28%] flex flex-col justify-center  items-center;
+}
+
+.commercial main p {
+  @apply px-[2rem] mb-[4rem];
+}
 .first {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  margin: 1rem;
-  background-color: white;
   border-radius: 25px 0px 0px 0px;
   border: 4px double #f57f80;
+  @apply w-[80vw] lg:w-[21vw]  h-[48vh] flex  flex-col justify-center items-center lg:mb-[4rem] bg-[white];
 }
 
 .first p,
@@ -473,7 +482,7 @@
 }
 @media screen and (max-width: 480px) {
   .first img {
-    width: 80vw;
+    width: 80%;
     height: 35vh;
     object-fit: contain;
     align-items: center;
@@ -494,16 +503,13 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    width: 80vw;
+    width: 80%;
     height: 100%;
     object-fit: contain;
     align-items: center;
   }
 }
 
-.home {
-  @apply ml-[2rem] font-serif text-[1.3rem];
-}
 .fumigation {
   @apply w-[5rem];
 }
@@ -517,13 +523,13 @@
   @apply w-[5rem];
 }
 .services p {
-  @apply text-[1.3rem];
+  @apply text-[1rem] lg:text-[1.3rem];
 }
 .services {
   background-image: url("./asset/nordwood-themes-R53t-Tg6J4c-unsplash.jpg");
   background-attachment: fixed;
   background-size: cover;
-  @apply w-[100%];
+  @apply w-[100%] lg:pt-[5rem] lg:pb-[3rem] p-[0];
 }
 .service {
   display: grid;
@@ -557,14 +563,14 @@
   @apply font-extrabold tracking-[2px];
 }
 .h1 {
-  @apply text-center text-[#0e4e97] pb-[3.5rem]
+  @apply text-center text-[#0e4e97] pb-[1rem] lg:pb-[3.5rem]
     font-serif;
 }
 .environment {
   @apply text-center;
 }
 .services h3 {
-  @apply text-[#0e4e97] text-[1.4rem] font-serif;
+  @apply text-[#0e4e97] font-serif;
 }
 .service1 {
   @apply flex flex-row  gap-[2rem]  ml-[1rem] mt-[2rem];
@@ -572,16 +578,15 @@
 .service2 {
   @apply flex flex-row  gap-[2rem]  ml-[1rem] mt-[2rem];
 }
-form {
+.form {
   border: 3px double rgb(143, 113, 108);
   border-radius: 25px 0px;
-  background-image: url("./asset/neven-krcmarek-HWbxSLvmSww-unsplash.jpg");
-  background-position: top;
-  background-size: cover;
-  @apply flex flex-col w-[30vw] h-[79vh]
+  background-color: whitesmoke;
+
+  @apply flex flex-col w-[30vw] h-[100vh]
     justify-center p-4  font-serif;
 }
-form input {
+.form input {
   border-radius: 15px 0px;
   border: hidden;
   @apply p-[0.5rem] bg-[#dee5e9] w-[95%] ml-2 m-[0.25rem];
@@ -599,14 +604,14 @@ form input {
 .form textarea::-webkit-scrollbar {
   display: none;
 }
-form button {
+.form button {
   border-radius: 15px 0px;
   @apply bg-[#e5edf3] w-[95%] ml-[0.5rem] text-[1.3rem] font-serif p-[0.5rem] mt-[1.5rem];
 }
-form button:focus {
-  outline: none;
+.form button:focus {
+  outline: 0;
 }
-form label {
+.form label {
   @apply ml-[1.3rem] text-[1.3rem];
 }
 .contact-align {
@@ -625,19 +630,22 @@ form label {
   .contact-align {
     display: flex;
     flex-direction: column;
-    width: 100vw;
+    width: 100%;
     height: 100%;
   }
 }
+.contact-align form {
+  @apply h-[100%];
+}
 .contact {
   padding: 5rem 0px;
-  @apply flex flex-row gap-[13rem] mt-[5rem]  justify-center  w-[100%] h-[100vh];
+  @apply flex flex-row gap-[13rem] my-[5rem]  justify-center  w-[100%] h-[100vh];
 }
 @media screen and (max-width: 480px) {
   .contact {
     display: flex;
     flex-direction: column;
-    width: 100vw;
+    width: 100%;
     height: 100%;
   }
 }
@@ -645,14 +653,14 @@ form label {
   .address {
     display: flex;
     flex-direction: column;
-    width: 100vw;
+    width: 100%;
     height: auto;
     text-align: center;
   }
 }
 @media screen and (max-width: 480px) {
   form {
-    width: 90vw;
+    width: 90%;
     height: auto;
     margin-left: 1rem;
   }
@@ -665,8 +673,8 @@ footer {
   @apply w-[100%];
 }
 .footer {
-  padding: 7rem 0px;
-  @apply flex flex-row  gap-[5rem] justify-center bg-[#0f0326];
+  padding: 5rem 0px;
+  @apply flex flex-row  gap-[7rem] justify-center bg-[#0f0326];
 }
 @media screen and (max-width: 480px) {
   .footer {
@@ -674,14 +682,17 @@ footer {
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    width: 100%;
+    padding: 0;
+    gap: 0.5rem;
+    text-align: center;
   }
 }
 .footer ul {
   @apply mt-10;
 }
 footer li {
-  line-height: 2.7rem;
-  @apply text-[#a7d7f6] font-serif  text-[1.2rem];
+  @apply text-[#a7d7f6] font-serif text-[1rem] lg:text-[1.2rem] leading-[1.7rem] lg:leading-[2.7rem];
 }
 .footer li:hover {
   border-bottom: 1px solid rgba(21, 195, 201, 0.884);
@@ -690,8 +701,8 @@ footer img {
   @apply w-[2rem] h-[2rem]  rounded-[100%];
 }
 .media {
-  border-top: 0.25px solid grey;
-  @apply bg-[#0f0326] flex  flex-row h-[8rem] gap-[1rem] mb-[1rem] w-[40%];
+  /* border-top: 0.25px solid grey; */
+  @apply bg-[#0f0326] w-[100%] flex  flex-row justify-center items-center lg:border-t-[1px] lg:h-[8rem] gap-[1rem] lg:mb-[1rem] lg:w-[40%];
 }
 
 .media_class {
@@ -700,6 +711,7 @@ footer img {
 @media screen and (max-width: 480px) {
   .media_class {
     height: auto;
+    @apply flex  flex-col;
   }
 }
 .copyright {
@@ -714,7 +726,33 @@ footer img {
     display: flex;
     flex-direction: column;
     align-items: center;
+    width: 100%;
   }
+}
+.BN {
+  @apply w-[100%] mt-[1rem] lg:mt-[2.2rem] text-center  inline-flex;
+}
+.BN p {
+  font-size: 0.9rem;
+}
+.BiCopyright {
+  margin-top: 4px;
+  margin-right: 5px;
+}
+@media screen and (max-width: 480px) {
+  .BN {
+  }
+}
+.producer {
+  @apply lg:flex flex-row;
+}
+.producer p {
+  @apply lg:ml-[8rem] mr-[1rem];
+}
+.facebook,
+.mail {
+  fill: rgb(255, 255, 255, 0.5);
+  @apply hidden lg:w-[25px] lg:h-[25px] rounded-[50%] lg:flex;
 }
 .media a {
   @apply mt-[2.5rem];
@@ -735,49 +773,62 @@ footer img {
   @apply font-serif ml-[5px] tracking-[0.2rem] text-[1.5rem];
 }
 .details {
-  @apply flex flex-row w-[100%] h-[100vh] mt-[5rem];
+  @apply flex flex-col lg:flex flex-row w-[100%]  mt-[0] justify-center items-center lg:mt-[5rem];
 }
 .product_map {
   @apply flex flex-col justify-center items-center w-[80%] mb-[2rem];
 }
 .details main {
-  @apply flex flex-row justify-center items-center  w-[100%] m-[2rem];
+  background-color: white;
+  box-shadow: 1px 1px 15px 3px #a7d7f6;
+  @apply flex flex-col lg:flex-row justify-center items-center  w-[95%] lg:mt-[0.5rem] gap-[1rem]  rounded-[15px];
+}
+.productDetailImage {
+  @apply w-[30%];
+}
+.items_countbg {
+  background-image: url("./asset/vojtech-bruzek-Yrxr3bsPdS0-unsplash.jpg");
+  background-position: center;
+  background-size: cover;
+  @apply w-[95%] lg:w-[65%] h-[80vh] my-[2rem] rounded-[20px];
 }
 .items_count {
-  @apply mt-[14rem] flex flex-col justify-center items-center w-[40%] mb-[15rem];
+  background-color: rgb(5, 0, 5, 0.5);
+  @apply m-[0] text-[white] flex flex-col justify-center items-center w-[100%] h-[100%] lg:mb-[15rem] rounded-[25px] font-bold lg:gap-[1rem];
 }
 .countButton {
-  @apply flex flex-row;
+  @apply w-[80%] flex flex-row justify-center;
 }
 .countButton button {
-  @apply w-[3rem] border-[1px] border-slate-400 m-[2px] text-[1.5rem];
+  @apply w-[20%] border-[1px] border-slate-400 m-[5px] text-[1.5rem] rounded-[15px] hover:bg-[white] hover:text-[#5e72e4] lg:mt-[1rem];
 }
 .items_count button:focus {
   outline: none;
 }
 .clearButton {
-  @apply w-[60%] border-[1px] border-slate-400 p-[0.25rem] rounded-[10px] m-[0.5rem] text-[1.3rem];
+  @apply w-[70%] border-[1px] border-slate-400 p-[0.25rem] rounded-[10px] m-[0.5rem] text-[1rem]  hover:bg-[white] hover:text-[#5e72e4];
 }
-.details aside {
-  @apply w-[28%] mt-[2rem];
+.buttonDiv {
+  @apply flex flex-row w-[20%] justify-center items-center;
 }
+
 .domestic,
 .disinfect,
 .plank,
 .pest,
 .wast,
 .commercial {
-  @apply w-[100%] mt-[5rem];
+  @apply w-[100%] mt-[1rem];
 }
 .pest_map {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   align-items: center;
-  background-color: rgba(255, 255, 255, 0.3);
-  @apply w-[65%] m-[1rem] gap-[1.5rem] p-[2rem];
+  background-color: rgba(255, 255, 255, 0.9);
+  @apply w-[70%] m-[1rem] gap-[1.5rem] p-[2rem] mb-[2rem];
 }
 .pest_map p {
-  @apply text-[1.3rem] font-serif font-semibold p-[0.5rem];
+  @apply lg:text-[1.3rem] font-serif font-semibold lg:p-[0.5rem];
 }
 .pest_map a {
   border-radius: 10px;
@@ -786,7 +837,7 @@ footer img {
 }
 .pest_map img {
   border-radius: 10px 0px 0px 0px;
-  @apply w-[35rem]  h-[13em];
+  @apply w-[100%]  h-[13em];
 }
 .pest_map a:hover {
   transform: scale(1.1);
@@ -795,11 +846,11 @@ footer img {
 .slider {
   margin: 0.5rem 0px;
   overflow: hidden;
-  @apply w-[90%] h-[98vh] ml-[4.5rem] pb-[2rem];
+  @apply lg:w-[90%] h-[98vh] ml-[4.5rem] pb-[2rem];
 }
 @media screen and (max-width: 480px) {
   .slider {
-    width: 90vw;
+    width: 90%;
     height: 55vh;
     margin-left: 1.2rem;
     padding-bottom: 0.5rem;
@@ -909,34 +960,45 @@ footer img {
   font-size: 2rem;
   font-weight: 700;
   padding: 0.5rem;
-  background-image: linear-gradient(white, #a7d7f6);
+  color: gray;
+}
+@media screen and (max-width: 480px) {
+  .Advert {
+    font-size: 1.2rem;
+    padding: 0;
+  }
 }
 .getIntouch {
   margin: 30px auto;
   @apply flex flex-col items-center border-2
-    w-[15%] rounded-[10px] p-[0.25rem] text-[1.5rem] bg-[#0e4e97] text-[white];
+    w-[18%] rounded-[10px] p-[0.25rem] text-[1.5rem] bg-[#0e4e97] text-[white] font-serif;
 }
 @media screen and (max-width: 480px) {
   .getIntouch {
     width: 40%;
-    height: 8vh;
+    height: 7vh;
     justify-content: center;
+    font-size: 1rem;
   }
 }
 .getIntouch:hover {
   background-color: transparent;
   color: black;
 }
-.profile_wrap {
-  @apply flex flex-row gap-[1rem];
-}
 @media screen and (max-width: 480px) {
-  .company-info {
-    margin-bottom: 10rem;
+  .our_Service {
+    text-align: center;
+    font-size: 1.2rem;
+    margin: 0;
+    padding: 0;
   }
 }
+.profile_wrap {
+  @apply flex flex-col lg:flex lg:flex-row gap-[1rem];
+}
+
 .c_profile {
-  @apply flex flex-col text-left border-[1px] h-[100vh];
+  @apply w-[100%] lg:flex flex-col text-left border-[1px] h-[100%];
 }
 .c_profile p {
   margin: 1rem 20px;
@@ -945,14 +1007,15 @@ footer img {
 @media screen and (max-width: 480px) {
   .c_profile p {
     text-align: left;
+    font-size: 1rem;
   }
 }
 .demo {
-  @apply flex flex-col items-center border-[1px] h-[100vh];
+  @apply lg:flex flex-col items-center border-[1px] h-[100vh];
 }
 @media screen and (max-width: 480px) {
   .demo {
-    /* display: none; */
+    display: none;
   }
 }
 .display_frame {
@@ -1069,7 +1132,7 @@ footer img {
   margin-left: 8rem;
 }
 .pictorial .dropdown:hover .dropdown-content {
-  @apply flex  flex-col z-[1] items-center;
+  @apply flex  flex-col items-center;
 }
 .dropdown {
   position: relative;
@@ -1084,6 +1147,7 @@ footer img {
   padding: 12px 1px;
   align-items: center;
   color: gray;
+  z-index: 2;
 }
 .dropdown-content li {
   border-bottom: 1px solid lightgray;
@@ -1093,7 +1157,7 @@ footer img {
   @apply bg-[lightgray];
 }
 .dropdown:hover .dropdown-content {
-  @apply flex  flex-col z-[1];
+  @apply flex  flex-col z-[2];
 }
 .subdropdown {
   position: relative;
@@ -1126,10 +1190,13 @@ footer img {
   background-repeat: repeat;
   background-size: cover;
   /* background-attachment: fixed; */
-  @apply w-[60%] h-[100vh] flex flex-col  justify-center items-center mt-[3rem];
+  @apply w-[65%] h-[80vh] flex flex-col  justify-end items-end my-[3rem]  ml-[1rem];
 }
 .pest_class img {
-  @apply ml-[75%] w-[15%] h-[40vh] rounded-[100%];
+  @apply w-[20%] h-[30vh] rounded-[50%] mb-[20%];
+}
+.ads {
+  @apply w-[30%] flex flex-col justify-center items-center;
 }
 .cleaningBg {
   background-image: url("./asset/cdc-jjrXvzbqC5E-unsplash.jpg");
@@ -1146,4 +1213,376 @@ footer img {
   width: 100%;
   text-align: right;
   padding-right: 0.5rem;
+}
+.accessibility {
+  background-image: linear-gradient(to bottom, #a7d7f6, #010080);
+  @apply w-[33vw] h-[100vh] rounded-[25px] pb-[5rem] mt-[5%];
+}
+.accessibility input,
+.travel input {
+  @apply outline-none  w-[80%] border-b-[1px] bg-[transparent] ml-[10%] leading-[2rem];
+}
+.accessibility .label {
+  @apply text-[0.70rem] text-[gray] ml-[10%] mt-[5%];
+}
+.accessibility {
+  @apply flex flex-col justify-center items-center;
+}
+.travel label {
+  @apply text-[0.70rem] text-[gray] ml-[10%] mt-[5%] text-left;
+}
+.sign_up_form_container {
+  @apply flex flex-col justify-center items-center  w-[100%] pb-[5rem];
+}
+.styleInputSection {
+  @apply bg-[#fafafa] w-[90%] h-[76vh] flex flex-col justify-center rounded-[30px] pb-[10px] border-[#010080] border-[1px];
+}
+.styleInputSectionLogin {
+  @apply bg-[#fafafa] w-[80%] h-[75vh] flex flex-col justify-center mt-[8rem] mb-[2rem] rounded-[10px];
+}
+.uploadFileInput {
+  @apply flex flex-row gap-[4rem] justify-center items-center rounded-[15%] border-[1px] py-[0.80rem];
+}
+.fileLabel {
+  @apply w-[100px] h-[90px] rounded-[20%] bg-[#95bbdf] flex flex-col justify-center items-center cursor-pointer text-[white] text-center text-[0.90rem];
+}
+.fileInput {
+  @apply outline-0 hidden;
+}
+.fileIcon {
+  @apply w-[40px] h-[40px] fill-[white];
+}
+
+.text {
+  @apply text-[1rem] text-[#010080]  font-extrabold  mt-[9%];
+}
+.tnc {
+  @apply w-[100%] h-[50%] flex flex-col items-center;
+}
+.tnc .firstDiv {
+  @apply flex flex-row justify-between items-center text-[0.85rem] w-[80%] py-[20px];
+}
+.tnc .secondDiv {
+  @apply w-[15%] flex flex-row items-center gap-[5px];
+}
+.sign_upButtonDiv {
+  @apply w-[100%] text-white flex flex-col justify-center items-center text-[0.90rem];
+}
+.sign_upButton {
+  @apply w-[80%] p-[15px] rounded-[5px] text-white font-extrabold outline-0 flex flex-row justify-center items-center gap-[0.5rem];
+}
+.icon {
+  @apply w-[20px] h-[25px] outline-0;
+}
+.errorMsg {
+  @apply bg-[red]  border-[1px] border-[red] rounded-[5px] px-[4rem] mt-[3px]  text-[white];
+}
+.loginText {
+  @apply text-[white] cursor-pointer font-extrabold mt-[3%];
+}
+.loginReset {
+  @apply flex flex-row justify-between items-center text-[0.85rem] w-[80%] py-[20px]  text-white;
+}
+.checkDiv {
+  @apply w-[50%] flex flex-row items-center gap-[5px];
+}
+.loginResetParentDiv {
+  @apply w-[100%] h-[50%] flex flex-col items-center;
+}
+.avartaIcon {
+  @apply w-[100px] object-cover h-[90px] rounded-[20%];
+}
+.fileImg {
+  @apply w-[100px] object-cover h-[90px] border-[1px] rounded-[20%];
+}
+.btnContainer {
+  @apply w-[70%] flex flex-row justify-center  items-center bg-[#0f0326] rounded-[15px] mb-[5px];
+}
+.terms {
+  @apply text-[0.75rem] text-[white] leading-[15px] font-bold;
+}
+.GrCheckboxIcon {
+  @apply fill-white  w-[20px] h-[25px];
+}
+.BsFillCheckSquareFillIcon {
+  @apply fill-[white] w-[20px] h-[25px];
+}
+.irehv {
+  @apply w-[5%] h-[50%] cursor-pointer;
+}
+.dashboard {
+  @apply mt-[5%];
+}
+.logout {
+  @apply outline-none text-[0.95rem] text-[#01004d] font-bold cursor-pointer;
+}
+.dashBoardDiv {
+  width: 100%;
+  height: 60vh;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  background-color: #5e72e4;
+}
+
+.dash_aside {
+  width: 19%;
+  height: 90%;
+  margin-left: 1rem;
+  border-radius: 15px;
+  margin-top: 2%;
+  color: gray;
+  position: fixed;
+  background-color: white;
+}
+.dash_aside img {
+  width: 1.5rem;
+}
+.statusManager {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  border-bottom: 1px solid lightgray;
+  border-radius: 15px 0px 0px 0px;
+  gap: 0.75rem;
+  color: gray;
+  padding: 1rem 1rem;
+}
+.statusManager img {
+  @apply w-[50%] object-cover h-[5rem] border-[1px] rounded-[10%];
+}
+.dash {
+  display: flex;
+  flex-direction: column;
+  gap: 0.35rem;
+  margin-top: 1rem;
+}
+.dash div {
+  @apply w-[90%] flex  flex-row items-center ml-[1rem] gap-[1.5rem] py-[0.75rem] px-[2rem] cursor-pointer  hover:bg-[#5e72e4] hover:text-[white] rounded-[10px];
+}
+.mainClass {
+  width: 100%;
+  position: relative;
+  left: 17rem;
+}
+.mainClass::-webkit-scrollbar {
+  @apply flex-none;
+}
+.container {
+  width: 90%;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  gap: 2rem;
+}
+.WrapperContainer {
+  @apply grid grid-cols-[repeat(auto-fit,minmax(10rem,1fr))] md:w-[90%]  gap-[1rem] grid grid-cols-[repeat(auto-fit,minmax(15rem,1fr))] lg:flex  flex-row justify-center items-center lg:gap-[1.5rem] lg:w-[95%];
+}
+.WrapperContainer div {
+  cursor: pointer;
+  @apply w-[100%] h-[8rem] rounded-[15px] my-[1rem] bg-[#ffffff] flex  flex-row justify-around items-center text-[gray]  font-bold;
+}
+
+.WrapperContainer div span {
+  @apply bg-[purple] rounded-[100%] p-[10px];
+}
+
+.icon {
+  @apply w-[25px]  h-[25px] fill-[white];
+}
+
+.dashboardIcon {
+  @apply w-[25px]  h-[25px];
+}
+
+.analytics {
+  display: flex;
+  flex-direction: row;
+  margin: 0px 1.6rem;
+  gap: 1.3rem;
+}
+.field {
+  display: flex;
+  flex-direction: column;
+  margin: 0.3rem 0px;
+  gap: 0.75rem;
+}
+.graphField {
+  overflow-x: auto;
+  width: 48vw;
+  height: 60vh;
+  background-color: white;
+  border-radius: 20px;
+  @apply px-[2rem];
+  border: 1px solid lightgray;
+}
+.graphField::-webkit-scrollbar {
+  @apply flex-none;
+}
+
+.revenue {
+  width: 25.9vw;
+  height: auto;
+  margin-top: 0.5rem;
+  background-image: url("./asset/ed-van-duijn-UUdJ-0LQs0M-unsplash.jpg");
+  background-position: left;
+  background-size: cover;
+  object-fit: cover;
+
+  border-radius: 15px;
+}
+.modal {
+  @apply w-[100%] h-[100vh] flex  flex-row  justify-center  items-center;
+}
+.modalBg {
+  background-image: url("https://assets-us-01.kc-usercontent.com/338e61a8-25d7-0035-f3a0-cea86e563aa1/b1f9189b-5ada-40ca-b8e9-445b5120f86e/procare-homepage-mosquito-control.jpg?w=760&h=480&auto=format&fit=crop");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: bottom;
+  @apply w-[50%] h-[80%] rounded-[5%]  mt-[5%] text-white object-contain;
+}
+.modalContainer {
+  background-color: rgb(0, 0, 0, 0.5);
+  @apply w-[100%] h-[100%] flex flex-col justify-center
+    items-center rounded-[5%] font-bold gap-[1rem];
+}
+.buttonContainer {
+  @apply flex flex-row gap-[0.5rem];
+}
+.buttonContainer button {
+  @apply outline-transparent rounded-[5px] px-[1.5rem] py-[0.35rem] border-[2px]  border-[#95bbdf] hover:bg-[#95bbdf] hover:text-[black] mt-[20px] text-[0.90rem] font-serif;
+}
+.accessibleUpdate {
+  @apply flex flex-col justify-center items-center  w-[25vw] h-[70vh] leading-[1.3rem] border-[2px] font-serif  mt-[15%] rounded-[2%] bg-white;
+}
+.inputField {
+  @apply w-[70%] flex flex-col justify-center gap-[0.5rem]  my-[5%];
+}
+.inputField input {
+  @apply outline-transparent p-[0.5rem] bg-[transparent] border-b-[1px];
+}
+.updateButtonContainer {
+  @apply flex flex-row gap-[0.5rem] justify-center items-center w-[90%];
+}
+.updateButtonContainer button {
+  @apply outline-transparent rounded-[2px] border-[1px]  border-[#95bbdf] hover:bg-[transtarent] hover:py-[2px] text-[0.90rem] font-serif px-[1rem]  py-[0.35rem] mt-[10px];
+}
+.updateFile::-webkit-input-placeholder {
+  @apply hidden;
+}
+.irehvModal {
+  @apply w-[30%] h-[10%] mb-[13%] py-[5px];
+}
+.colarrange {
+  @apply flex flex-col;
+}
+.colarrange nav {
+  @apply flex flex-col text-[0.80rem] font-bold;
+}
+nav i {
+  @apply text-[1.2rem]  text-[#3e506e];
+}
+.tableWrapper {
+  @apply flex  flex-col justify-center items-center w-[72vw] bg-[white] mt-[5%] ml-[2.5rem] rounded-[15px];
+}
+.Author {
+  @apply w-[95%] mt-[5%];
+}
+.tableHeader {
+  @apply text-[gray] text-[1.2rem];
+}
+.userTableHeader {
+  @apply text-[gray] font-bold items-center mt-[10%] border-b-[1px];
+}
+.userTableHeader td {
+  @apply my-[1rem];
+}
+.Authoricon {
+  @apply w-[50px] h-[40px] object-cover rounded-[10px];
+}
+.AuthorAlign {
+  @apply flex flex-row items-center gap-[2rem] text-[1.2rem];
+}
+.data_analysis {
+  @apply w-[100%] mt-[6%] ml-[0.3rem];
+}
+.filter-user {
+  right: 0;
+  border-radius: 0px 10px 10px 0px;
+  @apply w-[60%] outline-0 border-b-[1px] bg-white
+    h-[40px];
+}
+.filter-user::placeholder {
+  @apply text-[gray]  text-[1rem] font-serif  px-[1rem];
+}
+.searchField {
+  @apply flex  flex-row justify-end  items-center mt-[10%];
+}
+.searchIcon {
+  border-radius: 10px 0px 0px 10px;
+
+  @apply w-[30px] h-[40px] bg-[white];
+}
+.client {
+  @apply text-[1.2rem] font-serif;
+}
+.parentContainer {
+  @apply w-[100%] h-[100vh] bg-[white] z-[1];
+}
+.resetArrow {
+  @apply flex  flex-row  justify-center  items-center;
+}
+.resetArrow input {
+  @apply outline-0  bg-[transparent] border-b-[1px];
+}
+.resetArrowIcon {
+  @apply w-[40px] h-[25px] border-[1px];
+}
+.reset_password {
+  @apply cursor-pointer;
+}
+.productUpdate {
+  @apply w-[77vw] flex  flex-row  bg-[white] ml-[1rem] justify-center  items-center  mt-[3%] rounded-[15px];
+}
+.paymentUpdate {
+  @apply w-[100%] h-[70%] flex  flex-row  bg-[white] justify-center  items-center  mt-[2%] rounded-[15px];
+}
+.productSidebg {
+  background-image: url("https://raw.githubusercontent.com/creativetimofficial/public-assets/master/argon-dashboard-pro/assets/img/signin-ill.jpg");
+  background-size: contain;
+  background-position: center;
+  @apply w-[58%]  h-[85vh] rounded-[15px] mb-[1rem];
+}
+.productSidebg div {
+  background-color: rgb(55, 55, 255, 0.4);
+  @apply w-[100%] h-[100%] rounded-[15px] flex  flex-col justify-center items-center  text-white font-bold;
+}
+.productUpdateForm {
+  @apply w-[40%] h-[95vh] flex  flex-col justify-center items-center  gap-[0.5rem];
+}
+.productUpdateForm input {
+  @apply w-[85%] h-[40px] rounded-[10px]  outline-0 pl-[10px]   border-[1px];
+}
+.productUpdateForm label {
+  @apply pl-[10px] font-serif mr-[60%]  font-bold text-[0.90rem];
+}
+.productUpdateForm input::placeholder {
+  @apply font-bold font-serif  text-[1rem] text-[gray];
+}
+.productUpdateForm button {
+  @apply font-bold font-serif  text-[1rem] text-[white] w-[85%] rounded-[10px] h-[50px] mt-[1rem] bg-[#5e72e4];
+}
+.irehvupdateform {
+  @apply w-[30%]  h-[7%]  my-[5%];
+}
+.updateheader {
+  @apply text-[#5e72e4] text-center;
+}
+.texts {
+  @apply w-[70%]  text-center;
+}
+.googlepay {
+  @apply w-[100%] h-[100vh] flex flex-col justify-center items-center;
 }

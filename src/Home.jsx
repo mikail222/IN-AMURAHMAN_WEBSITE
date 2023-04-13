@@ -13,8 +13,9 @@ import img9 from "./asset/resul-mentes-DbwYNr8RPbg-unsplash.jpg";
 import img10 from "./asset/neven-krcmarek-HWbxSLvmSww-unsplash.jpg";
 import { Link } from "react-router-dom";
 import Service from "./Service";
+import Footer from "./Footer";
 
-const Home = ({ products }) => {
+const Home = ({ productUpdate }) => {
   const picture = [
     { image: img },
     { image: logo1 },
@@ -61,7 +62,7 @@ const Home = ({ products }) => {
             </div>
           ))}
         </div>
-        <p className="Advert">place your Advert here</p>
+        <p className="Advert"> Advertise here</p>
         <Link to="Contact" className="getIntouch">
           Get in Touch
         </Link>
@@ -71,10 +72,7 @@ const Home = ({ products }) => {
           <h2 className="environment">About us</h2>
         </div>
         <div className="profile_wrap">
-          <main
-            style={{ width: "60%", marginTop: "2rem", marginBottom: "6rem" }}
-            className="c_profile"
-          >
+          <main className="c_profile">
             <p>
               <b> IREHV</b> is a registered and accredited Environmental
               Protection service Company, certified by the Kwara State Ministry
@@ -112,21 +110,22 @@ const Home = ({ products }) => {
           </aside>
         </div>
       </div>
-      <div style={{ textAlign: "center" }}>
-        <h2>Our feature Product</h2>
+      <div className="our_Service">
+        <h2 style={{ textAlign: "center" }}>Our feature Product</h2>
         <div className="cleaning_equip">
-          {products.map(({ image, name }, i) => (
+          {productUpdate.map(({ img, product_name }, i) => (
             <div key={i} style={{ margin: "1rem 0px" }}>
               <Link className="first">
                 <i>Order Now</i>
-                <img className="imgs" src={image} alt="" />
-                <p>{name}</p>
+                <img className="imgs" src={img} alt="" />
+                <p>{product_name}</p>
               </Link>
             </div>
           ))}
         </div>
         <Service />
       </div>
+      <Footer />
     </div>
   );
 };

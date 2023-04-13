@@ -1,5 +1,6 @@
 import React from "react";
 import { Link } from "react-router-dom";
+import Footer from "./Footer";
 
 const Hire = () => {
   // 2 * 2;
@@ -64,6 +65,7 @@ const Hire = () => {
           </div>
         ))}
       </div>
+      <Footer />
     </div>
   );
 };

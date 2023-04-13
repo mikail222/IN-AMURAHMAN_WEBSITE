@@ -13,31 +13,39 @@ body {
   background-size: cover;
   background-repeat: no-repeat;
   background-attachment: fixed;
-  /* @media screen and (min-width: 320px) {
-    width: 100%;
-    background-color: pink;
-  } */
 }
+@media screen and (max-width: 420px) {
+  p {
+    font-size: 1rem;
+  }
+}
+
 @media screen and (max-width: 480px) {
   body {
     width: 100%;
     background-color: transparent;
   }
 }
+button {
+  @apply outline-0;
+}
 h1 {
-  @apply text-[2.9rem];
+  @apply text-[1.5rem] lg:text-[2.5rem];
 }
 h2 {
-  @apply text-[2.5rem] font-serif;
+  @apply text-[1.3rem] lg:text-[2.3rem] font-serif;
 }
 h3 {
-  @apply text-[2.3rem] font-serif;
+  @apply text-[1.2rem] lg:text-[1.7rem] font-serif;
 }
 h4 {
   @apply text-[1.7rem] font-serif;
 }
 h5 {
   @apply text-[1.5rem] text-[white] font-serif;
+}
+h6 {
+  @apply text-[1.3rem] font-serif;
 }
 p {
   @apply font-serif;

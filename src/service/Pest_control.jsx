@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import pest1 from "../asset/ed-van-duijn-UUdJ-0LQs0M-unsplash.jpg";
 import pest2 from "../asset/peter-f-wolf-XG8eYNYdz54-unsplash.jpg";
 import pest3 from "../asset/312226385_1797629957237115_964696407549559286_n.jpg";
@@ -9,7 +9,27 @@ import pest7 from "../asset/erik-karits-8aBgCl_TNfc-unsplash.jpg";
 import pest8 from "../asset/alexas_fotos-gSYeFmQamuo-unsplash.jpg";
 import pest9 from "../asset/chris-curry-N4AFGRPZGk4-unsplash.jpg";
 import { Link } from "react-router-dom";
-const Pest_control = ({ handleSubmit, checkList }) => {
+import { addDoc, collection, serverTimestamp } from "firebase/firestore";
+import { db } from "../firebaseconfig";
+import Footer from "../Footer";
+const Pest_control = ({ checkList }) => {
+  const [pestData, setPestData] = useState({});
+
+  const handleChange = (e) => {
+    const newInput = { [e.target.name]: e.target.value };
+    setPestData({ ...pestData, ...newInput });
+  };
+  const CollRef = collection(db, "Enquiry");
+
+  const addEnguiry = async (e) => {
+    e.preventDefault();
+    await addDoc(CollRef, {
+      ...pestData,
+      day: new Date().toDateString(),
+      timestamp: serverTimestamp(),
+    });
+  };
+
   return (
     <div className="pest">
       <div style={{ display: "flex", flexDirection: "row", height: "90%" }}>
@@ -19,10 +39,11 @@ const Pest_control = ({ handleSubmit, checkList }) => {
             alt=""
           />
         </div>
-        <div style={{ width: "30%", marginLeft: "5rem" }} className="form">
+        <div style={{ width: "30%", marginLeft: "1.5rem" }}>
           <h4 style={{ marginTop: "2rem" }}>Enquiry</h4>
           <form
-            onSubmit={handleSubmit}
+            className="form"
+            onChange={(e) => handleChange(e)}
             style={{ height: "80%", marginTop: "1rem" }}
           >
             <label htmlFor="">Full Name</label>
@@ -33,7 +54,9 @@ const Pest_control = ({ handleSubmit, checkList }) => {
             <input type="number" name="number" required />
             <label htmlFor="">Message</label>
             <textarea name="msg" id="msgs" cols="50" rows="4"></textarea>
-            <button>submit</button>
+            <button type="submit" onClick={addEnguiry}>
+              submit
+            </button>
           </form>
         </div>
       </div>
@@ -103,32 +126,35 @@ const Pest_control = ({ handleSubmit, checkList }) => {
               <p>Flies</p>
             </Link>
           </div>
-          <div style={{ marginTop: "2rem", marginLeft: "2rem", width: "30%" }}>
+          <div className="ads">
             <i
               style={{
-                textAlign: "center",
                 marginBottom: "2rem",
+                fontFamily: "serif",
+                fontWeight: "bold",
+                marginLeft: "1.5rem",
               }}
             >
               For Home use and Family protection order now!
             </i>
 
-            {checkList.slice(6, 8).map(({ image, name, id }, i) => (
+            {checkList.slice(6, 8).map(({ img, product_name, id }, i) => (
               <div key={i}>
                 <Link
                   className="first"
-                  style={{ margin: "2rem" }}
+                  style={{ marginTop: "2rem" }}
                   to={`Product_detail/${id}`}
                 >
                   <i>Order Now</i>
-                  <img className="first_class_img" src={image} alt="" />
-                  <p>{name}</p>
+                  <img className="first_class_img" src={img} alt="" />
+                  <p>{product_name}</p>
                 </Link>
               </div>
             ))}
           </div>
         </div>
       </div>
+      <Footer />
     </div>
   );
 };

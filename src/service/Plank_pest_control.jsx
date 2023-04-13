@@ -1,4 +1,5 @@
 import React from "react";
+import Footer from "../Footer";
 
 const Plank_pest_control = () => {
   return (
@@ -8,6 +9,7 @@ const Plank_pest_control = () => {
           <p></p>
         </div>
       </main>
+      <Footer />
     </div>
   );
 };
