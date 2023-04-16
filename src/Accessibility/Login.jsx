@@ -64,8 +64,8 @@ const Login = ({ navigate, user }) => {
   return (
     <div className="flex flex-col ">
       <div className="sign_up_form_container">
+        <p className="text">LOG IN</p>
         <form onSubmit={handleSubmit} className="accessibility">
-          <p className="text">LOG IN</p>
           <div className="styleInputSectionLogin ">
             <label htmlFor="" className="label">
               Email

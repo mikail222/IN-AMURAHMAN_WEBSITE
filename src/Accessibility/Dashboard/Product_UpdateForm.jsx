@@ -4,8 +4,9 @@ import { db, storage } from "../../firebaseconfig";
 import { MdOutlineDriveFolderUpload } from "react-icons/md";
 import { ref, uploadBytesResumable, getDownloadURL } from "firebase/storage";
 import irehv from "../../asset/irehv-low-resolution-logo-color-on-transparent-background.png";
+import Product_Details from "./Product_Details";
 
-const Product_UpdateForm = () => {
+const Product_UpdateForm = ({ product_detail }) => {
   const [product, setProduct] = useState([]);
   const [data, setData] = useState([]);
   const [trackupload, setTrackUpload] = useState(null);
@@ -70,48 +71,53 @@ const Product_UpdateForm = () => {
   };
   console.log(product);
   return (
-    <div className="productUpdate">
-      <form className="productUpdateForm" onChange={(e) => handleChange(e)}>
-        <div className="uploadFileInput">
-          {productFileUpload ? (
-            <img src={product.img} alt="" className="fileImg  " />
-          ) : (
-            <label htmlFor="fileInput" className="fileLabel ">
-              <MdOutlineDriveFolderUpload className="fileIcon " />
-              <p> choose image:</p>
-            </label>
-          )}
-          <input
-            type="file"
-            id="fileInput"
-            name="file"
-            className="fileInput"
-            onChange={(e) => setProductFileUpload(e.target.files[0])}
-          />
-        </div>
-        <img src={irehv} alt="" className="irehvupdateform" />
-        <h4 className="updateheader">Products Form</h4>
-        <label htmlFor=""></label>
-        <input type="text" placeholder="Product Name" name="product_name" />
-        <label htmlFor=""></label>
-        <input type="number" placeholder="Price" name="price" />
-        <button type="button" onClick={update_Products} className="button">
-          {trackupload !== null && trackupload < 100 ? (
-            <i> loading...</i>
-          ) : (
-            "Update Stock"
-          )}
-        </button>
-      </form>
-      <div className="productSidebg">
-        <div>
-          <h3>"Attention is the new currency"</h3>
-          <p className="texts">
-            The more effortless the writing looks, the more effort the writer
-            actually put into the process.
-          </p>
+    <div>
+      <div className="productUpdate">
+        <form className="productUpdateForm" onChange={(e) => handleChange(e)}>
+          <div>
+            {productFileUpload ? (
+              <img src={product.img} alt="" className="fileImg  " />
+            ) : (
+              <label htmlFor="fileInput" className="fileLabel ">
+                <MdOutlineDriveFolderUpload className="fileIcon " />
+                <p> choose image:</p>
+              </label>
+            )}
+            <input
+              type="file"
+              id="fileInput"
+              name="file"
+              className="fileInput"
+              onChange={(e) => setProductFileUpload(e.target.files[0])}
+            />
+          </div>
+          <img src={irehv} alt="" className="irehvupdateform" />
+          <h4 className="updateheader">Products Form</h4>
+          <label htmlFor=""></label>
+          <input type="text" placeholder="Product Name" name="product_name" />
+          <label htmlFor=""></label>
+          <input type="number" placeholder="Quantity" name="quantity" />
+          <label htmlFor=""></label>
+          <input type="number" placeholder="Price" name="price" />
+          <button type="button" onClick={update_Products} className="button">
+            {trackupload !== null && trackupload < 100 ? (
+              <i> loading...</i>
+            ) : (
+              "Update Stock"
+            )}
+          </button>
+        </form>
+        <div className="productSidebg">
+          <div>
+            <h3>"Attention is the new currency"</h3>
+            <p className="texts">
+              The more effortless the writing looks, the more effort the writer
+              actually put into the process.
+            </p>
+          </div>
         </div>
       </div>
+      <Product_Details product_detail={product_detail} />
     </div>
   );
 };

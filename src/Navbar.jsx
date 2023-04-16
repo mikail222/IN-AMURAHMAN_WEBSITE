@@ -107,6 +107,9 @@ const Navbar = ({ navigate, setShowNav }) => {
             <Link to="Show_Room">
               <p>Show Room</p>
             </Link>
+            <Link to="Booking">
+              <p>Book</p>
+            </Link>
             <Link to="Blog">
               <p>Blog</p>
             </Link>
@@ -119,9 +122,29 @@ const Navbar = ({ navigate, setShowNav }) => {
                   Login
                 </i>
               ) : (
-                <i onClick={handleLogOut} className="logout">
-                  LogOut
-                </i>
+                <div className="dropdown">
+                  <i onClick={handleLogOut} className="logout">
+                    LogOut
+                  </i>
+
+                  <div className="dropdown-content">
+                    <ul>
+                      <li>
+                        <Link to="/Dashboard">Dashboard</Link>
+                      </li>
+                      <li>
+                        <Link to="/Payment_Method" className="row">
+                          <img
+                            src={currentUser?.photoURL}
+                            alt=""
+                            className="profileImg"
+                          />{" "}
+                          <p>My Profile</p>
+                        </Link>
+                      </li>
+                    </ul>
+                  </div>
+                </div>
               )}
             </div>
             <div

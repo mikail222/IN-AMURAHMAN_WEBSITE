@@ -15,17 +15,8 @@
 .nav {
   position: fixed;
   top: 0;
-  background-color: white;
-  @apply flex flex-row justify-between w-[100%] z-[1] h-[3rem] items-center  border-b-[1px];
-}
-@media screen and (max-width: 480px) {
-  .nav {
-    position: fixed;
-    width: 100%;
-    height: 5rem;
-    display: flex;
-    flex-direction: row;
-  }
+  background-image: linear-gradient(to right, white, white, transparent, white);
+  @apply hidden md:flex lg:flex lg:flex-row justify-between w-[100%] z-[1] h-[3rem] items-center  border-b-[1px];
 }
 
 .nav img {
@@ -48,7 +39,9 @@
     font-size: 1.3rem;
   }
 } */
-
+.profileImg {
+  @apply w-[75vw] h-[40vh] rounded-[10px];
+}
 @media screen and (min-width: 481px) {
   .navs {
     width: 100%;
@@ -77,7 +70,7 @@
   background-position: top;
   background-repeat: repeat;
   background-size: cover;
-  @apply mt-[1rem] w-[100%] h-[80vh] flex flex-col justify-center items-center text-center  text-white;
+  @apply lg:mt-[4%] w-[100%] h-[80vh] flex flex-col justify-center items-center text-center  text-white;
 }
 
 @media screen and (max-width: 480px) {
@@ -108,8 +101,8 @@
   }
 }
 .overlay {
-  background-color: rgba(0, 0, 0, 0.3);
-  @apply w-[100%] h-[80vh] flex flex-col justify-center items-center text-center;
+  background-color: rgba(05, 03, 05, 0.5);
+  @apply w-[100%] h-[40vh] lg:h-[80vh] flex flex-col justify-center items-center text-center;
 }
 @media screen and (max-width: 480px) {
   .brand {
@@ -382,9 +375,8 @@
   @apply flex flex-col justify-end gap-[2rem] w-[100%] rounded-[15px];
 }
 .show_room {
-  background-image: -webkit-radial-gradient(white, #a7d7f6, #0e4e97);
   width: 100%;
-  @apply mt-[5rem]  p-[2rem];
+  @apply mt-[3rem]  p-[2rem];
 }
 @media screen and (max-width: 480px) {
   .show_room {
@@ -394,7 +386,7 @@
 }
 .show_room input {
   border-radius: 15px;
-  background-image: linear-gradient(to right, white, #a7d7f6);
+  background-image: linear-gradient(to right, white, transparent);
   @apply w-[80%] bg-[transparent]  border-b-[1px] lg:w-[50%] pl-[1rem] h-[2.5rem]  lg:my-[2rem] lg:bg-[white] ml-[1rem];
 }
 .show_room input:focus {
@@ -438,6 +430,8 @@
     align-items: center;
     object-fit: contain;
     align-items: center;
+    gap: 2rem;
+    margin-top: 1rem;
   }
 }
 @media screen and (max-width: 480px) {
@@ -460,18 +454,17 @@
   @apply px-[2rem] mb-[4rem];
 }
 .first {
-  border-radius: 25px 0px 0px 0px;
-  border: 4px double #f57f80;
-  @apply w-[80vw] lg:w-[21vw]  h-[48vh] flex  flex-col justify-center items-center lg:mb-[4rem] bg-[white];
+  background: linear-gradient(to bottom, #45a4de, #eff8fc, #fee5ad);
+  @apply w-[80vw]  lg:w-[21vw]  lg:h-[50vh] flex  flex-col justify-center items-center lg:mb-[4rem] bg-[white];
 }
 
 .first p,
 .hiring p {
-  background-color: hsl(216deg 72% 23%);
-  @apply text-[1.4rem] text-[white] w-[100%]   text-center;
+  background-color: #0095eb;
+  @apply text-[1.4rem] text-[white] w-[100%]   text-center  py-[0.65rem];
 }
 .first i {
-  @apply flex  flex-col ml-[11.4rem] font-serif bg-[#a7d7f6];
+  @apply flex  flex-col ml-[64%] lg:ml-[67%] font-serif bg-[#ab060c] text-[white];
   padding: 0px 10px;
 }
 .first img {
@@ -483,7 +476,7 @@
 @media screen and (max-width: 480px) {
   .first img {
     width: 80%;
-    height: 35vh;
+    height: 45vh;
     object-fit: contain;
     align-items: center;
   }
@@ -1022,10 +1015,7 @@ footer img {
 }
 .display_frame {
   @apply w-[80%] h-[80%] mt-[4rem] rounded-[15px];
-  background-image: url("./asset/cdc-jjrXvzbqC5E-unsplash.jpg");
-  background-position: center;
-  background-repeat: no-repeat;
-  background-size: cover;
+
   animation: change infinite;
   animation-duration: 60s;
   animation-delay: 5s;
@@ -1252,11 +1242,11 @@ footer img {
   @apply outline-0 hidden;
 }
 .fileIcon {
-  @apply w-[40px] h-[40px] fill-[white];
+  @apply w-[60px] h-[50px] fill-[white];
 }
 
 .text {
-  @apply text-[1rem] text-[#010080]  font-extrabold  mt-[9%];
+  @apply text-[1rem] text-[#010080]  font-extrabold  mt-[4%];
 }
 .tnc {
   @apply w-[100%] h-[50%] flex flex-col items-center;
@@ -1332,7 +1322,7 @@ footer img {
   height: 90%;
   margin-left: 1rem;
   border-radius: 15px;
-  margin-top: 2%;
+  margin-top: 4%;
   color: gray;
   position: fixed;
   background-color: white;
@@ -1345,10 +1335,11 @@ footer img {
   flex-direction: row;
   justify-content: center;
   align-items: center;
-  border-bottom: 1px solid lightgray;
-  border-radius: 15px 0px 0px 0px;
+  border-bottom: 2px solid red;
+  border-radius: 15px 15px 0px 0px;
   gap: 0.75rem;
-  color: gray;
+  color: white;
+  background-color: purple;
   padding: 1rem 1rem;
 }
 .statusManager img {
@@ -1489,14 +1480,17 @@ nav i {
 .tableWrapper {
   @apply flex  flex-col justify-center items-center w-[72vw] bg-[white] mt-[5%] ml-[2.5rem] rounded-[15px];
 }
+.productWrapper {
+  @apply flex  flex-col justify-center items-center w-[75vw] bg-[white] mt-[5%] ml-[2.5rem] rounded-[15px];
+}
 .Author {
   @apply w-[95%] mt-[5%];
 }
 .tableHeader {
-  @apply text-[gray] text-[1.2rem];
+  @apply w-[100%] text-[#5e72e4] text-[1.2rem] font-serif  m-[0];
 }
 .userTableHeader {
-  @apply text-[gray] font-bold items-center mt-[10%] border-b-[1px];
+  @apply text-[gray] font-bold items-center mt-[15%] border-b-[1px] font-serif  w-[73vw];
 }
 .userTableHeader td {
   @apply my-[1rem];
@@ -1505,7 +1499,7 @@ nav i {
   @apply w-[50px] h-[40px] object-cover rounded-[10px];
 }
 .AuthorAlign {
-  @apply flex flex-row items-center gap-[2rem] text-[1.2rem];
+  @apply w-[100%] flex flex-row items-center gap-[1rem] text-[1.2rem];
 }
 .data_analysis {
   @apply w-[100%] mt-[6%] ml-[0.3rem];
@@ -1546,10 +1540,10 @@ nav i {
   @apply cursor-pointer;
 }
 .productUpdate {
-  @apply w-[77vw] flex  flex-row  bg-[white] ml-[1rem] justify-center  items-center  mt-[3%] rounded-[15px];
+  @apply w-[77vw] flex  flex-row  bg-[white] lg:ml-[1rem] justify-center  items-center  lg:mt-[6%] rounded-[15px];
 }
 .paymentUpdate {
-  @apply w-[100%] h-[70%] flex  flex-row  bg-[white] justify-center  items-center  mt-[2%] rounded-[15px];
+  @apply w-[100%] h-[70%] flex  flex-row  bg-[white] justify-center  items-center  mt-[3%] rounded-[15px];
 }
 .productSidebg {
   background-image: url("https://raw.githubusercontent.com/creativetimofficial/public-assets/master/argon-dashboard-pro/assets/img/signin-ill.jpg");
@@ -1561,8 +1555,24 @@ nav i {
   background-color: rgb(55, 55, 255, 0.4);
   @apply hidden w-[100%] h-[100%] rounded-[15px] lg:flex  flex-col justify-center items-center  text-white font-bold;
 }
+.BookingForm {
+  background-image: url("./asset/alexas_fotos-gSYeFmQamuo-unsplash.jpg");
+  background-size: cover;
+  background-position: center;
+}
+.BookingOverlay {
+  background-color: rgb(0, 0, 0, 0.6);
+  @apply w-[100%] h-[100%] text-center flex  flex-col pb-[3rem] lg:pb-[0px] lg:flex-row justify-center items-center lg:mt-[4%];
+}
+.BookingOverlay label,
+.BookingText {
+  @apply font-serif font-bold text-white;
+}
 .productUpdateForm {
-  @apply w-[80%] mt-[15%] lg:w-[40%] lg:h-[95vh] flex  flex-col justify-center items-center  gap-[0.5rem];
+  @apply w-[80%] mt-[15%] lg:mt-[4px] lg:w-[40%] lg:h-[95vh] flex  flex-col justify-center items-center  gap-[0.5rem];
+}
+.row {
+  @apply flex  flex-row-reverse;
 }
 .productUpdateForm input {
   @apply w-[85%] h-[40px] rounded-[10px]  outline-0 pl-[10px]   border-[1px];
@@ -1587,4 +1597,35 @@ nav i {
 }
 .googlepay {
   @apply w-[100%] h-[100vh] flex flex-col justify-center items-center;
+}
+/* .toogle_Nav{
+  @apply  
+} */
+.menuBar {
+  @apply w-[3rem] h-[1.8rem];
+}
+.mobile {
+  @apply flex md:hidden lg:hidden;
+}
+.mobile_logo {
+  @apply w-[5rem] h-[1.5rem];
+}
+.mobile_nav {
+  @apply w-[100%] flex flex-row  justify-between  items-center bg-[gray];
+}
+.mobile_navs {
+  background-color: rgb(0, 0, 0, 0.9);
+  @apply w-[80vw] h-[100vh] flex flex-col gap-[0.5rem] font-serif text-[white] font-bold text-[1.2rem]  z-[1];
+}
+/* .rowwing :active {
+  @apply ;
+} */
+.rowwing {
+  @apply w-[80%] flex flex-row items-center  hover:bg-[teal] text-[white] hover:text-[black] mx-[1rem] gap-[2rem] pl-[0.75rem] py-[0.5rem] rounded-[10px];
+}
+.paymentImg {
+  @apply w-[40%] h-[10rem];
+}
+.hide {
+  @apply hidden;
 }

@@ -4,7 +4,7 @@ import Contact from "../Contact";
 import Home from "../Home";
 import Hire from "../Hire";
 import Clues from "../Clues";
-import { Route, Routes, useNavigate } from "react-router-dom";
+import { Route, Routes, useNavigate, useParams } from "react-router-dom";
 import Show_Room from "../Show_Room";
 import { useState } from "react";
 import ProductDetail from "../ProductDetail";
@@ -39,20 +39,21 @@ import Blog from "../Blog";
 import User_modal from "../Accessibility/User_modal";
 import Update from "../Accessibility/Update";
 import Navbar from "../Navbar";
-import Nav_empty from "../Nav_empty";
 import Dashboard from "../Accessibility/Dashboard/Dashboard";
 import Reset_Password from "../Accessibility/Dashboard/Reset_Password";
 import { auth, db } from "../firebaseconfig";
 import { collection, getDocs } from "firebase/firestore";
 import Payment_Method from "../Accessibility/Payment_Method";
 import Googlepay from "../Accessibility/Googlepay";
+import Mobile_nav from "../Mobile_Nav";
+import Booking from "../service/Booking";
 
 const Container = ({ user, setShowNav, showNav }) => {
   const [findProduct, setFindProduct] = useState("");
   const [productUpdate, setProductUpdate] = useState([]);
   const navigate = useNavigate();
 
-  const checkList = productUpdate.filter((p) =>
+  const checkList = productUpdate?.filter((p) =>
     p.product_name.toLowerCase().includes(findProduct.toLowerCase())
   );
 
@@ -67,11 +68,17 @@ const Container = ({ user, setShowNav, showNav }) => {
     };
     getUser();
   }, []);
-
+  const { id } = useParams();
+  const userId = productUpdate.filter((p) => p.id === id);
+  const total = userId.map(({ price }) => price * count);
+  console.log(userId);
+  console.log(total);
   return (
-    <div>
-      {showNav && <Nav_empty />}/{" "}
-      {!showNav && <Navbar navigate={navigate} setShowNav={setShowNav} />}
+    <div className="toogle_Nav">
+      <Mobile_nav setShowNav={setShowNav} />
+
+      <Navbar navigate={navigate} setShowNav={setShowNav} />
+
       <div className="App">
         <Routes>
           <Route
@@ -84,8 +91,9 @@ const Container = ({ user, setShowNav, showNav }) => {
               />
             }
           />
-          <Route path="/Payment_Method" element={<Payment_Method />} />
+
           <Route path="/Googlepay" element={<Googlepay />} />
+          <Route path="/Booking" element={<Booking />} />
 
           <Route path="/" element={<Home productUpdate={productUpdate} />} />
           <Route path="Clues" element={<Clues />} />
@@ -120,19 +128,43 @@ const Container = ({ user, setShowNav, showNav }) => {
           <Route path="Contact" element={<Contact />} />
           <Route
             path="Show_Room/Product_detail/:id"
-            element={<ProductDetail productUpdate={productUpdate} />}
+            element={
+              <ProductDetail
+                productUpdate={productUpdate}
+                userId={userId}
+                total={total}
+              />
+            }
           />
           <Route
             path="Pest_control/Product_detail/:id"
-            element={<ProductDetail productUpdate={productUpdate} />}
+            element={
+              <ProductDetail
+                productUpdate={productUpdate}
+                userId={userId}
+                total={total}
+              />
+            }
           />
           <Route
             path="Commercial/Product_detail/:id"
-            element={<ProductDetail productUpdate={productUpdate} />}
+            element={
+              <ProductDetail
+                productUpdate={productUpdate}
+                userId={userId}
+                total={total}
+              />
+            }
           />
           <Route
             path="Domestic_cleaning/Product_detail/:id"
-            element={<ProductDetail productUpdate={productUpdate} />}
+            element={
+              <ProductDetail
+                productUpdate={productUpdate}
+                userId={userId}
+                total={total}
+              />
+            }
           />
           <Route path="Wast_management" element={<Wast_managment />} />
           <Route

@@ -1,4 +1,4 @@
-import React, { memo, useState } from "react";
+import React, { memo, useEffect, useState } from "react";
 import { Link, useParams } from "react-router-dom";
 import Footer from "./Footer";
 
@@ -8,9 +8,14 @@ const Show_Room = ({
   setFindProduct,
   productUpdate,
 }) => {
-  console.log(findProduct);
-  console.log(checkList);
-
+  const [saveProduct, setSaveProduct] = useState([]);
+  // console.log(productUpdate);
+  useEffect(() => {
+    const save = () => {
+      setSaveProduct(productUpdate);
+    };
+    save();
+  }, []);
   const handleChange = (event) => {
     setFindProduct(event.target.value);
   };
@@ -19,12 +24,12 @@ const Show_Room = ({
       <div className="show_room">
         <input
           type="text"
-          placeholder="Search your Product....."
+          placeholder="Search desire your Product....."
           value={findProduct}
           onChange={handleChange}
         />
         <div className="cleaning_product">
-          {productUpdate?.map(({ img, product_name, id }, i) => (
+          {checkList.map(({ img, product_name, id }, i) => (
             <div key={i}>
               <Link className="first" to={`Product_detail/${id}`}>
                 <i>Order Now</i>

@@ -12,6 +12,9 @@ const Dashboard = ({ setShowNav, productUpdate }) => {
   const [booking, setBooking] = useState([]);
   const [enquiry, setEnquiry] = useState([]);
   const [user, setUser] = useState([]);
+  const [sales, setSales] = useState([]);
+  const [totalamount, setTotalamount] = useState([]);
+  const [product_detail, setProduct_detail] = useState([]);
   const [userList, setUserList] = useState(false);
   const [dashboardInfo, setDashboardInfo] = useState(false);
   const [productUpdateInfo, setProductUpdateInfo] = useState(false);
@@ -21,6 +24,8 @@ const Dashboard = ({ setShowNav, productUpdate }) => {
   useEffect(() => {
     const collectionOfUser = collection(db, "Admin");
     const collBooking = collection(db, "Booking");
+    const collSales = collection(db, "Payment-details");
+    const collTotalAmount = collection(db, "Paymeny_details");
     const collConsult = collection(db, "Consultance");
     const collEnquiry = collection(db, "Enquiry");
     const collProductUpdate = collection(db, "Products");
@@ -28,18 +33,28 @@ const Dashboard = ({ setShowNav, productUpdate }) => {
     const getUser = async () => {
       const data = await getDocs(collectionOfUser);
       const Booking = await getDocs(collBooking);
+      const sales = await getDocs(collSales);
+      const totalAmount = await getDocs(collTotalAmount);
       const Consult = await getDocs(collConsult);
       const Enquiry = await getDocs(collEnquiry);
       const Products = await getDocs(collProductUpdate);
       setBooking(Booking.docs.map((doc) => ({ ...doc.data(), id: doc.id })));
+      setSales(sales.docs.map((doc) => ({ ...doc.data(), id: doc.id })));
+      setTotalamount(
+        totalAmount.docs.map((doc) => ({ ...doc.data(), id: doc.id }))
+      );
       setEnquiry(Enquiry.docs.map((doc) => ({ ...doc.data(), id: doc.id })));
       setConsult(Consult.docs.map((doc) => ({ ...doc.data(), id: doc.id })));
       setUser(data.docs.map((doc) => ({ ...doc.data(), id: doc.id })));
+      setProduct_detail(
+        Products.docs.map((doc) => ({ ...doc.data(), id: doc.id }))
+      );
     };
     getUser();
   }, [currentUser]);
-  console.log(productUpdate.map((m, id) => m.img));
-
+  // console.log(productUpdate.map((m, id) => m.price));
+  console.log(sales);
+  console.log(totalamount);
   return (
     <div className="parentContainer">
       <div className="dashBoardDiv">
@@ -58,11 +73,13 @@ const Dashboard = ({ setShowNav, productUpdate }) => {
                 enquiry={enquiry}
                 consult={consult}
                 productUpdate={productUpdate}
+                sales={sales}
+                totalamount={sales}
               />
             ) : userList ? (
               <User_Table user={user} onChange={() => setShowNav(false)} />
             ) : productUpdate ? (
-              <Product_UpdateForm />
+              <Product_UpdateForm product_detail={product_detail} />
             ) : (
               ""
             )}

@@ -7,6 +7,7 @@ import {
   ValueAxis,
 } from "@devexpress/dx-react-chart";
 import { Paper } from "@material-ui/core";
+import Sales_Details from "./Sales_Details";
 
 const Data_analysis_page = ({
   user,
@@ -14,6 +15,8 @@ const Data_analysis_page = ({
   enquiry,
   consult,
   productUpdate,
+  sales,
+  totalamount,
 }) => {
   const data = [
     { argument: "Monday", value: 30 },
@@ -22,6 +25,8 @@ const Data_analysis_page = ({
     { argument: "Thursday", value: 50 },
     { argument: "Friday", value: 60 },
   ];
+  console.log(sales);
+  console.log(totalamount);
   return (
     <div className="data_analysis">
       <Columns
@@ -30,6 +35,8 @@ const Data_analysis_page = ({
         consult={consult}
         enquiry={enquiry}
         productUpdate={productUpdate}
+        sales={sales}
+        totalamount={totalamount}
       />
       <div className="analytics">
         <div className="field">
@@ -46,6 +53,7 @@ const Data_analysis_page = ({
         </div>
         <aside className="revenue"></aside>
       </div>
+      <Sales_Details sales={sales} productUpdate={productUpdate} />
     </div>
   );
 };

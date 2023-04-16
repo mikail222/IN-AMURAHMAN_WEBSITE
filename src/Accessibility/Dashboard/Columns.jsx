@@ -5,16 +5,23 @@ import {
   serverTimestamp,
   where,
 } from "firebase/firestore";
-import React, { useEffect } from "react";
+import React, { useEffect, useState } from "react";
 import { AiOutlineShoppingCart, AiOutlineUserAdd } from "react-icons/ai";
 import { BiUserCheck } from "react-icons/bi";
 import { auth, db } from "../../firebaseconfig";
+import { TbCurrencyNaira } from "react-icons/tb";
 
-const Columns = ({ user, booking, enquiry, consult, productUpdate }) => {
+const Columns = ({
+  user,
+  booking,
+  enquiry,
+  consult,
+  productUpdate,
+  sales,
+  totalamount,
+}) => {
   const currentUser = auth.currentUser;
-  // console.log(user.find((x) => x.id === currentUser?.uid.length));
   const day = new Date();
-  const currentDay = new Date().toDateString();
 
   const lastMonth = new Date(new Date().setMonth(day.getMonth() - 1));
   console.log(lastMonth);
@@ -25,7 +32,7 @@ const Columns = ({ user, booking, enquiry, consult, productUpdate }) => {
         where("timeStamp", "<=", day, where("timeStamp", ">", lastMonth))
       );
       const lastMonthData = await getDocs(lastMonthQuery);
-      console.log(lastMonthData.docs.length);
+      // console.log(lastMonthData.docs.length);
     };
     getLastMonth();
   }, []);
@@ -36,6 +43,12 @@ const Columns = ({ user, booking, enquiry, consult, productUpdate }) => {
   const findBooking = booking.filter((m) => m.day === today);
   const findConsult = consult.filter((m) => m.day === today);
   const finduser = enquiry.filter((m) => m.day === today);
+
+  const newSale = sales.filter((d) => d.day === today);
+  const totalSales = totalamount
+    .map(({ amount }) => amount[0])
+    .reduce((a, b) => a + b, 0);
+
   return (
     <div>
       <div className="container">
@@ -67,11 +80,28 @@ const Columns = ({ user, booking, enquiry, consult, productUpdate }) => {
                   Products in Stock: <i>{productUpdate.length}</i>{" "}
                 </p>
                 <p>
-                  New Sales : <i>0</i>{" "}
-                </p>{" "}
-                <p>
-                  Total Sale: <i>0</i>
-                </p>{" "}
+                  New Sales : <i>{newSale.length + 1}</i>{" "}
+                </p>
+
+                <p
+                  style={{
+                    display: "flex",
+                    flexDirection: "row",
+                    alignItems: "center",
+                  }}
+                >
+                  Total Sales :
+                  <i
+                    style={{
+                      display: "flex",
+                      flexDirection: "row",
+                      alignItems: "center",
+                    }}
+                  >
+                    <TbCurrencyNaira />
+                    {totalSales}
+                  </i>
+                </p>
               </nav>
             </article>
             <span>

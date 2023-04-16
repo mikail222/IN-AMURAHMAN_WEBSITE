@@ -52,8 +52,7 @@ const Side_Bar = ({
           <MdMonitor className="dashboardIcon" />
           <i
             onClick={() =>
-              setDashboardInfo(true) ||
-              (setUserList(false) && setProductUpdateInfo(false))
+              setDashboardInfo(true) || setProductUpdateInfo(false)
             }
           >
             Dashboard

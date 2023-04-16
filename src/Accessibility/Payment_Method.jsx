@@ -2,31 +2,42 @@ import React, { useEffect, useState } from "react";
 import { Navigate, useNavigate } from "react-router-dom";
 import AOS from "aos";
 import "aos/dist/aos.css";
+import { addDoc, collection, serverTimestamp } from "firebase/firestore";
+import { db } from "../firebaseconfig";
+import { TbCurrencyNaira } from "react-icons/tb";
 
-const Payment_Method = () => {
-  const [firstName, setFirstName] = useState("");
-  const [lastName, setLastName] = useState("");
-  const [amount, setAmount] = useState(null);
-  const [email, setEmail] = useState(null);
-  const [contact, setContact] = useState(null);
-  const [payment, setPayment] = useState([]);
+const Payment_Method = ({ total, product_name, product_img }) => {
+  const [firstName, setFirstName] = useState(" ");
+  const [lastName, setLastName] = useState(" ");
+  const [email, setEmail] = useState(" ");
+  const [contact, setContact] = useState(" ");
+  const [payment, setPayment] = useState({});
   const navigate = useNavigate();
 
-  const update_Payment = (e) => {
+  const collPayRef = collection(db, "Payment-details");
+
+  const update_Payment = async (e) => {
     e.preventDefault();
     const newPayment = {
       firstName: firstName,
       lastName: lastName,
       email: email,
-      amount: amount,
+      amount: total,
       contact: contact,
+      items: product_name,
+      day: new Date().toDateString(),
     };
-    setPayment(...payment, newPayment);
+    await addDoc(collPayRef, {
+      ...newPayment,
+      timestamp: serverTimestamp(),
+    });
+    alert("Payment successfully uploaded");
     navigate("/Googlepay");
   };
   useEffect(() => {
     AOS.init({ duration: 3000 });
   }, []);
+  console.log(payment);
   return (
     <div
       className="paymentUpdate"
@@ -34,10 +45,20 @@ const Payment_Method = () => {
       data-aos-offset="300"
       data-aos-easing="ease-in-sine"
     >
-      <form className="productUpdateForm" onChange={(e) => handleChange(e)}>
+      <form className="productUpdateForm">
+        <img src={product_img} alt="" />
+        <h2>{product_name}</h2>
+        <h4
+          style={{
+            display: "flex",
+            flexDirection: "row",
+            alignItems: "center",
+          }}
+        >
+          <TbCurrencyNaira />
+          {total}
+        </h4>
         <h4 className="updateheader">Payment Form</h4>
-
-        <label htmlFor="">{firstName ? "First Name" : " "}</label>
         <input
           type="text"
           placeholder="First Name"
@@ -45,7 +66,6 @@ const Payment_Method = () => {
           value={firstName}
           onChange={(e) => setFirstName(e.target.value)}
         />
-        <label htmlFor="">{lastName ? "Last Name" : " "}</label>
         <input
           type="text"
           placeholder=" Last Name"
@@ -53,24 +73,13 @@ const Payment_Method = () => {
           onChange={(e) => setLastName(e.target.value)}
           required
         />
-        <label htmlFor="">{email ? "Email" : " "}</label>
         <input
           type="Email"
           placeholder="Email"
           value={email}
           onChange={(e) => setEmail(e.target.value)}
           required
-        />
-        <label htmlFor="">{amount ? "Amount" : " "}</label>
-
-        <input
-          type="number"
-          placeholder="Amount"
-          value={amount}
-          onChange={(e) => setAmount(e.target.value)}
-          required
-        />
-        <label htmlFor="">{contact ? "Contact" : " "}</label>
+        />{" "}
         <input
           type="number"
           placeholder="Contact"
