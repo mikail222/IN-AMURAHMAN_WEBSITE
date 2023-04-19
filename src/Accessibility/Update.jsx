@@ -40,62 +40,64 @@ const Update = ({ navigate }) => {
       });
   };
   return (
-    <div className="modal">
-      <div className="updateContainer">
-        <form className="accessibleUpdate ">
-          <img src={profileEditIcon} alt="" className="avartaIcon" />
-          <p>{user?.displayName}</p>
-          <div className="inputField">
-            <label htmlFor="displayName" className="label"></label>
-            <input
-              type="text"
-              placeholder="Display Name "
-              value={displayName}
-              onChange={(e) => setdDisplayName(e.target.value)}
-            />
-            <label htmlFor="email" className="label"></label>
-            <input
-              type="text"
-              placeholder="email"
-              value={email}
-              onChange={(e) => setEmail(e.target.value)}
-            />
-            <label htmlFor="photoUrl" className="label">
-              {" "}
-            </label>{" "}
-            <input
-              type="file"
-              id="fileInput"
-              className="updateFile"
-              placeholder="Photo url "
-              onChange={(e) => setPhotoUrl(e.target.files[0])}
-            />
-            <label htmlFor="phoneNumber" className="label">
-              {" "}
-            </label>{" "}
-            <input
-              type="number"
-              placeholder="Phone"
-              value={phoneNumber}
-              onChange={(e) => setPhoneNumber(e.target.value)}
-            />
-          </div>
-          <div className="updateButtonContainer">
-            <button
-              type="button"
-              style={{ borderColor: "red", color: "red" }}
-              onClick={handleDeleteUser}
-            >
-              Delete Account
-            </button>
-            <button type="button" onClick={() => navigate(-1)}>
-              Back
-            </button>
-            <button type="button" onClick={(e) => handleUpdate(e)}>
-              Confirm
-            </button>
-          </div>
-        </form>
+    <div className="bg">
+      <div className="modal">
+        <div className="updateContainer">
+          <form className="accessibleUpdate ">
+            <img src={profileEditIcon} alt="" className="avartaIcon" />
+            <p>{user?.displayName}</p>
+            <div className="inputField">
+              <label htmlFor="displayName" className="label"></label>
+              <input
+                type="text"
+                placeholder="Display Name "
+                value={displayName}
+                onChange={(e) => setdDisplayName(e.target.value)}
+              />
+              <label htmlFor="email" className="label"></label>
+              <input
+                type="text"
+                placeholder="email"
+                value={email}
+                onChange={(e) => setEmail(e.target.value)}
+              />
+              <label htmlFor="photoUrl" className="label">
+                {" "}
+              </label>{" "}
+              <input
+                type="file"
+                id="fileInput"
+                className="updateFile"
+                placeholder="Photo url "
+                onChange={(e) => setPhotoUrl(e.target.files[0])}
+              />
+              <label htmlFor="phoneNumber" className="label">
+                {" "}
+              </label>{" "}
+              <input
+                type="number"
+                placeholder="Phone"
+                value={phoneNumber}
+                onChange={(e) => setPhoneNumber(e.target.value)}
+              />
+            </div>
+            <div className="updateButtonContainer">
+              <button
+                type="button"
+                style={{ borderColor: "red", color: "red" }}
+                onClick={handleDeleteUser}
+              >
+                Delete
+              </button>
+              <button type="button" onClick={() => navigate(-1)}>
+                Back
+              </button>
+              <button type="button" onClick={(e) => handleUpdate(e)}>
+                Confirm
+              </button>
+            </div>
+          </form>
+        </div>
       </div>
     </div>
   );

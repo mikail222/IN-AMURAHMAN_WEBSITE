@@ -6,6 +6,10 @@ import Data_analysis_page from "./Data_analysis_page";
 import User_Table from "./User_Table";
 import Side_Bar from "./Side_Bar";
 import Product_UpdateForm from "./Product_UpdateForm";
+import { CgMenuGridR } from "react-icons/cg";
+import { FcMenu } from "react-icons/fc";
+import { BiMenu } from "react-icons/bi";
+import Mobile_Side_Bar from "./Mobile_Side_Bar";
 
 const Dashboard = ({ setShowNav, productUpdate }) => {
   const [consult, setConsult] = useState([]);
@@ -18,6 +22,7 @@ const Dashboard = ({ setShowNav, productUpdate }) => {
   const [userList, setUserList] = useState(false);
   const [dashboardInfo, setDashboardInfo] = useState(false);
   const [productUpdateInfo, setProductUpdateInfo] = useState(false);
+  const [drawer, setDrawer] = useState(true);
 
   const currentUser = auth.currentUser;
 
@@ -58,15 +63,30 @@ const Dashboard = ({ setShowNav, productUpdate }) => {
   return (
     <div className="parentContainer">
       <div className="dashBoardDiv">
-        <Side_Bar
-          currentUser={currentUser}
-          setDashboardInfo={setDashboardInfo}
-          setUserList={setUserList}
-          setProductUpdateInfo={setProductUpdateInfo}
-        />
+        {!drawer && (
+          <Mobile_Side_Bar
+            currentUser={currentUser}
+            setDashboardInfo={setDashboardInfo}
+            setUserList={setUserList}
+            setProductUpdateInfo={setProductUpdateInfo}
+            setDrawer={setDrawer}
+          />
+        )}
         <div className="parentDiv">
+          <Side_Bar
+            currentUser={currentUser}
+            setDashboardInfo={setDashboardInfo}
+            setUserList={setUserList}
+            setProductUpdateInfo={setProductUpdateInfo}
+            setDrawer={setDrawer}
+          />
           <main className="mainClass">
-            {dashboardInfo ? (
+            <BiMenu
+              className="menuBar "
+              title="Menu Bar"
+              onClick={(e) => setDrawer(false)}
+            />
+            {!dashboardInfo ? (
               <Data_analysis_page
                 user={user}
                 booking={booking}

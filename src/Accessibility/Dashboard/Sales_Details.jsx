@@ -1,4 +1,5 @@
 import React, { useEffect } from "react";
+import { TbCurrencyNaira } from "react-icons/tb";
 
 const Sales_Details = ({ sales, productUpdate }) => {
   const findItem = Object.values(sales).map(({ items }) => items[0]);
@@ -18,20 +19,22 @@ const Sales_Details = ({ sales, productUpdate }) => {
     filtterQuantity();
   }, []);
 
-  // console.log(productUpdate.map(({ price }) => price));
-  console.log(findamount);
-  console.log(findprice);
+  // console.log(findamount);
+  // console.log(findprice);
   return (
-    <div className="tableWrapper">
+    <div className="productWrapper">
+      <h2>Sales Detail</h2>
       <table className="Author">
-        <thead className="tableHeader">
-          <tr>
-            <th>Buyer</th>
-            <th>Contact</th>
-            <th>Product Name</th>
-            <th>Price</th>
-            <th>Date Updated</th>
-            {/* <th>Quantity</th> */}
+        <thead>
+          <tr className="tableHeader">
+            <th> Buyer</th>
+            <th className="hide">Contact</th>
+            <th>Dated</th>
+            <th>Product</th>
+            <th className="hide">Amount</th>
+            <th className="naira">
+              <TbCurrencyNaira />
+            </th>
           </tr>
         </thead>
         <tbody>
@@ -43,15 +46,11 @@ const Sales_Details = ({ sales, productUpdate }) => {
             // )
             .map(({ amount, items, firstName, lastName, day, contact }, i) => (
               <tr key={i} className="userTableHeader">
-                <td className="AuthorAlign">
-                  <td>
-                    {firstName} {lastName}
-                  </td>
-                  <td>{contact}</td>
-                  <td>{items}</td>
-                </td>
-                <td>{amount / productUpdate.price}</td>
+                <td className="AuthorAlign">{firstName}</td>
+                <td className="hide">{contact}</td>
                 <td>{day}</td>
+                <td>{items}</td>
+                <td>{amount}</td>
               </tr>
             ))}
         </tbody>

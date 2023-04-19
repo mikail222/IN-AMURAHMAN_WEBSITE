@@ -14,15 +14,12 @@ import Footer from "../Footer";
 const Commercial = ({ checkList }) => {
   return (
     <div>
-      <div
-        className="commercial"
-        style={{ display: "flex", flexDirection: "row", gap: "1rem" }}
-      >
-        <main style={{ width: "75%" }}>
+      <div className="commercial">
+        <main>
           <div className="main" style={{ marginBottom: "4rem" }}>
-            <h4 style={{}}>Commercial cleaning</h4>
+            <h4>Commercial cleaning</h4>
           </div>
-          <p style={{ marginTop: "3rem", lineHeight: "3rem" }}>
+          <p>
             pleasant and healthy environment is an important consideration for a
             productive and happy work force when determining their job
             satisfaction. Your staff deserve the best conditions that can be
@@ -32,7 +29,7 @@ const Commercial = ({ checkList }) => {
             requirements and to customize our cleaning program to the specific
             concerns of your company or organization
           </p>
-          <p style={{ marginTop: "3rem", lineHeight: "3rem" }}>
+          <p>
             Our office cleaning service is tailored to each individual customer
             and can include specialist cleaning such as computer and IT
             equipment to prevent the risk of overheating. We can also have
@@ -41,20 +38,11 @@ const Commercial = ({ checkList }) => {
           </p>
         </main>
         <aside>
-          <Link
-            style={{
-              textAlign: "center",
-              fontSize: "1.3rem",
-              fontFamily: "serif",
-              fontWeight: "bold",
-              marginBottom: "1rem",
-            }}
-            to="/Show_Room"
-          >
-            Check out for our Products{" "}
+          <Link className="ads" to="/Show_Room">
+            Check out for our Products
           </Link>
-          {checkList.slice(5, 6).map(({ img, product_name, id }, i) => (
-            <div style={{ marginLeft: "0.5rem" }} key={i}>
+          {checkList.slice(4, 5).map(({ img, product_name, id }, i) => (
+            <div key={i}>
               <Link className="first" to={`Product_detail/${id}`}>
                 <i>Order Now</i>
                 <img className="first_class_img" src={img} alt="" />

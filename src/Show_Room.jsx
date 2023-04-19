@@ -1,6 +1,8 @@
 import React, { memo, useEffect, useState } from "react";
 import { Link, useParams } from "react-router-dom";
 import Footer from "./Footer";
+import AOS from "aos";
+import "aos/dist/aos.css";
 
 const Show_Room = ({
   checkList,
@@ -11,10 +13,7 @@ const Show_Room = ({
   const [saveProduct, setSaveProduct] = useState([]);
   // console.log(productUpdate);
   useEffect(() => {
-    const save = () => {
-      setSaveProduct(productUpdate);
-    };
-    save();
+    AOS.init({ duration: 1000 });
   }, []);
   const handleChange = (event) => {
     setFindProduct(event.target.value);
@@ -30,7 +29,7 @@ const Show_Room = ({
         />
         <div className="cleaning_product">
           {checkList.map(({ img, product_name, id }, i) => (
-            <div key={i}>
+            <div key={i} data-aos="fade-down">
               <Link className="first" to={`Product_detail/${id}`}>
                 <i>Order Now</i>
                 <img className="imgs" src={img} alt="" />

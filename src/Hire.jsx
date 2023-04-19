@@ -1,9 +1,10 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { Link } from "react-router-dom";
 import Footer from "./Footer";
+import AOS from "aos";
+import "aos/dist/aos.css";
 
 const Hire = () => {
-  // 2 * 2;
   const hiringItems = [
     {
       images:
@@ -53,11 +54,14 @@ const Hire = () => {
     //   images: "",
     // },
   ];
+  useEffect(() => {
+    AOS.init({ duration: 1000 });
+  }, []);
   return (
     <div>
       <div className="rent">
         {hiringItems.map(({ images, name }, i) => (
-          <div key={i}>
+          <div key={i} data-aos="slide-up">
             <Link className="hiring">
               <img src={images} alt="" />
               <p>{name}</p>

@@ -37,7 +37,7 @@ const User_modal = ({ user, setShowNav }) => {
           <h3 className="userText">{currentUser?.displayName}</h3>
           <div className="buttonContainer">
             <button type="button" onClick={() => navigate("/Update")}>
-              Update Account Profile
+              Update Profile
             </button>
             <button
               type="button"

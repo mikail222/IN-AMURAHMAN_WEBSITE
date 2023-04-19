@@ -31,7 +31,6 @@ const Navbar = ({ navigate, setShowNav }) => {
       />
 
       <div className="menuBar_container">
-        {/* <CgMenuGridR className="menuBar" /> */}
         <div className="dropdown-bar">
           <div className="navs">
             <div className="dropdown">

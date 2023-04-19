@@ -29,7 +29,14 @@ const Contact = () => {
       <p className="text" style={{ color: "#8ccaf3" }}>
         For feedback and request please kindly fill the form below
       </p>
-      <i style={{ textAlign: "center", marginTop: "1rem" }}>
+      <i
+        style={{
+          textAlign: "center",
+          margin: "1rem",
+          color: "gray",
+          fontWeight: "bold",
+        }}
+      >
         or get in tounch on our social medial official handle bellow
       </i>
       <div className="contact">

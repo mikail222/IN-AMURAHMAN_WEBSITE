@@ -62,10 +62,10 @@ const Login = ({ navigate, user }) => {
   };
 
   return (
-    <div className="flex flex-col ">
+    <div>
       <div className="sign_up_form_container">
         <p className="text">LOG IN</p>
-        <form onSubmit={handleSubmit} className="accessibility">
+        <form onSubmit={handleSubmit} className="accessibilityLogin">
           <div className="styleInputSectionLogin ">
             <label htmlFor="" className="label">
               Email
@@ -113,9 +113,7 @@ const Login = ({ navigate, user }) => {
                     onClick={() => setCheck(false)}
                   />
                 )}
-                <p className="text-[0.90rem] ml-[5px] text-white">
-                  Remember me
-                </p>
+                <p>Remember me</p>
               </div>
               <div>
                 <p

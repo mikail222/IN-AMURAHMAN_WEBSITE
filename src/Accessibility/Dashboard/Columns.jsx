@@ -10,6 +10,7 @@ import { AiOutlineShoppingCart, AiOutlineUserAdd } from "react-icons/ai";
 import { BiUserCheck } from "react-icons/bi";
 import { auth, db } from "../../firebaseconfig";
 import { TbCurrencyNaira } from "react-icons/tb";
+import { GrProductHunt } from "react-icons/gr";
 
 const Columns = ({
   user,
@@ -45,7 +46,10 @@ const Columns = ({
   const finduser = enquiry.filter((m) => m.day === today);
 
   const newSale = sales.filter((d) => d.day === today);
-  const totalSales = totalamount
+  const totalSales = newSale
+    .map(({ amount }) => amount[0])
+    .reduce((a, b) => a + b, 0);
+  const grossTotalSales = totalamount
     .map(({ amount }) => amount[0])
     .reduce((a, b) => a + b, 0);
 
@@ -74,13 +78,23 @@ const Columns = ({
           </div>
           <div>
             <article className="colarrange">
-              <p>PRODUCTS & SALES</p>
+              <p>PRODUCTS</p>
               <nav>
                 <p>
-                  Products in Stock: <i>{productUpdate.length}</i>{" "}
+                  Products in Stock: <i>{productUpdate.length}</i>
                 </p>
+              </nav>
+            </article>
+            <span>
+              <GrProductHunt className="icon" />
+            </span>
+          </div>
+          <div>
+            <article className="colarrange">
+              <p>TODAY'S SALES</p>
+              <nav>
                 <p>
-                  New Sales : <i>{newSale.length + 1}</i>{" "}
+                  Sold item : <i>{newSale.length}</i>{" "}
                 </p>
 
                 <p
@@ -100,6 +114,25 @@ const Columns = ({
                   >
                     <TbCurrencyNaira />
                     {totalSales}
+                  </i>
+                </p>
+                <p
+                  style={{
+                    display: "flex",
+                    flexDirection: "row",
+                    alignItems: "center",
+                  }}
+                >
+                  Gross Sales :
+                  <i
+                    style={{
+                      display: "flex",
+                      flexDirection: "row",
+                      alignItems: "center",
+                    }}
+                  >
+                    <TbCurrencyNaira />
+                    {grossTotalSales}
                   </i>
                 </p>
               </nav>

@@ -11,7 +11,7 @@ const Product_Details = ({ product_detail }) => {
           <tr className="tableHeader">
             <th>Product Name</th>
             <th>Price</th>
-            <th>Date Updated</th>
+            <th>Updated</th>
             <th>Quantity</th>
           </tr>
         </thead>
@@ -29,7 +29,7 @@ const Product_Details = ({ product_detail }) => {
                   <p>{product_name}</p>
                 </td>
 
-                <td>{price}/unit</td>
+                <td>{price}</td>
                 <td>{day}</td>
                 {/* <td>{quantity}</td> */}
               </tr>

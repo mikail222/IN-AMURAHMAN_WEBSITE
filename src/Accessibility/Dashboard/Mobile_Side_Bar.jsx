@@ -7,11 +7,12 @@ import { useNavigate } from "react-router-dom";
 import { signOut } from "firebase/auth";
 import { auth } from "../../firebaseconfig";
 
-const Side_Bar = ({
+const Mobile_Side_Bar = ({
   currentUser,
   setUserList,
   setDashboardInfo,
   setProductUpdateInfo,
+  setDrawer,
 }) => {
   const navigate = useNavigate();
   const handleLogOut = (e) => {
@@ -25,7 +26,7 @@ const Side_Bar = ({
       });
   };
   return (
-    <aside className="dash_aside">
+    <aside className="mobile_dash_asides">
       {" "}
       <div className="statusManager">
         {currentUser ? (
@@ -67,7 +68,7 @@ const Side_Bar = ({
           <AiOutlineLogout className="dashboardIcon" />
           <i>Log Out</i>
         </div>
-        <div>
+        <div onClick={(e) => setDrawer(true)}>
           <MdOutlineClear className="menuBar " title="dashboardIcon" />{" "}
           <i>Back</i>
         </div>
@@ -76,4 +77,4 @@ const Side_Bar = ({
   );
 };
 
-export default Side_Bar;
+export default Mobile_Side_Bar;

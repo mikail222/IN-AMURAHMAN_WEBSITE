@@ -12,46 +12,55 @@ const User_Table = ({ user }) => {
   console.log();
 
   return (
-    <div>
+    <div className="user">
       <div className="searchField">
         <TbUserSearch className="searchIcon" />
-
         <input
           type="text"
           onChange={(e) => setSearch_user(e.target.value)}
-          placeholder="search user..."
+          placeholder="please search user..."
           className="filter-user"
           id="filter_user"
         />
       </div>
-      <div className="tableWrapper">
+
+      <div className="productWrapper">
+        <h2>User's List</h2>
+        <div className="tableDiv">
+          {/* <div> Picture</div> */}
+          <div>User Name</div>
+          <div>Email</div>
+          <div>dated</div>
+          <div>Contact</div>
+        </div>
         <table className="Author">
-          <thead>
-            <tr className="tableHeader">
-              <th>Author</th>
-              <th>Email</th>
-              <th>Date Onboard</th>
-              <th>Phone Number</th>
-            </tr>
-          </thead>
+          {/* <thead> */}
+          {/* </thead> */}
           <tbody>
             {user
-              .filter(
-                (m) =>
-                  m.email.toLowerCase().includes(search_user.toLowerCase()) ||
-                  m.first.includes(search_user.toLocaleLowerCase())
-              )
-              .map((m, id) => (
-                <tr key={id} className="userTableHeader">
-                  <td className="AuthorAlign">
-                    <img src={m.img} alt="" className="Authoricon" />
-                    <p>{m.first + "  " + m.LastName}</p>
-                  </td>
-                  <td>{m.email}</td>
-                  <td>{m.day}</td>
-                  <td>{m.phone}</td>
-                </tr>
-              ))}
+              ? user
+                  .filter(
+                    (m) =>
+                      m.email
+                        .toLowerCase()
+                        .includes(search_user.toLowerCase()) ||
+                      m.first.includes(search_user.toLocaleLowerCase())
+                  )
+                  .map(({ img, first, LastName, email, phone, day }, i) => (
+                    <tr key={i} className="userTableHeader">
+                      <td className="AuthorAlign">
+                        <img src={img} alt="" className="Authoricon" />
+                      </td>
+
+                      <td>
+                        {first} {LastName}
+                      </td>
+                      <td>{email}</td>
+                      <td>{day}</td>
+                      <td>{phone}</td>
+                    </tr>
+                  ))
+              : "sorry trying  to upload user,please wait a minute"}
           </tbody>
         </table>
       </div>

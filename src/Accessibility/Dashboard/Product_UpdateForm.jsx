@@ -8,7 +8,7 @@ import Product_Details from "./Product_Details";
 
 const Product_UpdateForm = ({ product_detail }) => {
   const [product, setProduct] = useState([]);
-  const [data, setData] = useState([]);
+  const [list, setList] = useState(false);
   const [trackupload, setTrackUpload] = useState(null);
   const [productFileUpload, setProductFileUpload] = useState(null);
 
@@ -92,7 +92,7 @@ const Product_UpdateForm = ({ product_detail }) => {
             />
           </div>
           <img src={irehv} alt="" className="irehvupdateform" />
-          <h4 className="updateheader">Products Form</h4>
+          <h4 className="updateheader">Products Update Form</h4>
           <label htmlFor=""></label>
           <input type="text" placeholder="Product Name" name="product_name" />
           <label htmlFor=""></label>
@@ -105,7 +105,16 @@ const Product_UpdateForm = ({ product_detail }) => {
             ) : (
               "Update Stock"
             )}
-          </button>
+          </button>{" "}
+          {list ? (
+            <p onClick={() => setList(false)} className="viewList">
+              close stock list
+            </p>
+          ) : (
+            <p className="viewList" onClick={() => setList(true)}>
+              view stock list
+            </p>
+          )}
         </form>
         <div className="productSidebg">
           <div>
@@ -117,7 +126,7 @@ const Product_UpdateForm = ({ product_detail }) => {
           </div>
         </div>
       </div>
-      <Product_Details product_detail={product_detail} />
+      {list && <Product_Details product_detail={product_detail} />}
     </div>
   );
 };

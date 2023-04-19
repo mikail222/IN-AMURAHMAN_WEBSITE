@@ -12,15 +12,8 @@ import Footer from "../Footer";
 const Domestic_cleaning = ({ checkList }) => {
   return (
     <div>
-      <div
-        style={{
-          display: "flex",
-          flexDirection: "row",
-          gap: "2rem",
-        }}
-        className="domestic"
-      >
-        <main style={{ width: "65%", height: "100%" }}>
+      <div className="domestic">
+        <main>
           <div className="cleaningBg">
             <h4>Domestic cleaning Service</h4>
           </div>
@@ -73,26 +66,10 @@ const Domestic_cleaning = ({ checkList }) => {
             </div>
           </div>
         </main>
-        <aside
-          style={{
-            width: "30%",
-            marginLeft: "1rem",
-            alignItems: "center",
-            // background: "pink",
-          }}
-        >
-          <Link
-            style={{
-              textAlign: "center",
-              fontSize: "1.4rem",
-              fontFamily: "serif",
-            }}
-            to="/Show_Room"
-          >
+        <aside>
+          <Link to="/Show_Room">
             <div className="serviceDescription">
-              <h4 style={{ color: "white", margin: "1rem" }}>
-                Domestic Services are:
-              </h4>
+              <h4 style={{ color: "white" }}>Domestic Services are:</h4>
               <Link to="/Sitting_Room">
                 <div>
                   <GiCheckMark />
@@ -142,8 +119,8 @@ const Domestic_cleaning = ({ checkList }) => {
             </div>
             Check out for our Products{" "}
           </Link>
-          {checkList.slice(7, 8).map(({ img, product_name, id }, i) => (
-            <div style={{ marginTop: "0.5rem" }} key={i}>
+          {checkList.slice(8, 9).map(({ img, product_name, id }, i) => (
+            <div style={{ marginTop: "0.5rem", marginBottom: "1rem" }} key={i}>
               <Link className="first" to={`Product_detail/${id}`}>
                 <i style={{ marginLeft: "15rem" }}>Order Now</i>
                 <img className="first_class_img" src={img} alt="" />

@@ -32,14 +32,18 @@ const Pest_control = ({ checkList }) => {
 
   return (
     <div className="pest">
-      <div style={{ display: "flex", flexDirection: "row", height: "90%" }}>
+      <div className="pests">
         <div className="pest_class">
           <img
             src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSsbRXnAcu5SMCvc0e5tT15YElEvCgfg50wKw&usqp=CAU"
             alt=""
+            className="ant"
           />
+          <div style={{ marginBottom: "4rem" }}>
+            <h4 className="h4">Pest Control</h4>
+          </div>
         </div>
-        <div style={{ width: "30%", marginLeft: "1.5rem" }}>
+        <div className="pestForm">
           <h4 style={{ marginTop: "2rem" }}>Enquiry</h4>
           <form
             className="form"
@@ -63,31 +67,33 @@ const Pest_control = ({ checkList }) => {
       <h2 style={{ textAlign: "center" }}>
         Pest control and Fumigation Services
       </h2>
-      <p style={{ fontSize: "1.5rem", margin: "2rem" }}>
-        Whether it’s a home, school hospital, office, factory etc, our goal is
-        to eliminate the causes of pest problems for our customers, rather than
-        just treat the symptoms. We provide One-time, Monthly or Quarterly
-        treatments. With our dependable pest-control services, you can sit back
-        and enjoy the peace of mind that comes from knowing that your family and
-        property are fully protected. You can be rest assured that our
-        professional team will eliminate all pests from your property so that
-        you can love where you work, live and play.
-      </p>
-      <p style={{ fontSize: "1.5rem", margin: "2rem" }}>
-        {" "}
-        We provide each individual with professional and effective pest control
-        solutions which ensure the health and hygiene one needs in order to live
-        and work in a safe, hygienic, pest-free environment. Cleaneat Services
-        focuses primarily on the control and eradication of pests common in
-        Nigeria using only environmentally friendly products. Some of these
-        pests include bed bugs, termites, rats, houseflies among others
-      </p>
+      <div className="texts">
+        <p>
+          Whether it’s a home, school hospital, office, factory etc, our goal is
+          to eliminate the causes of pest problems for our customers, rather
+          than just treat the symptoms. We provide One-time, Monthly or
+          Quarterly treatments. With our dependable pest-control services, you
+          can sit back and enjoy the peace of mind that comes from knowing that
+          your family and property are fully protected. You can be rest assured
+          that our professional team will eliminate all pests from your property
+          so that you can love where you work, live and play.
+        </p>
+        <p>
+          We provide each individual with professional and effective pest
+          control solutions which ensure the health and hygiene one needs in
+          order to live and work in a safe, hygienic, pest-free environment.
+          Cleaneat Services focuses primarily on the control and eradication of
+          pests common in Nigeria using only environmentally friendly products.
+          Some of these pests include bed bugs, termites, rats, houseflies among
+          others
+        </p>
+      </div>
       <div>
-        <div style={{ textAlign: "center", marginRight: "30%" }}>
+        <div style={{ textAlign: "center" }}>
           <b> click on any of the pest for details</b>
           <h3>pest we deal with</h3>
         </div>
-        <div style={{ display: "flex", flexDirection: "row" }}>
+        <div className="pestDeal">
           <div className="pest_map">
             <Link to="/Spider">
               <img src={pest1} alt="" />
@@ -129,10 +135,9 @@ const Pest_control = ({ checkList }) => {
           <div className="ads">
             <i
               style={{
-                marginBottom: "2rem",
                 fontFamily: "serif",
                 fontWeight: "bold",
-                marginLeft: "1.5rem",
+                textAlign: "center",
               }}
             >
               For Home use and Family protection order now!
@@ -142,7 +147,7 @@ const Pest_control = ({ checkList }) => {
               <div key={i}>
                 <Link
                   className="first"
-                  style={{ marginTop: "2rem" }}
+                  style={{ marginTop: "2rem", marginBottom: "2rem" }}
                   to={`Product_detail/${id}`}
                 >
                   <i>Order Now</i>

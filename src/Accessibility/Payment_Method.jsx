@@ -7,8 +7,8 @@ import { db } from "../firebaseconfig";
 import { TbCurrencyNaira } from "react-icons/tb";
 
 const Payment_Method = ({ total, product_name, product_img }) => {
-  const [firstName, setFirstName] = useState(" ");
-  const [lastName, setLastName] = useState(" ");
+  const [firstName, setFirstName] = useState("");
+  const [lastName, setLastName] = useState("");
   const [email, setEmail] = useState(" ");
   const [contact, setContact] = useState(" ");
   const [payment, setPayment] = useState({});

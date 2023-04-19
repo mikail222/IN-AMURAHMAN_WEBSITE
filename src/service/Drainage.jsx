@@ -5,19 +5,11 @@ const Drainage = () => {
   return (
     <div>
       <div className="drainage">
-        <main style={{ width: "70%" }}>
+        <main>
           <div className="drainimg">
             <h4>Drainage Service</h4>
           </div>
-          <div
-            style={{
-              display: "flex",
-              flexDirection: "column",
-              gap: "2rem",
-              marginTop: "2rem",
-              marginLeft: "1rem",
-            }}
-          >
+          <div className="drainageTexts">
             <p>
               Drainage maintenance is the maintenance of drainage system by
               keeping ditch, culvert and other drainage structure, clean and
@@ -42,7 +34,7 @@ const Drainage = () => {
             </p>
           </div>
         </main>
-        <aside style={{ width: "30%" }}>
+        <aside>
           <div className="drainAdvert">
             <img
               src="https://media.istockphoto.com/id/1135314838/photo/repair-of-hydraulic-heating-system-in-the-house.jpg?s=612x612&w=0&k=20&c=Z8-BohVX0_Niqp72nroZzeK3m8C69U2xLcvQYE_iHuA="
@@ -56,7 +48,6 @@ const Drainage = () => {
             <img
               src="https://www.liveandwingit.com/wp-content/uploads/2022/07/DOWNLOAD-FISH-FARMING-BUSINESS-PLAN-SAMPLE-300x225.jpeg"
               alt="Catfish"
-              style={{ width: "100%" }}
             />
 
             <p>For Healthy Catfish procurement</p>
@@ -66,10 +57,9 @@ const Drainage = () => {
             <img
               src="https://guardian.ng/wp-content/uploads/2020/08/Fish-1062x598.jpg"
               alt="Smoked Catfish"
-              style={{ width: "100%", height: "40vh" }}
             />
 
-            <p>For Hygienic Smoked Catfish procurement</p>
+            <p>For Hygienic Smoked Catfish </p>
             <p>Get in Touch IREHV</p>
           </div>
         </aside>

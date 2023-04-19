@@ -129,7 +129,6 @@ const Sign_up = ({ navigate, user }) => {
         >
           <div className="styleInputSection">
             <div className="uploadFileInput">
-              {/* <img src={} alt="" /> */}
               <label htmlFor="fileInput" className="fileLabel ">
                 <MdOutlineDriveFolderUpload className="fileIcon " />
                 <p> choose image:</p>
@@ -204,7 +203,7 @@ const Sign_up = ({ navigate, user }) => {
                 <p className="terms  ">
                   By proceeding, I acknowledge that I have read and agree to
                   IREHV
-                  <b className="text-[#010080]"> terms & conditions</b>
+                  <b> terms & conditions</b>
                 </p>
               </div>
             </div>
