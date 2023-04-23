@@ -62,11 +62,36 @@ const Consultance = () => {
         </main>
         <aside>
           <div className="drainAdvert">
+            <div className="consultform">
+              <h4>Booking</h4>
+              <form className="form" onChange={(e) => handleChange(e)}>
+                <label htmlFor="">Full Name</label>
+                <input type="text" name="fullName" required />
+                <label htmlFor="">Email</label>
+                <input type="email" name="mail" required />
+                <label htmlFor="">Contact</label>
+                <input type="number" name="number" required />
+                <label htmlFor="">Purpose</label>
+                <textarea name="msg" id="msgs" cols="50" rows="4"></textarea>
+                <button type="sbmit" onClick={addconsultance}>
+                  submit
+                </button>
+              </form>
+            </div>
             <img
               src="https://agro4africa.com/wp-content/uploads/2021/10/meat-chicken-breeds.jpg"
               alt="broilers"
             />
             <p>For Chicken breeding Consultation service</p>
+            <p>reach out to IREHV</p>
+          </div>
+          <div className="drainAdvert">
+            <img
+              src="https://media.istockphoto.com/id/1135314838/photo/repair-of-hydraulic-heating-system-in-the-house.jpg?s=612x612&w=0&k=20&c=Z8-BohVX0_Niqp72nroZzeK3m8C69U2xLcvQYE_iHuA="
+              alt="plumbing"
+            />
+
+            <p>For proffessional plumbing service</p>
             <p>reach out to IREHV</p>
           </div>
           <div className="serviceDescription" style={{ marginTop: "5rem" }}>
@@ -103,35 +128,6 @@ const Consultance = () => {
               <GiCheckMark />
               <p>Factory cleaning & others</p>
             </div>
-          </div>
-          <div style={{ marginLeft: "2rem" }}>
-            <h4 style={{ marginTop: "2rem", marginLeft: "1rem" }}>Booking</h4>
-            <form
-              className="form"
-              onChange={(e) => handleChange(e)}
-              style={{ width: "90%", height: "80%", marginTop: "1rem" }}
-            >
-              <label htmlFor="">Full Name</label>
-              <input type="text" name="fullName" required />
-              <label htmlFor="">Email</label>
-              <input type="email" name="mail" required />
-              <label htmlFor="">Contact</label>
-              <input type="number" name="number" required />
-              <label htmlFor="">Purpose</label>
-              <textarea name="msg" id="msgs" cols="50" rows="4"></textarea>
-              <button type="sbmit" onClick={addconsultance}>
-                submit
-              </button>
-            </form>
-          </div>
-          <div className="drainAdvert">
-            <img
-              src="https://media.istockphoto.com/id/1135314838/photo/repair-of-hydraulic-heating-system-in-the-house.jpg?s=612x612&w=0&k=20&c=Z8-BohVX0_Niqp72nroZzeK3m8C69U2xLcvQYE_iHuA="
-              alt="plumbing"
-            />
-
-            <p>For proffessional plumbing service</p>
-            <p>reach out to IREHV</p>
           </div>
         </aside>
       </div>

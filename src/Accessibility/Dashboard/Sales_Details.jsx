@@ -28,7 +28,7 @@ const Sales_Details = ({ sales, productUpdate }) => {
         <thead>
           <tr className="tableHeader">
             <th> Buyer</th>
-            <th className="hide">Contact</th>
+            {/* <th className="hide"></th> */}
             <th>Dated</th>
             <th>Product</th>
             <th className="hide">Amount</th>

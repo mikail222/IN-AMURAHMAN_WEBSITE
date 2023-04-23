@@ -1,8 +1,12 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { Link } from "react-router-dom";
 import Footer from "./Footer";
-
+import AOS from "aos";
+import "aos/dist/aos.css";
 const Service = () => {
+  useEffect(() => {
+    AOS.init({ duration: 1000 });
+  }, []);
   return (
     <div className="services">
       <div className="h1">
@@ -10,7 +14,7 @@ const Service = () => {
       </div>
       <div className="service">
         <Link to="Domestic_cleaning">
-          <div>
+          <div data-aos="fade-down">
             <img
               className="domestic"
               src="https://e7.pngegg.com/pngimages/267/998/png-clipart-window-cleaner-maid-service-house-cleaning-house-blue-text-thumbnail.png"
@@ -34,7 +38,7 @@ const Service = () => {
           </div>
         </Link>
         <Link to="Commercial">
-          <div>
+          <div data-aos="fade-down">
             <img
               className="commercial"
               src="https://img.freepik.com/free-vector/industrial-cleaning-team-work-flat-poster_1284-8622.jpg?w=2000"
@@ -57,7 +61,7 @@ const Service = () => {
           </div>
         </Link>
         <Link to="Pest_control">
-          <div>
+          <div data-aos="fade-down">
             <img
               className="fumigation"
               src="https://pngimage.net/wp-content/uploads/2018/06/fumigador-png-4.png"
@@ -80,7 +84,7 @@ const Service = () => {
           </div>
         </Link>
         <Link to="Disinfect">
-          <div>
+          <div data-aos="fade-down">
             <img
               className="disinfection"
               src="https://icon-library.com/images/137_spray-can-aerosol-hand-disinfection-512.png"
@@ -104,7 +108,7 @@ const Service = () => {
           </div>
         </Link>
         <Link to="Wast_management">
-          <div>
+          <div data-aos="fade-down">
             <img
               className="wast"
               src="https://w7.pngwing.com/pngs/708/566/png-transparent-waste-management-waste-container-bus-stop-text-recycling-logo.png"
@@ -127,7 +131,7 @@ const Service = () => {
           </div>
         </Link>
         <Link to="Plank_pest_control">
-          <div>
+          <div data-aos="fade-down">
             <img
               src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSHdyIYDf-BQmZL-9MVmmOP2aPgjb1fSIjWCA&usqp=CAU"
               alt="termite"
@@ -149,7 +153,7 @@ const Service = () => {
           </div>
         </Link>
         <Link to="Drainage">
-          <div>
+          <div data-aos="fade-down">
             <img
               src="https://e7.pngegg.com/pngimages/460/273/png-clipart-cleaner-plumbing-cleaning-maid-service-drain-24-hour-service-blue-furniture-thumbnail.png"
               alt=""
@@ -171,7 +175,7 @@ const Service = () => {
           </div>
         </Link>
         <Link to="Event_Maintainance">
-          <div>
+          <div data-aos="fade-down">
             <img
               src="https://e7.pngegg.com/pngimages/268/1005/png-clipart-cleaning-laborer-empresa-mr-power-clean-mr-clean-service-team.png"
               alt=""
@@ -192,7 +196,7 @@ const Service = () => {
           </div>
         </Link>
         <Link to="Consultance">
-          <div>
+          <div data-aos="fade-down">
             <img
               src="https://www.pngfind.com/pngs/m/69-698301_thx-mobile-consulting-icon-png-transparent-png.png"
               alt=""
@@ -214,7 +218,7 @@ const Service = () => {
           </div>
         </Link>
         <Link to="Trainning">
-          <div>
+          <div data-aos="fade-down">
             <img
               src="http://cdn.onlinewebfonts.com/svg/img_461424.png"
               alt=""

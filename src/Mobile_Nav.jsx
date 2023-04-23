@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { CgMenuGridR } from "react-icons/cg";
 import irehv from "./asset/irehv-low-resolution-logo-color-on-transparent-background.png";
+import irehv2 from "./asset/irehv-low-resolution-logo-white-on-transparent-background.png";
 import { auth } from "./firebaseconfig";
 import { Link, useNavigate } from "react-router-dom";
 import {
@@ -68,7 +69,7 @@ const Mobile_nav = ({ show, setShowNav }) => {
               {" "}
               <div className="mobile_bar">
                 <img
-                  src={irehv}
+                  src={irehv2}
                   alt=""
                   className="mobile_logo"
                   onClick={() => navigate("/") || setDrawer(true)}

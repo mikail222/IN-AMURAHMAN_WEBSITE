@@ -19,6 +19,10 @@ const User_modal = ({ user, setShowNav }) => {
         console.log(error);
       });
   };
+  const handleNavigation = async () => {
+    if (currentUser.emailVerified == true) {
+    }
+  };
   return (
     <div className="modal">
       <div className="modalBg">
@@ -41,7 +45,7 @@ const User_modal = ({ user, setShowNav }) => {
             </button>
             <button
               type="button"
-              onClick={() => navigate("/Dashboard") && setShowNav(false)}
+              onClick={() => navigate("/Users_Dashboard") && setShowNav(false)}
             >
               Continue
             </button>

@@ -4,18 +4,8 @@ import Footer from "../Footer";
 const Mosquitoes = () => {
   return (
     <div>
-      <div
-        style={{
-          display: "flex",
-          flexDirection: "row",
-          gap: "5rem",
-          width: "98%",
-          marginLeft: "2rem",
-          marginTop: "5rem",
-        }}
-        className="mosquitoe"
-      >
-        <main style={{ width: "50%" }}>
+      <div className="mosquitoe">
+        <main>
           <p>
             {" "}
             Mosquitoes are major, disease causing, household pests of the class
@@ -255,10 +245,7 @@ const Mosquitoes = () => {
             Book an appointment{" "}
           </li>
         </main>
-        <aside style={{ alignItems: "center", width: "40%" }}>
-          <div className="clueVideo">
-            <video src="" width="250" controls muted autoPlay></video>
-          </div>
+        <aside>
           <div className="frame">
             <img
               src="https://www.umontpellier.fr/wp-content/uploads/2022/08/Moustique-The-conversation.jpg"

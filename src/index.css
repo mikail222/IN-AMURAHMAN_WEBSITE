@@ -14,7 +14,6 @@ body {
   background-repeat: no-repeat;
   background-attachment: fixed;
   width: 100%;
-  /* margin-left: 2%; */
 }
 
 @media screen and (max-width: 480px) {
@@ -43,8 +42,9 @@ h5 {
   @apply text-[1.5rem] text-[white] font-serif;
 }
 h6 {
-  @apply text-[1.3rem] font-serif;
+  @apply text-[0.90rem] lg:text-[1rem] font-serif text-[gray];
 }
+
 p {
   @apply font-serif;
 }

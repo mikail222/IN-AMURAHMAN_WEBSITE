@@ -165,32 +165,33 @@
   margin-top: 2rem;
   @apply w-[100%] flex  flex-col lg:flex-row mb-[4rem];
 }
+.consultform {
+  @apply flex flex-col justify-center  items-center;
+}
+.consultform label {
+  @apply mr-[11rem];
+}
 .consultance aside {
-  @apply w-[35%] ml-[3rem];
+  @apply flex flex-col justify-center items-center lg:w-[35%] ml-[1%] lg:ml-[0rem];
 }
 .consultance main {
   @apply w-[100%] lg:w-[65%];
 }
 .consultparag {
   line-height: 2rem;
-  @apply w-[90%] text-[1.3rem] lg:ml-[1rem] mt-[2rem] flex flex-col gap-[2rem];
+  @apply w-[90%] lg:text-[1.3rem] lg:ml-[1rem] mt-[2rem] flex flex-col gap-[2rem] px-[1rem];
 }
 .consultbg {
   background-image: url("./asset/scott-graham-5fNmWej4tAA-unsplash.jpg");
   background-position: center;
   background-repeat: repeat;
   background-size: cover;
-  @apply w-[100%] h-[62vh] flex flex-col  justify-center items-center lg:mt-[4rem] lg:ml-[1rem];
+  @apply w-[100%] h-[40vh] lg:h-[62vh] flex flex-col  justify-center items-center lg:mt-[4rem] lg:ml-[1rem];
 }
 .consultbg h4 {
-  margin-top: 7rem;
   background-image: linear-gradient(to right, transparent, transparent, black);
-  color: white;
-  width: 100%;
-  text-align: right;
   font-style: italic;
-  margin-top: 20rem;
-  padding: 0.75rem;
+  @apply mt-[12rem] text-[white] w-[100%] text-right  lg:p-[0.75rem] lg:mt-[20rem];
 }
 .drainage {
   @apply w-[100%] lg:mt-[3rem] mb-[3rem] flex flex-col lg:flex-row;
@@ -199,7 +200,7 @@
   @apply w-[90%] lg:w-[75%];
 }
 .drainage aside {
-  @apply flex flex-col justify-center items-center w-[90%] ml-[5%] lg:ml-[0px] lg:w-[25%];
+  @apply flex flex-col justify-center items-center w-[100%] lg:ml-[0px] lg:w-[25%];
 }
 .drainage p {
   @apply lg:text-[1.3rem] font-serif;
@@ -335,20 +336,18 @@
 }
 .event {
   margin-top: 5rem;
-  @apply w-[100%] mb-[2rem] flex  flex-row gap-[1rem];
+  @apply w-[100%] mb-[2rem] flex flex-col lg:flex-row gap-[1rem];
 }
 .event p {
-  @apply font-serif  text-[1.3rem];
+  @apply font-serif  lg:text-[1.3rem];
 }
 .eventimg {
   @apply mt-[2rem] mb-[2rem];
 }
 .event_rent {
-  display: grid;
-  grid-template-columns: repeat(4, 1fr);
   align-items: center;
-  background-color: rgba(255, 255, 255, 0.6);
-  @apply w-[93%] m-[3rem] gap-[2rem] p-[2rem];
+  background-color: rgba(255, 255, 255, 0.9);
+  @apply w-[80%] grid lg:grid-cols-4  lg:w-[93%] lg:m-[1rem] gap-[1.5rem] lg:p-[2rem] mb-[2rem] ml-[10%] lg:ml-[4%];
 }
 .event_img img {
   border-radius: 10px 0px 0px 0px;
@@ -356,7 +355,7 @@
 }
 .event_img p {
   background-color: whitesmoke;
-  @apply text-[1.3rem];
+  @apply lg:text-[1.3rem];
 }
 .event_img div {
   border-radius: 10px;
@@ -371,19 +370,26 @@
   background-position: top;
   background-repeat: repeat;
   background-size: cover;
-  @apply w-[100%] h-[60vh] flex flex-col  justify-center items-center mb-[2rem];
+  @apply lg:w-[100%] h-[40vh] lg:h-[60vh] flex flex-col  justify-center items-center mb-[2rem];
 }
 .event_managemnt h4 {
-  margin-top: 20rem;
   background-image: linear-gradient(to right, transparent, transparent, black);
-  color: white;
-  width: 100%;
-  text-align: right;
-  padding: 1rem;
+  @apply w-[100%] mt-[50%] lg:mt-[20rem] text-[white] text-right px-[0.5rem];
+}
+.event main {
+  @apply w-[96%] lg:h-[60vh] lg:mt-[3rem] ml-[2%] lg:w-[75%];
+}
+.event aside {
+  @apply lg:w-[25%] lg:ml-[5rem] lg:mt-[1rem];
+}
+.ads_Link {
+  @apply my-[3%] text-center text-[1.4rem] font-serif font-bold text-[blue];
+}
+.event_ads {
+  @apply flex  flex-col justify-center  items-center mt-[10%] lg:mt-[0px];
 }
 .clueVideo {
-  margin: 3rem 0px;
-  @apply flex flex-col justify-end gap-[2rem] w-[100%] rounded-[15px];
+  @apply flex flex-col justify-end gap-[2rem] w-[100%] h-[40vh] rounded-[15px] lg:my-[rem];
 }
 .show_room {
   width: 100%;
@@ -451,7 +457,7 @@
 }
 .first {
   background: linear-gradient(to bottom, #45a4de, #eff8fc, #fee5ad);
-  @apply w-[80vw] lg:w-[21vw]  lg:h-[50vh] flex  flex-col justify-center items-center lg:mb-[4rem] bg-[white];
+  @apply w-[80vw] h-[45vh] lg:w-[21vw]  lg:h-[50vh] flex  flex-col justify-center items-center lg:mb-[2rem] bg-[white];
 }
 
 .first p,
@@ -460,7 +466,7 @@
   @apply text-[1.4rem] text-[white] w-[100%]   text-center  py-[0.65rem];
 }
 .first i {
-  @apply flex  flex-col ml-[64%] lg:ml-[67%] font-serif bg-[#ab060c] text-[white];
+  @apply w-[5.5rem] h-[10%]  flex  flex-col ml-[64%] lg:ml-[67%] font-serif bg-[#ab060c] text-[white];
   padding: 0px 10px;
 }
 .first img {
@@ -469,7 +475,7 @@
 @media screen and (max-width: 480px) {
   .first img {
     width: 80%;
-    height: 40vh;
+    height: 30vh;
     object-fit: contain;
     align-items: center;
   }
@@ -565,7 +571,7 @@
   @apply flex flex-row  gap-[2rem]  ml-[1rem] mt-[2rem];
 }
 .form {
-  @apply flex flex-col lg:w-[30vw] h-[100vh]
+  @apply flex flex-col lg:w-[30vw]  h-[65vh] lg:h-[80vh]
     justify-center lg:p-4  font-serif mb-[10%];
 }
 .form input {
@@ -646,13 +652,7 @@
     font-size: 1rem;
     color: gray;
     font-weight: bold;
-  }
-}
-@media screen and (max-width: 480px) {
-  form {
-    width: 90%;
-    height: auto;
-    margin-left: 1rem;
+    margin-bottom: 15%;
   }
 }
 .address p {
@@ -1074,8 +1074,8 @@ footer img {
 .bedbugs p,
 .cockroache p,
 .mosquitoe p,
-.termites p {
-  @apply text-[1.3rem];
+.termites p .snake p {
+  @apply lg:text-[1.3rem];
 }
 .ants li,
 .spider li,
@@ -1095,6 +1095,36 @@ footer img {
 .mosquit0e b,
 .termites b {
   @apply font-extrabold text-[1.1rem] ml-[1rem];
+}
+.bedbugs,
+.ants,
+.cockroaches,
+.mosquitoe,
+.rodents,
+.spider,
+.termites,
+.snake {
+  @apply flex flex-col-reverse  lg:flex-row gap-[2rem] w-[98%] mt-[5rem];
+}
+.bedbugs main,
+.ants main,
+.cockroache,
+.mosquitoe main,
+.rodents main,
+.spider main,
+.termites main,
+.snake main {
+  @apply lg:w-[70%] mx-[3%] mb-[5%];
+}
+.bedbugs aside,
+.ants aside,
+.cockroaches aside,
+.mosquitoe aside,
+.rodents aside,
+.spider aside,
+.termites aside,
+.snake aside {
+  @apply lg:w-[30%];
 }
 .pictorial {
   @apply cursor-pointer flex flex-col gap-[2rem] lg:ml-[2rem] w-[100%]  h-[55vh] lg:h-[70vh]  mt-[3rem];
@@ -1171,7 +1201,7 @@ footer img {
   @apply flex flex-col;
 }
 .frame img {
-  @apply w-[100%] h-[60vh] mt-[2.5rem] rounded-[15px] items-center;
+  @apply w-[100%] h-[40vh] lg:h-[60vh] mt-[2.5rem] rounded-[10px] items-center;
 }
 .pest_class {
   background-image: url("https://assets-us-01.kc-usercontent.com/338e61a8-25d7-0035-f3a0-cea86e563aa1/b1f9189b-5ada-40ca-b8e9-445b5120f86e/procare-homepage-mosquito-control.jpg?w=760&h=480&auto=format&fit=crop");
@@ -1202,7 +1232,7 @@ footer img {
 }
 .accessibilityLogin {
   background-image: linear-gradient(to bottom, #a7d7f6, #010080);
-  @apply flex flex-col justify-center items-center max-w-[90%] lg:w-[33vw] h-[60vh] lg:h-[80vh] rounded-[15px] pb-[5rem] mt-[2%];
+  @apply flex flex-col justify-center items-center max-w-[95%] lg:w-[33vw] h-[60vh] lg:h-[80vh] rounded-[15px] pb-[5rem] mt-[2%];
 }
 .accessibility input,
 .travel input,
@@ -1316,13 +1346,13 @@ footer img {
 
 .dash_aside,
 .mobile_dash_asides {
-  @apply max-w-[60vw] mt-[13%]  lg:w-[19%] h-[100%] lg:h-[90%] ml-[1rem] rounded-[15px] lg:mt-[4%] text-[gray] fixed  bg-[white] z-[1] border-[1px];
+  @apply ml-[1rem] rounded-[15px] lg:mt-[4%] text-[gray] fixed  bg-[white] z-[1] border-[1px];
 }
 .dash_aside {
-  @apply hidden lg:flex flex-col;
+  @apply max-w-[60vw] mt-[4%]  lg:w-[19%] h-[100%] lg:h-[90%] hidden lg:flex flex-col;
 }
 .mobile_dash_asides {
-  @apply flex flex-col lg:hidden;
+  @apply max-w-[15rem] mt-[13%]  lg:w-[19%] h-[88%] lg:h-[90%] flex flex-col lg:hidden;
 }
 .dash_aside img {
   width: 1.5rem;
@@ -1341,16 +1371,13 @@ footer img {
   padding: 1rem 1rem;
 }
 .statusManager img {
-  @apply w-[30%] h-[80%] object-cover border-[2px] border-[pink] rounded-[50%];
+  @apply w-[35%] h-[80%] object-cover border-[2px] border-[pink] rounded-[50%];
 }
 .dash {
-  display: flex;
-  flex-direction: column;
-  gap: 0.35rem;
-  margin-top: 1rem;
+  @apply flex flex-col gap-[0.35rem] mt-[1rem];
 }
 .dash div {
-  @apply w-[90%] flex  flex-row gap-3  items-center ml-[1rem] lg:gap-[1.5rem] py-[0.75rem] lg:px-[2rem] cursor-pointer  hover:bg-[#5e72e4] hover:text-[white] rounded-[10px] font-serif font-bold;
+  @apply w-[90%] flex  flex-row gap-[1.7rem]  items-center ml-[0.75rem] lg:gap-[1.5rem] py-[0.75rem] lg:px-[2rem] cursor-pointer  hover:bg-[#5e72e4] hover:text-[white] rounded-[10px] font-serif font-bold pl-[1.3rem];
 }
 .mainClass {
   @apply lg:w-[78vw]  mt-[20%] lg:mt-[0px] lg:relative lg:ml-[17rem];
@@ -1366,7 +1393,7 @@ footer img {
 }
 .WrapperContainer div {
   cursor: pointer;
-  @apply w-[90%] h-[7rem] my-[0.5rem] lg:w-[100%] lg:h-[8rem] ml-[5%] lg:ml-[0px] rounded-[15px] lg:my-[1rem] bg-[#ffffff] flex  lg:flex-row justify-around items-center text-[gray]  font-bold;
+  @apply w-[90%] h-[7rem] my-[1rem] lg:w-[100%] lg:h-[8rem] ml-[5%] lg:ml-[0px] rounded-[20px] lg:my-[1rem] bg-[#ffffff] flex  lg:flex-row justify-around items-center text-[gray]  font-bold;
 }
 
 .WrapperContainer div span {
@@ -1407,6 +1434,14 @@ footer img {
   object-fit: cover;
   border-radius: 15px;
   @apply hidden  lg:flex;
+}
+.Image {
+  margin-top: 0.5rem;
+  background-image: url("https://media.istockphoto.com/id/1047001986/photo/business-strategy.jpg?b=1&s=170667a&w=0&k=20&c=deNq0aMRx3JkQ3UtFffIewUHEayUtpJH0DXLIDprxrk=");
+  background-position: center;
+  background-size: cover;
+  border-radius: 15px;
+  @apply hidden w-[26vw] h-auto lg:flex;
 }
 .modal {
   @apply w-[100%] h-[75vh] lg:w-[100%] lg:h-[100vh] flex  flex-row  justify-center  items-center  mt-[10%]  lg:mt-[0px];
@@ -1550,7 +1585,7 @@ nav i {
   @apply font-serif font-bold text-white;
 }
 .productUpdateForm {
-  @apply w-[90%] h-[100%] mt-[20%] md:mt-[15%] lg:mt-[4px] mb-[5%] lg:w-[40%] lg:h-[95vh] flex  flex-col justify-center items-center  gap-[0.5rem];
+  @apply w-[90%] h-[100%] mt-[22%] md:mt-[15%] lg:mt-[4px] mb-[5%] lg:w-[40%] lg:h-[95vh] flex  flex-col justify-center items-center  lg:gap-[0.5rem];
 }
 .row {
   @apply flex  flex-row-reverse;
@@ -1579,9 +1614,7 @@ nav i {
 .googlepay {
   @apply w-[100%] h-[100vh] flex flex-col justify-center items-center;
 }
-/* .toogle_Nav{
-  @apply  
-} */
+
 .menuBar {
   @apply w-[2rem] h-[1.8rem]  fill-[black];
 }
@@ -1592,10 +1625,10 @@ nav i {
   @apply w-[5rem] h-[1.5rem];
 }
 .mobile_nav {
-  @apply min-w-[100vw] flex flex-row  justify-around  gap-[35%] items-center py-[0.5rem] bg-[white] z-[1];
+  @apply min-w-[100vw] flex flex-row  justify-around  gap-[55%] items-center py-[0.5rem] bg-[white] z-[1];
 }
 .mobile_bar {
-  @apply min-w-[65vw] flex flex-row  justify-between  py-[0.5rem] items-center bg-[teal]  z-[1];
+  @apply min-w-[65vw] flex flex-row  justify-between  py-[0.5rem] items-center bg-[teal] z-[1];
 }
 .mobile_navs {
   background-color: rgb(0, 0, 0, 0.9);
@@ -1626,4 +1659,79 @@ nav i {
 }
 .tableDiv {
   @apply w-[100%] flex  flex-row gap-[2.3rem]  text-[#5e72e4]  lg:text-[1.5rem]  lg:justify-around font-serif  font-bold;
+}
+.usersContainer {
+  @apply w-[100%] bg-[purple]   h-[300vh];
+}
+.user_col {
+  @apply pt-[7%];
+}
+.users {
+  @apply w-[100%] bg-[lightgray];
+}
+.mainBody {
+  @apply w-[80%] h-[70vh] lg:ml-[20%] lg:mt-[0px];
+}
+.profile {
+  @apply flex flex-col justify-center items-center lg:flex-row w-[95vw] lg:w-[97%]  h-auto gap-[2rem];
+}
+.profileForm {
+  @apply flex flex-col lg:flex-row justify-center items-center lg:w-[65%] h-auto mt-[15rem] ml-[2%] bg-[white] rounded-[20px];
+}
+.profileForm form {
+  @apply lg:w-[90%] mx-[2%] my-[5%] bg-[white];
+}
+.profileForm h6 {
+  @apply my-[1rem];
+}
+.formDiv label,
+.contactInfo label,
+.contactContainer label {
+  @apply text-[0.85rem] text-[#3c4e6d] font-serif font-bold;
+}
+.formDiv input {
+  @apply w-[100%] lg:w-[17.8rem] py-[0.35rem] my-[0.25rem] outline-0 border-[1px] rounded-[10px];
+}
+
+.formDiv {
+  @apply w-[100%] flex  flex-row gap-[1rem];
+}
+.formDiv div,
+.contactInfo div {
+  @apply flex flex-col;
+}
+.contactContainer {
+  @apply flex  flex-col gap-[0.5rem];
+}
+
+.contactInfo {
+  @apply w-[100%] gap-[0.5rem] inline-flex;
+}
+.contactContainer input {
+  @apply w-[100%] outline-0 border-[1px] rounded-[10px] py-[0.45rem] my-[0.5rem];
+}
+.userInfo {
+  @apply flex  flex-row;
+}
+.profileImage {
+  @apply w-[80%] lg:w-[32%] h-[80vh] bg-[white] rounded-[15px] ml-[2%];
+}
+.myPics {
+  background-image: url("https://kwarastate.gov.ng/wp-content/uploads/Screen-Shot-2021-12-17-at-11.52.18-PM.jpeg");
+  background-size: cover;
+  background-position: center;
+  border-radius: 15px 15px 0px 0px;
+  @apply flex  flex-col  justify-center items-center w-[100%] h-[30vh];
+}
+.myPics img {
+  @apply mt-[50%] w-[33%] h-[60%] rounded-[50%] border-[white] border-[3px];
+}
+.location {
+  @apply animate-bounce mt-[1rem] w-[25px] h-[25px] fill-[#3c4e6d];
+}
+.scan {
+  @apply w-[75px] h-[10px] animate-ping bg-[orange] rounded-[100%] mb-[2%];
+}
+.userDetail {
+  @apply flex flex-col justify-center items-center mt-[20%];
 }

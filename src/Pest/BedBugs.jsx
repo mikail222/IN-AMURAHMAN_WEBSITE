@@ -4,18 +4,8 @@ import Footer from "../Footer";
 const BedBugs = () => {
   return (
     <div>
-      <div
-        style={{
-          display: "flex",
-          flexDirection: "row",
-          gap: "4rem",
-          width: "98%",
-          marginLeft: "2rem",
-          marginTop: "5rem",
-        }}
-        className="bedbugs"
-      >
-        <main style={{ width: "50%" }}>
+      <div className="bedbugs">
+        <main>
           <h4>Bed bugs</h4>{" "}
           <p>
             are insects from the genus Cimex that feed on blood, usually at
@@ -106,16 +96,7 @@ const BedBugs = () => {
             </li>
           </ul>
         </main>
-        <aside style={{ alignItems: "center", width: "40%" }}>
-          <div className="clueVideo">
-            <video
-              src="https://youtu.be/ToeWrGTGOOI?t=46"
-              width="250"
-              controls
-              muted
-              autoPlay
-            ></video>
-          </div>
+        <aside>
           <div className="frame">
             <img
               src="https://upload.wikimedia.org/wikipedia/commons/thumb/8/87/Bed_bug%2C_Cimex_lectularius.jpg/1200px-Bed_bug%2C_Cimex_lectularius.jpg"

@@ -31,7 +31,7 @@ const Show_Room = ({
           {checkList.map(({ img, product_name, id }, i) => (
             <div key={i} data-aos="fade-down">
               <Link className="first" to={`Product_detail/${id}`}>
-                <i>Order Now</i>
+                <i>Buy Now</i>
                 <img className="imgs" src={img} alt="" />
                 <p>{product_name}</p>
               </Link>

@@ -5,17 +5,8 @@ import Footer from "../Footer";
 const Cockroaches = () => {
   return (
     <div>
-      <div
-        style={{
-          display: "flex",
-          flexDirection: "row",
-          gap: "5rem",
-          width: "98%",
-          marginLeft: "2rem",
-          marginTop: "5rem",
-        }}
-      >
-        <main style={{ width: "50%" }} className="cockroache">
+      <div className="cockroaches">
+        <main className="cockroache">
           <h2>Cockroaches</h2>
           <p>
             Cockroaches are one of the oldest living insects according to fossil
@@ -140,7 +131,7 @@ const Cockroaches = () => {
             Termination
           </p>
         </main>
-        <aside style={{ alignItems: "center", width: "40%" }}>
+        <aside>
           <div className="clueVideo">
             <iframe
               width="100%"

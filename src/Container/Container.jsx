@@ -47,6 +47,7 @@ import Payment_Method from "../Accessibility/Payment_Method";
 import Googlepay from "../Accessibility/Googlepay";
 import Mobile_nav from "../Mobile_Nav";
 import Booking from "../service/Booking";
+import Users_Dashboard from "../Accessibility/Users_Dashboard/Users_Dashboard";
 
 const Container = ({ user, setShowNav, showNav }) => {
   const [findProduct, setFindProduct] = useState("");
@@ -91,7 +92,7 @@ const Container = ({ user, setShowNav, showNav }) => {
               />
             }
           />
-
+          <Route path="/Users_Dashboard" element={<Users_Dashboard />} />
           <Route path="/Googlepay" element={<Googlepay />} />
           <Route path="/Booking" element={<Booking />} />
 

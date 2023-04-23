@@ -4,18 +4,8 @@ import Footer from "../Footer";
 const Termites = () => {
   return (
     <div>
-      <div
-        style={{
-          display: "flex",
-          flexDirection: "row",
-          gap: "5rem",
-          width: "98%",
-          marginLeft: "2rem",
-          marginTop: "5rem",
-        }}
-        className="termites"
-      >
-        <main style={{ width: "50%" }}>
+      <div className="termites">
+        <main>
           <p>
             Termites Contrary to popular opinions, termites are cousins to
             Cockroaches not ants. According to fossil records and phylogenetic
@@ -116,17 +106,7 @@ const Termites = () => {
             to get rid of already noticed Termite infestation.
           </p>
         </main>
-        <aside style={{ alignItems: "center", width: "40%" }}>
-          <div className="clueVideo">
-            <iframe
-              width="90%"
-              height="480"
-              src="https://www.youtube.com/embed/d8Lsy_MTGzc"
-              // title="2019 Termite Always On Ads"
-              allow=" autoplay"
-              style={{ width: "100%", marginBottom: "3rem" }}
-            ></iframe>
-          </div>
+        <aside>
           <div className="frame">
             <img
               src="https://www.collinsdictionary.com/images/full/termite_303633596.jpg"

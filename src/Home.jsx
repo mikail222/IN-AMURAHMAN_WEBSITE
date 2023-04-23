@@ -116,7 +116,7 @@ const Home = ({ productUpdate }) => {
           {productUpdate.map(({ img, product_name }, i) => (
             <div key={i} style={{ margin: "1rem 0px" }}>
               <Link className="first">
-                <i>Order Now</i>
+                <i>Buy Now</i>
                 <img className="imgs" src={img} alt="" />
                 <p>{product_name}</p>
               </Link>

@@ -49,21 +49,16 @@ const Event_maintainance = ({ checkList }) => {
         "https://i.pinimg.com/736x/89/79/11/897911233779da7ed3c49010e125f950.jpg",
       name: "Portable Grass Cutter",
     },
-    // {
-    //   images: "",
-    // },
   ];
 
   return (
     <div>
       <div className="event">
-        <main style={{ width: "63%", padding: "2rem", marginTop: "3rem" }}>
-          {/* <img src={eventImg} alt="" className="eventimg" /> */}
+        <main>
           <div className="event_managemnt">
             <h4>Event Management Service</h4>
           </div>
           <div>
-            {" "}
             <p>
               Experience has shown how difficult it is to respond simutaniously
               to many need in an event and this has mirror the level of
@@ -86,26 +81,18 @@ const Event_maintainance = ({ checkList }) => {
               the facility including carpet care, tile floor care, restroom
               cleaning, kitchen cleaning, exterior building cleanup, assist in
               supervising some parttime workers engaged in maintenance, and
-              other duties as assigned.{" "}
+              other duties as assigned.
             </p>
           </div>
         </main>
-        <aside style={{ width: "25%", marginLeft: "5rem", marginTop: "3rem" }}>
-          <Link
-            style={{
-              marginTop: "5rem",
-              textAlign: "center",
-              fontSize: "1.4rem",
-              fontFamily: "serif",
-            }}
-            to="/Show_Room"
-          >
-            <p> Check out for our Products</p>
+        <aside>
+          <Link to="/Show_Room">
+            <p className="ads_Link"> Check out for our Products</p>
           </Link>
           {checkList.slice(3, 6).map(({ img, product_name, id }, i) => (
-            <div style={{ marginTop: "0.5rem" }} key={i}>
+            <div className="event_ads" key={i}>
               <Link className="first" to={`Product_detail/${id}`}>
-                <i>Order Now</i>
+                <i>Buy Now</i>
                 <img className="first_class_img" src={img} alt="" />
                 <p>{product_name}</p>
               </Link>
@@ -115,7 +102,13 @@ const Event_maintainance = ({ checkList }) => {
       </div>
       <div>
         <div style={{ marginTop: "2.5rem", width: "100%" }}>
-          <h4 style={{ textAlign: "center" }}>
+          <h4
+            style={{
+              textAlign: "center",
+              marginBottom: "1rem",
+              padding: "1rem",
+            }}
+          >
             We also hire out cleaning machines and Public service facilities
           </h4>
           <div className="event_rent">

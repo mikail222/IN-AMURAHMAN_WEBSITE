@@ -25,6 +25,7 @@ const Dashboard = ({ setShowNav, productUpdate }) => {
   const [drawer, setDrawer] = useState(true);
 
   const currentUser = auth.currentUser;
+  console.log(currentUser);
 
   useEffect(() => {
     const collectionOfUser = collection(db, "Admin");
@@ -57,9 +58,6 @@ const Dashboard = ({ setShowNav, productUpdate }) => {
     };
     getUser();
   }, [currentUser]);
-  // console.log(productUpdate.map((m, id) => m.price));
-  console.log(sales);
-  console.log(totalamount);
   return (
     <div className="parentContainer">
       <div className="dashBoardDiv">

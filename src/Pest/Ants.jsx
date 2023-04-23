@@ -5,19 +5,8 @@ import Footer from "../Footer";
 const Ants = () => {
   return (
     <div>
-      <div
-        style={{
-          display: "flex",
-          flexDirection: "row",
-          gap: "4rem",
-          width: "98%",
-          marginLeft: "2rem",
-          marginTop: "5rem",
-        }}
-        className="ants"
-      >
-        <main style={{ width: "50%" }}>
-          {" "}
+      <div className="ants">
+        <main>
           <p>
             According to terro, There are more than 10,000 known species of ants
             living throughout the world such as sugar ants, carpenter ants,
@@ -93,10 +82,7 @@ const Ants = () => {
             following numbers:
           </p>
         </main>
-        <aside style={{ alignItems: "center", width: "40%" }}>
-          <div className="clueVideo">
-            <video src="" width="250" controls muted autoPlay></video>
-          </div>
+        <aside>
           <div className="frame">
             <img src={ant} alt="" />
           </div>

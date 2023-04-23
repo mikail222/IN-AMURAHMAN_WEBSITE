@@ -4,18 +4,8 @@ import Footer from "../Footer";
 const Rodents = () => {
   return (
     <div>
-      <div
-        style={{
-          display: "flex",
-          flexDirection: "row",
-          gap: "5rem",
-          width: "98%",
-          marginLeft: "2rem",
-          marginTop: "5rem",
-        }}
-        className="rodents"
-      >
-        <main style={{ width: "50%" }}>
+      <div className="rodents">
+        <main>
           <h2> Rodents</h2>
           <p>
             Rodents are small mammals. Interestingly, they are the largest group
@@ -204,10 +194,7 @@ const Rodents = () => {
             You will need help catching them and freeing your home.
           </li>
         </main>
-        <aside style={{ alignItems: "center", width: "40%" }}>
-          <div className="clueVideo">
-            <video src="" width="250" controls muted autoPlay></video>
-          </div>
+        <aside>
           <div className="frame">
             <img
               src="https://upload.wikimedia.org/wikipedia/commons/thumb/b/bd/Apodemus_sylvaticus_bosmuis.jpg/310px-Apodemus_sylvaticus_bosmuis.jpg"

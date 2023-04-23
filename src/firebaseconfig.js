@@ -11,6 +11,7 @@ import { getStorage } from "firebase/storage";
 //   messagingSenderId: import.meta.env.VITE_FIREBASE_MESSAGE_SENDER_ID,
 //   appId: import.meta.env.VITE_FIREBASE_APPID,
 // };
+
 export const app = initializeApp(firebaseConfig);
 export const db = getFirestore(app);
 export const auth = getAuth();

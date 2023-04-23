@@ -5,18 +5,8 @@ import Footer from "../Footer";
 const Spider = () => {
   return (
     <div>
-      <div
-        style={{
-          display: "flex",
-          flexDirection: "row",
-          gap: "5rem",
-          width: "98%",
-          marginLeft: "2rem",
-          marginTop: "5rem",
-        }}
-        className="spider"
-      >
-        <main style={{ width: "50%" }}>
+      <div className="spider">
+        <main>
           {" "}
           <p>
             Spiders are one of the most common household pests and ranks seventh
@@ -151,10 +141,7 @@ const Spider = () => {
             cleaning up after them every morning, all that can be such a pain.
           </p>
         </main>
-        <aside style={{ alignItems: "center", width: "40%" }}>
-          <div className="clueVideo">
-            <video src="" width="250" controls muted autoPlay></video>
-          </div>
+        <aside>
           <div className="frame">
             <img src={spiders} alt="" />
           </div>
