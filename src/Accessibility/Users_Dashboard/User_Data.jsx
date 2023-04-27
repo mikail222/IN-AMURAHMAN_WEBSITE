@@ -6,6 +6,7 @@ import {
 } from "@devexpress/dx-react-chart";
 import { Paper } from "@material-ui/core";
 import React from "react";
+import User_Column from "./User_Column";
 
 const User_Data = () => {
   const data = [
@@ -17,6 +18,7 @@ const User_Data = () => {
   ];
   return (
     <div>
+      <User_Column />
       <div className="analytics">
         <div className="field">
           <aside className="graphField">

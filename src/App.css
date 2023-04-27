@@ -230,13 +230,16 @@
 .drainAdvert img {
   @apply w-[100%];
 }
+
 .trainning {
-  margin-top: 5rem;
-  @apply w-[90%] flex flex-row;
+  @apply lg:w-[98%] flex flex-col justify-center items-center lg:flex-row mt-[3rem] mx-[1%] lg:gap-[2rem];
 }
 
 .trainning main {
-  @apply ml-[2rem];
+  @apply lg:w-[70%];
+}
+.trainning aside {
+  @apply flex flex-col lg:mb-[35%];
 }
 
 .trainning p,
@@ -263,7 +266,7 @@
   @apply w-[100%];
 }
 .trainning img {
-  @apply w-[100%] h-[60vh] flex flex-col  justify-center items-center mt-[5rem] ml-[1rem];
+  @apply w-[100%] h-[35vh] lg:h-[60vh] flex flex-col  justify-center items-center mt-[1rem];
 }
 .ads {
   @apply lg:text-[1.3rem] font-serif font-bold lg:mb-[1rem] mt-[10%];
@@ -1363,11 +1366,10 @@ footer img {
   height: 20vh;
   justify-content: center;
   align-items: center;
-  border-bottom: 2px solid red;
   border-radius: 15px 15px 0px 0px;
   gap: 0.75rem;
-  color: white;
-  background-color: purple;
+  color: purple;
+  border-bottom: 4px double purple;
   padding: 1rem 1rem;
 }
 .statusManager img {
@@ -1724,7 +1726,7 @@ nav i {
   @apply flex  flex-col  justify-center items-center w-[100%] h-[30vh];
 }
 .myPics img {
-  @apply mt-[50%] w-[33%] h-[60%] rounded-[50%] border-[white] border-[3px];
+  @apply mt-[70%] w-[7rem] h-[60vh] rounded-[100%] border-[white] border-[3px];
 }
 .location {
   @apply animate-bounce mt-[1rem] w-[25px] h-[25px] fill-[#3c4e6d];
@@ -1733,5 +1735,14 @@ nav i {
   @apply w-[75px] h-[10px] animate-ping bg-[orange] rounded-[100%] mb-[2%];
 }
 .userDetail {
-  @apply flex flex-col justify-center items-center mt-[20%];
+  @apply flex flex-col justify-center items-center mt-[30%];
+}
+.bg {
+  @apply bg-[teal];
+}
+.btn {
+  @apply border-[1px] text-[#3c4e6d] hover:bg-[#5e72e4] hover:text-[white] p-[0.20rem] rounded-[5px] px-[0.5rem] font-serif;
+}
+.uploadBtn {
+  @apply flex flex-row  justify-between items-center  gap-[3rem];
 }

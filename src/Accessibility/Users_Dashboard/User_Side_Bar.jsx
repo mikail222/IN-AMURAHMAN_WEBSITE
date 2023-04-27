@@ -46,15 +46,15 @@ const User_Side_Bar = () => {
         </div>
       </div>
       <div className="dash">
-        <div>
+        <div onClick={() => navigate("User_Data")}>
           <MdMonitor className="dashboardIcon" />
           <i>Dashboard</i>
         </div>
-        <div>
+        <div onClick={() => navigate("User_Profile")}>
           <CgProfile className="dashboardIcon" />
           <i>Profile</i>
         </div>
-        <div>
+        <div onClick={() => navigate("")}>
           <GrUpdate />
           <i>Product update</i>
         </div>
@@ -62,7 +62,7 @@ const User_Side_Bar = () => {
           <AiOutlineLogout className="dashboardIcon" />
           <i>Log Out</i>
         </div>
-        <div>
+        <div onClick={() => navigate("")}>
           <MdOutlineClear className="menuBar " title="dashboardIcon" />{" "}
           <i>Back</i>
         </div>

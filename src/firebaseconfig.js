@@ -11,7 +11,15 @@ import { getStorage } from "firebase/storage";
 //   messagingSenderId: import.meta.env.VITE_FIREBASE_MESSAGE_SENDER_ID,
 //   appId: import.meta.env.VITE_FIREBASE_APPID,
 // };
-
+const firebaseConfig = {
+  apiKey: "AIzaSyBwKn7Bi2k2qjDbn18YuD172HWxl9KSGPY",
+  authDomain: "irehv-b4c29.firebaseapp.com",
+  projectId: "irehv-b4c29",
+  storageBucket: "irehv-b4c29.appspot.com",
+  messagingSenderId: "155266417769",
+  appId: "1:155266417769:web:d0de054110fadf1e70cef8",
+  measurementId: "G-KKW970VETL",
+};
 export const app = initializeApp(firebaseConfig);
 export const db = getFirestore(app);
 export const auth = getAuth();

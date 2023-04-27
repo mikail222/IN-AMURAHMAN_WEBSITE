@@ -1,7 +1,7 @@
 import { collection, getDocs } from "firebase/firestore";
 import { useEffect, useState } from "react";
 import { auth, db } from "../../firebaseconfig";
-import { useNavigate } from "react-router-dom";
+import { Route, Routes, useNavigate } from "react-router-dom";
 import Data_analysis_page from "./Data_analysis_page";
 import User_Table from "./User_Table";
 import Side_Bar from "./Side_Bar";
@@ -84,23 +84,36 @@ const Dashboard = ({ setShowNav, productUpdate }) => {
               title="Menu Bar"
               onClick={(e) => setDrawer(false)}
             />
-            {!dashboardInfo ? (
-              <Data_analysis_page
-                user={user}
-                booking={booking}
-                enquiry={enquiry}
-                consult={consult}
-                productUpdate={productUpdate}
-                sales={sales}
-                totalamount={sales}
+            {/* <Data_analysis_page
+              user={user}
+              booking={booking}
+              enquiry={enquiry}
+              consult={consult}
+              productUpdate={productUpdate}
+              sales={sales}
+              totalamount={sales}
+            /> */}
+            <Routes>
+              <Route
+                path="Data_analysis_page"
+                element={
+                  <Data_analysis_page
+                    user={user}
+                    booking={booking}
+                    enquiry={enquiry}
+                    consult={consult}
+                    productUpdate={productUpdate}
+                    sales={sales}
+                    totalamount={sales}
+                  />
+                }
               />
-            ) : userList ? (
-              <User_Table user={user} onChange={() => setShowNav(false)} />
-            ) : productUpdate ? (
-              <Product_UpdateForm product_detail={product_detail} />
-            ) : (
-              ""
-            )}
+              <Route path="User_Table" element={<User_Table user={user} />} />
+              <Route
+                path="Product_UpdateForm"
+                element={<Product_UpdateForm product_detail={product_detail} />}
+              />
+            </Routes>
           </main>
         </div>
       </div>

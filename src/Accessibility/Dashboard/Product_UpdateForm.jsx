@@ -119,7 +119,7 @@ const Product_UpdateForm = ({ product_detail }) => {
         <div className="productSidebg">
           <div>
             <h3>"Attention is the new currency"</h3>
-            <p className="texts">
+            <p className="text">
               The more effortless the writing looks, the more effort the writer
               actually put into the process.
             </p>

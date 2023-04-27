@@ -63,7 +63,7 @@ const User_Mobile_Bar = ({ setDrawer }) => {
             <AiOutlineLogout className="dashboardIcon" />
             <i>Log Out</i>
           </div>
-          <div onClick={(e) => setDrawer(true)}>
+          <div onClick={(e) => setDrawer(false)}>
             <MdOutlineClear className="menuBar " title="dashboardIcon" />{" "}
             <i>Back</i>
           </div>

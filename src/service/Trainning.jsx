@@ -26,7 +26,7 @@ const Trainning = () => {
   return (
     <div>
       <div className="trainning">
-        <main style={{ width: "75%" }}>
+        <main>
           <img src={trainImg} alt="" />
           <h2 style={{ marginTop: "2rem" }}> Training Service Program </h2>
           <p style={{ marginTop: "2rem" }}>
@@ -60,14 +60,10 @@ const Trainning = () => {
             understanding.
           </p>
         </main>
-        <aside style={{ width: "30%" }}>
-          <div style={{ width: "30%", marginLeft: "3rem" }}>
-            <h4 style={{ marginTop: "2rem" }}>Enquiry</h4>
-            <form
-              onChange={(e) => handleChange(e)}
-              style={{ height: "80%" }}
-              className="form"
-            >
+        <aside>
+          <div>
+            <h4>Enquiry</h4>
+            <form onChange={(e) => handleChange(e)} className="form">
               <label htmlFor="">Full Name</label>
               <input type="text" name="fullName" required />
               <label htmlFor="">Email</label>

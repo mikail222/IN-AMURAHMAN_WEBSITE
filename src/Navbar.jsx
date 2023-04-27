@@ -132,7 +132,7 @@ const Navbar = ({ navigate, setShowNav }) => {
                         <Link to="/Dashboard">Dashboard</Link>
                       </li>
                       <li>
-                        <Link to="/Payment_Method" className="row">
+                        <Link to="Users_Dashboard/User_Profile" className="row">
                           <img
                             src={currentUser?.photoURL}
                             alt=""

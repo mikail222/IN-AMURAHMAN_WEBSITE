@@ -99,25 +99,26 @@ const Sign_up = ({ navigate, user }) => {
 
       setLoggedInUser(res.user);
       console.log(res.user);
+      navigate("/User_modal");
     } catch (err) {
       setError(err.message);
     }
   };
-  useEffect(() => {
-    if (loggedInUser) {
-      console.log({ loggedInUser });
-      const currentUserDetails = user.find(
-        (m) => m.email === loggedInUser?.email
-      );
-      updateProfile(currentUser, {
-        displayName:
-          currentUserDetails?.first + " " + currentUserDetails?.LastName,
-        photoURL: currentUserDetails?.img,
-      }).then(() => {
-        navigate("/User_modal");
-      });
-    }
-  }, [loggedInUser]);
+  // useEffect(() => {
+  //   if (loggedInUser) {
+  //     console.log({ loggedInUser });
+  //     const currentUserDetails = user.find(
+  //       (m) => m.email === loggedInUser?.email
+  //     );
+  //     updateProfile(currentUser, {
+  //       displayName:
+  //         currentUserDetails?.first + " " + currentUserDetails?.LastName,
+  //       photoURL: currentUserDetails?.img,
+  //     }).then(() => {
+  //
+  //     });
+  //   }
+  // }, [loggedInUser]);
   return (
     <div className=" sign_up_form_container ">
       <p className="text ">CREATE ACCOUNT</p>

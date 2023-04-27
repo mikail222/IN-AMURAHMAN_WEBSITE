@@ -27,7 +27,7 @@ const Update = ({ navigate }) => {
         alert(error.message);
       });
 
-    console.log(user);
+    console.log(photoURL);
   };
   const handleDeleteUser = () => {
     deleteUser(user)

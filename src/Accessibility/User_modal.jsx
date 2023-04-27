@@ -2,7 +2,7 @@ import { async } from "@firebase/util";
 import { onAuthStateChanged, signOut } from "firebase/auth";
 import React, { useEffect } from "react";
 import { useNavigate } from "react-router-dom";
-import { auth } from "../firebaseconfig";
+import { auth, db } from "../firebaseconfig";
 import irehv from "../asset/irehv-low-resolution-logo-white-on-transparent-background.png";
 
 const User_modal = ({ user, setShowNav }) => {
@@ -20,7 +20,10 @@ const User_modal = ({ user, setShowNav }) => {
       });
   };
   const handleNavigation = async () => {
-    if (currentUser.emailVerified == true) {
+    if (!currentUser) {
+      navigate("/Users_Dashboard");
+    } else {
+      navigate("/Dashboard");
     }
   };
   return (
@@ -43,10 +46,7 @@ const User_modal = ({ user, setShowNav }) => {
             <button type="button" onClick={() => navigate("/Update")}>
               Update Profile
             </button>
-            <button
-              type="button"
-              onClick={() => navigate("/Users_Dashboard") && setShowNav(false)}
-            >
+            <button type="button" onClick={handleNavigation}>
               Continue
             </button>
             <button type="button" onClick={handleLogOut}>

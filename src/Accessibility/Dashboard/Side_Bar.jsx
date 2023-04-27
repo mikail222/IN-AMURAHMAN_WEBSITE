@@ -49,17 +49,15 @@ const Side_Bar = ({
         </div>
       </div>
       <div className="dash">
-        <div
-          onClick={() => setDashboardInfo(true) || setProductUpdateInfo(false)}
-        >
+        <div onClick={() => navigate("Data_analysis_page")}>
           <MdMonitor className="dashboardIcon" />
           <i>Dashboard</i>
         </div>
-        <div onClick={() => setUserList(true) || setDashboardInfo(false)}>
+        <div onClick={() => navigate("User_Table")}>
           <FcCalendar className="dashboardIcon" />
           <i>User Table</i>
         </div>
-        <div onClick={() => setProductUpdateInfo(true) || setUserList(false)}>
+        <div onClick={() => navigate("Product_UpdateForm")}>
           <GrUpdate />
           <i>Product update</i>
         </div>

@@ -83,7 +83,7 @@ const Container = ({ user, setShowNav, showNav }) => {
       <div className="App">
         <Routes>
           <Route
-            path="/Dashboard"
+            path="/Dashboard/*"
             element={
               <Dashboard
                 user={user}
@@ -92,7 +92,7 @@ const Container = ({ user, setShowNav, showNav }) => {
               />
             }
           />
-          <Route path="/Users_Dashboard" element={<Users_Dashboard />} />
+          <Route path="/Users_Dashboard/*" element={<Users_Dashboard />} />
           <Route path="/Googlepay" element={<Googlepay />} />
           <Route path="/Booking" element={<Booking />} />
 
