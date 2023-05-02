@@ -12,18 +12,20 @@ const Users_Dashboard = () => {
   return (
     <div className="usersContainer">
       <div className="users">
-        {!drawer && <User_Mobile_Bar setDrawer={setDrawer} />}
-        <User_Side_Bar />
-        <div className="mainBody">
-          <BiMenu
-            className="menuBar "
-            title="Menu Bar"
-            onClick={(e) => setDrawer(true)}
-          />
-          <Routes>
-            <Route path="User_Data" element={<User_Data />} />
-            <Route path="User_Profile" element={<User_Profile />} />
-          </Routes>
+        <div className="userOverlay">
+          {!drawer && <User_Mobile_Bar setDrawer={setDrawer} />}
+          <User_Side_Bar />
+          <div className="mainBody">
+            <BiMenu
+              className="menuBar "
+              title="Menu Bar"
+              onClick={(e) => setDrawer(true)}
+            />
+            <Routes>
+              <Route path="User_Data" element={<User_Data />} />
+              <Route path="User_Profile" element={<User_Profile />} />
+            </Routes>
+          </div>
         </div>
       </div>
     </div>

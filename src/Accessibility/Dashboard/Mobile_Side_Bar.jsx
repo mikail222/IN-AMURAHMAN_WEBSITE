@@ -9,9 +9,7 @@ import { auth } from "../../firebaseconfig";
 
 const Mobile_Side_Bar = ({
   currentUser,
-  setUserList,
-  setDashboardInfo,
-  setProductUpdateInfo,
+
   setDrawer,
 }) => {
   const navigate = useNavigate();
@@ -50,17 +48,15 @@ const Mobile_Side_Bar = ({
         </div>
       </div>
       <div className="dash">
-        <div
-          onClick={() => setDashboardInfo(true) || setProductUpdateInfo(false)}
-        >
+        <div onClick={() => navigate("Data_analysis_page")}>
           <MdMonitor className="dashboardIcon" />
           <i>Dashboard</i>
         </div>
-        <div onClick={() => setUserList(true) || setDashboardInfo(false)}>
+        <div onClick={() => navigate("User_Table")}>
           <FcCalendar className="dashboardIcon" />
           <i>User Table</i>
         </div>
-        <div onClick={() => setProductUpdateInfo(true) || setUserList(false)}>
+        <div onClick={() => navigate("Product_UpdateForm")}>
           <GrUpdate />
           <i>Product update</i>
         </div>
@@ -68,7 +64,7 @@ const Mobile_Side_Bar = ({
           <AiOutlineLogout className="dashboardIcon" />
           <i>Log Out</i>
         </div>
-        <div onClick={(e) => setDrawer(true)}>
+        <div onClick={() => setDrawer(true)}>
           <MdOutlineClear className="menuBar " title="dashboardIcon" />{" "}
           <i>Back</i>
         </div>

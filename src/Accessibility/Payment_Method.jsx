@@ -37,7 +37,6 @@ const Payment_Method = ({ total, product_name, product_img }) => {
   useEffect(() => {
     AOS.init({ duration: 3000 });
   }, []);
-  console.log(payment);
   return (
     <div
       className="paymentUpdate"
@@ -94,7 +93,7 @@ const Payment_Method = ({ total, product_name, product_img }) => {
       <div className="productSidebg">
         <div>
           <h3>"Health is Wealth"</h3>
-          <p className="texts">
+          <p>
             The more effortless the hazard eradication looks, the more effort
             the conscious mind actually put into the process.
           </p>

@@ -62,7 +62,7 @@ const User_Side_Bar = () => {
           <AiOutlineLogout className="dashboardIcon" />
           <i>Log Out</i>
         </div>
-        <div onClick={() => navigate("")}>
+        <div onClick={() => navigate("User_Data")}>
           <MdOutlineClear className="menuBar " title="dashboardIcon" />{" "}
           <i>Back</i>
         </div>

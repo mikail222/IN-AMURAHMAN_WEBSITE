@@ -20,7 +20,7 @@ const User_modal = ({ user, setShowNav }) => {
       });
   };
   const handleNavigation = async () => {
-    if (!currentUser) {
+    if (currentUser) {
       navigate("/Users_Dashboard");
     } else {
       navigate("/Dashboard");

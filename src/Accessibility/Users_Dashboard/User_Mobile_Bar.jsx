@@ -46,16 +46,16 @@ const User_Mobile_Bar = ({ setDrawer }) => {
             </p>
           </div>
         </div>
-        <div className="dash">
+        <div className="dash" onClick={() => navigate("User_Data")}>
           <div>
             <MdMonitor className="dashboardIcon" />
             <i>Dashboard</i>
           </div>
-          <div>
+          <div onClick={() => navigate("User_Profile")}>
             <CgProfile className="dashboardIcon" />
             <i>Profile</i>
           </div>
-          <div>
+          <div onClick={() => navigate("")}>
             <GrUpdate />
             <i>Product update</i>
           </div>
@@ -63,8 +63,8 @@ const User_Mobile_Bar = ({ setDrawer }) => {
             <AiOutlineLogout className="dashboardIcon" />
             <i>Log Out</i>
           </div>
-          <div onClick={(e) => setDrawer(false)}>
-            <MdOutlineClear className="menuBar " title="dashboardIcon" />{" "}
+          <div onClick={() => setDrawer(false)}>
+            <MdOutlineClear className="menuBar " title="dashboardIcon" />
             <i>Back</i>
           </div>
         </div>

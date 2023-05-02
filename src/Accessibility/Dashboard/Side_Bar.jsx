@@ -7,12 +7,7 @@ import { useNavigate } from "react-router-dom";
 import { signOut } from "firebase/auth";
 import { auth } from "../../firebaseconfig";
 
-const Side_Bar = ({
-  currentUser,
-  setUserList,
-  setDashboardInfo,
-  setProductUpdateInfo,
-}) => {
+const Side_Bar = ({ currentUser, setDrawer }) => {
   const navigate = useNavigate();
   const handleLogOut = (e) => {
     e.preventDefault();
@@ -65,7 +60,7 @@ const Side_Bar = ({
           <AiOutlineLogout className="dashboardIcon" />
           <i>Log Out</i>
         </div>
-        <div>
+        <div onClick={() => navigate("Data_analysis_page")}>
           <MdOutlineClear className="menuBar " title="dashboardIcon" />{" "}
           <i>Back</i>
         </div>

@@ -16,7 +16,6 @@ const User_Profile = () => {
       [e.target.name]: e.target.value,
     };
     setProfileUpdate({ ...profileUpdate, ...newInput });
-    console.log(newInput);
   };
   const handleSubmit = async (e) => {
     e.preventDefault();
@@ -61,14 +60,12 @@ const User_Profile = () => {
         () => {
           getDownloadURL(uploadTask.snapshot.ref).then((downloadURL) => {
             setProfileUpdate({ ...profileUpdate, img: downloadURL });
-            // console.log(photoUrl);
           });
         }
       );
     };
     photoUrl && uploadfile();
   }, [photoUrl]);
-  console.log(profileUpdate);
   return (
     <div className="profile">
       <div className="profileForm">
@@ -76,7 +73,7 @@ const User_Profile = () => {
           <div className="uploadBtn">
             <h6>Edit Profile</h6>
             <button className="btn" onSubmit={(e) => handleSubmit(e)}>
-              Upload profile{" "}
+              Upload profile
             </button>
           </div>
           <h6>USER INFORMATION</h6>
@@ -149,7 +146,7 @@ const User_Profile = () => {
           {photoUrl ? (
             <img src={profileUpdate.img} alt="" className="bg" />
           ) : (
-            <img src={me?.photoURL} alt="" />
+            <img src={me?.photoURL} alt="" className="bg" />
           )}
           <div className="uploadBtn">
             <label htmlFor="fileInput" className=" btn">
@@ -171,3 +168,4 @@ const User_Profile = () => {
 };
 
 export default User_Profile;
+// https://ilorininnovationhub.com/wp-content/uploads/2020/12/facility_3.jpg

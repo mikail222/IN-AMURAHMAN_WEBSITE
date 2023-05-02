@@ -78,7 +78,7 @@ const Login = ({ navigate, user }) => {
           <label htmlFor="" className="label">
             Password
           </label>{" "}
-          <div className="flex flex-row  justify-around w-[80%]">
+          <div>
             {" "}
             <input
               type={passwordType}
