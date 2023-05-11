@@ -1,12 +1,6 @@
 import React, { useState } from "react";
 import Columns from "./Columns";
-import {
-  ArgumentAxis,
-  BarSeries,
-  Chart,
-  ValueAxis,
-} from "@devexpress/dx-react-chart";
-import { Paper } from "@material-ui/core";
+
 import Sales_Details from "./Sales_Details";
 import Post from "./Post";
 import Toggle_Buttons from "./Toggle_Buttons";
@@ -51,14 +45,14 @@ const Data_analysis_page = ({
       <div className="analytics">
         <div className="field">
           <aside className="graphField">
-            <Paper>
+            {/* <Paper>
               <Chart data={data}>
                 <ArgumentAxis />
                 <ValueAxis />
 
                 <BarSeries valueField="value" argumentField="argument" />
               </Chart>
-            </Paper>
+            </Paper> */}
           </aside>
         </div>
         <aside className="revenue"></aside>
