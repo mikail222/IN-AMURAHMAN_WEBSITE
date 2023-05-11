@@ -23,7 +23,7 @@ const Show_Room = ({
       <div className="show_room">
         <input
           type="text"
-          placeholder="Search desire your Product....."
+          placeholder="Search your desire  Product....."
           value={findProduct}
           onChange={handleChange}
         />

@@ -1,7 +1,7 @@
 .App {
   justify-content: center;
   align-items: center;
-  background-color: rgba(255, 255, 255, 0.5);
+  background-color: rgba(55, 205, 25, 0.2);
 }
 @media screen and (max-width: 480px) {
   .App {
@@ -13,7 +13,7 @@
 .nav {
   position: fixed;
   top: 0;
-  background-image: linear-gradient(to right, white, white, transparent, white);
+  background-image: linear-gradient(to right, white, transparent, white);
   @apply hidden md:flex lg:flex lg:flex-row justify-between w-[100%] z-[1] h-[3rem] items-center border-b-[1px];
 }
 
@@ -49,13 +49,31 @@
 .navs p:hover {
   @apply border-b-[1px] text-[blue];
 }
-
+.logo1 h1,
+.logo1 h2,
+.logo1 h4,
+.logo1 i {
+  text-shadow: 5px 6px 2px #0e4e97;
+}
 .logo1 {
-  background-image: url("https://raw.githubusercontent.com/creativetimofficial/public-assets/master/argon-dashboard-pro/assets/img/signup-cover.jpg");
-  background-position: top;
-  background-repeat: repeat;
+  background-position: center;
+  background-repeat: no-repeat;
   background-size: cover;
-  @apply lg:mt-[4%] w-[100%] h-[80vh] flex flex-col justify-center items-center text-center  text-white;
+  animation: image 40s infinite alternate;
+
+  @apply lg:mt-[4%] w-[100%] h-[90vh] flex flex-col justify-center items-center text-center  text-white;
+}
+
+@keyframes image {
+  0% {
+    background-image: url("https://unsplash.it/600/600");
+  }
+  50% {
+    background-image: url("https://raw.githubusercontent.com/creativetimofficial/public-assets/master/argon-dashboard-pro/assets/img/signup-cover.jpg");
+  }
+  100% {
+    background-image: url("https://unsplash.it/601/601");
+  }
 }
 
 @media screen and (max-width: 480px) {
@@ -78,16 +96,18 @@
 }
 
 .logo1 h1 {
-  @apply font-serif tracking-[5px];
+  @apply font-serif tracking-[8px] text-[4rem];
 }
 @media screen and (max-width: 480px) {
   .logo1 h1 {
     font-size: 2rem;
   }
 }
+
 .overlay {
-  background-color: rgba(05, 03, 05, 0.4);
-  @apply w-[100%] h-[45vh] lg:h-[80vh] flex flex-col justify-center items-center text-center;
+  /* border-radius: 100% 0px 0px 100%; */
+  background-color: rgba(0, 0, 0, 0.6);
+  @apply w-[100%] h-[45vh] lg:h-[90vh] flex flex-col justify-center items-center text-center;
 }
 @media screen and (max-width: 480px) {
   .brand {
@@ -97,12 +117,17 @@
 }
 
 .company-info {
-  background-image: url("./asset/nordwood-themes-R53t-Tg6J4c-unsplash.jpg");
+  background-image: url("./asset/marc-babin-ecGZWPOvya0-unsplash.jpg");
   background-position: center;
   background-size: cover;
   background-repeat: no-repeat;
   background-attachment: fixed;
   width: 100%;
+  border-radius: 75% 0px 75% 0px;
+}
+.company-info-overlay {
+  border-radius: 70% 0px 70% 0px;
+  background-color: rgba(255, 255, 255, 0.6);
 }
 
 @media screen and (max-width: 480px) {
@@ -114,12 +139,23 @@
 }
 
 .cleaning_equip {
+  background-image: url("./asset/nordwood-themes-R53t-Tg6J4c-unsplash.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  /* border-radius: 100% 100%; */
   display: grid;
   grid-template-columns: repeat(4, 1fr);
   align-items: center;
   place-items: center;
   width: 100%;
   padding: 1rem;
+  @apply my-[5%];
+}
+.imags {
+  transform: skew(50deg, 10deg);
+  background: linear-gradient(to bottom, #45a4de, #eff8fc, #fee5ad);
+  @apply w-[80vw] h-[45vh] lg:w-[20vw]  lg:h-[50vh] flex  flex-col justify-center items-center lg:mb-[2rem] bg-[white];
 }
 
 @media screen and (max-width: 480px) {
@@ -163,7 +199,7 @@
 
 .consultance {
   margin-top: 2rem;
-  @apply w-[100%] flex  flex-col lg:flex-row mb-[4rem];
+  @apply w-[100%] flex  flex-col lg:flex-row mb-[4rem] lg:gap-[2%];
 }
 .consultform {
   @apply flex flex-col justify-center  items-center;
@@ -172,10 +208,10 @@
   @apply mr-[11rem];
 }
 .consultance aside {
-  @apply flex flex-col justify-center items-center lg:w-[35%] ml-[1%] lg:ml-[0rem];
+  @apply flex flex-col justify-center items-center lg:w-[29%] ml-[1%] lg:ml-[0rem];
 }
 .consultance main {
-  @apply w-[100%] lg:w-[65%];
+  @apply w-[100%] lg:w-[68%];
 }
 .consultparag {
   line-height: 2rem;
@@ -209,7 +245,7 @@
   @apply flex flex-col  gap-[1rem] lg:gap-[2rem] mt-[2rem] ml-[1rem];
 }
 .drainAdvert {
-  @apply w-[90%] mt-[4rem] lg:ml-[3rem]  text-center lg:w-[80%];
+  @apply w-[90%] mt-[4rem] text-center lg:w-[80%];
 }
 .drainAdvert p {
   color: white;
@@ -293,7 +329,7 @@
 }
 
 .serviceDescription {
-  @apply w-[80vw] lg:ml-[0px] lg:w-[90%] h-[auto] lg:mx-[2rem] mt-[2rem] lg:mt-[0px];
+  @apply w-[80vw] p-[15px] lg:w-[20rem] h-[auto]  mt-[2rem] lg:mt-[10%];
   background-image: linear-gradient(
     blue,
     transparent,
@@ -518,13 +554,20 @@
   @apply w-[5rem];
 }
 .services p {
-  @apply text-[1rem] lg:text-[1.3rem];
+  @apply text-[1rem] lg:text-[1.3rem] font-bold;
 }
 .services {
-  background-image: url("./asset/nordwood-themes-R53t-Tg6J4c-unsplash.jpg");
+  background-image: url("./asset/neven-krcmarek-HWbxSLvmSww-unsplash.jpg");
   background-attachment: fixed;
   background-size: cover;
-  @apply w-[100%] lg:pt-[5rem] lg:pb-[3rem] p-[0];
+  background-position: right;
+  border-radius: 100% 100%;
+  @apply w-[100%] mb-[3%] pb-[0];
+}
+.service-overlay {
+  background-color: rgba(09, 73, 05, 0.4);
+  border-radius: 0px 100% 100% 0%;
+  @apply w-[100%];
 }
 .service {
   display: grid;
@@ -562,7 +605,8 @@
     font-serif;
 }
 .environment {
-  @apply text-center;
+  text-shadow: 5px 6px 2px black;
+  @apply text-center text-[#0e4e97] lg:text-[6rem] text-[2rem];
 }
 .services h3 {
   @apply text-[#0e4e97] font-serif;
@@ -578,9 +622,11 @@
     justify-center lg:p-4  font-serif mb-[10%];
 }
 .form input {
-  border-radius: 5px;
-  border: 1px solid lightgray;
-  @apply p-[0.25rem] w-[95%] ml-2 m-[0.25rem];
+  border-radius: 10px;
+  border-bottom: 1px solid lightgray;
+  box-shadow: 1px 1px 1px white;
+  @apply p-[0.45rem] w-[95%] ml-2 m-[0.25rem]
+    bg-[transparent];
 }
 .form input:focus {
   outline: none;
@@ -593,7 +639,9 @@
 }
 .form textarea {
   border-radius: 13px 0px;
-  @apply w-[95%] ml-2;
+  border-bottom: 1px solid lightgray;
+  box-shadow: 1px 1px 1px white;
+  @apply w-[95%] ml-2 bg-[transparent];
 }
 .form textarea::-webkit-scrollbar {
   display: none;
@@ -633,6 +681,14 @@
 .contact-align form {
   @apply h-[100%];
 }
+.contactFeedback {
+  border-radius: 0px 0px 70% 0px;
+  @apply bg-[#0f0326] flex flex-col justify-center items-center h-[30vh] lg:leading-[2.5rem];
+}
+.contactFeedback p,
+.contactFeedback i {
+  @apply text-[0.90rem] px-[2rem] text-center lg:text-[20px];
+}
 .contact {
   @apply flex flex-row lg:gap-[13rem] lg:my-[5rem]  justify-center  w-[100%] h-[100vh] lg:py-[5rem];
 }
@@ -662,10 +718,11 @@
   line-height: 2rem;
   @apply text-[1.2rem]  tracking-[0.20rem];
 }
-footer {
+.footer-container {
   @apply w-[100%];
 }
 .footer {
+  border-radius: 50% 0px 0px 0px;
   padding: 5rem 0px;
   @apply flex flex-row  gap-[7rem] justify-center bg-[#0f0326];
 }
@@ -993,7 +1050,7 @@ footer img {
 }
 
 .c_profile {
-  @apply w-[100%] lg:flex flex-col text-left border-[1px] h-[100%];
+  @apply w-[100%] lg:flex flex-col text-left h-[100%];
 }
 .c_profile p {
   margin: 1rem 20px;
@@ -1006,7 +1063,7 @@ footer img {
   }
 }
 .demo {
-  @apply lg:flex flex-col items-center border-[1px] h-[100vh];
+  @apply lg:flex flex-col items-center h-[100vh];
 }
 @media screen and (max-width: 480px) {
   .demo {
@@ -1014,7 +1071,7 @@ footer img {
   }
 }
 .display_frame {
-  @apply w-[80%] h-[80%] mt-[4rem] rounded-[15px];
+  @apply w-[90%] h-[40%] mt-[4rem] rounded-[15px];
 
   animation: change infinite;
   animation-duration: 60s;
@@ -1225,45 +1282,52 @@ footer img {
   background-position: center;
   background-repeat: repeat;
   background-size: cover;
-  /* background-attachment: fixed; */
   @apply w-[100%] lg:h-[60vh] flex flex-col ml-[1%] justify-center items-center lg:ml-[1rem];
 }
 
 .accessibility {
-  background-image: linear-gradient(to bottom, #a7d7f6, #010080);
-  @apply flex flex-col justify-center items-center max-w-[98%] lg:w-[33vw] h-[80vh] lg:h-[100vh] rounded-[15px] pb-[5rem] mt-[2%];
+  @apply flex flex-col justify-center items-center max-w-[98%] lg:w-[33vw] h-[88vh] lg:h-[90vh] rounded-[15px] pb-[2rem]  mt-[10%] lg:mt-[4%]  border-[1px];
 }
 .accessibilityLogin {
-  background-image: linear-gradient(to bottom, #a7d7f6, #010080);
-  @apply w-[90%] flex flex-col justify-center items-center max-w-[95%] lg:w-[33vw] h-[60vh] lg:h-[80vh] rounded-[15px] pb-[5rem] mt-[2%];
+  @apply w-[90%] flex flex-col justify-center items-center max-w-[95%] lg:w-[33vw] h-[60vh] lg:h-[80vh] rounded-[15px] pb-[5rem] border-[1px] lg:mt-[4%];
 }
 .accessibility input,
 .travel input,
 .accessibilityLogin input {
-  @apply outline-none  w-[80%] border-b-[1px] bg-[transparent] ml-[10%] lg:leading-[2rem];
+  @apply outline-none  w-[80%] border-b-[1px] bg-[transparent] ml-[10%] text-white lg:leading-[1.8rem];
 }
 .accessibility .label,
 .accessibilityLogin .label {
-  @apply text-[0.70rem] text-[gray] ml-[10%] lg:mt-[5%];
+  @apply text-[0.70rem] text-[gray] ml-[10%] lg:mt-[1%];
 }
 
 .travel label {
   @apply text-[0.70rem] text-[gray] ml-[10%] lg:mt-[5%] text-left;
 }
 .sign_up_form_container {
-  @apply flex flex-col justify-center items-center w-[100%] h-[100%] lg:pb-[5rem];
+  background-image: url("./asset/francesca-tosolini-hCU4fimRW-c-unsplash.jpg");
+  background-position: center;
+  background-size: cover;
+  @apply flex flex-col justify-center items-center w-[100%] h-[100%];
+}
+.login_overlay {
+  background-color: rgba(20, 3, 20, 0.8);
+  @apply w-[100%] h-[100vh]  flex  flex-col  justify-center  items-center;
 }
 .styleInputSection {
-  @apply bg-[#fafafa] w-[85%] h-[52vh] lg:w-[90%] lg:h-[76vh] flex flex-col justify-center rounded-[20px] pb-[10px] border-[#010080] border-[1px] mt-[15%]  lg:mt-[0px];
+  @apply w-[85%] h-[52vh] lg:w-[90%] lg:h-[76vh] flex flex-col justify-center rounded-[20px] pb-[10px] mt-[15%]  lg:mt-[0px];
 }
 .styleInputSectionLogin {
-  @apply bg-[#fafafa] w-[80%] h-[30vh] mt-[5%] lg:h-[75vh] flex flex-col justify-center lg:mt-[8rem] lg:mb-[2rem] rounded-[10px];
+  @apply w-[80%] h-[30vh] mt-[5%] lg:h-[75vh] flex flex-col justify-center lg:mt-[8rem] lg:mb-[2rem] rounded-[10px];
 }
 .uploadFileInput {
-  @apply w-[100%] flex flex-row  gap-[3rem] lg:gap-[4rem] justify-center items-center rounded-[15%] lg:border-[1px] lg:py-[0.80rem] my-[4%] lg:my-0;
+  @apply w-[100%] flex flex-row  gap-[3rem] lg:gap-[4rem] justify-center items-center rounded-[15%]  lg:py-[0.80rem] my-[4%] lg:my-0;
 }
 .fileLabel {
   @apply w-[60px] h-[60px] lg:w-[100px] lg:h-[90px] rounded-[20%] bg-[#95bbdf] flex flex-col justify-center items-center cursor-pointer text-[white] text-center;
+}
+.info_text {
+  @apply w-auto rounded-[10px] bg-[#95bbdf] flex flex-col cursor-pointer text-[white] my-[1%] p-[1%];
 }
 .fileInput {
   @apply outline-0 hidden;
@@ -1381,6 +1445,7 @@ footer img {
 .dash div {
   @apply w-[90%] flex  flex-row gap-[1.7rem]  items-center ml-[0.75rem] lg:gap-[1.5rem] py-[0.75rem] lg:px-[2rem] cursor-pointer  hover:bg-[#5e72e4] hover:text-[white] rounded-[10px] font-serif font-bold pl-[1.3rem];
 }
+
 .mainClass {
   @apply lg:w-[78vw]  mt-[20%] lg:mt-[0px] lg:relative lg:ml-[17rem];
 }
@@ -1401,6 +1466,9 @@ footer img {
 .WrapperContainer div span {
   @apply bg-[purple] rounded-[100%] p-[10px];
 }
+/* .WrapperContainer div span:nth-child(1) {
+  @apply bg-[tomato] rounded-[100%] p-[10px];
+} */
 
 .icon {
   @apply w-[25px]  h-[25px] fill-[white];
@@ -1420,7 +1488,7 @@ footer img {
   gap: 0.75rem;
 }
 .graphField {
-  @apply w-[93vw] ml-[2%] lg:ml-[0px] lg:px-[2rem] overflow-x-auto lg:w-[48vw] h-[60vh] bg-[white] rounded-[20px] border-[1px];
+  @apply w-[93vw] ml-[1%] lg:ml-[0px] lg:px-[2rem] overflow-x-auto lg:w-[48vw] h-[60vh] bg-[white] rounded-[20px] border-[1px];
 }
 .graphField::-webkit-scrollbar {
   @apply flex-none;
@@ -1493,6 +1561,9 @@ footer img {
 .colarrange nav {
   @apply flex flex-col text-[0.80rem] font-bold;
 }
+.colarrange nav p {
+  @apply flex flex-row items-start text-[0.80rem] font-bold;
+}
 nav i {
   @apply text-[1.2rem]  text-[#3e506e];
 }
@@ -1509,16 +1580,23 @@ nav i {
   @apply w-[100%] text-[#5e72e4]  text-[1rem] lg:text-[1.2rem] font-serif m-[0];
 }
 .userTableHeader {
-  @apply text-[gray] font-bold items-center mt-[15%] border-b-[1px] font-serif  lg:w-[73vw];
+  @apply text-[gray] font-bold mt-[15%] border-b-[1px] font-serif  lg:w-[73vw];
 }
-.userTableHeader td {
-  @apply my-[1rem];
-}
+
 .Authoricon {
-  @apply w-[50px] h-[40px] object-cover rounded-[10px];
+  @apply w-[50px] h-[50px] object-cover rounded-[50%] border-[1px] border-[purple];
 }
 .AuthorAlign {
   @apply min-w-[30%] lg:w-[100%] flex flex-row items-center gap-[1rem] text-[1.2rem];
+}
+.offline {
+  @apply rounded-[5px] text-center text-[lightgray];
+}
+.online {
+  @apply rounded-[5px] text-center text-[green];
+}
+.delete:hover {
+  @apply cursor-pointer text-[red];
 }
 .data_analysis {
   @apply w-[100%] lg:w-[100%] mt-[6%]  lg:ml-[0.3rem];
@@ -1652,10 +1730,17 @@ nav i {
   @apply lg:hidden;
 }
 .user {
-  @apply w-[100%] text-[0.80rem] lg:w-[100%];
+  @apply w-[100%] text-[0.90rem] lg:w-[100%] lg:leading-[2rem];
+}
+.user i {
+  @apply text-[blue];
+}
+.err {
+  box-shadow: 1px 1px 4px 1px black;
+  @apply bg-[lightray] border-[1px] px-[20px] py-[5px] lg:text-[1.2rem] text-[red] rounded-[15px];
 }
 .tableDiv {
-  @apply w-[100%] flex  flex-row gap-[2.3rem]  text-[#5e72e4]  lg:text-[1.5rem]  lg:justify-around font-serif  font-bold;
+  @apply w-[100%] flex  flex-row lg:px-[4rem]  text-[#5e72e4]  lg:text-[1.5rem]  lg:justify-between font-serif  font-bold;
 }
 .usersContainer {
   @apply w-[100%] bg-[lightgray] h-[300vh];
@@ -1677,7 +1762,7 @@ nav i {
   @apply w-[80%] h-[70vh] lg:ml-[20%] lg:mt-[0px];
 }
 .profile {
-  @apply flex flex-col justify-center items-center lg:flex-row  lg:justify-center lg:items-center  w-[95vw] lg:w-[97%]  h-auto gap-[0.5rem] mt-[38%];
+  @apply flex flex-col-reverse  gap-[2rem]  justify-center items-center lg:flex-row lg:justify-start lg:items-start w-[93vw] lg:w-[97%]  h-auto lg:gap-[0.5rem] mt-[38%];
 }
 .profileForm {
   @apply flex flex-col lg:flex-row justify-center items-center lg:w-[75%] h-auto  ml-[2%] bg-[white] rounded-[20px];
@@ -1718,7 +1803,7 @@ nav i {
   @apply flex  flex-row;
 }
 .profileImage {
-  @apply w-[80%] lg:w-[32%] h-[80vh] bg-[white] rounded-[15px] ml-[2%]  mb-[25%];
+  @apply w-[80%] lg:w-[32%] h-[80vh] bg-[white] rounded-[15px] ml-[2%];
 }
 .myPics {
   background-image: url("https://kwarastate.gov.ng/wp-content/uploads/Screen-Shot-2021-12-17-at-11.52.18-PM.jpeg");
@@ -1756,4 +1841,97 @@ nav i {
 }
 .loaderDiv {
   @apply flex  flex-col  justify-center  items-center gap-[1rem] my-[1rem];
+}
+.routeBtn {
+  @apply flex flex-row justify-center items-center  rounded-[25px]  text-[white] font-serif font-bold lg:w-[90%] bg-[blue] mt-[1rem] lg:mt-[2rem] lg:ml-[5%] border-[1px] gap-[0.15rem];
+}
+.routeBtn button {
+  @apply lg:w-[100%] h-auto rounded-[25px] lg:px-[2rem]  hover:bg-[white] hover:text-[black] hover:border-[1px] py-[0.5rem];
+}
+.postForm {
+  @apply w-[96%]  ml-[2%] flex flex-col justify-start mt-[5%] bg-[white] rounded-[10px];
+}
+.serviceDetail {
+  @apply w-[96%] ml-[2%] flex flex-col gap-[2rem] lg:flex-row justify-evenly mt-[5%] bg-[white] rounded-[10px];
+}
+.serviceDetail div {
+  @apply w-[96%] flex flex-col justify-start mt-[1%];
+}
+.serviceDetail div h3 {
+  @apply mx-[2%] mt-[1%] text-[purple] font-bold;
+}
+.postForm form {
+  @apply flex flex-col font-serif font-bold p-[0.5rem];
+}
+.postForm form div {
+  @apply flex flex-row  justify-end p-[1rem] gap-[1rem];
+}
+.postForm form textarea {
+  @apply rounded-[5px] outline-0 border-[1px] border-[lightgray] pl-[1rem] pt-[1rem];
+}
+.postingform textarea::placeholder {
+  @apply text-[lightgray];
+}
+.postBtn {
+  @apply flex flex-col justify-center items-center w-[8rem] rounded-[15px] px-[0.25rem] hover:bg-[lightgray] hover:text-[black] border-[1px] text-[lightgray];
+}
+.send {
+  @apply fill-[lightgray] w-[25px] h-[25px] cursor-pointer hover:fill-[green];
+}
+.info {
+  @apply w-[98%] flex flex-col  justify-start items-start lg:w-[95%] p-[2%] font-bold;
+}
+.comment_info {
+  @apply w-[98%] flex flex-col justify-end  items-end lg:w-[95%] p-[2%] font-bold;
+}
+.date {
+  @apply text-[0.9rem] font-serif  text-[white] bg-[purple] w-auto rounded-[10px]  p-[3px];
+}
+.postPhotos {
+  @apply lg:w-[30%] lg:h-[30vh] rounded-[10px];
+}
+.split {
+  @apply flex flex-row;
+}
+.our-team-container {
+  background-image: url("https://thumbs.dreamstime.com/b/weed-insecticide-fumigation-organic-ecological-agriculture-spray-pesticides-pesticide-fruit-lemon-growing-agricultural-167279928.jpg");
+  background-size: cover;
+  background-position: center;
+  border-radius: 0% 100% 0px 100%;
+  background-attachment: fixed;
+  @apply bg-[lightgray] flex flex-row justify-center  items-center lg:my-[5%];
+}
+
+.our-team-overlay {
+  background-color: rgba(0, 0, 255, 0.2);
+  border-radius: 0% 90% 0% 90%;
+  @apply w-[100%] pb-[10%] flex flex-col justify-center  items-center;
+}
+.our-team {
+  @apply flex  flex-col lg:grid lg:grid-cols-5 place-items-center gap-[1rem] lg:gap-[0px]  w-[100%];
+}
+.our-team div {
+  @apply w-[78%] h-[75vh] lg:w-[90%] lg:h-[70vh] bg-[white] rounded-[5px] flex flex-col items-center  text-center gap-[0.5rem] px-[2%];
+}
+
+.our-team div i {
+  @apply w-[80%] font-bold text-center text-[0.90rem] font-serif hover:text-[white];
+}
+.our-team div img {
+  @apply my-[8%] w-[5rem] h-[15vh] lg:w-[8rem] lg:h-[20vh] object-[80%] rounded-[100px] border-[2px] border-[gray];
+}
+.name {
+  @apply text-[1.2rem] font-serif font-bold text-[#217192];
+}
+.our-team div:hover {
+  box-shadow: 1px 1px 15px 1px #a7d7f6;
+  transform: scale(1.1);
+  @apply bg-[#324959] text-[white] rounded-[5px];
+}
+.our-team-container h3 {
+  text-shadow: 4px 4px 2px rgba(0, 0, 0, 0.9);
+  @apply text-[2rem] lg:text-[6rem] text-[white]  my-[3%] lg:my-[5%] font-bold;
+}
+.social-medial {
+  @apply flex flex-row justify-center items-center gap-[0.5rem];
 }

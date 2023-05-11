@@ -91,7 +91,7 @@ const Sign_up = ({ navigate, user }) => {
         data.email,
         data.password
       );
-      await setDoc(doc(db, "users", res.user.uid), {
+      await setDoc(doc(db, "Admin", res.user.uid), {
         ...data,
         day: new Date().toDateString(),
         timeStamp: serverTimestamp(),
@@ -99,126 +99,132 @@ const Sign_up = ({ navigate, user }) => {
 
       setLoggedInUser(res.user);
       console.log(res.user);
-      navigate("/User_modal");
     } catch (err) {
       setError(err.message);
     }
+    if (loggedInUser) {
+      console.log({ loggedInUser });
+      const currentUserDetails = user.find(
+        (m) => m.email === loggedInUser?.email
+      );
+      updateProfile(currentUser, {
+        displayName:
+          currentUserDetails?.first + " " + currentUserDetails?.LastName,
+        photoURL: currentUserDetails?.img,
+        phoneNumber: currentUser.phone,
+      }).then(() => {
+        alert(
+          `You are successfully signed in as ${
+            data?.first + " " + data?.LastName
+          }`
+        );
+        navigate("/User_modal");
+      });
+    }
   };
-  // useEffect(() => {
-  //   if (loggedInUser) {
-  //     console.log({ loggedInUser });
-  //     const currentUserDetails = user.find(
-  //       (m) => m.email === loggedInUser?.email
-  //     );
-  //     updateProfile(currentUser, {
-  //       displayName:
-  //         currentUserDetails?.first + " " + currentUserDetails?.LastName,
-  //       photoURL: currentUserDetails?.img,
-  //     }).then(() => {
-  //
-  //     });
-  //   }
-  // }, [loggedInUser]);
+  console.log(data);
   return (
     <div className=" sign_up_form_container ">
-      <p className="text ">CREATE ACCOUNT</p>
-      <form
-        onChange={(e) => handleChange(e)}
-        onSubmit={handleSubmit}
-        className="accessibility "
-      >
-        <div className="styleInputSection">
-          <div className="uploadFileInput">
-            <label htmlFor="fileInput" className="fileLabel ">
-              <MdOutlineDriveFolderUpload className="fileIcon " />
-              <p> choose image:</p>
-            </label>
-            <input
-              type="file"
-              id="fileInput"
-              name="file"
-              className="fileInput"
-              onChange={(e) => setFileUpload(e.target.files[0])}
-            />
-            {fileUpload ? (
-              <img src={data.img} alt="" className="fileImg  " />
-            ) : (
-              <img
-                src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQhVCVV2vEZkPS1sMCHgmPsfLpWfr8wb-OubQ&usqp=CAU"
-                alt=""
-                className=" avartaIcon "
+      <div className="login_overlay">
+        <form
+          onChange={(e) => handleChange(e)}
+          onSubmit={handleSubmit}
+          className="accessibility "
+        >
+          <div className="styleInputSection">
+            <div className="uploadFileInput">
+              <label htmlFor="fileInput" className="fileLabel ">
+                <MdOutlineDriveFolderUpload className="fileIcon " />
+                <p> choose image:</p>
+              </label>
+              <input
+                type="file"
+                id="fileInput"
+                name="file"
+                className="fileInput"
+                onChange={(e) => setFileUpload(e.target.files[0])}
               />
-            )}
-          </div>
-          <label htmlFor="" className="label">
-            First Name
-          </label>
-          <input type="text" name="first" />
-          <label htmlFor="" className="label">
-            Last Name
-          </label>
-          <input type="text" name="LastName" />
-          <label htmlFor="" className="label">
-            Phone Number
-          </label>
-          <input type="number" name="phone" />
-          <label htmlFor="" className="label">
-            Email
-          </label>
-          <input type={"email"} required name="email" />
-          <label htmlFor="" className="label">
-            Password
-          </label>{" "}
-          <div>
-            <input type={passwordType} required name="password" />
-            <button
-              type="button"
-              className="outline-0"
-              onClick={togglePassword}
-            >
-              {passwordType === "password" ? (
-                <BiShow className="iconEye" />
+              {fileUpload ? (
+                <img src={data.img} alt="" className="fileImg  " />
               ) : (
-                <AiOutlineEyeInvisible className="iconEye" />
-              )}
-            </button>
-          </div>
-        </div>
-        <div className="tnc">
-          <div className="firstDiv  ">
-            <div className="secondDiv ">
-              {!check ? (
-                <GrCheckbox
-                  className="GrCheckboxIcon  "
-                  onClick={() => setCheck(true)}
-                />
-              ) : (
-                <BsFillCheckSquareFill
-                  className="BsFillCheckSquareFillIcon  "
-                  onClick={() => setCheck(false)}
+                <img
+                  src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQhVCVV2vEZkPS1sMCHgmPsfLpWfr8wb-OubQ&usqp=CAU"
+                  alt=""
+                  className=" avartaIcon "
                 />
               )}
             </div>
+            <label htmlFor="" className="label">
+              First Name
+            </label>
+            <input type="text" name="first" />
+            <label htmlFor="" className="label">
+              Last Name
+            </label>
+            <input type="text" name="LastName" />
+            <label htmlFor="" className="label">
+              Phone Number
+            </label>
+            <input type="number" name="phone" />
+            <label htmlFor="" className="label">
+              Email
+            </label>
+            <input type={"email"} required name="email" />
+            <label htmlFor="" className="label">
+              Password
+            </label>{" "}
             <div>
-              <p className="terms  ">
-                By proceeding, I acknowledge that I have read and agree to IREHV
-                <b> terms & conditions</b>
+              <input type={passwordType} required name="password" />
+              <button
+                type="button"
+                className="outline-0"
+                onClick={togglePassword}
+              >
+                {passwordType === "password" ? (
+                  <BiShow className="iconEye" />
+                ) : (
+                  <AiOutlineEyeInvisible className="iconEye" />
+                )}
+              </button>
+            </div>
+          </div>
+          <div className="tnc">
+            <div className="firstDiv  ">
+              <div className="secondDiv ">
+                {!check ? (
+                  <GrCheckbox
+                    className="GrCheckboxIcon  "
+                    onClick={() => setCheck(true)}
+                  />
+                ) : (
+                  <BsFillCheckSquareFill
+                    className="BsFillCheckSquareFillIcon  "
+                    onClick={() => setCheck(false)}
+                  />
+                )}
+              </div>
+              <div>
+                <p className="terms  ">
+                  By proceeding, I acknowledge that I have read and agree to
+                  IREHV
+                  <b> terms & conditions</b>
+                </p>
+              </div>
+            </div>
+            <div
+              className="sign_upButtonDiv
+              "
+            >
+              {!error ? <Button trackupload={trackupload} /> : <Button />}
+              {error && <p className="erroeMsg ">{error}</p>}
+              <p className="terms">Already have an account</p>
+              <p onClick={() => navigate("/Login")} className="loginText">
+                Login
               </p>
             </div>
           </div>
-          <div
-            className="sign_upButtonDiv
-              "
-          >
-            {!error ? <Button trackupload={trackupload} /> : <Button />}
-            {error && <p className="erroeMsg ">{error}</p>}
-            <p className="terms">Already have an account</p>
-            <p onClick={() => navigate("/Login")} className="loginText">
-              Login
-            </p>
-          </div>
-        </div>
-      </form>
+        </form>
+      </div>
     </div>
   );
 };

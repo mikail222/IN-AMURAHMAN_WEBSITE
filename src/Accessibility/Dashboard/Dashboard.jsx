@@ -11,7 +11,7 @@ import { FcMenu } from "react-icons/fc";
 import { BiMenu } from "react-icons/bi";
 import Mobile_Side_Bar from "./Mobile_Side_Bar";
 
-const Dashboard = ({ setShowNav, productUpdate }) => {
+const Dashboard = ({ adminPost, productUpdate, count }) => {
   const [consult, setConsult] = useState([]);
   const [booking, setBooking] = useState([]);
   const [enquiry, setEnquiry] = useState([]);
@@ -28,6 +28,10 @@ const Dashboard = ({ setShowNav, productUpdate }) => {
   console.log(currentUser);
 
   useEffect(() => {
+    if (currentUser) {
+      currentUser.reload();
+    }
+    console.log(currentUser?.emailVerified);
     const collectionOfUser = collection(db, "Admin");
     const collBooking = collection(db, "Booking");
     const collSales = collection(db, "Payment-details");
@@ -105,13 +109,19 @@ const Dashboard = ({ setShowNav, productUpdate }) => {
                     productUpdate={productUpdate}
                     sales={sales}
                     totalamount={sales}
+                    adminPost={adminPost}
                   />
                 }
               />
               <Route path="User_Table" element={<User_Table user={user} />} />
               <Route
                 path="Product_UpdateForm"
-                element={<Product_UpdateForm product_detail={product_detail} />}
+                element={
+                  <Product_UpdateForm
+                    product_detail={product_detail}
+                    count={count}
+                  />
+                }
               />
             </Routes>
           </main>

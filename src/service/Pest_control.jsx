@@ -82,7 +82,7 @@ const Pest_control = ({ checkList }) => {
           We provide each individual with professional and effective pest
           control solutions which ensure the health and hygiene one needs in
           order to live and work in a safe, hygienic, pest-free environment.
-          Cleaneat Services focuses primarily on the control and eradication of
+          IREHV Services focuses primarily on the control and eradication of
           pests common in Nigeria using only environmentally friendly products.
           Some of these pests include bed bugs, termites, rats, houseflies among
           others

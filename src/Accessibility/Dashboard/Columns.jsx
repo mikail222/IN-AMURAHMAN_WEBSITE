@@ -20,12 +20,21 @@ const Columns = ({
   productUpdate,
   sales,
   totalamount,
+  bookingDetails,
+  setBookingDetails,
+  consultDetails,
+  setConsultDetails,
+  enquiryDetails,
+  setEnquiryDetails,
 }) => {
   const currentUser = auth.currentUser;
   const day = new Date();
+  const [comment, setComment] = useState([]);
 
   const lastMonth = new Date(new Date().setMonth(day.getMonth() - 1));
   console.log(lastMonth);
+  const CommentRef = collection(db, "User_Comment");
+
   useEffect(() => {
     const getLastMonth = async () => {
       const lastMonthQuery = query(
@@ -36,9 +45,17 @@ const Columns = ({
       // console.log(lastMonthData.docs.length);
     };
     getLastMonth();
+    const getComment = async () => {
+      const comment_data = await getDocs(CommentRef);
+      setComment(
+        comment_data.docs.map((doc) => ({ ...doc.data(), id: doc.id }))
+      );
+    };
+    getComment();
   }, []);
 
   const today = new Date().toDateString();
+  const findCommentCount = comment.filter(({ day }) => day === today);
   const findNewUser = user.filter((m) => m.day === today);
   const findEnquire = enquiry.filter((m) => m.day === today);
   const findBooking = booking.filter((m) => m.day === today);
@@ -62,14 +79,44 @@ const Columns = ({
               <p>NEW CLIENT</p>
               <nav>
                 <p>
-                  Booking : <i>{findBooking.length}</i>{" "}
+                  {!bookingDetails ? (
+                    <button onClick={() => setBookingDetails(true)}>
+                      {" "}
+                      Booking
+                    </button>
+                  ) : (
+                    <button onClick={() => setBookingDetails(false)}>
+                      hide Booking
+                    </button>
+                  )}
+                  : <i>{findBooking.length}</i>
                 </p>
                 <p>
-                  Consult : <i>{findConsult.length}</i>{" "}
+                  {!consultDetails ? (
+                    <button onClick={() => setConsultDetails(true)}>
+                      {" "}
+                      Consult
+                    </button>
+                  ) : (
+                    <button onClick={() => setConsultDetails(false)}>
+                      hide Consult
+                    </button>
+                  )}
+                  : <i>{findConsult.length}</i>{" "}
                 </p>{" "}
                 <p>
-                  Enquiry : <i>{findEnquire.length}</i>{" "}
-                </p>{" "}
+                  {!enquiryDetails ? (
+                    <button onClick={() => setEnquiryDetails(true)}>
+                      {" "}
+                      Enquiry
+                    </button>
+                  ) : (
+                    <button onClick={() => setEnquiryDetails(false)}>
+                      hide Enquiry
+                    </button>
+                  )}
+                  : <i>{findEnquire.length}</i>
+                </p>
               </nav>
             </article>
             <span>
@@ -78,10 +125,20 @@ const Columns = ({
           </div>
           <div>
             <article className="colarrange">
-              <p>PRODUCTS</p>
+              <p>PRODUCTS & OTHERS</p>
               <nav>
                 <p>
                   Products in Stock: <i>{productUpdate.length}</i>
+                </p>
+              </nav>
+              <nav>
+                <p>
+                  Client Comments: <i>{findCommentCount.length}</i>
+                </p>
+              </nav>{" "}
+              <nav>
+                <p>
+                  All Comments: <i>{comment.length}</i>
                 </p>
               </nav>
             </article>

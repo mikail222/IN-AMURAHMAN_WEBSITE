@@ -4,8 +4,8 @@ import { useNavigate, useParams } from "react-router-dom";
 import { TbCurrencyNaira } from "react-icons/tb";
 import Payment_Method from "./Accessibility/Payment_Method";
 
-const ProductDetail = ({ productUpdate }) => {
-  const [count, setCount] = useState(0);
+const ProductDetail = ({ productUpdate, setCount, count }) => {
+  // const [count, setCount] = useState(0);
   const [togglePage, setTogglePage] = useState(true);
 
   const navigate = useNavigate();

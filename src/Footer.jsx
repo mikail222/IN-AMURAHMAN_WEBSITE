@@ -16,7 +16,7 @@ const Footer = () => {
     },
   };
   return (
-    <footer>
+    <footer className="footer-container">
       <div className="footer">
         <ul>
           <h5>Cleaning Service</h5>

@@ -5,13 +5,12 @@ import profileEditIcon from "../asset/images-removebg-preview.png";
 import { auth } from "../firebaseconfig";
 
 const Update = ({ navigate }) => {
-  const user = auth.currentUser;
+  const users = auth.currentUser;
   const [displayName, setdDisplayName] = useState("");
   const [email, setEmail] = useState("");
   const [photoURL, setPhotoUrl] = useState("");
   const [emailVerified, setEmailVerified] = useState("");
   const [phoneNumber, setPhoneNumber] = useState("");
-
   const handleUpdate = (e) => {
     e.preventDefault();
     updateProfile(auth.currentUser, {
@@ -30,10 +29,10 @@ const Update = ({ navigate }) => {
     console.log(photoURL);
   };
   const handleDeleteUser = () => {
-    deleteUser(user)
+    deleteUser(users)
       .then(() => {
         alert("User deleted");
-        navigate("/") && setShowNav(false);
+        navigate("/");
       })
       .catch((error) => {
         alert(error);
@@ -45,7 +44,7 @@ const Update = ({ navigate }) => {
         <div className="updateContainer">
           <form className="accessibleUpdate ">
             <img src={profileEditIcon} alt="" className="avartaIcon" />
-            <p>{user?.displayName}</p>
+            <p>{users?.displayName}</p>
             <div className="inputField">
               <label htmlFor="displayName" className="label"></label>
               <input
@@ -61,9 +60,7 @@ const Update = ({ navigate }) => {
                 value={email}
                 onChange={(e) => setEmail(e.target.value)}
               />
-              <label htmlFor="photoUrl" className="label">
-                {" "}
-              </label>{" "}
+              <label htmlFor="photoUrl" className="label"></label>
               <input
                 type="file"
                 id="fileInput"

@@ -7,6 +7,7 @@ import { BiShow } from "react-icons/bi";
 import { AiOutlineEyeInvisible } from "react-icons/ai";
 import {
   onAuthStateChanged,
+  sendEmailVerification,
   signInWithEmailAndPassword,
   updateProfile,
 } from "firebase/auth";
@@ -38,6 +39,15 @@ const Login = ({ navigate, user }) => {
       });
   };
   useEffect(() => {
+    sendEmailVerification(currentUser).then(() => {
+      alert("Email verification sent!");
+      if (currentUser.emailVerified === false) {
+        alert("please verify your are the owner of the  email provided");
+      } else {
+        navigate("/User_modal");
+      }
+      // ...
+    });
     if (loggedInUser) {
       console.log({ loggedInUser });
       const currentUserDetails = user.find(
@@ -48,9 +58,7 @@ const Login = ({ navigate, user }) => {
           currentUserDetails?.first + " " + currentUserDetails?.LastName,
         photoURL: currentUserDetails?.img,
         phoneNumber: currentUser.phone,
-      }).then(() => {
-        navigate("/User_modal");
-      });
+      }).then(() => {});
     }
   }, [loggedInUser]);
 
@@ -64,81 +72,82 @@ const Login = ({ navigate, user }) => {
 
   return (
     <div className="sign_up_form_container">
-      <p className="text">LOG IN</p>
-      <form onSubmit={handleSubmit} className="accessibilityLogin">
-        <div className="styleInputSectionLogin ">
-          <label htmlFor="" className="label">
-            Email
-          </label>
-          <input
-            type={"email"}
-            required
-            onChange={(e) => setEmail(e.target.value)}
-          />{" "}
-          <label htmlFor="" className="label">
-            Password
-          </label>{" "}
-          <div>
-            {" "}
+      <div className="login_overlay">
+        <form onSubmit={handleSubmit} className="accessibilityLogin">
+          <div className="styleInputSectionLogin ">
+            <label htmlFor="" className="label">
+              Email
+            </label>
             <input
-              type={passwordType}
+              type={"email"}
               required
-              className="outline-0"
-              onChange={(e) => setPassword(e.target.value)}
-            />
-            <button
-              type="button"
-              onClick={tooglePassword}
-              className="outline-0"
-            >
-              {passwordType === "password" ? (
-                <BiShow />
-              ) : (
-                <AiOutlineEyeInvisible />
-              )}
-            </button>
-          </div>
-        </div>
-        <div className="loginResetParentDiv  ">
-          <div className="loginReset">
-            <div className="checkDiv ">
-              {!check ? (
-                <GrCheckbox
-                  className=" GrCheckboxIcon "
-                  onClick={() => setCheck(true)}
-                />
-              ) : (
-                <BsFillCheckSquareFill
-                  className="BsFillCheckSquareFillIcon "
-                  onClick={() => setCheck(false)}
-                />
-              )}
-              <p>Remember me</p>
-            </div>
+              onChange={(e) => setEmail(e.target.value)}
+            />{" "}
+            <label htmlFor="" className="label">
+              Password
+            </label>{" "}
             <div>
-              <p
-                className="reset_password"
-                onClick={() => navigate("/Reset_Password")}
+              {" "}
+              <input
+                type={passwordType}
+                required
+                className="outline-0"
+                onChange={(e) => setPassword(e.target.value)}
+              />
+              <button
+                type="button"
+                onClick={tooglePassword}
+                className="outline-0"
               >
-                Forget password?
+                {passwordType === "password" ? (
+                  <BiShow />
+                ) : (
+                  <AiOutlineEyeInvisible />
+                )}
+              </button>
+            </div>
+          </div>
+          <div className="loginResetParentDiv  ">
+            <div className="loginReset">
+              <div className="checkDiv ">
+                {!check ? (
+                  <GrCheckbox
+                    className=" GrCheckboxIcon "
+                    onClick={() => setCheck(true)}
+                  />
+                ) : (
+                  <BsFillCheckSquareFill
+                    className="BsFillCheckSquareFillIcon "
+                    onClick={() => setCheck(false)}
+                  />
+                )}
+                <p>Remember me</p>
+              </div>
+              <div>
+                <p
+                  className="reset_password"
+                  onClick={() => navigate("/Reset_Password")}
+                >
+                  Forget password?
+                </p>
+              </div>
+            </div>
+            <div className="sign_upButtonDiv">
+              <Login_button />
+              {userErr && (
+                <p className="errorMsg">Oops! {userErr.slice(22, 36)}</p>
+              )}
+              <p className="mt-[3%]">Don't have an account</p>
+              <p
+                onClick={() => setTimeout(navigate("/Sign_up"), 30000)}
+                className="loginText"
+              >
+                Create account
               </p>
             </div>
           </div>
-          <div className="sign_upButtonDiv">
-            <Login_button />
-            {userErr && (
-              <p className="errorMsg">Oops! {userErr.slice(22, 36)}</p>
-            )}
-            <p className="mt-[3%]">Don't have an account</p>
-            <p
-              onClick={() => setTimeout(navigate("/Sign_up"), 30000)}
-              className="loginText"
-            >
-              Create account
-            </p>
-          </div>
-        </div>
-      </form>
+        </form>
+      </div>
     </div>
   );
 };

@@ -1,9 +1,27 @@
 import React, { useState } from "react";
 import { TbUserSearch } from "react-icons/tb";
+import { auth } from "../../firebaseconfig";
+import { deleteUser } from "firebase/auth";
+import { list } from "firebase/storage";
+import Dashboard from "./Dashboard";
 
 const User_Table = ({ user }) => {
   const [search_user, setSearch_user] = useState(" ");
+  const [delete_User, setDelete_User] = useState(" ");
+  const [err, setErr] = useState(" ");
+
   console.log();
+  const handleDeleteUser = () => {
+    deleteUser(auth.currentUser)
+      .then(() => {
+        setDelete_User("User deleted");
+      })
+      .catch((error) => {
+        setErr(error.message);
+      });
+  };
+  const currentUser = auth.currentUser.email;
+  const userStatus = user.filter(({ email }) => email === currentUser);
 
   return (
     <div className="user">
@@ -19,12 +37,16 @@ const User_Table = ({ user }) => {
 
       <div className="productWrapper">
         <h2>User's List</h2>
+        {delete_User && <p className="">{delete_User}</p>}
+        {err & <p className="err">{err}</p>}
+
         <div className="tableDiv">
-          {/* <div> Picture</div> */}
-          <div>User Name</div>
-          <div>Email</div>
+          <div>User Details</div>
+          {/* <div>Email</div>
           <div>dated</div>
           <div>Contact</div>
+          <div> Status</div> */}
+          <div>Action</div>
         </div>
         <table className="Author">
           <tbody>
@@ -42,11 +64,43 @@ const User_Table = ({ user }) => {
                     </td>
 
                     <td>
+                      <p>
+                        <i>Name</i>
+                      </p>
                       {first} {LastName}
                     </td>
-                    <td>{email}</td>
-                    <td>{day}</td>
-                    <td>{phone}</td>
+                    <td>
+                      <p>
+                        <i>Mail</i>
+                      </p>{" "}
+                      {email}
+                    </td>
+                    <td>
+                      <p>
+                        <i>Date join</i>
+                      </p>
+
+                      {day}
+                    </td>
+                    <td>
+                      {" "}
+                      <p>
+                        <i>Contact</i>
+                      </p>
+                      {phone}
+                    </td>
+                    {!userStatus && (
+                      <td className="offline">
+                        <p>
+                          <i>Name</i>
+                        </p>
+                        Offline
+                      </td>
+                    )}
+                    {userStatus && <td className="online">online</td>}
+                    <td onClick={handleDeleteUser} className="delete">
+                      delete
+                    </td>
                   </tr>
                 ))
             ) : (

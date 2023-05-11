@@ -11,7 +11,7 @@ const Consultance = () => {
     const newInput = { [e.target.name]: e.target.value };
     setConsultanceData({ ...consultanceData, ...newInput });
   };
-  const consultanceCollRef = collection(db, "Booking");
+  const consultanceCollRef = collection(db, "Consultance");
 
   const addconsultance = async (e) => {
     e.preventDefault();
@@ -22,7 +22,7 @@ const Consultance = () => {
     });
     console.log("booked");
   };
-
+  console.log(consultanceData);
   return (
     <div>
       <div className="consultance">
@@ -94,8 +94,11 @@ const Consultance = () => {
             <p>For proffessional plumbing service</p>
             <p>reach out to IREHV</p>
           </div>
-          <div className="serviceDescription" style={{ marginTop: "5rem" }}>
-            <h4 style={{ color: "white" }}> 0ur Consultation Services are:</h4>
+          <div className="serviceDescription">
+            <h4 style={{ color: "white", textAlign: "center" }}>
+              {" "}
+              0ur Consultation Services are:
+            </h4>
             <div>
               <GiCheckMark />
               <p>Environmental Hazard Management</p>

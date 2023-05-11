@@ -7,6 +7,7 @@ import {
 import { Paper } from "@material-ui/core";
 import React from "react";
 import User_Column from "./User_Column";
+import Comment from "./Comment";
 
 const User_Data = () => {
   const data = [
@@ -17,7 +18,7 @@ const User_Data = () => {
     { argument: "Friday", value: 60 },
   ];
   return (
-    <div>
+    <div className="data_analysis">
       <User_Column />
       <div className="analytics">
         <div className="field">
@@ -34,6 +35,7 @@ const User_Data = () => {
         </div>
         <aside className="Image"></aside>
       </div>
+      <Comment />
     </div>
   );
 };

@@ -1,7 +1,7 @@
 import React from "react";
 import { TbCurrencyNaira } from "react-icons/tb";
 
-const Product_Details = ({ product_detail }) => {
+const Product_Details = ({ product_detail, count }) => {
   console.log(product_detail);
   return (
     <div className="productWrapper">
@@ -22,7 +22,7 @@ const Product_Details = ({ product_detail }) => {
             //     m.email.toLowerCase().includes(search_user.toLowerCase()) ||
             //     m.first.includes(search_user.toLocaleLowerCase())
             // )
-            .map(({ img, price, product_name, quantity, day }, i) => (
+            .map(({ img, price, product_name, qty, day }, i) => (
               <tr key={i} className="userTableHeader">
                 <td className="AuthorAlign">
                   <img src={img} alt="" className="Authoricon" />
@@ -31,7 +31,7 @@ const Product_Details = ({ product_detail }) => {
 
                 <td>{price}</td>
                 <td>{day}</td>
-                {/* <td>{quantity}</td> */}
+                <td>{qty}</td>
               </tr>
             ))}
         </tbody>

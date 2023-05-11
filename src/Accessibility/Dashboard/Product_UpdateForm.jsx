@@ -6,7 +6,7 @@ import { ref, uploadBytesResumable, getDownloadURL } from "firebase/storage";
 import irehv from "../../asset/irehv-low-resolution-logo-color-on-transparent-background.png";
 import Product_Details from "./Product_Details";
 
-const Product_UpdateForm = ({ product_detail }) => {
+const Product_UpdateForm = ({ product_detail, count }) => {
   const [product, setProduct] = useState([]);
   const [list, setList] = useState(false);
   const [trackupload, setTrackUpload] = useState(null);
@@ -126,7 +126,9 @@ const Product_UpdateForm = ({ product_detail }) => {
           </div>
         </div>
       </div>
-      {list && <Product_Details product_detail={product_detail} />}
+      {list && (
+        <Product_Details product_detail={product_detail} count={count} />
+      )}
     </div>
   );
 };

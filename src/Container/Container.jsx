@@ -49,10 +49,11 @@ import Mobile_nav from "../Mobile_Nav";
 import Booking from "../service/Booking";
 import Users_Dashboard from "../Accessibility/Users_Dashboard/Users_Dashboard";
 
-const Container = ({ user, setShowNav, showNav }) => {
+const Container = ({ user, setShowNav }) => {
   const [findProduct, setFindProduct] = useState("");
   const [productUpdate, setProductUpdate] = useState([]);
   const navigate = useNavigate();
+  const [count, setCount] = useState(0);
 
   const checkList = productUpdate?.filter((p) =>
     p.product_name.toLowerCase().includes(findProduct.toLowerCase())
@@ -61,19 +62,18 @@ const Container = ({ user, setShowNav, showNav }) => {
   useEffect(() => {
     const collProductUpdate = collection(db, "Products");
 
-    const getUser = async () => {
+    const getProduct = async () => {
       const Products = await getDocs(collProductUpdate);
       setProductUpdate(
         Products.docs.map((doc) => ({ ...doc.data(), id: doc.id }))
       );
     };
-    getUser();
+    getProduct();
   }, []);
   const { id } = useParams();
   const userId = productUpdate.filter((p) => p.id === id);
   const total = userId.map(({ price }) => price * count);
-  console.log(userId);
-  console.log(total);
+
   return (
     <div className="toogle_Nav">
       <Mobile_nav setShowNav={setShowNav} />
@@ -89,6 +89,7 @@ const Container = ({ user, setShowNav, showNav }) => {
                 user={user}
                 onChange={() => setShowNav(false)}
                 productUpdate={productUpdate}
+                count={count}
               />
             }
           />
@@ -133,7 +134,8 @@ const Container = ({ user, setShowNav, showNav }) => {
               <ProductDetail
                 productUpdate={productUpdate}
                 userId={userId}
-                total={total}
+                count={count}
+                setCount={setCount}
               />
             }
           />
@@ -144,6 +146,8 @@ const Container = ({ user, setShowNav, showNav }) => {
                 productUpdate={productUpdate}
                 userId={userId}
                 total={total}
+                count={count}
+                setCount={setCount}
               />
             }
           />
@@ -154,6 +158,8 @@ const Container = ({ user, setShowNav, showNav }) => {
                 productUpdate={productUpdate}
                 userId={userId}
                 total={total}
+                count={count}
+                setCount={setCount}
               />
             }
           />
@@ -164,6 +170,8 @@ const Container = ({ user, setShowNav, showNav }) => {
                 productUpdate={productUpdate}
                 userId={userId}
                 total={total}
+                count={count}
+                setCount={setCount}
               />
             }
           />

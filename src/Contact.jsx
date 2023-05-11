@@ -26,19 +26,19 @@ const Contact = () => {
 
   return (
     <div className="contact-align">
-      <p className="text" style={{ color: "#8ccaf3" }}>
-        For feedback and request please kindly fill the form below
-      </p>
-      <i
-        style={{
-          textAlign: "center",
-          margin: "1rem",
-          color: "gray",
-          fontWeight: "bold",
-        }}
-      >
-        or get in tounch on our social medial official handle bellow
-      </i>
+      <div className="contactFeedback">
+        <p style={{ color: "#8ccaf3" }}>
+          For feedback and request please kindly fill the form below
+        </p>
+        <i
+          style={{
+            color: "gray",
+            fontWeight: "bold",
+          }}
+        >
+          or get in tounch on our social medial official handle bellow
+        </i>
+      </div>
       <div className="contact">
         <div className="address">
           <h2 style={{ color: "blue" }}>IREHV</h2>

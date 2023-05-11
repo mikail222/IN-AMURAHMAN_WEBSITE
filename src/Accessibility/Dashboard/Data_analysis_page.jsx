@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import Columns from "./Columns";
 import {
   ArgumentAxis,
@@ -8,6 +8,11 @@ import {
 } from "@devexpress/dx-react-chart";
 import { Paper } from "@material-ui/core";
 import Sales_Details from "./Sales_Details";
+import Post from "./Post";
+import Toggle_Buttons from "./Toggle_Buttons";
+import Booking from "./Booking";
+import Consult from "./Consult";
+import Enquiry from "./Enquiry";
 
 const Data_analysis_page = ({
   user,
@@ -17,7 +22,13 @@ const Data_analysis_page = ({
   productUpdate,
   sales,
   totalamount,
+  adminPost,
 }) => {
+  const [show, setShow] = useState(false);
+  const [bookingDetails, setBookingDetails] = useState(false);
+  const [consultDetails, setConsultDetails] = useState(false);
+  const [enquiryDetails, setEnquiryDetails] = useState(false);
+  const [postDetail, setPostDetail] = useState(false);
   const data = [
     { argument: "Monday", value: 30 },
     { argument: "Tuesday", value: 20 },
@@ -25,8 +36,7 @@ const Data_analysis_page = ({
     { argument: "Thursday", value: 50 },
     { argument: "Friday", value: 60 },
   ];
-  console.log(sales);
-  console.log(totalamount);
+
   return (
     <div className="data_analysis">
       <Columns
@@ -53,7 +63,25 @@ const Data_analysis_page = ({
         </div>
         <aside className="revenue"></aside>
       </div>
-      <Sales_Details sales={sales} productUpdate={productUpdate} />
+      <Toggle_Buttons
+        show={show}
+        setShow={setShow}
+        setPostDetail={setPostDetail}
+        postDetail={postDetail}
+        bookingDetails={bookingDetails}
+        setBookingDetails={setBookingDetails}
+        consultDetails={consultDetails}
+        setConsultDetails={setConsultDetails}
+        enquiryDetails={enquiryDetails}
+        setEnquiryDetails={setEnquiryDetails}
+      />
+      {show === true && (
+        <Sales_Details sales={sales} productUpdate={productUpdate} />
+      )}
+      {postDetail === true && <Post adminPost={adminPost} />}
+      {bookingDetails === true && <Booking booking={booking} />}
+      {consultDetails === true && <Consult consult={consult} />}
+      {enquiryDetails === true && <Enquiry enquiry={enquiry} />}
     </div>
   );
 };

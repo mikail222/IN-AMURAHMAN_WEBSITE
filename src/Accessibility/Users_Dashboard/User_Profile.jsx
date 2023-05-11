@@ -28,6 +28,7 @@ const User_Profile = () => {
       console.log(err.message);
     }
   };
+  console.log(profileUpdate);
   useEffect(() => {
     const uploadfile = () => {
       const identity = new Date().getTime() + photoUrl.name;
@@ -73,7 +74,11 @@ const User_Profile = () => {
           <div className="uploadBtn">
             <h6>Edit Profile</h6>
             <button className="btn" onSubmit={(e) => handleSubmit(e)}>
-              Upload profile
+              {trackphotoUrl !== null && trackphotoUrl < 100 ? (
+                <i>loading picture</i>
+              ) : (
+                "Upload profile"
+              )}
             </button>
           </div>
           <h6>USER INFORMATION</h6>
@@ -150,7 +155,11 @@ const User_Profile = () => {
           )}
           <div className="uploadBtn">
             <label htmlFor="fileInput" className=" btn">
-              Add Picture
+              {trackphotoUrl !== null && trackphotoUrl < 100 ? (
+                <i>loading picture</i>
+              ) : (
+                "Add Picture"
+              )}
             </label>
             <button className="btn">Remove</button>
           </div>

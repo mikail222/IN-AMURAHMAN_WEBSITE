@@ -6,7 +6,7 @@ import { addDoc, collection, serverTimestamp } from "firebase/firestore";
 import { db } from "../firebaseconfig";
 import { TbCurrencyNaira } from "react-icons/tb";
 
-const Payment_Method = ({ total, product_name, product_img }) => {
+const Payment_Method = ({ total, product_name, product_img, count }) => {
   const [firstName, setFirstName] = useState("");
   const [lastName, setLastName] = useState("");
   const [email, setEmail] = useState(" ");
