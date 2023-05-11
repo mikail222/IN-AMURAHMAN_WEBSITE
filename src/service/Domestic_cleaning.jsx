@@ -1,5 +1,4 @@
 import React from "react";
-import cleaningImg from "../asset/cdc-jjrXvzbqC5E-unsplash.jpg";
 import { GiCheckMark } from "react-icons/gi";
 import { Link } from "react-router-dom";
 import toilet from "../asset/filios-sazeides-qeIuFR5vPm8-unsplash.jpg";

@@ -1,5 +1,5 @@
 import React, { memo, useEffect, useState } from "react";
-import { Link, useParams } from "react-router-dom";
+import { Link } from "react-router-dom";
 import Footer from "./Footer";
 import AOS from "aos";
 import "aos/dist/aos.css";
@@ -11,7 +11,6 @@ const Show_Room = ({
   productUpdate,
 }) => {
   const [saveProduct, setSaveProduct] = useState([]);
-  // console.log(productUpdate);
   useEffect(() => {
     AOS.init({ duration: 1000 });
   }, []);

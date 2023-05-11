@@ -1,10 +1,4 @@
-import {
-  collection,
-  getDocs,
-  query,
-  serverTimestamp,
-  where,
-} from "firebase/firestore";
+import { collection, getDocs, query, where } from "firebase/firestore";
 import React, { useEffect, useState } from "react";
 import { AiOutlineShoppingCart, AiOutlineUserAdd } from "react-icons/ai";
 import { BiUserCheck } from "react-icons/bi";

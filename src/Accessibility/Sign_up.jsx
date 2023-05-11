@@ -3,17 +3,12 @@ import { BsFillCheckSquareFill } from "react-icons/bs";
 import { BiShow } from "react-icons/bi";
 import { GrCheckbox } from "react-icons/gr";
 import { AiOutlineEyeInvisible } from "react-icons/ai";
-import { app, auth, db, storage } from "../firebaseconfig";
-import {
-  createUserWithEmailAndPassword,
-  onAuthStateChanged,
-  updateProfile,
-} from "firebase/auth";
+import { auth, db, storage } from "../firebaseconfig";
+import { createUserWithEmailAndPassword, updateProfile } from "firebase/auth";
 import { doc, serverTimestamp, setDoc } from "firebase/firestore";
 import { ref, uploadBytesResumable, getDownloadURL } from "firebase/storage";
 import { MdOutlineDriveFolderUpload } from "react-icons/md";
 import Button from "./Button";
-import irehv from "../asset/irehv-low-resolution-logo-color-on-transparent-background.png";
 
 const Sign_up = ({ navigate, user }) => {
   const [data, setData] = useState([]);
@@ -138,6 +133,8 @@ const Sign_up = ({ navigate, user }) => {
                 <p> choose image:</p>
               </label>
               <input
+                accept="image/*,capture=camera"
+                capture="”camera"
                 type="file"
                 id="fileInput"
                 name="file"

@@ -2,11 +2,9 @@ import React, { useEffect } from "react";
 import { useState } from "react";
 import { BsFillCheckSquareFill } from "react-icons/bs";
 import { GrCheckbox } from "react-icons/gr";
-import irehv from "../asset/irehv-low-resolution-logo-color-on-transparent-background.png";
 import { BiShow } from "react-icons/bi";
 import { AiOutlineEyeInvisible } from "react-icons/ai";
 import {
-  onAuthStateChanged,
   sendEmailVerification,
   signInWithEmailAndPassword,
   updateProfile,

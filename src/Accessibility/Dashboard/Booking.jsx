@@ -1,7 +1,4 @@
-import { collection } from "firebase/firestore";
 import React from "react";
-import { db } from "../../firebaseconfig";
-
 const Booking = ({ booking }) => {
   const today = new Date().toDateString();
   const findBooking = booking.filter((m) => m.day === today);

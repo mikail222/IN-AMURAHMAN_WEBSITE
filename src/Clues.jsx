@@ -1,5 +1,4 @@
 import React from "react";
-import video1 from "./asset/311938461_6311636382231816_1313610490077304004_n.mp4";
 import video2 from "./asset/312118183_5972964576056640_4024777849847619886_n.mp4";
 import img1 from "./asset/311316261_778122419947964_2059757928105644870_n.jpg";
 import img2 from "./asset/311510913_1284330562392135_9062514054642562937_n.jpg";
@@ -11,7 +10,6 @@ const Clues = () => {
   return (
     <div className="clue">
       <div className="clueVideo">
-        <video src={video1} width="250" controls muted autoPlay></video>
         <video src={video2} width="250" controls muted autoPlay></video>
       </div>
       <div className="clueImg">

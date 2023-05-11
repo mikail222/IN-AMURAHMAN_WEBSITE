@@ -1,7 +1,6 @@
 import React from "react";
 import { auth } from "../../firebaseconfig";
 import { MdMonitor, MdOutlineClear } from "react-icons/md";
-import { FcCalendar } from "react-icons/fc";
 import { GrUpdate } from "react-icons/gr";
 import { AiOutlineLogout } from "react-icons/ai";
 import { signOut } from "firebase/auth";

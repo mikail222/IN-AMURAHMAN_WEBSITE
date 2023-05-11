@@ -1,5 +1,4 @@
 import React from "react";
-import { TbCurrencyNaira } from "react-icons/tb";
 
 const Product_Details = ({ product_detail, count }) => {
   console.log(product_detail);

@@ -55,6 +55,9 @@
 .logo1 i {
   text-shadow: 5px 6px 2px #0e4e97;
 }
+.logo1 i {
+  @apply lg:text-[1.5rem];
+}
 .logo1 {
   background-position: center;
   background-repeat: no-repeat;
@@ -496,16 +499,16 @@
 }
 .first {
   background: linear-gradient(to bottom, #45a4de, #eff8fc, #fee5ad);
-  @apply w-[80vw] h-[45vh] lg:w-[21vw]  lg:h-[50vh] flex  flex-col justify-center items-center lg:mb-[2rem] bg-[white];
+  @apply w-[80vw] h-[45vh] lg:w-[20vw]  lg:h-[52vh] flex  flex-col justify-center items-center lg:mb-[2rem] bg-[white];
 }
 
 .first p,
 .hiring p {
   background-color: #0095eb;
-  @apply text-[1.4rem] text-[white] w-[100%]   text-center  py-[0.65rem];
+  @apply lg:text-[1.4rem] text-[white] w-[100%]   text-center  py-[0.65rem];
 }
 .first i {
-  @apply w-[5.5rem] h-[10%]  flex  flex-col ml-[64%] lg:ml-[67%] font-serif bg-[#ab060c] text-[white];
+  @apply lg:w-[5.5rem] h-[10%]  flex  flex-col justify-center items-center ml-[64%] lg:ml-[67%] font-serif bg-[#ab060c] text-[white];
   padding: 0px 10px;
 }
 .first img {
@@ -719,12 +722,17 @@
   @apply text-[1.2rem]  tracking-[0.20rem];
 }
 .footer-container {
+  border-radius: 30% 0px 0px 0px;
+  background-image: url("./asset/vojtech-bruzek-Yrxr3bsPdS0-unsplash.jpg");
+  background-size: cover;
+  background-position: center;
   @apply w-[100%];
 }
 .footer {
-  border-radius: 50% 0px 0px 0px;
+  background-color: rgba(4, 2, 54, 0.8);
+  border-radius: 32% 0px 0px 0px;
   padding: 5rem 0px;
-  @apply flex flex-row  gap-[7rem] justify-center bg-[#0f0326];
+  @apply flex flex-row  gap-[7rem] justify-center;
 }
 @media screen and (max-width: 480px) {
   .footer {
@@ -750,11 +758,12 @@ footer img {
   @apply w-[2rem] h-[2rem]  rounded-[100%];
 }
 .media {
-  /* border-top: 0.25px solid grey; */
-  @apply bg-[#0f0326] w-[100%] flex  flex-row justify-center items-center lg:border-t-[1px] lg:h-[8rem] gap-[1rem] lg:mb-[1rem] lg:w-[40%];
+  border-radius: 0px 20px 0px 0px;
+  @apply w-[100%] flex  flex-row justify-center lg:border-t-[0.15px] border-[gray] lg:h-[8rem] gap-[1rem] lg:mb-[1rem] lg:w-[40%];
 }
 
 .media_class {
+  background-color: rgba(6, 6, 54, 0.8);
   @apply flex  flex-row h-[100%];
 }
 @media screen and (max-width: 480px) {
@@ -764,8 +773,8 @@ footer img {
   }
 }
 .copyright {
+  border-radius: 20px 0px 0px 0px;
   width: 60%;
-  background-color: #0f0326;
   height: 8rem;
   border-top: 0.25px solid grey;
   color: gray;
@@ -922,7 +931,7 @@ footer img {
   }
 }
 .image img {
-  @apply w-[100%] h-[100%] rounded-[5px];
+  @apply w-[100%] h-[100%] rounded-[5px] object-contain;
 }
 .slide-container {
   @apply w-[84000px] h-[73vh];
@@ -1580,11 +1589,11 @@ nav i {
   @apply w-[100%] text-[#5e72e4]  text-[1rem] lg:text-[1.2rem] font-serif m-[0];
 }
 .userTableHeader {
-  @apply text-[gray] font-bold mt-[15%] border-b-[1px] font-serif  lg:w-[73vw];
+  @apply text-[#344767] font-bold mt-[15%] border-b-[1px] font-serif  lg:w-[73vw];
 }
 
 .Authoricon {
-  @apply w-[50px] h-[50px] object-cover rounded-[50%] border-[1px] border-[purple];
+  @apply w-[50px] h-[50px] object-cover rounded-[5px] border-[1px] border-[#344767];
 }
 .AuthorAlign {
   @apply min-w-[30%] lg:w-[100%] flex flex-row items-center gap-[1rem] text-[1.2rem];
@@ -1616,7 +1625,7 @@ nav i {
   @apply text-[1.2rem] font-serif;
 }
 .parentContainer {
-  @apply w-[100%]  h-[300vh] bg-[lightgray];
+  @apply w-[100%]  h-[300vh] bg-[white];
 }
 .resetArrow {
   @apply flex  flex-row  justify-center  items-center;

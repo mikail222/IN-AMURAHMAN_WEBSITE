@@ -9,7 +9,6 @@ import img5 from "./asset/311316261_778122419947964_2059757928105644870_n.jpg";
 import img6 from "./asset/312174882_1528535947626341_195442157512999292_n.jpg";
 import img7 from "./asset/312158060_491770219533679_7275163015181232328_n.jpg";
 import img8 from "./asset/312137280_520182353281868_4450230382255186139_n.jpg";
-import img9 from "./asset/resul-mentes-DbwYNr8RPbg-unsplash.jpg";
 import img10 from "./asset/neven-krcmarek-HWbxSLvmSww-unsplash.jpg";
 import { Link } from "react-router-dom";
 import Service from "./Service";
@@ -30,7 +29,6 @@ const Home = ({ productUpdate }) => {
     { image: img6 },
     { image: img7 },
     { image: img8 },
-    { image: img9 },
     { image: img10 },
   ];
 

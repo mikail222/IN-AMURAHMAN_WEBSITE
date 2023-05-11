@@ -1,6 +1,5 @@
 import { deleteUser, updateProfile } from "firebase/auth";
 import React, { useState } from "react";
-import { MdHowToVote } from "react-icons/md";
 import profileEditIcon from "../asset/images-removebg-preview.png";
 import { auth } from "../firebaseconfig";
 
@@ -9,7 +8,6 @@ const Update = ({ navigate }) => {
   const [displayName, setdDisplayName] = useState("");
   const [email, setEmail] = useState("");
   const [photoURL, setPhotoUrl] = useState("");
-  const [emailVerified, setEmailVerified] = useState("");
   const [phoneNumber, setPhoneNumber] = useState("");
   const handleUpdate = (e) => {
     e.preventDefault();

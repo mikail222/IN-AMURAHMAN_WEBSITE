@@ -1,9 +1,7 @@
 import "./App.css";
 import Container from "./Container/Container";
-import Dashboard from "./Accessibility/Dashboard/Dashboard";
-import { Route, Routes } from "react-router-dom";
 import { useEffect, useState } from "react";
-import { collection, getDocs, query } from "firebase/firestore";
+import { collection, getDocs } from "firebase/firestore";
 import { db } from "./firebaseconfig";
 
 const App = () => {

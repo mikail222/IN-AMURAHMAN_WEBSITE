@@ -1,10 +1,6 @@
 import React, { useState } from "react";
-import { TbUserSearch } from "react-icons/tb";
 import { auth } from "../../firebaseconfig";
 import { deleteUser } from "firebase/auth";
-import { list } from "firebase/storage";
-import Dashboard from "./Dashboard";
-
 const User_Table = ({ user }) => {
   const [search_user, setSearch_user] = useState(" ");
   const [delete_User, setDelete_User] = useState(" ");

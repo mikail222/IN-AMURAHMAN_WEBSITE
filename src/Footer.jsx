@@ -1,11 +1,10 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import { SiFacebook } from "react-icons/si";
-import { AiOutlineMail } from "react-icons/ai";
+import { AiOutlineMail, AiOutlineTwitter } from "react-icons/ai";
 import { MdPhoneInTalk } from "react-icons/md";
 import { BsWhatsapp } from "react-icons/bs";
 import { BsInstagram } from "react-icons/bs";
-import { FiTwitter } from "react-icons/fi";
 import { BiCopyright } from "react-icons/bi";
 const Footer = () => {
   const style = {
@@ -115,7 +114,7 @@ const Footer = () => {
             title="Twitter"
             rel="noopener noreferrer"
           >
-            <FiTwitter
+            <AiOutlineTwitter
               style={{
                 color: "black",
                 width: "25px",

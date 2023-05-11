@@ -1,7 +1,5 @@
 import React from "react";
-import { MdAndroid } from "react-icons/md";
 import { Link } from "react-router-dom";
-import logo from "./asset/311994973_527103495932771_4660787857232063610_n.jpg";
 import irehv from "./asset/irehv-low-resolution-logo-color-on-transparent-background.png";
 import { useState } from "react";
 import { auth } from "./firebaseconfig";
@@ -14,7 +12,7 @@ const Navbar = ({ navigate, setShowNav }) => {
     e.preventDefault();
     signOut(auth)
       .then(() => {
-        navigate("/") && setShowNav(true);
+        navigate("/");
         console.log(" Sign-out successful.");
       })
       .catch((error) => {
@@ -22,12 +20,12 @@ const Navbar = ({ navigate, setShowNav }) => {
       });
   };
   return (
-    <div className="nav">
+    <div className="nav" onScroll={{}}>
       <img
         className="irehv"
         src={irehv}
         alt="logo"
-        onClick={() => navigate("/") && setShowNav(true)}
+        onClick={() => navigate("/")}
       />
 
       <div className="menuBar_container">

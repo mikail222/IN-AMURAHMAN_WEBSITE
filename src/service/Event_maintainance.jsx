@@ -1,6 +1,5 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import eventImg from "../asset/marc-babin-ecGZWPOvya0-unsplash.jpg";
 import Footer from "../Footer";
 
 const Event_maintainance = ({ checkList }) => {

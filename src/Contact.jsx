@@ -1,7 +1,6 @@
-import { addDoc, collection, serverTimestamp } from "firebase/firestore";
+import { addDoc, collection } from "firebase/firestore";
 import React from "react";
 import { useState } from "react";
-import { Link } from "react-router-dom";
 import { db } from "./firebaseconfig";
 import Footer from "./Footer";
 

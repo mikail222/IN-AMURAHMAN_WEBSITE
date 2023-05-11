@@ -1,6 +1,5 @@
 import React, { useEffect } from "react";
 import { Link } from "react-router-dom";
-import Footer from "./Footer";
 import AOS from "aos";
 import "aos/dist/aos.css";
 // import domestic from "./asset/domestic";

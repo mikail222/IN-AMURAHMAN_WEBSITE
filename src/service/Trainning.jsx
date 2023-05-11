@@ -3,7 +3,6 @@ import React, { useState } from "react";
 import trainImg from "../asset/sincerely-media-dGxOgeXAXm8-unsplash.jpg";
 import { db } from "../firebaseconfig";
 import Footer from "../Footer";
-import Drainage from "./Drainage";
 
 const Trainning = () => {
   const [trainData, setTrainData] = useState({});

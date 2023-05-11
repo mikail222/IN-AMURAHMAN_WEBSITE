@@ -6,7 +6,6 @@ import { GrUpdate } from "react-icons/gr";
 import { useNavigate } from "react-router-dom";
 import { signOut } from "firebase/auth";
 import { auth } from "../../firebaseconfig";
-import Toggle_Buttons from "./Toggle_Buttons";
 
 const Side_Bar = ({ currentUser, setDrawer }) => {
   const navigate = useNavigate();

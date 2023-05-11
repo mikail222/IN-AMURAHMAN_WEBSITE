@@ -6,8 +6,6 @@ import Data_analysis_page from "./Data_analysis_page";
 import User_Table from "./User_Table";
 import Side_Bar from "./Side_Bar";
 import Product_UpdateForm from "./Product_UpdateForm";
-import { CgMenuGridR } from "react-icons/cg";
-import { FcMenu } from "react-icons/fc";
 import { BiMenu } from "react-icons/bi";
 import Mobile_Side_Bar from "./Mobile_Side_Bar";
 
