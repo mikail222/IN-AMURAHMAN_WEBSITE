@@ -8,6 +8,9 @@
     "preview": "vite preview"
   },
   "dependencies": {
+    "@devexpress/dx-react-chart": "^4.0.3",
+    "@devexpress/dx-react-chart-material-ui": "^4.0.3",
+    "@devexpress/dx-react-core": "^4.0.3",
     "@google-pay/button-react": "^3.0.6",
     "@reduxjs/toolkit": "^1.8.4",
     "aos": "^2.3.4",
