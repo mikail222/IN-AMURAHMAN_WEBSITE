@@ -1,10 +1,3 @@
-import {
-  ArgumentAxis,
-  BarSeries,
-  Chart,
-  ValueAxis,
-} from "@devexpress/dx-react-chart";
-import { Paper } from "@material-ui/core";
 import React from "react";
 import User_Column from "./User_Column";
 import Comment from "./Comment";
@@ -23,14 +16,14 @@ const User_Data = () => {
       <div className="analytics">
         <div className="field">
           <aside className="graphField">
-            <Paper>
+            {/* <Paper>
               <Chart data={data}>
                 <ArgumentAxis />
                 <ValueAxis />
 
                 <BarSeries valueField="value" argumentField="argument" />
               </Chart>
-            </Paper>
+            </Paper> */}
           </aside>
         </div>
         <aside className="Image"></aside>
