@@ -132,15 +132,16 @@ const Pest_control = ({ checkList }) => {
               <p>Flies</p>
             </Link>
           </div>
-          <div className="ads">
+          <div>
             <i
+              className="ads"
               style={{
                 fontFamily: "serif",
                 fontWeight: "bold",
                 textAlign: "center",
               }}
             >
-              For Home use and Family protection order now!
+              For Home and Environmental protection order now!
             </i>
 
             {checkList.slice(6, 8).map(({ img, product_name, id }, i) => (
@@ -150,7 +151,7 @@ const Pest_control = ({ checkList }) => {
                   style={{ marginTop: "2rem", marginBottom: "2rem" }}
                   to={`Product_detail/${id}`}
                 >
-                  <i>Order Now</i>
+                  <i>Buy Now</i>
                   <img className="first_class_img" src={img} alt="" />
                   <p>{product_name}</p>
                 </Link>

@@ -16,7 +16,6 @@ import { GrBlog } from "react-icons/gr";
 import { AiOutlineLogin } from "react-icons/ai";
 import { RiLoginCircleFill, RiLogoutBoxRLine } from "react-icons/ri";
 import { MdOutlineClear } from "react-icons/md";
-import { signOut } from "firebase/auth";
 import { TbBrandBooking } from "react-icons/tb";
 
 const Mobile_nav = ({ show, setShowNav }) => {
@@ -24,8 +23,10 @@ const Mobile_nav = ({ show, setShowNav }) => {
   const [open, setOpen] = useState(false);
   const [toggleDrawer, setToggleDrawer] = useState(false);
 
-  const handleLogOut = (e) => {
+  const handleLogOut = async (e) => {
     e.preventDefault();
+    const { signOut } = await import("firebase/auth");
+
     signOut(auth)
       .then(() => {
         navigate("/") && setShowNav(true);

@@ -292,7 +292,10 @@
   @apply flex flex-col justify-center items-center lg:flex-row gap-[1rem];
 }
 .pestDeal {
-  @apply flex flex-col justify-center items-center lg:flex-row;
+  @apply flex flex-col lg:justify-between items-center lg:flex-row;
+}
+.pestDeal div:nth-child(2) {
+  @apply flex  flex-col justify-center  items-center;
 }
 .cleaningBg {
   @apply mt-[4rem];
@@ -308,14 +311,14 @@
   @apply w-[100%] h-[35vh] lg:h-[60vh] flex flex-col  justify-center items-center mt-[1rem];
 }
 .ads {
-  @apply lg:text-[1.3rem] font-serif font-bold lg:mb-[1rem] mt-[10%];
+  @apply text-[0.80rem] lg:w-[10%] lg:text-[1.3rem]   hover:text-[blue]  font-serif font-bold mb-[1rem] lg:mt-[10%];
 }
 .main {
   background-image: url("./asset/s-o-c-i-a-l-c-u-t-1RT4txDDAbM-unsplash.jpg");
   background-position: bottom;
   background-repeat: repeat;
   background-size: cover;
-  @apply max-w-[93vw] lg:w-[100%] h-[40vh] lg:h-[62vh] flex flex-col  justify-center items-center lg:mt-[3rem] lg:ml-[1rem];
+  @apply max-w-[93vw] lg:w-[100%] h-[40vh] lg:h-[62vh] flex flex-col lg:ml-[1rem];
 }
 
 .main h4 {
@@ -365,8 +368,8 @@
   background-size: cover;
   background-repeat: no-repeat;
   background-attachment: fixed;
-  @apply flex flex-row overflow-auto w-[95%] lg:h-[80vh] ml-[3%]
-    lg:m-[1.5rem] gap-[1.5rem] lg:ml-[2rem] mb-[3rem];
+  @apply flex flex-row overflow-auto w-[95%] lg:h-[70vh] ml-[3%]
+    lg:m-[1.5rem] gap-[1.5rem] lg:ml-[2rem] mb-[5rem];
 }
 
 .commercialSlideImg img {
@@ -802,15 +805,14 @@ footer img {
   }
 }
 .producer {
-  @apply lg:flex flex-row;
+  @apply lg:flex flex-row gap-[0.5rem];
 }
 .producer p {
   @apply lg:ml-[8rem] mr-[1rem];
 }
 .facebook,
 .mail {
-  fill: rgb(255, 255, 255, 0.5);
-  @apply hidden lg:w-[25px] lg:h-[25px] rounded-[50%] lg:flex;
+  @apply hidden lg:w-[20px] lg:h-[20px] rounded-[50%] lg:flex;
 }
 .media a {
   @apply mt-[2.5rem];
@@ -1284,7 +1286,7 @@ footer img {
   @apply hidden lg:w-[20%] lg:h-[30vh] rounded-[50%] mb-[20%];
 }
 .ads {
-  @apply w-[30%] flex flex-col justify-center items-center;
+  @apply w-[100%] flex flex-col  justify-center items-center;
 }
 .cleaningBg {
   background-image: url("./asset/cdc-jjrXvzbqC5E-unsplash.jpg");

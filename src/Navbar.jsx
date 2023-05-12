@@ -3,12 +3,12 @@ import { Link } from "react-router-dom";
 import irehv from "./asset/irehv-low-resolution-logo-color-on-transparent-background.png";
 import { useState } from "react";
 import { auth } from "./firebaseconfig";
-import { signOut } from "firebase/auth";
 
 const Navbar = ({ navigate, setShowNav }) => {
   const [show, setShow] = useState(false);
   const currentUser = auth.currentUser;
-  const handleLogOut = (e) => {
+  const handleLogOut = async (e) => {
+    const { signOut } = await import("firebase/auth");
     e.preventDefault();
     signOut(auth)
       .then(() => {
@@ -20,7 +20,7 @@ const Navbar = ({ navigate, setShowNav }) => {
       });
   };
   return (
-    <div className="nav" onScroll={{}}>
+    <div className="nav">
       <img
         className="irehv"
         src={irehv}

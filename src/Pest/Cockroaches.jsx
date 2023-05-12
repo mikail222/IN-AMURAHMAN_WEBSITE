@@ -132,17 +132,7 @@ const Cockroaches = () => {
           </p>
         </main>
         <aside>
-          <div className="clueVideo">
-            <iframe
-              width="100%"
-              height="420"
-              src="https://www.youtube.com/embed/P3gHumZ_cxY"
-              title="PestXpert 2 in 1 Cockroach Gel Bait in action"
-              frameborder="0"
-              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-              allowfullscreen
-            ></iframe>
-          </div>
+          <div className="clueVideo"></div>
           <div className="frame">
             <img src={Cockroache} alt="" />
           </div>

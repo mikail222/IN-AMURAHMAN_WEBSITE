@@ -5,18 +5,7 @@ import Footer from "../Footer";
 const Snakes = () => {
   return (
     <div>
-      <div className="hide">
-        <iframe
-          width="98%"
-          height="420"
-          src="https://www.youtube.com/embed/0arsPXEaIUY"
-          title="Nope Ropes, Sneks, & Danger Noodles"
-          frameborder="0"
-          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-          allowFullscreen
-          style={{ borderRadius: "15px", marginLeft: "1rem" }}
-        ></iframe>
-      </div>
+      <div className="hide"></div>
       <div className="snake">
         <main>
           <h2>SNAKE REMOVAL SERVICE</h2>

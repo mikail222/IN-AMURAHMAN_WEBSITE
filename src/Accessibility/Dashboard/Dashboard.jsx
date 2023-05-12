@@ -1,7 +1,6 @@
-import { collection, getDocs } from "firebase/firestore";
 import { useEffect, useState } from "react";
-import { auth, db } from "../../firebaseconfig";
-import { Route, Routes, useNavigate } from "react-router-dom";
+import { auth } from "../../firebaseconfig";
+import { Route, Routes } from "react-router-dom";
 import Data_analysis_page from "./Data_analysis_page";
 import User_Table from "./User_Table";
 import Side_Bar from "./Side_Bar";
@@ -30,15 +29,19 @@ const Dashboard = ({ adminPost, productUpdate, count }) => {
       currentUser.reload();
     }
     console.log(currentUser?.emailVerified);
-    const collectionOfUser = collection(db, "Admin");
-    const collBooking = collection(db, "Booking");
-    const collSales = collection(db, "Payment-details");
-    const collTotalAmount = collection(db, "Paymeny_details");
-    const collConsult = collection(db, "Consultance");
-    const collEnquiry = collection(db, "Enquiry");
-    const collProductUpdate = collection(db, "Products");
 
     const getUser = async () => {
+      const { collection, getDocs } = await import("firebase/firestore");
+      const { db } = await import("../../firebaseconfig");
+
+      const collectionOfUser = collection(db, "Admin");
+      const collBooking = collection(db, "Booking");
+      const collSales = collection(db, "Payment-details");
+      const collTotalAmount = collection(db, "Paymeny_details");
+      const collConsult = collection(db, "Consultance");
+      const collEnquiry = collection(db, "Enquiry");
+      const collProductUpdate = collection(db, "Products");
+
       const data = await getDocs(collectionOfUser);
       const Booking = await getDocs(collBooking);
       const sales = await getDocs(collSales);

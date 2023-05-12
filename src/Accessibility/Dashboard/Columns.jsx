@@ -1,4 +1,3 @@
-import { collection, getDocs, query, where } from "firebase/firestore";
 import React, { useEffect, useState } from "react";
 import { AiOutlineShoppingCart, AiOutlineUserAdd } from "react-icons/ai";
 import { BiUserCheck } from "react-icons/bi";
@@ -27,10 +26,12 @@ const Columns = ({
 
   const lastMonth = new Date(new Date().setMonth(day.getMonth() - 1));
   console.log(lastMonth);
-  const CommentRef = collection(db, "User_Comment");
 
   useEffect(() => {
     const getLastMonth = async () => {
+      const { collection, getDocs, query, where } = await import(
+        "firebase/firestore"
+      );
       const lastMonthQuery = query(
         collection(db, "Admin"),
         where("timeStamp", "<=", day, where("timeStamp", ">", lastMonth))
@@ -40,6 +41,9 @@ const Columns = ({
     };
     getLastMonth();
     const getComment = async () => {
+      const { collection, getDocs } = await import("firebase/firestore");
+      const CommentRef = collection(db, "User_Comment");
+
       const comment_data = await getDocs(CommentRef);
       setComment(
         comment_data.docs.map((doc) => ({ ...doc.data(), id: doc.id }))

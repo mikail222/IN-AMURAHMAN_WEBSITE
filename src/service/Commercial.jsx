@@ -41,10 +41,11 @@ const Commercial = ({ checkList }) => {
           <Link className="ads" to="/Show_Room">
             Check out for our Products
           </Link>
+
           {checkList.slice(4, 5).map(({ img, product_name, id }, i) => (
             <div key={i}>
               <Link className="first" to={`Product_detail/${id}`}>
-                <i>Order Now</i>
+                <i>Buy Now</i>
                 <img className="first_class_img" src={img} alt="" />
                 <p>{product_name}</p>
               </Link>
