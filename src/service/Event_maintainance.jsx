@@ -35,7 +35,8 @@ const Event_maintainance = ({ checkList }) => {
       name: "Storex",
     },
     {
-      images: "https://i.ytimg.com/vi/yyxYiMWl1R8/maxresdefault.jpg",
+      images:
+        "https://images.yaoota.com/mcxOaL34lH6edE-rB6_5rci2mEg=/trim/yaootaweb-production-ng/media/crawledproductimages/8b48b5bfa179c48d9c3292440fc2115c7a8b40bb.jpg",
       name: "Pumping Machine",
     },
     {
@@ -51,7 +52,7 @@ const Event_maintainance = ({ checkList }) => {
   ];
 
   return (
-    <div>
+    <div className="event-container">
       <div className="event">
         <main>
           <div className="event_managemnt">
@@ -99,7 +100,7 @@ const Event_maintainance = ({ checkList }) => {
           ))}
         </aside>
       </div>
-      <div>
+      <div className="hireEquipment">
         <div style={{ marginTop: "2.5rem", width: "100%" }}>
           <h4
             style={{

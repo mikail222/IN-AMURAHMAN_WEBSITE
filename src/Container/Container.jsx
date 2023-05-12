@@ -45,6 +45,8 @@ import Googlepay from "../Accessibility/Googlepay";
 import Mobile_nav from "../Mobile_Nav";
 import Booking from "../service/Booking";
 import Users_Dashboard from "../Accessibility/Users_Dashboard/Users_Dashboard";
+import { collection, getDocs } from "firebase/firestore";
+import { db } from "../firebaseconfig";
 
 const Container = ({ user, setShowNav }) => {
   const [findProduct, setFindProduct] = useState("");
@@ -58,11 +60,7 @@ const Container = ({ user, setShowNav }) => {
 
   useEffect(() => {
     const getProduct = async () => {
-      const { db } = await import("../firebaseconfig");
-      const { collection, getDocs } = await import("firebase/firestore");
-
       const collProductUpdate = collection(db, "Products");
-
       const Products = await getDocs(collProductUpdate);
       setProductUpdate(
         Products.docs.map((doc) => ({ ...doc.data(), id: doc.id }))

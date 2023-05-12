@@ -1,7 +1,7 @@
 .App {
   justify-content: center;
   align-items: center;
-  background-color: rgba(55, 205, 25, 0.2);
+  /* background-color: rgba(55, 205, 25, 0.2); */
 }
 @media screen and (max-width: 480px) {
   .App {
@@ -121,10 +121,8 @@
 
 .company-info {
   background-image: url("./asset/marc-babin-ecGZWPOvya0-unsplash.jpg");
-  background-position: center;
-  background-size: cover;
-  background-repeat: no-repeat;
-  background-attachment: fixed;
+  background-position: top;
+  background-size: contain;
   width: 100%;
   border-radius: 75% 0px 75% 0px;
 }
@@ -177,11 +175,6 @@
   grid-template-columns: repeat(4, 1fr);
   align-items: center;
   place-items: center;
-  background-image: url("./asset/annie-spratt-0ZPSX_mQ3xI-unsplash.jpg");
-  background-position: center;
-  background-size: cover;
-  background-repeat: no-repeat;
-  background-attachment: fixed;
   margin-top: 5rem;
   width: 100%;
   padding: 2rem;
@@ -233,7 +226,7 @@
   @apply mt-[12rem] text-[white] w-[100%] text-right  lg:p-[0.75rem] lg:mt-[20rem];
 }
 .drainage {
-  @apply w-[100%] lg:mt-[3rem] mb-[3rem] flex flex-col lg:flex-row;
+  @apply w-[100%] lg:mt-[2%] mb-[3rem] flex flex-col lg:flex-row;
 }
 .drainage main {
   @apply w-[90%] lg:w-[75%];
@@ -380,9 +373,10 @@
   @apply flex-none;
 }
 .event {
-  margin-top: 5rem;
-  @apply w-[100%] mb-[2rem] flex flex-col lg:flex-row gap-[1rem];
+  margin-top: 2rem;
+  @apply w-[100%] mb-[2rem] flex flex-col lg:flex-row gap-[1rem]  lg:h-[120vh];
 }
+
 .event p {
   @apply font-serif  lg:text-[1.3rem];
 }
@@ -563,22 +557,22 @@
   @apply text-[1rem] lg:text-[1.3rem] font-bold;
 }
 .services {
-  background-image: url("./asset/neven-krcmarek-HWbxSLvmSww-unsplash.jpg");
-  background-attachment: fixed;
+  background-image: url("./asset/nordwood-themes-R53t-Tg6J4c-unsplash.jpg");
   background-size: cover;
-  background-position: right;
-  border-radius: 100% 100%;
+  background-position: center;
+  border-radius: 100% 0%;
   @apply w-[100%] mb-[3%] pb-[0];
 }
 .service-overlay {
-  background-color: rgba(09, 73, 05, 0.4);
-  border-radius: 0px 100% 100% 0%;
+  /* background-color: rgba(209, 245, 245, 0.89); */
+  border-radius: 0% 100%;
   @apply w-[100%];
 }
 .service {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   grid-gap: 1.5rem;
+  color: black;
 }
 @media screen and (max-width: 480px) {
   .service {
@@ -630,7 +624,7 @@
 .form input {
   border-radius: 10px;
   border-bottom: 1px solid lightgray;
-  box-shadow: 1px 1px 1px white;
+  box-shadow: 1px 2px 1px black;
   @apply p-[0.45rem] w-[95%] ml-2 m-[0.25rem]
     bg-[transparent];
 }
@@ -646,7 +640,7 @@
 .form textarea {
   border-radius: 13px 0px;
   border-bottom: 1px solid lightgray;
-  box-shadow: 1px 1px 1px white;
+  box-shadow: 1px 2px 1px black;
   @apply w-[95%] ml-2 bg-[transparent];
 }
 .form textarea::-webkit-scrollbar {
@@ -1016,6 +1010,72 @@ footer img {
   .slide-container {
     width: 42000px;
     height: 35vh;
+    margin: 0px 0px 0px -990px;
+  }
+  @keyframes slide_image {
+    0% {
+      left: 0px;
+    }
+    5% {
+      left: 0px;
+    }
+    10% {
+      left: 1200px;
+    }
+    15% {
+      left: 1200px;
+    }
+    20% {
+      left: 2400px;
+    }
+    25% {
+      left: 2400px;
+    }
+    30% {
+      left: 3600px;
+    }
+    35% {
+      left: 3600px;
+    }
+    40% {
+      left: 4800px;
+    }
+    45% {
+      left: 4800px;
+    }
+    50% {
+      left: 6000px;
+    }
+    55% {
+      left: 6000px;
+    }
+    60% {
+      left: 7200px;
+    }
+    65% {
+      left: 7200px;
+    }
+    70% {
+      left: 8400px;
+    }
+    75% {
+      left: 8400px;
+    }
+    80% {
+      left: 9600px;
+    }
+    85% {
+      left: 9600px;
+    }
+    90% {
+      left: 10800px;
+    }
+    /* 95% {
+    left: 10800px;
+  } */
+    100% {
+      left: 10800px;
+    }
   }
 }
 .Advert {
