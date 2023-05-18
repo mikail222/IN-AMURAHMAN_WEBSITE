@@ -533,7 +533,7 @@
 }
 .first {
   background: linear-gradient(to bottom, #45a4de, #eff8fc, #fee5ad);
-  @apply w-[80vw] h-[45vh] lg:w-[20vw]  lg:h-[52vh] flex  flex-col justify-center items-center lg:mb-[2rem] bg-[white];
+  @apply w-[80vw] h-[43vh] lg:w-[20vw]  lg:h-[52vh] flex  flex-col justify-center items-center lg:mb-[2rem] bg-[white];
 }
 
 .first p,
@@ -642,7 +642,7 @@
     font-serif;
 }
 .environment {
-  text-shadow: 5px 6px 2px black;
+  text-shadow: 5px 3px 2px black;
   @apply text-center text-[#0e4e97] lg:text-[6rem] text-[2.5rem];
 }
 .services h3 {
@@ -1247,7 +1247,7 @@ footer img {
 .flies p,
 .termites p,
 .snake p {
-  @apply lg:text-[1.3rem] m-[2rem] text-center;
+  @apply lg:text-[1.3rem] m-[1.5rem] text-center;
 }
 .ants li,
 .spider li,
@@ -1278,7 +1278,7 @@ footer img {
 .scorpion,
 .flies,
 .snake {
-  @apply flex flex-col-reverse  lg:flex-row gap-[2rem] w-[98%] text-center mt-[3rem];
+  @apply flex flex-col-reverse  lg:flex-row gap-[2rem] w-[98%] text-center mt-[2rem];
 }
 .bedbugs main,
 .ants main,
@@ -1382,7 +1382,7 @@ footer img {
   @apply flex flex-col;
 }
 .frame img {
-  @apply w-[100%] h-[40vh] lg:h-[60vh] mt-[2.5rem] rounded-[10px] items-center  object-contain;
+  @apply w-[100%] h-[40vh] lg:h-[60vh] mt-[1.5rem] rounded-[10px] items-center  object-contain;
 }
 .pest_class {
   background-image: url("https://assets-us-01.kc-usercontent.com/338e61a8-25d7-0035-f3a0-cea86e563aa1/b1f9189b-5ada-40ca-b8e9-445b5120f86e/procare-homepage-mosquito-control.jpg?w=760&h=480&auto=format&fit=crop");

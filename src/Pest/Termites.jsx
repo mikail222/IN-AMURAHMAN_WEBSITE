@@ -60,7 +60,9 @@ const Termites = () => {
           </p>
           <p>4. Warm dark places</p>
           <p> 5. Moisture</p>
-          <p> 6. Dead trees Icon Termite Identification </p>
+          <p>
+            <b> 6. Dead trees Icon Termite Identification </b>
+          </p>
           <li>1. Six legs</li> <li>2. Straight pointing beady antennas </li>
           <li>3. Large heads with no distinct body segmentation</li>
           <li>

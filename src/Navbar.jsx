@@ -50,6 +50,12 @@ const Navbar = ({ navigate, setShowNav }) => {
                         <Link to="/Ants">Ant control</Link>
                       </li>
                       <li>
+                        <Link to="/Scorpion">Scorpion control</Link>
+                      </li>
+                      <li>
+                        <Link to="/Flies">Flies control</Link>
+                      </li>
+                      <li>
                         <Link to="/Bedbugs">Bedbugs control</Link>
                       </li>
                       <li>
