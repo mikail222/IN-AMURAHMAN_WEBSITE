@@ -66,10 +66,6 @@ const Mobile_Side_Bar = ({ currentUser, setDrawer }) => {
           <AiFillQuestionCircle className="menuBar " title="dashboardIcon" />{" "}
           <i>Enquiry</i>
         </div>
-        <div onClick={() => navigate("Data_analysis_page")}>
-          <MdOutlineClear className="menuBar " title="dashboardIcon" />{" "}
-          <i>Back</i>
-        </div>
         <div onClick={() => setDrawer(true)}>
           <MdOutlineClear className="menuBar " title="dashboardIcon" />{" "}
           <i>Back</i>

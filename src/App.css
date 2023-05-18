@@ -122,7 +122,7 @@
 .company-info {
   background-image: url("./asset/marc-babin-ecGZWPOvya0-unsplash.jpg");
   background-position: top;
-  background-size: contain;
+  background-size: cover;
   background-attachment: fixed;
   width: 100%;
   border-radius: 100% 0px 100% 0px;
@@ -2038,7 +2038,7 @@ nav i {
   @apply w-[80%] font-bold text-center text-[0.90rem] font-serif hover:text-[white];
 }
 .our-team div img {
-  @apply my-[8%] w-[5rem] h-[15vh] lg:w-[8rem] lg:h-[20vh] object-[80%] rounded-[100px] border-[2px] border-[gray];
+  @apply my-[8%] w-[8rem] h-[19vh] lg:w-[8rem] lg:h-[20vh] object-[80%] rounded-[100px];
 }
 .name {
   @apply text-[1.2rem] font-serif font-bold text-[#217192];
