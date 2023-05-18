@@ -44,9 +44,10 @@ import Reset_Password from "../Accessibility/Dashboard/Reset_Password";
 import Googlepay from "../Accessibility/Googlepay";
 import Mobile_nav from "../Mobile_Nav";
 import Booking from "../service/Booking";
-import Users_Dashboard from "../Accessibility/Users_Dashboard/Users_Dashboard";
 import { collection, getDocs } from "firebase/firestore";
 import { db } from "../firebaseconfig";
+import Scorpion from "../Pest/Scorpion";
+import Flies from "../Pest/Flies";
 
 const Container = ({ user, setShowNav }) => {
   const [findProduct, setFindProduct] = useState("");
@@ -91,10 +92,12 @@ const Container = ({ user, setShowNav }) => {
               />
             }
           />
-          <Route path="/Users_Dashboard/*" element={<Users_Dashboard />} />
+          {/* <Route
+            path="/Users_Dashboard/*"
+            element={<Users_Dashboard user={user} />}
+          /> */}
           <Route path="/Googlepay" element={<Googlepay />} />
           <Route path="/Booking" element={<Booking />} />
-
           <Route path="/" element={<Home productUpdate={productUpdate} />} />
           <Route path="Clues" element={<Clues />} />
           <Route path="Hire" element={<Hire />} />
@@ -114,7 +117,6 @@ const Container = ({ user, setShowNav }) => {
             path="/Reset_Password"
             element={<Reset_Password user={user} />}
           />
-
           <Route
             path="/Login"
             element={<Login navigate={navigate} user={user} />}
@@ -162,6 +164,42 @@ const Container = ({ user, setShowNav }) => {
             }
           />
           <Route
+            path="Wast_management/Product_detail/:id"
+            element={
+              <ProductDetail
+                productUpdate={productUpdate}
+                userId={userId}
+                total={total}
+                count={count}
+                setCount={setCount}
+              />
+            }
+          />
+          <Route
+            path="Commercial/Product_detail/:id"
+            element={
+              <ProductDetail
+                productUpdate={productUpdate}
+                userId={userId}
+                total={total}
+                count={count}
+                setCount={setCount}
+              />
+            }
+          />{" "}
+          <Route
+            path="Plank_pest_control/Product_detail/:id"
+            element={
+              <ProductDetail
+                productUpdate={productUpdate}
+                userId={userId}
+                total={total}
+                count={count}
+                setCount={setCount}
+              />
+            }
+          />
+          <Route
             path="Domestic_cleaning/Product_detail/:id"
             element={
               <ProductDetail
@@ -173,12 +211,18 @@ const Container = ({ user, setShowNav }) => {
               />
             }
           />
-          <Route path="Wast_management" element={<Wast_managment />} />
+          <Route
+            path="Wast_management"
+            element={<Wast_managment checkList={checkList} />}
+          />
           <Route
             path="/Domestic_cleaning"
             element={<Domestic_cleaning checkList={checkList} />}
           />
-          <Route path="Plank_pest_control" element={<Plank_pest_control />} />
+          <Route
+            path="Plank_pest_control"
+            element={<Plank_pest_control checkList={checkList} />}
+          />
           <Route path="Disinfect" element={<Disinfect />} />
           <Route
             path="Pest_control"
@@ -193,7 +237,6 @@ const Container = ({ user, setShowNav }) => {
             path="Event_maintainance"
             element={<Event_maintainance checkList={checkList} />}
           />
-
           <Route
             path="Event_maintainance/Product_detail/:id"
             element={<ProductDetail productUpdate={productUpdate} />}
@@ -201,6 +244,8 @@ const Container = ({ user, setShowNav }) => {
           <Route path="Drainage" element={<Drainage />} />
           <Route path="Consultance" element={<Consultance />} />
           <Route path="Ants" element={<Ants />} />
+          <Route path="Scorpion" element={<Scorpion />} />
+          <Route path="Flies" element={<Flies />} />
           <Route path="Spider" element={<Spider />} />
           <Route path="Rodents" element={<Rodents />} />
           <Route path="Mosquitoes" element={<Mosquitoes />} />

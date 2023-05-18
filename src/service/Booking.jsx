@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useRef, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { db } from "../firebaseconfig";
 import { addDoc, collection, serverTimestamp } from "firebase/firestore";
@@ -6,6 +6,7 @@ import { addDoc, collection, serverTimestamp } from "firebase/firestore";
 const Booking = () => {
   const [Booking, setBooking] = useState({});
   const navigate = useNavigate();
+  const ref = useRef(null);
   const consultanceCollRef = collection(db, "Booking");
 
   const handleChange = (e) => {
@@ -22,6 +23,8 @@ const Booking = () => {
       day: new Date().toDateString(),
       timestamp: serverTimestamp(),
     });
+    ref.current.value = "";
+
     alert("booked");
   };
 

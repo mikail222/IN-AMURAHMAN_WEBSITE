@@ -60,7 +60,7 @@ const Columns = ({
   const findConsult = consult.filter((m) => m.day === today);
   const finduser = enquiry.filter((m) => m.day === today);
 
-  const newSale = sales.filter((d) => d.day === today);
+  const newSale = sales?.filter((d) => d.day === today);
   const totalSales = newSale
     .map(({ amount }) => amount[0])
     .reduce((a, b) => a + b, 0);

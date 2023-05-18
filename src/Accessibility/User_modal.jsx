@@ -20,18 +20,12 @@ const User_modal = ({ user, setShowNav }) => {
         console.log(error);
       });
   };
-  const filteredUser = user
-    .filter(({ email }) => email === currentUser?.email)
-    .map(({ roles }) => roles.author === roles.author);
-  console.log(filteredUser);
+
   const handleNavigation = () => {
     if (currentUser.emailVerified === false) {
       alert("please verify your are the owner of the  email provided");
-    }
-    if (filteredUser) {
-      navigate("/Dashboard");
     } else {
-      navigate("/Users_Dashboard");
+      navigate("/Dashboard");
     }
   };
   return (

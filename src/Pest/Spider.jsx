@@ -7,7 +7,6 @@ const Spider = () => {
     <div>
       <div className="spider">
         <main>
-          {" "}
           <p>
             Spiders are one of the most common household pests and ranks seventh
             in total species diversity of all organisms in the world. There are

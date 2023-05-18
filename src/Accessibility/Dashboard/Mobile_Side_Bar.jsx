@@ -1,28 +1,15 @@
 import React from "react";
-import { MdMonitor, MdOutlineClear } from "react-icons/md";
-import { FcCalendar } from "react-icons/fc";
-import { AiOutlineLogout } from "react-icons/ai";
+import { MdMonitor, MdOutlineClear, MdPostAdd } from "react-icons/md";
+import { FcCalendar, FcSalesPerformance } from "react-icons/fc";
+import { AiFillQuestionCircle, AiOutlineLogout } from "react-icons/ai";
 import { GrUpdate } from "react-icons/gr";
 import { useNavigate } from "react-router-dom";
 import { signOut } from "firebase/auth";
 import { auth } from "../../firebaseconfig";
+import { TbBrandBooking, TbBrandTripadvisor } from "react-icons/tb";
 
-const Mobile_Side_Bar = ({
-  currentUser,
-
-  setDrawer,
-}) => {
+const Mobile_Side_Bar = ({ currentUser, setDrawer }) => {
   const navigate = useNavigate();
-  const handleLogOut = (e) => {
-    e.preventDefault();
-    signOut(auth)
-      .then(() => {
-        navigate("/");
-      })
-      .catch((error) => {
-        console.log(error);
-      });
-  };
   return (
     <aside className="mobile_dash_asides">
       {" "}
@@ -60,9 +47,28 @@ const Mobile_Side_Bar = ({
           <GrUpdate />
           <i>Product update</i>
         </div>
-        <div onClick={handleLogOut}>
-          <AiOutlineLogout className="dashboardIcon" />
-          <i>Log Out</i>
+        <div onClick={() => navigate("Sales_Details")}>
+          <FcSalesPerformance className="menuBar " title="dashboardIcon" />{" "}
+          <i>Sales</i>
+        </div>{" "}
+        <div onClick={() => navigate("Post")}>
+          <MdPostAdd className="menuBar " title="dashboardIcon" /> <i>Post</i>
+        </div>{" "}
+        <div onClick={() => navigate("Booking")}>
+          <TbBrandBooking className="menuBar " title="dashboardIcon" />
+          <i>Booking</i>
+        </div>{" "}
+        <div onClick={() => navigate("Consult")}>
+          <TbBrandTripadvisor className="menuBar " title="dashboardIcon" />
+          <i>Consult</i>
+        </div>{" "}
+        <div onClick={() => navigate("Enquiry")}>
+          <AiFillQuestionCircle className="menuBar " title="dashboardIcon" />{" "}
+          <i>Enquiry</i>
+        </div>
+        <div onClick={() => navigate("Data_analysis_page")}>
+          <MdOutlineClear className="menuBar " title="dashboardIcon" />{" "}
+          <i>Back</i>
         </div>
         <div onClick={() => setDrawer(true)}>
           <MdOutlineClear className="menuBar " title="dashboardIcon" />{" "}

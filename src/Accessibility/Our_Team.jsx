@@ -29,7 +29,8 @@ const Our_Team = () => {
             <p>+234-8124330616</p>
           </div>
           <div>
-            <img src="" /> <p className="name">Umar Suleiman</p>
+            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRLtwcGm4AQnPv_n8iVk6Il1D4Uoh76CAapTg&usqp=CAU" />{" "}
+            <p className="name">Umar Suleiman</p>
             <i>
               professional and expert in destroyer pest detection and control{" "}
             </i>
@@ -42,7 +43,11 @@ const Our_Team = () => {
             </article>
           </div>
           <div>
-            <img src="" alt="" /> <p className="name">Bello Abdulrahman</p>
+            <img
+              src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRHT8jjk1PL6dTV0K50dAqOstdGyCCOKhPglAUHH0RjSd9cC9VHF1Ua7qmMxDHwz3_qvAA&usqp=CAU"
+              alt=""
+            />{" "}
+            <p className="name">Bello Abdulrahman</p>
             <i>
               professional and expert in Pest control and Environmental Hygen
               maintainance. Consultant and Advicer on top Environmental Hard
@@ -57,7 +62,11 @@ const Our_Team = () => {
             </article>
           </div>
           <div>
-            <img src="" alt="" /> <p className="name">AbdulFatah Bello</p>
+            <img
+              src="https://toppng.com/uploads/preview/cool-avatar-transparent-image-cool-boy-avatar-11562893383qsirclznyw.png"
+              alt=""
+            />{" "}
+            <p className="name">AbdulFatah Bello</p>
             <i>
               An experienced Human relation officer with outstanding client
               hospitality recongnision
@@ -71,7 +80,10 @@ const Our_Team = () => {
             </article>
           </div>
           <div>
-            <img src="" alt="" />{" "}
+            <img
+              src="https://glplaw.com/wp-content/uploads/2021/03/4.png"
+              alt=""
+            />{" "}
             <p className="name">Barr: AbdulSalam Abdulafeez</p>
             <i>
               professional and experience legal practitional with several record

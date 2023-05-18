@@ -37,7 +37,8 @@ const Hire = () => {
       name: "Storex",
     },
     {
-      images: "https://i.ytimg.com/vi/yyxYiMWl1R8/maxresdefault.jpg",
+      images:
+        "https://images.yaoota.com/mcxOaL34lH6edE-rB6_5rci2mEg=/trim/yaootaweb-production-ng/media/crawledproductimages/8b48b5bfa179c48d9c3292440fc2115c7a8b40bb.jpg",
       name: "Pumping Machine",
     },
     {

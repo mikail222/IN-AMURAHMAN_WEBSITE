@@ -123,12 +123,13 @@
   background-image: url("./asset/marc-babin-ecGZWPOvya0-unsplash.jpg");
   background-position: top;
   background-size: contain;
+  background-attachment: fixed;
   width: 100%;
-  border-radius: 75% 0px 75% 0px;
+  border-radius: 100% 0px 100% 0px;
 }
 .company-info-overlay {
-  border-radius: 70% 0px 70% 0px;
-  background-color: rgba(255, 255, 255, 0.6);
+  border-radius: 95% 0px 95% 0px;
+  background-color: rgba(163, 106, 148, 0.5);
 }
 
 @media screen and (max-width: 480px) {
@@ -194,8 +195,11 @@
 }
 
 .consultance {
-  margin-top: 2rem;
-  @apply w-[100%] flex  flex-col lg:flex-row mb-[4rem] lg:gap-[2%];
+  /* margin-top: 2rem; */
+  @apply w-[100%] flex  flex-col lg:flex-row   mb-[4rem] lg:gap-[2%];
+}
+.consultance h3 {
+  @apply my-[2rem] text-center text-[teal];
 }
 .consultform {
   @apply flex flex-col justify-center  items-center;
@@ -204,10 +208,10 @@
   @apply mr-[11rem];
 }
 .consultance aside {
-  @apply flex flex-col justify-center items-center lg:w-[29%] ml-[1%] lg:ml-[0rem];
+  @apply flex flex-col items-center lg:w-[30%] ml-[1%] lg:ml-[0rem];
 }
 .consultance main {
-  @apply w-[100%] lg:w-[68%];
+  @apply w-[100%] lg:w-[70%]  flex flex-col justify-center items-center;
 }
 .consultparag {
   line-height: 2rem;
@@ -228,17 +232,26 @@
 .drainage {
   @apply w-[100%] lg:mt-[2%] mb-[3rem] flex flex-col lg:flex-row;
 }
+.disinfect {
+  @apply w-[100%] lg:mt-[2%] mb-[3rem] flex flex-col lg:flex-row  justify-center;
+}
 .drainage main {
-  @apply w-[90%] lg:w-[75%];
+  @apply flex  flex-col w-[90%] lg:w-[75%];
+}
+.disinfect main {
+  @apply w-[98%] lg:w-[75%]  flex flex-col  items-center gap-[2rem];
 }
 .drainage aside {
   @apply flex flex-col justify-center items-center w-[100%] lg:ml-[0px] lg:w-[25%];
+}
+.disinfect aside {
+  @apply flex flex-col  items-center mt-[2rem] w-[100%] lg:ml-[0px] lg:w-[25%];
 }
 .drainage p {
   @apply lg:text-[1.3rem] font-serif;
 }
 .drainageTexts {
-  @apply flex flex-col  gap-[1rem] lg:gap-[2rem] mt-[2rem] ml-[1rem];
+  @apply flex flex-col lg:text-[1.2rem] gap-[1rem] lg:gap-[2rem] mt-[2rem] ml-[1rem];
 }
 .drainAdvert {
   @apply w-[90%] mt-[4rem] text-center lg:w-[80%];
@@ -255,7 +268,23 @@
   background-size: cover;
   @apply w-[100%] h-[30vh] lg:h-[62vh] flex flex-col  justify-center items-center mt-[4rem] ml-[1rem];
 }
-.drainimg h4 {
+.plankimg {
+  background-image: url("https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTJGXOyaY9pVOUNiINSZWx-QAm-YYCdHTwoOiagDjhzLlHunc-JsgqL3pCv0mlQJJKgoMw&usqp=CAU");
+  background-position: center;
+  background-repeat: repeat;
+  background-size: cover;
+  @apply w-[100%] h-[30vh] lg:h-[62vh] flex flex-col  justify-center items-center mt-[4rem] ml-[1rem];
+}
+.disinfectimg {
+  background-image: url("https://salud-america.org/wp-content/uploads/2022/05/iStock-1241052262.jpg");
+  background-position: center;
+  background-repeat: repeat;
+  background-size: cover;
+  @apply w-[100%] h-[30vh] lg:h-[62vh] flex flex-col  justify-center items-center mt-[4rem] ml-[1rem];
+}
+.drainimg h4,
+.disinfectimg h4,
+.plankimg h4 {
   background-image: linear-gradient(to right, transparent, transparent, black);
   @apply w-[100%] text-[white] text-right pr-[0.5rem] mt-[7rem] lg:mt-[21rem];
 }
@@ -324,7 +353,7 @@
 .h4 {
   background-image: linear-gradient(to right, transparent, transparent, black);
   font-style: italic;
-  @apply mt-[35%]  pr-[0.5rem] text-[white] w-[100%] text-right;
+  @apply mt-[35%] pr-[0.5rem] text-[white] w-[100%] text-right;
 }
 
 .serviceDescription {
@@ -374,7 +403,7 @@
 }
 .event {
   margin-top: 2rem;
-  @apply w-[100%] mb-[2rem] flex flex-col lg:flex-row gap-[1rem]  lg:h-[120vh];
+  @apply w-[100%] mb-[2rem] flex flex-col lg:flex-row gap-[1rem] lg:gap-[0px] lg:h-[100%];
 }
 
 .event p {
@@ -411,7 +440,15 @@
   background-size: cover;
   @apply lg:w-[100%] h-[40vh] lg:h-[60vh] flex flex-col  justify-center items-center mb-[2rem];
 }
-.event_managemnt h4 {
+.wast_managemnt {
+  background-image: url("https://3egroup.com.au/wp-content/uploads/2022/03/Rep-Image-Waste-Management-1.png");
+  background-position: center;
+  background-repeat: repeat;
+  background-size: cover;
+  @apply lg:w-[100%] h-[40vh] lg:h-[60vh] flex flex-col  justify-center items-center mb-[2rem];
+}
+.event_managemnt h4,
+.wast_managemnt h4 {
   background-image: linear-gradient(to right, transparent, transparent, black);
   @apply w-[100%] mt-[50%] lg:mt-[20rem] text-[white] text-right px-[0.5rem];
 }
@@ -584,7 +621,7 @@
   @apply flex flex-row;
 }
 .services img {
-  @apply w-[20%] h-[7rem] m-[2rem] mt-4;
+  @apply w-[20%] h-[5rem] m-[1rem] mt-4;
 }
 @media screen and (max-width: 480px) {
   .service img {
@@ -606,7 +643,7 @@
 }
 .environment {
   text-shadow: 5px 6px 2px black;
-  @apply text-center text-[#0e4e97] lg:text-[6rem] text-[2rem];
+  @apply text-center text-[#0e4e97] lg:text-[6rem] text-[2.5rem];
 }
 .services h3 {
   @apply text-[#0e4e97] font-serif;
@@ -618,8 +655,8 @@
   @apply flex flex-row  gap-[2rem]  ml-[1rem] mt-[2rem];
 }
 .form {
-  @apply flex flex-col lg:w-[30vw]  h-[65vh] lg:h-[80vh]
-    justify-center lg:p-4  font-serif mb-[10%];
+  @apply flex flex-col lg:w-[100%] h-[65vh] lg:h-[80vh]
+    justify-center lg:px-4  font-serif mb-[10%];
 }
 .form input {
   border-radius: 10px;
@@ -879,7 +916,7 @@ footer img {
 }
 .pest_map {
   background-color: rgba(255, 255, 255, 0.9);
-  @apply w-[80%] grid lg:grid-cols-3  lg:w-[70%] lg:m-[1rem] gap-[1.5rem] lg:p-[2rem] mb-[2rem];
+  @apply w-[80%] grid lg:grid-cols-3  lg:w-[100%] lg:m-[1rem] gap-[1.5rem] lg:p-[2rem] mb-[2rem];
 }
 .pest_map p {
   @apply w-[100%] lg:text-[1.3rem] font-serif font-semibold lg:p-[0.5rem];
@@ -930,7 +967,8 @@ footer img {
   @apply w-[100%] h-[100%] rounded-[5px] object-contain;
 }
 .slide-container {
-  @apply w-[84000px] h-[73vh];
+  @apply w-[84000px] h-[73vh] border-b-[1px];
+  box-shadow: 1px 1px 9px 1px black;
   position: relative;
   margin: 0px 0px 0px -9900px;
   animation-name: slide_image;
@@ -1205,8 +1243,11 @@ footer img {
 .bedbugs p,
 .cockroache p,
 .mosquitoe p,
-.termites p .snake p {
-  @apply lg:text-[1.3rem];
+.scorpion p,
+.flies p,
+.termites p,
+.snake p {
+  @apply lg:text-[1.3rem] m-[2rem] text-center;
 }
 .ants li,
 .spider li,
@@ -1234,8 +1275,10 @@ footer img {
 .rodents,
 .spider,
 .termites,
+.scorpion,
+.flies,
 .snake {
-  @apply flex flex-col-reverse  lg:flex-row gap-[2rem] w-[98%] mt-[5rem];
+  @apply flex flex-col-reverse  lg:flex-row gap-[2rem] w-[98%] text-center mt-[3rem];
 }
 .bedbugs main,
 .ants main,
@@ -1244,9 +1287,16 @@ footer img {
 .rodents main,
 .spider main,
 .termites main,
+.scorpion main,
+.filter main,
 .snake main {
   @apply lg:w-[70%] mx-[3%] mb-[5%];
 }
+.text_picture {
+  @apply flex  flex-row  justify-center gap-[1rem] items-center;
+}
+.filter aside,
+.scorpion aside,
 .bedbugs aside,
 .ants aside,
 .cockroaches aside,
@@ -1332,7 +1382,7 @@ footer img {
   @apply flex flex-col;
 }
 .frame img {
-  @apply w-[100%] h-[40vh] lg:h-[60vh] mt-[2.5rem] rounded-[10px] items-center;
+  @apply w-[100%] h-[40vh] lg:h-[60vh] mt-[2.5rem] rounded-[10px] items-center  object-contain;
 }
 .pest_class {
   background-image: url("https://assets-us-01.kc-usercontent.com/338e61a8-25d7-0035-f3a0-cea86e563aa1/b1f9189b-5ada-40ca-b8e9-445b5120f86e/procare-homepage-mosquito-control.jpg?w=760&h=480&auto=format&fit=crop");
@@ -1465,7 +1515,7 @@ footer img {
   @apply fill-[white] w-[20px] h-[25px];
 }
 .irehv {
-  @apply w-[5%] h-[50%] cursor-pointer;
+  @apply cursor-pointer;
 }
 .dashboard {
   @apply mt-[5%];
@@ -1479,7 +1529,6 @@ footer img {
   display: flex;
   flex-direction: row;
   justify-content: space-between;
-  background-color: #5e72e4;
 }
 
 .dash_aside,
@@ -1511,12 +1560,14 @@ footer img {
   @apply w-[35%] h-[80%] object-cover border-[2px] border-[pink] rounded-[50%];
 }
 .dash {
-  @apply flex flex-col gap-[0.35rem] mt-[1rem];
+  @apply flex flex-col text-left gap-[0.15rem] mt-[0.5rem];
 }
 .dash div {
-  @apply w-[90%] flex  flex-row gap-[1.7rem]  items-center ml-[0.75rem] lg:gap-[1.5rem] py-[0.75rem] lg:px-[2rem] cursor-pointer  hover:bg-[#5e72e4] hover:text-[white] rounded-[10px] font-serif font-bold pl-[1.3rem];
+  @apply w-[90%] flex  flex-row gap-[1.7rem]  items-center ml-[0.75rem] lg:gap-[1.5rem] py-[0.45rem] lg:px-[2rem] cursor-pointer  hover:bg-[#5e72e4] hover:text-[white] rounded-[10px] font-serif font-bold pl-[1.3rem];
 }
-
+.dash div i {
+  @apply text-left;
+}
 .mainClass {
   @apply lg:w-[78vw]  mt-[20%] lg:mt-[0px] lg:relative lg:ml-[17rem];
 }
@@ -1546,7 +1597,7 @@ footer img {
 }
 
 .dashboardIcon {
-  @apply w-[25px]  h-[25px];
+  @apply w-[20px]  h-[20px];
 }
 
 .analytics {
@@ -1673,11 +1724,12 @@ nav i {
   @apply w-[100%] lg:w-[100%] mt-[6%]  lg:ml-[0.3rem];
 }
 .filter-user {
+  box-shadow: 1px 5px 12px black;
   right: 0;
   @apply lg:w-[60%] outline-0 border-b-[1px] bg-[transparent] rounded-[10px] h-[40px];
 }
 .filter-user::placeholder {
-  @apply text-[white]  text-[1rem] font-serif  px-[1rem];
+  @apply text-[gray]  text-[1rem] font-serif  px-[1rem];
 }
 .searchField {
   @apply flex  flex-row lg:justify-end  items-center mt-[10%];
@@ -1687,7 +1739,7 @@ nav i {
   @apply text-[1.2rem] font-serif;
 }
 .parentContainer {
-  @apply w-[100%]  h-[300vh] bg-[white];
+  @apply w-[100%];
 }
 .resetArrow {
   @apply flex  flex-row  justify-center  items-center;
@@ -1762,7 +1814,7 @@ nav i {
 }
 
 .menuBar {
-  @apply w-[2rem] h-[1.8rem]  fill-[black];
+  @apply w-[2rem] h-[1.8rem] fill-[black];
 }
 .mobile {
   @apply flex fixed top-0 md:hidden lg:hidden z-[1];
@@ -1801,7 +1853,7 @@ nav i {
   @apply lg:hidden;
 }
 .user {
-  @apply w-[100%] text-[0.90rem] lg:w-[100%] lg:leading-[2rem];
+  @apply w-[97%] text-[0.90rem] lg:w-[100%] lg:leading-[2rem]  bg-[white];
 }
 .user i {
   @apply text-[blue];
@@ -1819,21 +1871,18 @@ nav i {
 .user_col {
   @apply pt-[15%];
 }
-.users {
+.dashBoardDiv {
   background-image: url("https://www.dcu.ie/sites/default/files/styles/widescreen_television/public/media/2018/08/11/why_dcu_connected.jpg?itok=Ff-67EpB");
   background-size: cover;
   background-position: left;
   @apply w-[100%] bg-[lightgray];
 }
-.userOverlay {
-  background-color: rgb(5, 0, 0, 0.4);
-  @apply w-[100%] h-[100%];
-}
+
 .mainBody {
   @apply w-[80%] h-[70vh] lg:ml-[20%] lg:mt-[0px];
 }
 .profile {
-  @apply flex flex-col-reverse  gap-[2rem]  justify-center items-center lg:flex-row lg:justify-start lg:items-start w-[93vw] lg:w-[97%]  h-auto lg:gap-[0.5rem] mt-[38%];
+  @apply flex flex-col-reverse  gap-[2rem]  justify-center items-center lg:flex-row lg:justify-start lg:items-start w-[93vw] lg:w-[97%]  h-auto lg:gap-[0.5rem] mt-[8%];
 }
 .profileForm {
   @apply flex flex-col lg:flex-row justify-center items-center lg:w-[75%] h-auto  ml-[2%] bg-[white] rounded-[20px];

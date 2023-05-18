@@ -7,9 +7,18 @@ import Side_Bar from "./Side_Bar";
 import Product_UpdateForm from "./Product_UpdateForm";
 import { BiMenu } from "react-icons/bi";
 import Mobile_Side_Bar from "./Mobile_Side_Bar";
+import Sales_Details from "./Sales_Details";
+import Post from "./Post";
+import Booking from "./Booking";
+import Consult from "./Consult";
+import Enquiry from "./Enquiry";
+import User_Data from "../Users_Dashboard/User_Data";
+import User_Profile from "../Users_Dashboard/User_Profile";
 
 const Dashboard = ({ adminPost, productUpdate, count }) => {
   const [consult, setConsult] = useState([]);
+  const [show, setShow] = useState(false);
+
   const [booking, setBooking] = useState([]);
   const [enquiry, setEnquiry] = useState([]);
   const [user, setUser] = useState([]);
@@ -22,13 +31,11 @@ const Dashboard = ({ adminPost, productUpdate, count }) => {
   const [drawer, setDrawer] = useState(true);
 
   const currentUser = auth.currentUser;
-  console.log(currentUser);
 
   useEffect(() => {
     if (currentUser) {
-      currentUser.reload();
+      // currentUser.reload();
     }
-    console.log(currentUser?.emailVerified);
 
     const getUser = async () => {
       const { collection, getDocs } = await import("firebase/firestore");
@@ -63,6 +70,9 @@ const Dashboard = ({ adminPost, productUpdate, count }) => {
     };
     getUser();
   }, [currentUser]);
+  const filteredUser = user
+    .filter(({ email }) => email === currentUser?.email)
+    .map(({ roles }) => roles.author === roles.author);
   return (
     <div className="parentContainer">
       <div className="dashBoardDiv">
@@ -73,6 +83,8 @@ const Dashboard = ({ adminPost, productUpdate, count }) => {
             setUserList={setUserList}
             setProductUpdateInfo={setProductUpdateInfo}
             setDrawer={setDrawer}
+            setShow={setShow}
+            filteredUser={filteredUser}
           />
         )}
         <div className="parentDiv">
@@ -82,38 +94,55 @@ const Dashboard = ({ adminPost, productUpdate, count }) => {
             setUserList={setUserList}
             setProductUpdateInfo={setProductUpdateInfo}
             setDrawer={setDrawer}
+            filteredUser={filteredUser}
+            setShow={setShow}
+            show={show}
           />
           <main className="mainClass">
             <BiMenu
               className="menuBar "
+              style={{ marginTop: "3rem" }}
               title="Menu Bar"
               onClick={(e) => setDrawer(false)}
             />
-            {/* <Data_analysis_page
-              user={user}
-              booking={booking}
-              enquiry={enquiry}
-              consult={consult}
-              productUpdate={productUpdate}
-              sales={sales}
-              totalamount={sales}
-            /> */}
+
             <Routes>
+              {filteredUser && (
+                <Route
+                  path="Data_analysis_page"
+                  element={
+                    <Data_analysis_page
+                      user={user}
+                      booking={booking}
+                      enquiry={enquiry}
+                      consult={consult}
+                      productUpdate={productUpdate}
+                      sales={sales}
+                      totalamount={sales}
+                      adminPost={adminPost}
+                    />
+                  }
+                />
+              )}
+              {!filteredUser && (
+                <Route path="User_Data" element={<User_Data />} />
+              )}
               <Route
-                path="Data_analysis_page"
+                path="User_Profile"
+                element={<User_Profile user={user} />}
+              />
+              <Route
+                path="Sales_Details"
                 element={
-                  <Data_analysis_page
-                    user={user}
-                    booking={booking}
-                    enquiry={enquiry}
-                    consult={consult}
-                    productUpdate={productUpdate}
-                    sales={sales}
-                    totalamount={sales}
-                    adminPost={adminPost}
-                  />
+                  <Sales_Details sales={sales} productUpdate={productUpdate} />
                 }
               />
+              <Route path="Post" element={<Post adminPost={adminPost} />} />
+              <Route path="Booking" element={<Booking booking={booking} />} />
+              <Route path="Consult" element={<Consult consult={consult} />} />
+
+              <Route path="Enquiry" element={<Enquiry enquiry={enquiry} />} />
+
               <Route path="User_Table" element={<User_Table user={user} />} />
               <Route
                 path="Product_UpdateForm"

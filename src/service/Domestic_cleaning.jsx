@@ -121,7 +121,7 @@ const Domestic_cleaning = ({ checkList }) => {
           {checkList.slice(8, 9).map(({ img, product_name, id }, i) => (
             <div style={{ marginTop: "0.5rem", marginBottom: "1rem" }} key={i}>
               <Link className="first" to={`Product_detail/${id}`}>
-                <i style={{ marginLeft: "15rem" }}>Order Now</i>
+                <i>Buy Now</i>
                 <img className="first_class_img" src={img} alt="" />
                 <p>{product_name}</p>
               </Link>

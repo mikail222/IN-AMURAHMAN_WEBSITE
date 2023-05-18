@@ -16,7 +16,7 @@ const User_Table = ({ user }) => {
         setErr(error.message);
       });
   };
-  const currentUser = auth.currentUser.email;
+  const currentUser = auth.currentUser?.email;
   const userStatus = user.filter(({ email }) => email === currentUser);
 
   return (

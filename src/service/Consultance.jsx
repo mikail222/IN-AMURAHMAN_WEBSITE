@@ -3,6 +3,16 @@ import React, { useState } from "react";
 import { GiCheckMark } from "react-icons/gi";
 import { db } from "../firebaseconfig";
 import Footer from "../Footer";
+import { Link } from "react-router-dom";
+import pest1 from "../asset/ed-van-duijn-UUdJ-0LQs0M-unsplash.jpg";
+import pest2 from "../asset/peter-f-wolf-XG8eYNYdz54-unsplash.jpg";
+import pest3 from "../asset/312226385_1797629957237115_964696407549559286_n.jpg";
+import pest4 from "../asset/257752417_1255051138337073_5686005790869040366_n.jpg";
+import pest5 from "../asset/sina-katirachi-VfdRlDDp_sk-unsplash (1).jpg";
+import pest6 from "../asset/312150053_1090676514947704_4342979459506156222_n.jpg";
+import pest7 from "../asset/erik-karits-8aBgCl_TNfc-unsplash.jpg";
+import pest8 from "../asset/alexas_fotos-gSYeFmQamuo-unsplash.jpg";
+import pest9 from "../asset/chris-curry-N4AFGRPZGk4-unsplash.jpg";
 
 const Consultance = () => {
   const [consultanceData, setConsultanceData] = useState({});
@@ -59,11 +69,54 @@ const Consultance = () => {
               regulations towards enhancing a disease-free society
             </p>
           </div>
+          <h3>
+            <em>
+              We also specialise in handling though pest like does ones bellow
+            </em>
+          </h3>
+          <div className="pest_map">
+            <Link to="/Spider">
+              <img src={pest1} alt="" />
+              <p>Spider</p>
+            </Link>
+            <Link to="/Ants">
+              <img src={pest2} alt="" />
+              <p>Ants</p>
+            </Link>
+            <Link to="/Snakes">
+              <img src={pest3} alt="" />
+              <p>Snakes</p>
+            </Link>
+            <Link to="/Termites">
+              <img src={pest4} alt="" />
+              <p>Termites</p>
+            </Link>
+            <a href="/Scorpion">
+              <img src={pest5} alt="" />
+              <p>Scorpions</p>
+            </a>
+            <Link to="/Bedbugs">
+              <img src={pest6} alt="" />
+              <p>Bedbugs</p>
+            </Link>
+            <Link to="/Cockroaches">
+              <img src={pest7} alt="" />
+              <p>Cockroaches</p>
+            </Link>
+            <Link to="/Rodents">
+              <img src={pest8} alt="" />
+              <p>Rodents</p>
+            </Link>
+            <Link to="/Flies">
+              <img src={pest9} alt="" />
+              <p>Flies</p>
+            </Link>
+          </div>
         </main>
         <aside>
           <div className="drainAdvert">
             <div className="consultform">
-              <h4>Booking</h4>
+              <h4>Book here</h4>
               <form className="form" onChange={(e) => handleChange(e)}>
                 <label htmlFor="">Full Name</label>
                 <input type="text" name="fullName" required />

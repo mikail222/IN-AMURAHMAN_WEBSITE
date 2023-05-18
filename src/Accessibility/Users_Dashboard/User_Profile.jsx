@@ -4,30 +4,50 @@ import { MdLocationOn } from "react-icons/md";
 import { getDownloadURL, ref, uploadBytesResumable } from "firebase/storage";
 import { updateProfile } from "firebase/auth";
 
-const User_Profile = () => {
+const User_Profile = ({ user }) => {
+  // console.log(user);
   const me = auth.currentUser;
   const [photoUrl, setPhotoUrl] = useState(null);
   const [profileUpdate, setProfileUpdate] = useState([]);
+  const [loggedInUser, setLoggedInUser] = useState();
 
   const [trackphotoUrl, setTrackPhotoUrl] = useState(null);
   const handleChange = (e) => {
+    e.preventDefault();
     const newInput = {
       ...photoUrl,
       [e.target.name]: e.target.value,
     };
     setProfileUpdate({ ...profileUpdate, ...newInput });
   };
-  const handleSubmit = async (e) => {
+
+  const handleSubmit = (e) => {
     e.preventDefault();
-    try {
-      const res = await updateProfile(auth.currentUser, {
-        ...profileUpdate,
+    if (loggedInUser) {
+      console.log({ loggedInUser });
+      const currentUserDetails = user.find(
+        (m) => m.email === loggedInUser?.email
+      );
+      updateProfile(me, {
+        displayName:
+          currentUserDetails?.first + " " + currentUserDetails?.LastName,
+        photoURL: currentUserDetails?.img,
+        phoneNumber: me.phone,
+        Country: profileUpdate.Country,
+        job: profileUpdate.job,
+        about_me: profileUpdate.about,
+        institution: profileUpdate.education,
+        city: profileUpdate.city,
+        address: profileUpdate.address,
+        user: profileUpdate.Username,
+      }).then(() => {
+        alert(
+          "Your profile is successfully update,hope you enjoy our service.Thanks"
+        );
       });
-      console.log(res);
-    } catch (err) {
-      console.log(err.message);
     }
   };
+
   console.log(profileUpdate);
   useEffect(() => {
     const uploadfile = () => {
@@ -73,7 +93,11 @@ const User_Profile = () => {
         <form className="" onChange={(e) => handleChange(e)}>
           <div className="uploadBtn">
             <h6>Edit Profile</h6>
-            <button className="btn" onSubmit={(e) => handleSubmit(e)}>
+            <button
+              type="button"
+              className="btn"
+              onClick={(e) => handleSubmit(e)}
+            >
               {trackphotoUrl !== null && trackphotoUrl < 100 ? (
                 <i>loading picture</i>
               ) : (

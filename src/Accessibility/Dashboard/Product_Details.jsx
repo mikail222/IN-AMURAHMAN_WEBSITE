@@ -11,7 +11,7 @@ const Product_Details = ({ product_detail, count }) => {
             <th>Product Name</th>
             <th>Price</th>
             <th>Updated</th>
-            <th>Quantity</th>
+            <th>Qty</th>
           </tr>
         </thead>
         <tbody>
