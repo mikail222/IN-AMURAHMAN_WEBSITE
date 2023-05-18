@@ -141,11 +141,6 @@
 }
 
 .cleaning_equip {
-  background-image: url("./asset/nordwood-themes-R53t-Tg6J4c-unsplash.jpg");
-  background-repeat: no-repeat;
-  background-size: cover;
-  background-position: center;
-  /* border-radius: 100% 100%; */
   display: grid;
   grid-template-columns: repeat(4, 1fr);
   align-items: center;
@@ -288,6 +283,11 @@
   background-image: linear-gradient(to right, transparent, transparent, black);
   @apply w-[100%] text-[white] text-right pr-[0.5rem] mt-[7rem] lg:mt-[21rem];
 }
+.pestName {
+  background-image: linear-gradient(to right, white, transparent, black);
+  @apply w-[100%] z-[1] text-[1.5rem] text-[white] text-right pr-[0.5rem] mb-[1rem];
+}
+
 .drainAdvert img {
   @apply w-[100%];
 }
@@ -954,7 +954,7 @@ footer img {
   position: relative;
   float: left;
   margin: 0px 17rem;
-  @apply flex  flex-row  justify-center items-center  w-[51vw] h-[70vh];
+  @apply flex  flex-col  justify-center items-center  w-[51vw] h-[70vh] bg-[white];
 }
 @media screen and (max-width: 480px) {
   .image {

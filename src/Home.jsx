@@ -1,9 +1,9 @@
 import React, { useEffect } from "react";
 import img from "./asset/annie-spratt-0ZPSX_mQ3xI-unsplash.jpg";
 import logo1 from "./asset/312243133_467283241883125_709980892638630759_n.png";
-import img1 from "./asset/311994973_527103495932771_4660787857232063610_n.jpg";
-import img2 from "./asset/312023062_445172301023267_2339998476333677235_n.jpg";
-import img3 from "./asset/oliver-hale-oTvU7Zmteic-unsplash.jpg";
+import img1 from "./asset/chris-curry-N4AFGRPZGk4-unsplash.jpg";
+import img2 from "./asset/ed-van-duijn-UUdJ-0LQs0M-unsplash.jpg";
+import img3 from "./asset/peter-f-wolf-XG8eYNYdz54-unsplash.jpg";
 import img4 from "./asset/annie-spratt-0ZPSX_mQ3xI-unsplash.jpg";
 import img5 from "./asset/311316261_778122419947964_2059757928105644870_n.jpg";
 import img6 from "./asset/312174882_1528535947626341_195442157512999292_n.jpg";
@@ -19,17 +19,45 @@ import Our_Team from "./Accessibility/Our_Team";
 
 const Home = ({ productUpdate }) => {
   const picture = [
-    { image: img },
-    { image: logo1 },
-    { image: img1 },
-    { image: img2 },
-    { image: img3 },
-    { image: img4 },
-    { image: img5 },
-    { image: img6 },
-    { image: img7 },
-    { image: img8 },
-    { image: img10 },
+    {
+      image:
+        "https://www.saferbrand.com/media/Articles/Safer-Brand/identify-and-get-rid-of-venmous-snakes.jpg",
+      name: "Snake",
+    },
+    {
+      image:
+        "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTNzAhaKlJ1WU7Neyi_RrsW19__bbjlp4lpZA&usqp=CAU",
+      name: "Termite",
+    },
+    {
+      image:
+        "https://8991486.fs1.hubspotusercontent-na1.net/hubfs/8991486/granulated-thick-tailed-scorpion-parabuthus-granu-2021-10-20-09-18-22-utc.jpg",
+      name: "Scorpion",
+    },
+    { image: img1, name: "Flies" },
+    { image: img2, name: "Spider" },
+    {
+      image:
+        "https://www.gannett-cdn.com/authoring/2015/08/04/NFTU/ghows-LK-e952682d-6d11-44d7-9c25-672b5a76f663-9d1e73dd.jpeg",
+      name: "Ant",
+    },
+    {
+      image:
+        "https://www.pestworld.org/media/560921/american-cockroach-dorsal.jpg",
+      name: "Cockroach",
+    },
+    {
+      image:
+        "https://upload.wikimedia.org/wikipedia/commons/thumb/8/87/Bed_bug%2C_Cimex_lectularius.jpg/800px-Bed_bug%2C_Cimex_lectularius.jpg",
+      name: "Bed Bug",
+    },
+    {
+      image:
+        "https://res.cloudinary.com/dk-find-out/image/upload/q_80,w_960,f_auto/MA_00030970_dffkdc.jpg",
+      name: "Rodient",
+    },
+    { image: "" },
+    { image: "" },
   ];
 
   const sumArrayValues = (arr) => {
@@ -71,9 +99,10 @@ const Home = ({ productUpdate }) => {
       </div>
       <div className="slider">
         <div className="slide-container">
-          {picture.map(({ image }, i) => (
+          {picture.map(({ image, name }, i) => (
             <div key={i} className="image">
               <img src={image} alt="" />
+              <p className="pestName">{name}</p>
             </div>
           ))}
         </div>
