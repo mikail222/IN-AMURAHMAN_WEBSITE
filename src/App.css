@@ -285,7 +285,7 @@
 }
 .pestName {
   background-image: linear-gradient(to right, white, transparent, black);
-  @apply w-[100%] z-[1] text-[1.5rem] text-[white] text-right pr-[0.5rem] mb-[1rem];
+  @apply w-[100%] z-[1] lg:text-[1.5rem] text-[white] text-right pr-[0.5rem] mb-[1rem];
 }
 
 .drainAdvert img {
@@ -954,7 +954,7 @@ footer img {
   position: relative;
   float: left;
   margin: 0px 17rem;
-  @apply flex  flex-col  justify-center items-center  w-[51vw] h-[70vh] bg-[white];
+  @apply flex  flex-col  justify-center items-center  w-[51vw] h-[70vh];
 }
 @media screen and (max-width: 480px) {
   .image {
@@ -968,15 +968,15 @@ footer img {
 }
 .slide-container {
   @apply w-[84000px] h-[73vh] border-b-[1px];
-  box-shadow: 1px 1px 9px 1px black;
+  box-shadow: 1px 7px 9px black;
   position: relative;
-  margin: 0px 0px 0px -9900px;
+  margin: 0px 9900rem 0px -9750px;
   animation-name: slide_image;
   animation-duration: 60s;
   animation-direction: normal;
   animation-play-state: inherit;
   animation-iteration-count: infinite;
-  animation-delay: 15s;
+  animation-delay: 30s;
   animation-fill-mode: both;
 }
 @keyframes slide_image {

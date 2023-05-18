@@ -1,13 +1,14 @@
 import React, { useEffect } from "react";
 import img from "./asset/annie-spratt-0ZPSX_mQ3xI-unsplash.jpg";
 import logo1 from "./asset/312243133_467283241883125_709980892638630759_n.png";
-import img1 from "./asset/chris-curry-N4AFGRPZGk4-unsplash.jpg";
-import img2 from "./asset/ed-van-duijn-UUdJ-0LQs0M-unsplash.jpg";
-import img3 from "./asset/peter-f-wolf-XG8eYNYdz54-unsplash.jpg";
-import img4 from "./asset/annie-spratt-0ZPSX_mQ3xI-unsplash.jpg";
-import img5 from "./asset/311316261_778122419947964_2059757928105644870_n.jpg";
-import img6 from "./asset/312174882_1528535947626341_195442157512999292_n.jpg";
-import img7 from "./asset/312158060_491770219533679_7275163015181232328_n.jpg";
+import img0 from "./asset/house-spider-two-column-removebg-preview.png";
+import img1 from "./asset/identify-and-get-rid-of-venmous-snakes-removebg-preview.png";
+import img2 from "./asset/images-removebgs-previews.png";
+import img3 from "./asset/granulated-thick-tailed-scorpion-parabuthus-granu-2021-10-20-09-18-22-utc-removebg-preview.png";
+import img4 from "./asset/29-house-fly-npma-removebg-preview.png";
+import img5 from "./asset/ghows-LK-e952682d-6d11-44d7-9c25-672b5a76f663-9d1e73dd-removebg-preview.png";
+import img6 from "./asset/american-cockroach-dorsal-removebg-preview.png";
+import img7 from "./asset/800px-Bed_bug__Cimex_lectularius-removebg-preview.png";
 import img8 from "./asset/312137280_520182353281868_4450230382255186139_n.jpg";
 import img10 from "./asset/neven-krcmarek-HWbxSLvmSww-unsplash.jpg";
 import { Link } from "react-router-dom";
@@ -20,35 +21,28 @@ import Our_Team from "./Accessibility/Our_Team";
 const Home = ({ productUpdate }) => {
   const picture = [
     {
-      image:
-        "https://www.saferbrand.com/media/Articles/Safer-Brand/identify-and-get-rid-of-venmous-snakes.jpg",
-      name: "Snake",
+      image: img1,
     },
     {
-      image:
-        "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTNzAhaKlJ1WU7Neyi_RrsW19__bbjlp4lpZA&usqp=CAU",
+      image: img2,
       name: "Termite",
     },
     {
-      image:
-        "https://8991486.fs1.hubspotusercontent-na1.net/hubfs/8991486/granulated-thick-tailed-scorpion-parabuthus-granu-2021-10-20-09-18-22-utc.jpg",
+      image: img3,
       name: "Scorpion",
     },
-    { image: img1, name: "Flies" },
-    { image: img2, name: "Spider" },
+    { image: img4, name: "Flies" },
+    { image: img0, name: "Spider" },
     {
-      image:
-        "https://www.gannett-cdn.com/authoring/2015/08/04/NFTU/ghows-LK-e952682d-6d11-44d7-9c25-672b5a76f663-9d1e73dd.jpeg",
+      image: img5,
       name: "Ant",
     },
     {
-      image:
-        "https://www.pestworld.org/media/560921/american-cockroach-dorsal.jpg",
+      image: img6,
       name: "Cockroach",
     },
     {
-      image:
-        "https://upload.wikimedia.org/wikipedia/commons/thumb/8/87/Bed_bug%2C_Cimex_lectularius.jpg/800px-Bed_bug%2C_Cimex_lectularius.jpg",
+      image: img7,
       name: "Bed Bug",
     },
     {
@@ -56,8 +50,6 @@ const Home = ({ productUpdate }) => {
         "https://res.cloudinary.com/dk-find-out/image/upload/q_80,w_960,f_auto/MA_00030970_dffkdc.jpg",
       name: "Rodient",
     },
-    { image: "" },
-    { image: "" },
   ];
 
   const sumArrayValues = (arr) => {
@@ -102,7 +94,6 @@ const Home = ({ productUpdate }) => {
           {picture.map(({ image, name }, i) => (
             <div key={i} className="image">
               <img src={image} alt="" />
-              <p className="pestName">{name}</p>
             </div>
           ))}
         </div>
