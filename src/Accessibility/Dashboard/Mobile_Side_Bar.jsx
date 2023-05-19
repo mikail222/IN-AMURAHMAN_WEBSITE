@@ -8,7 +8,7 @@ import { signOut } from "firebase/auth";
 import { auth } from "../../firebaseconfig";
 import { TbBrandBooking, TbBrandTripadvisor } from "react-icons/tb";
 
-const Mobile_Side_Bar = ({ currentUser, setDrawer }) => {
+const Mobile_Side_Bar = ({ currentUser, setDrawer, filterAdmin }) => {
   const navigate = useNavigate();
   return (
     <aside className="mobile_dash_asides">
@@ -35,37 +35,57 @@ const Mobile_Side_Bar = ({ currentUser, setDrawer }) => {
         </div>
       </div>
       <div className="dash">
-        <div onClick={() => navigate("Data_analysis_page")}>
-          <MdMonitor className="dashboardIcon" />
-          <i>Dashboard</i>
+        {currentUser?.email === filterAdmin ? (
+          <div onClick={() => navigate("Data_analysis_page")}>
+            <MdMonitor className="dashboardIcon" />
+            <i>Dashboard</i>
+          </div>
+        ) : (
+          <div onClick={() => navigate("User_data")}>
+            <MdMonitor className="dashboardIcon" />
+            <i>Dashboard</i>
+          </div>
+        )}
+        <div onClick={() => navigate("User_Profile")}>
+          <CgProfile className="dashboardIcon" />
+          <i>Profile</i>
         </div>
-        <div onClick={() => navigate("User_Table")}>
-          <FcCalendar className="dashboardIcon" />
-          <i>User Table</i>
-        </div>
-        <div onClick={() => navigate("Product_UpdateForm")}>
-          <GrUpdate />
-          <i>Product update</i>
-        </div>
-        <div onClick={() => navigate("Sales_Details")}>
-          <FcSalesPerformance className="menuBar " title="dashboardIcon" />{" "}
-          <i>Sales</i>
-        </div>{" "}
-        <div onClick={() => navigate("Post")}>
-          <MdPostAdd className="menuBar " title="dashboardIcon" /> <i>Post</i>
-        </div>{" "}
-        <div onClick={() => navigate("Booking")}>
-          <TbBrandBooking className="menuBar " title="dashboardIcon" />
-          <i>Booking</i>
-        </div>{" "}
-        <div onClick={() => navigate("Consult")}>
-          <TbBrandTripadvisor className="menuBar " title="dashboardIcon" />
-          <i>Consult</i>
-        </div>{" "}
-        <div onClick={() => navigate("Enquiry")}>
-          <AiFillQuestionCircle className="menuBar " title="dashboardIcon" />{" "}
-          <i>Enquiry</i>
-        </div>
+        {currentUser?.email === filterAdmin && (
+          <>
+            {" "}
+            <div onClick={() => navigate("User_Table")}>
+              <FcCalendar className="dashboardIcon" />
+              <i>User Table</i>
+            </div>
+            <div onClick={() => navigate("Product_UpdateForm")}>
+              <GrUpdate />
+              <i>Product update</i>
+            </div>
+            <div onClick={() => navigate("Sales_Details")}>
+              <FcSalesPerformance className="menuBar " title="dashboardIcon" />{" "}
+              <i>Sales</i>
+            </div>{" "}
+            <div onClick={() => navigate("Post")}>
+              <MdPostAdd className="menuBar " title="dashboardIcon" />{" "}
+              <i>Post</i>
+            </div>{" "}
+            <div onClick={() => navigate("Booking")}>
+              <TbBrandBooking className="menuBar " title="dashboardIcon" />
+              <i>Booking</i>
+            </div>{" "}
+            <div onClick={() => navigate("Consult")}>
+              <TbBrandTripadvisor className="menuBar " title="dashboardIcon" />
+              <i>Consult</i>
+            </div>{" "}
+            <div onClick={() => navigate("Enquiry")}>
+              <AiFillQuestionCircle
+                className="menuBar "
+                title="dashboardIcon"
+              />{" "}
+              <i>Enquiry</i>
+            </div>
+          </>
+        )}
         <div onClick={() => setDrawer(true)}>
           <MdOutlineClear className="menuBar " title="dashboardIcon" />{" "}
           <i>Back</i>
