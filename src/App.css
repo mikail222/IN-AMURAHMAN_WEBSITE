@@ -1693,7 +1693,7 @@ nav i {
   @apply flex  flex-col justify-center items-center w-[95%] lg:w-[77vw] bg-[white] mt-[5%] lg:ml-[1rem] rounded-[15px];
 }
 .productWrapper {
-  @apply flex  flex-col justify-center items-center w-[95%] ml-[2%] lg:w-[77vw] bg-[white] mt-[5%] lg:ml-[1rem] rounded-[15px];
+  @apply flex  flex-col justify-center items-center w-[95%] ml-[2%] lg:w-[76vw] bg-[white] mt-[5%] lg:ml-[1rem] rounded-[15px];
 }
 .Author {
   @apply w-[95%] mt-[5%];
@@ -1726,7 +1726,7 @@ nav i {
 .filter-user {
   box-shadow: 1px 5px 12px black;
   right: 0;
-  @apply lg:w-[60%] outline-0 border-b-[1px] bg-[transparent] rounded-[10px] h-[40px];
+  @apply lg:w-[60%] outline-0 border-b-[1px] bg-[transparent] rounded-[10px] h-[40px] m-[1rem];
 }
 .filter-user::placeholder {
   @apply text-[gray]  text-[1rem] font-serif  px-[1rem];
@@ -1826,7 +1826,7 @@ nav i {
   @apply min-w-[100vw] flex flex-row  justify-around  gap-[55%] items-center py-[0.5rem] bg-[white] z-[1];
 }
 .mobile_bar {
-  @apply min-w-[65vw] flex flex-row  justify-between  py-[0.5rem] items-center bg-[teal] z-[1];
+  @apply min-w-[65vw] flex flex-row  justify-between  py-[0.5rem] items-center bg-[teal]  border-b-[1px] border-[white] z-[1];
 }
 .mobile_navs {
   background-color: rgb(0, 0, 0, 0.9);
@@ -1853,7 +1853,7 @@ nav i {
   @apply lg:hidden;
 }
 .user {
-  @apply w-[97%] text-[0.90rem] lg:w-[100%] lg:leading-[2rem]  bg-[white];
+  @apply w-[98%] text-[0.90rem] lg:w-[100%] lg:leading-[2rem] rounded-[10px] bg-[white] lg:ml-[1%];
 }
 .user i {
   @apply text-[blue];
@@ -2054,4 +2054,7 @@ nav i {
 }
 .social-medial {
   @apply flex flex-row justify-center items-center gap-[0.5rem];
+}
+.userStatus i {
+  @apply text-[white] lg:text-[black];
 }

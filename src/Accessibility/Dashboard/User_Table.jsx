@@ -3,12 +3,12 @@ import { auth } from "../../firebaseconfig";
 import { deleteUser } from "firebase/auth";
 const User_Table = ({ user }) => {
   const [search_user, setSearch_user] = useState(" ");
-  const [delete_User, setDelete_User] = useState(" ");
+  const [delete_User, setDelete_User] = useState();
   const [err, setErr] = useState(" ");
-
+  const client = auth.currentUser;
   console.log();
   const handleDeleteUser = () => {
-    deleteUser(auth.currentUser)
+    deleteUser(client)
       .then(() => {
         setDelete_User("User deleted");
       })
@@ -17,7 +17,7 @@ const User_Table = ({ user }) => {
       });
   };
   const currentUser = auth.currentUser?.email;
-  const userStatus = user.filter(({ email }) => email === currentUser);
+  // const userStatus = user.filter(({ email }) => email === currentUser);
 
   return (
     <div className="user">
@@ -32,7 +32,6 @@ const User_Table = ({ user }) => {
       </div>
 
       <div className="productWrapper">
-        <h2>User's List</h2>
         {delete_User && <p className="">{delete_User}</p>}
         {err & <p className="err">{err}</p>}
 
@@ -85,7 +84,7 @@ const User_Table = ({ user }) => {
                       </p>
                       {phone}
                     </td>
-                    {!userStatus && (
+                    {email !== currentUser && (
                       <td className="offline">
                         <p>
                           <i>Name</i>
@@ -93,7 +92,9 @@ const User_Table = ({ user }) => {
                         Offline
                       </td>
                     )}
-                    {userStatus && <td className="online">online</td>}
+                    {email === currentUser && (
+                      <td className="online">online</td>
+                    )}
                     <td onClick={handleDeleteUser} className="delete">
                       delete
                     </td>

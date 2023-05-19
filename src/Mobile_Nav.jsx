@@ -5,6 +5,7 @@ import irehv2 from "./asset/irehv-low-resolution-logo-white-on-transparent-backg
 import { auth } from "./firebaseconfig";
 import { Link, useNavigate } from "react-router-dom";
 import {
+  FcAlphabeticalSortingAz,
   FcBusinessContact,
   FcServices,
   FcShop,
@@ -220,24 +221,7 @@ const Mobile_nav = ({ show, setShowNav }) => {
                   </p>
                 </div>
               </div>
-              <div>
-                {open === true ? (
-                  <div className="rowwing">
-                    <AiOutlineLogin className="icon" />
-                    <i onClick={() => setOpen(false)} className="logout">
-                      Login
-                    </i>
-                  </div>
-                ) : (
-                  <div className="rowwing">
-                    <RiLogoutBoxRLine className="icon" />
-                    <i onClick={() => setOpen(true)} className="logout">
-                      LogOut
-                    </i>
-                  </div>
-                )}
-              </div>
-            </div>{" "}
+            </div>
           </div>
         </div>
       )}

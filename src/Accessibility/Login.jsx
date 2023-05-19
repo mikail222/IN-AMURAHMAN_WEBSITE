@@ -132,9 +132,7 @@ const Login = ({ navigate, user }) => {
             </div>
             <div className="sign_upButtonDiv">
               <Login_button />
-              {userErr && (
-                <p className="errorMsg">Oops! {userErr.slice(22, 36)}</p>
-              )}
+              {userErr && <p className="errorMsg">Oops! {userErr}</p>}
               <p className="mt-[3%]">Don't have an account</p>
               <p
                 onClick={() => setTimeout(navigate("/Sign_up"), 30000)}
