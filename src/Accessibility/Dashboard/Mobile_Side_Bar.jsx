@@ -7,6 +7,7 @@ import { useNavigate } from "react-router-dom";
 import { signOut } from "firebase/auth";
 import { auth } from "../../firebaseconfig";
 import { TbBrandBooking, TbBrandTripadvisor } from "react-icons/tb";
+import { CgProfile } from "react-icons/cg";
 
 const Mobile_Side_Bar = ({ currentUser, setDrawer, filterAdmin }) => {
   const navigate = useNavigate();
