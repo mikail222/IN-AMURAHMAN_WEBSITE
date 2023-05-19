@@ -14,7 +14,7 @@ import { auth } from "../../firebaseconfig";
 import { TbBrandBooking, TbBrandTripadvisor } from "react-icons/tb";
 import { CgProfile } from "react-icons/cg";
 
-const Side_Bar = ({ currentUser, filterUser, setShow, show }) => {
+const Side_Bar = ({ currentUser, filterAdmin, setShow, show }) => {
   const navigate = useNavigate();
   return (
     <aside className="dash_aside">
@@ -41,7 +41,7 @@ const Side_Bar = ({ currentUser, filterUser, setShow, show }) => {
         </div>
       </div>
       <div className="dash">
-        {!filterUser ? (
+        {currentUser?.email === filterAdmin ? (
           <div onClick={() => navigate("Data_analysis_page")}>
             <MdMonitor className="dashboardIcon" />
             <i>Dashboard</i>
@@ -56,7 +56,7 @@ const Side_Bar = ({ currentUser, filterUser, setShow, show }) => {
           <CgProfile className="dashboardIcon" />
           <i>Profile</i>
         </div>
-        {!filterUser && (
+        {currentUser?.email === filterAdmin && (
           <>
             <div onClick={() => navigate("User_Table")}>
               <FcCalendar className="dashboardIcon" />

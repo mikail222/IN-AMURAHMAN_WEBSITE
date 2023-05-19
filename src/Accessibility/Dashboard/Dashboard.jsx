@@ -70,9 +70,9 @@ const Dashboard = ({ adminPost, productUpdate, count }) => {
     };
     getUser();
   }, [currentUser]);
-  const filteredUser = user
-    .filter(({ email }) => email === currentUser?.email)
-    .filter(({ roles }) => roles.author === roles.author);
+  const filteredAdmin = user
+    .filter(({ roles }) => roles?.author)
+    .map((r) => r.email);
   return (
     <div className="parentContainer">
       <div className="dashBoardDiv">
@@ -84,7 +84,7 @@ const Dashboard = ({ adminPost, productUpdate, count }) => {
             setProductUpdateInfo={setProductUpdateInfo}
             setDrawer={setDrawer}
             setShow={setShow}
-            filteredUser={filteredUser}
+            filteredAdmin={filteredAdmin}
           />
         )}
         <div className="parentDiv">
@@ -94,7 +94,7 @@ const Dashboard = ({ adminPost, productUpdate, count }) => {
             setUserList={setUserList}
             setProductUpdateInfo={setProductUpdateInfo}
             setDrawer={setDrawer}
-            filteredUser={filteredUser}
+            filteredAdmin={filteredAdmin}
             setShow={setShow}
             show={show}
           />
@@ -107,26 +107,23 @@ const Dashboard = ({ adminPost, productUpdate, count }) => {
             />
 
             <Routes>
-              {filteredUser && (
-                <Route
-                  path="Data_analysis_page"
-                  element={
-                    <Data_analysis_page
-                      user={user}
-                      booking={booking}
-                      enquiry={enquiry}
-                      consult={consult}
-                      productUpdate={productUpdate}
-                      sales={sales}
-                      totalamount={sales}
-                      adminPost={adminPost}
-                    />
-                  }
-                />
-              )}
-              {!filteredUser && (
-                <Route path="User_Data" element={<User_Data />} />
-              )}
+              <Route
+                path="Data_analysis_page"
+                element={
+                  <Data_analysis_page
+                    user={user}
+                    booking={booking}
+                    enquiry={enquiry}
+                    consult={consult}
+                    productUpdate={productUpdate}
+                    sales={sales}
+                    totalamount={sales}
+                    adminPost={adminPost}
+                  />
+                }
+              />
+              <Route path="User_Data" element={<User_Data />} />
+
               <Route
                 path="User_Profile"
                 element={<User_Profile user={user} />}
@@ -140,9 +137,7 @@ const Dashboard = ({ adminPost, productUpdate, count }) => {
               <Route path="Post" element={<Post adminPost={adminPost} />} />
               <Route path="Booking" element={<Booking booking={booking} />} />
               <Route path="Consult" element={<Consult consult={consult} />} />
-
               <Route path="Enquiry" element={<Enquiry enquiry={enquiry} />} />
-
               <Route path="User_Table" element={<User_Table user={user} />} />
               <Route
                 path="Product_UpdateForm"
