@@ -190,7 +190,7 @@ const Home = ({ productUpdate }) => {
               </div>
               <div className="bordering">
                 <p>
-                  <b>95%</b> <i>Execellence</i>
+                  <b>95%</b> <i>Bravo</i>
                 </p>
               </div>
               <div className="bordering">
