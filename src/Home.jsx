@@ -177,15 +177,15 @@ const Home = ({ productUpdate }) => {
                 effort the conscious mind actually put into the process.
               </p>
               <p>
-                we pay absolute attention to our Client environmental distress
+                We pay absolute attention to our Client environmental distress
                 and wage tremendous war again pathogenic visitor.
               </p>
-              <p>Alway with IREHV,is the environmemtal solace you want" </p>
+              <p>Alway with IREHV, is the environmemtal solace you want" </p>
             </div>
             <div className="performance">
               <div className="bordering">
                 <p>
-                  <b>90%</b> <i>integrity</i>
+                  <b>90%</b> <i>Integrity</i>
                 </p>
               </div>
               <div className="bordering">
@@ -197,7 +197,7 @@ const Home = ({ productUpdate }) => {
                 <p>
                   <b>90%</b>
                   <br />
-                  <i>intuitive</i>
+                  <i>Intuitive</i>
                 </p>
               </div>
             </div>
