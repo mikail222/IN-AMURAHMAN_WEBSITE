@@ -149,6 +149,7 @@ const Home = ({ productUpdate }) => {
         </div>
       </div>
       <div className="our_Service">
+        <Service />
         <h2
           style={{ textAlign: "center", marginTop: "1rem" }}
           className="environment"
@@ -166,8 +167,42 @@ const Home = ({ productUpdate }) => {
             </div>
           ))}
         </div>
-        <Service />
         <Our_Team />
+        <div className="performanceContainer">
+          <div className="performanceOverlay">
+            <h1>Client side Compatibility</h1>
+            <div className="performanceDescription">
+              <p>
+                " The more effortless the hazard eradication looks, the more
+                effort the conscious mind actually put into the process.
+              </p>
+              <p>
+                we pay absolute attention to our Client environmental distress
+                and wage tremendous war again pathogenic visitor.
+              </p>
+              <p>Alway with IREHV,is the environmemtal solace you want" </p>
+            </div>
+            <div className="performance">
+              <div className="bordering">
+                <p>
+                  <b>90%</b> <i>integrity</i>
+                </p>
+              </div>
+              <div className="bordering">
+                <p>
+                  <b>95%</b> <i>Execellence</i>
+                </p>
+              </div>
+              <div className="bordering">
+                <p>
+                  <b>90%</b>
+                  <br />
+                  <i>intuitive</i>
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
       </div>
       <Footer />
     </div>

@@ -14,7 +14,8 @@ import { auth } from "../../firebaseconfig";
 import { TbBrandBooking, TbBrandTripadvisor } from "react-icons/tb";
 import { CgProfile } from "react-icons/cg";
 
-const Side_Bar = ({ currentUser, filterAdmin, setShow, show }) => {
+const Side_Bar = ({ currentUser, filteredAdmin, setShow, show }) => {
+  console.log(filteredAdmin);
   const navigate = useNavigate();
   return (
     <aside className="dash_aside">
@@ -41,7 +42,7 @@ const Side_Bar = ({ currentUser, filterAdmin, setShow, show }) => {
         </div>
       </div>
       <div className="dash">
-        {currentUser?.email === filterAdmin ? (
+        {currentUser?.email == filteredAdmin ? (
           <div onClick={() => navigate("Data_analysis_page")}>
             <MdMonitor className="dashboardIcon" />
             <i>Dashboard</i>
@@ -56,7 +57,7 @@ const Side_Bar = ({ currentUser, filterAdmin, setShow, show }) => {
           <CgProfile className="dashboardIcon" />
           <i>Profile</i>
         </div>
-        {currentUser?.email === filterAdmin && (
+        {currentUser?.email == filteredAdmin ? (
           <>
             <div onClick={() => navigate("User_Table")}>
               <FcCalendar className="dashboardIcon" />
@@ -90,8 +91,18 @@ const Side_Bar = ({ currentUser, filterAdmin, setShow, show }) => {
               <i>Enquiry</i>
             </div>{" "}
           </>
+        ) : (
+          ""
         )}
-        <div onClick={() => navigate("Data_analysis_page")}>
+        <div
+          onClick={() =>
+            navigate(
+              currentUser?.email == filteredAdmin
+                ? "Data_analysis_page"
+                : "User_data"
+            )
+          }
+        >
           <MdOutlineClear className="menuBar " title="dashboardIcon" />{" "}
           <i>Back</i>
         </div>

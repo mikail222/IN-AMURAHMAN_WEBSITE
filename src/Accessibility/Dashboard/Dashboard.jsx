@@ -71,8 +71,9 @@ const Dashboard = ({ adminPost, productUpdate, count }) => {
     getUser();
   }, [currentUser]);
   const filteredAdmin = user
-    .filter(({ roles }) => roles?.author)
+    ?.filter(({ roles }) => roles?.author)
     .map((r) => r.email);
+  console.log(filteredAdmin);
   return (
     <div className="parentContainer">
       <div className="dashBoardDiv">

@@ -62,7 +62,7 @@
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
-  animation: image 40s infinite alternate;
+  animation: image 50s infinite alternate;
 
   @apply lg:mt-[4%] w-[100%] h-[90vh] flex flex-col justify-center items-center text-center  text-white;
 }
@@ -756,7 +756,6 @@
   @apply text-[1.2rem]  tracking-[0.20rem];
 }
 .footer-container {
-  border-radius: 30% 0px 0px 0px;
   background-image: url("./asset/vojtech-bruzek-Yrxr3bsPdS0-unsplash.jpg");
   background-size: cover;
   background-position: center;
@@ -764,7 +763,6 @@
 }
 .footer {
   background-color: rgba(4, 2, 54, 0.8);
-  border-radius: 32% 0px 0px 0px;
   padding: 5rem 0px;
   @apply flex flex-row  gap-[7rem] justify-center;
 }
@@ -968,7 +966,7 @@ footer img {
 }
 .slide-container {
   @apply w-[84000px] h-[73vh] border-b-[1px];
-  box-shadow: 1px 7px 9px black;
+  box-shadow: 10px 7px 0px black;
   position: relative;
   margin: 0px 9900rem 0px -9750px;
   animation-name: slide_image;
@@ -976,7 +974,7 @@ footer img {
   animation-direction: normal;
   animation-play-state: inherit;
   animation-iteration-count: infinite;
-  animation-delay: 30s;
+  animation-delay: 60s;
   animation-fill-mode: both;
 }
 @keyframes slide_image {
@@ -2057,4 +2055,37 @@ nav i {
 }
 .userStatus i {
   @apply text-[white] lg:text-[black];
+}
+.performanceContainer {
+  border-radius: 22% 0px 0px 0px;
+  background-image: url("./asset/ibrahim-boran-aBNPslolmJM-unsplash.jpg");
+  background-position: center;
+  background-size: cover;
+  @apply w-[100%] lg:h-[100%]  text-[white];
+}
+.performanceOverlay {
+  background-color: rgba(4, 2, 54, 0.7);
+  border-radius: 22% 0px 0px 0px;
+  @apply w-[100%] h-[100%] flex flex-col  justify-center items-center;
+}
+.performanceOverlay h1 {
+  @apply text-[2.5rem] lg:text-[4rem] font-bold my-[3rem];
+}
+.performanceDescription {
+  font-style: italic;
+  @apply text-[1.2rem]  text-center;
+}
+.performance {
+  @apply flex flex-col lg:flex-row justify-center items-center my-[5%] gap-[2rem] lg:gap-[3%];
+}
+.bordering {
+  border: 15px solid orange;
+  @apply w-[90%] lg:w-[28vw] lg:h-[55vh] flex flex-col  justify-center items-center text-center  rounded-[50%] relative;
+}
+.bordering p {
+  border-color: rgb(50, 04, 0, 0.7);
+  @apply w-[100%] h-[100%] border-[80px] m-[0] rounded-[50px]  text-[2rem] text-[white] font-bold;
+}
+.bordering p b {
+  @apply text-[4rem]  text-[white];
 }

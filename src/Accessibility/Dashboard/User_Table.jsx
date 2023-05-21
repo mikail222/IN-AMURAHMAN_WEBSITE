@@ -87,7 +87,7 @@ const User_Table = ({ user }) => {
                     {email !== currentUser && (
                       <td className="offline">
                         <p>
-                          <i>Name</i>
+                          <i>Status</i>
                         </p>
                         Offline
                       </td>

@@ -29,7 +29,7 @@ button {
   @apply outline-0;
 }
 h1 {
-  @apply text-[1.5rem] lg:text-[2.5rem];
+  @apply text-[1.5rem] lg:text-[2.5rem] font-serif;
 }
 h2 {
   @apply text-[1.3rem] lg:text-[2.3rem] font-serif;
