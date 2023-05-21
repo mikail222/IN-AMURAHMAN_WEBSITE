@@ -834,14 +834,14 @@ footer img {
   }
 }
 .producer {
-  @apply lg:flex flex-row gap-[0.5rem];
+  @apply flex flex-row justify-center items-center gap-[0.5rem];
 }
 .producer p {
   @apply lg:ml-[8rem] mr-[1rem];
 }
 .facebook,
 .mail {
-  @apply hidden lg:w-[20px] lg:h-[20px] rounded-[50%] lg:flex;
+  @apply lg:w-[20px] lg:h-[20px] rounded-[50%] flex;
 }
 .media a {
   @apply mt-[2.5rem];

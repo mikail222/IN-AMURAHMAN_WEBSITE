@@ -3,9 +3,10 @@ import { Link } from "react-router-dom";
 import { SiFacebook } from "react-icons/si";
 import { AiOutlineMail, AiOutlineTwitter } from "react-icons/ai";
 import { MdPhoneInTalk } from "react-icons/md";
-import { BsWhatsapp } from "react-icons/bs";
+import { BsLinkedin, BsWhatsapp } from "react-icons/bs";
 import { BsInstagram } from "react-icons/bs";
 import { BiCopyright } from "react-icons/bi";
+import { GrLinkedin, GrLinkedinOption } from "react-icons/gr";
 const Footer = () => {
   const style = {
     // Adding media query..
@@ -206,22 +207,30 @@ const Footer = () => {
             </p>
           </div>
           <div className="producer">
-            <p>web design by: Mikail Abdulraheem</p>
+            <p>web design by: M&K TEC</p>
             <a
-              href="http://"
+              href="https://web.facebook.com/mikail.abdulraheem.3"
               target="_blank"
               title="Facebook"
               rel="noopener noreferrer"
             >
-              <SiFacebook className="facebook" />
+              <SiFacebook />
             </a>
             <a
-              href="http://abdulraheemmukaila6@gmail.com"
+              href="mailto:abdulraheemmukaila6@gmail.com"
               target="_blank"
               title="Email"
               rel="noopener noreferrer"
             >
-              <AiOutlineMail className="mail" />
+              <AiOutlineMail />
+            </a>
+            <a
+              href="https://www.linkedin.com/feed/"
+              target="_blank"
+              title="Linkedin"
+              rel="noopener noreferrer"
+            >
+              <GrLinkedinOption />
             </a>
           </div>
         </div>
