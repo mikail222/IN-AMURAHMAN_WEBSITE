@@ -1721,7 +1721,7 @@ nav i {
   @apply cursor-pointer text-[red];
 }
 .data_analysis {
-  @apply w-[100%] lg:w-[100%] mt-[6%]  lg:ml-[0.3rem];
+  @apply w-[100%] lg:w-[100%] lg:ml-[0.3rem];
 }
 .filter-user {
   box-shadow: 1px 5px 12px black;
@@ -1869,13 +1869,13 @@ nav i {
   @apply w-[100%] bg-[lightgray] h-[300vh];
 }
 .user_col {
-  @apply pt-[15%];
+  @apply pt-[5%];
 }
 .dashBoardDiv {
   background-image: url("https://www.dcu.ie/sites/default/files/styles/widescreen_television/public/media/2018/08/11/why_dcu_connected.jpg?itok=Ff-67EpB");
   background-size: cover;
   background-position: left;
-  @apply w-[100%] bg-[lightgray];
+  @apply w-[100%] h-[70vh];
 }
 
 .mainBody {
@@ -1933,7 +1933,7 @@ nav i {
   @apply flex  flex-col  justify-center items-center w-[100%] h-[30vh];
 }
 .myPics img {
-  @apply mt-[15rem] w-[5rem] h-[14vh] rounded-[100%] border-[white] border-[3px];
+  @apply lg:mt-[15rem] w-[5rem] h-[14vh] rounded-[100%] border-[white] border-[3px] mt-[12rem];
 }
 .location {
   @apply animate-bounce mt-[1rem] w-[25px] h-[25px] fill-[#3c4e6d];
@@ -1942,7 +1942,7 @@ nav i {
   @apply w-[75px] h-[10px] animate-ping bg-[orange] rounded-[100%] mb-[2%];
 }
 .userDetail {
-  @apply flex flex-col justify-center items-center mt-[30%];
+  @apply flex flex-col justify-center items-center lg:mt-[30%]  mt-[5rem];
 }
 .bg {
   @apply bg-[teal];
