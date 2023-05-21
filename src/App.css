@@ -1827,7 +1827,9 @@ nav i {
   @apply min-w-[100vw] flex flex-row  justify-around  gap-[55%] items-center py-[0.5rem] bg-[white] z-[1];
 }
 .mobile_bar {
-  @apply min-w-[65vw] flex flex-row  justify-between  py-[0.5rem] items-center bg-[teal]  border-b-[1px] border-[white] z-[1];
+  border-bottom: 5px double white;
+  @apply min-w-[65vw] flex flex-row
+    justify-between py-[6%] items-center bg-[teal] border-[white] z-[1] px-[3%];
 }
 .mobile_navs {
   background-color: rgb(0, 0, 0, 0.9);
