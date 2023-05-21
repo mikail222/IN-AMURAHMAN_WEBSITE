@@ -92,10 +92,6 @@ const Container = ({ user, setShowNav }) => {
               />
             }
           />
-          {/* <Route
-            path="/Users_Dashboard/*"
-            element={<Users_Dashboard user={user} />}
-          /> */}
           <Route path="/Googlepay" element={<Googlepay />} />
           <Route path="/Booking" element={<Booking />} />
           <Route path="/" element={<Home productUpdate={productUpdate} />} />

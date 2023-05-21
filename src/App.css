@@ -642,7 +642,7 @@
     font-serif;
 }
 .environment {
-  text-shadow: 5px 3px 2px black;
+  /* text-shadow: 5px 3px 2px black; */
   @apply text-center text-[#0e4e97] lg:text-[6rem] text-[2.5rem];
 }
 .services h3 {
@@ -791,7 +791,7 @@ footer img {
 }
 .media {
   border-radius: 0px 20px 0px 0px;
-  @apply w-[100%] flex  flex-row justify-center lg:border-t-[0.15px] border-[gray] lg:h-[8rem] gap-[1rem] lg:mb-[1rem] lg:w-[40%];
+  @apply w-[100%] flex  flex-row justify-center lg:border-t-[0.15px] border-[gray] lg:h-[8rem] gap-[1rem] mb-[1rem] lg:w-[40%];
 }
 
 .media_class {
@@ -1380,7 +1380,10 @@ footer img {
   @apply flex flex-col;
 }
 .frame img {
-  @apply w-[100%] h-[40vh] lg:h-[60vh] mt-[1.5rem] rounded-[10px] items-center  object-contain;
+  @apply w-[100%] h-[60vh] lg:h-[60vh] mt-[1.5rem] rounded-[10px] object-contain;
+}
+.tail {
+  @apply w-[30vw] h-[60vh] lg:h-[60vh] mt-[1.5rem] rounded-[10px] items-center  object-contain;
 }
 .pest_class {
   background-image: url("https://assets-us-01.kc-usercontent.com/338e61a8-25d7-0035-f3a0-cea86e563aa1/b1f9189b-5ada-40ca-b8e9-445b5120f86e/procare-homepage-mosquito-control.jpg?w=760&h=480&auto=format&fit=crop");

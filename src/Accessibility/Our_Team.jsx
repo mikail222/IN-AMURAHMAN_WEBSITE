@@ -21,10 +21,18 @@ const Our_Team = () => {
             </i>
             <p>web Developer</p>
             <article className="social-medial">
-              <GrFacebookOption />
-              <AiOutlineTwitter />
-              <RiLinkedinFill />
-              <MdEmail />
+              <a href="https://web.facebook.com/mikail.abdulraheem.3">
+                <GrFacebookOption />
+              </a>
+              <a href="">
+                <AiOutlineTwitter />
+              </a>
+              <a href="https://www.linkedin.com/feed/">
+                <RiLinkedinFill />
+              </a>
+              <a href="mailto:abdulraheemmukaila6@gmail.com">
+                <MdEmail />
+              </a>
             </article>
             <p>+234-8124330616</p>
           </div>

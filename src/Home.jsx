@@ -61,7 +61,6 @@ const Home = ({ productUpdate }) => {
   };
   const numbers = [1, 2, 3, 4, 5];
   //calling a function
-  console.log(sumArrayValues(picture));
   useEffect(() => {
     AOS.init({ duration: 1000 });
   }, []);

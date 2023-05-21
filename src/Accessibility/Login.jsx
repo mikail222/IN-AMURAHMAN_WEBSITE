@@ -22,8 +22,6 @@ const Login = ({ navigate, user }) => {
   const currentUser = auth.currentUser;
   const currentUserDetails = user.filter((m) => m.id === currentUser?.uid);
 
-  console.log(currentUserDetails);
-
   const handleSubmit = (e) => {
     e.preventDefault();
     signInWithEmailAndPassword(auth, email, password)

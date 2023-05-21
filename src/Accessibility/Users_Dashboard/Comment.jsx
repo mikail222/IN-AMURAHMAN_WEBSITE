@@ -30,9 +30,7 @@ const Comment = () => {
     await addDoc(CommentRef, {
       ...comments,
     });
-    console.log("comment sent");
   };
-  // useEffect(() => {}, []);
   useEffect(() => {
     const getPost = async () => {
       const data = await getDocs(postRef);

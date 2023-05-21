@@ -73,7 +73,6 @@ const Dashboard = ({ adminPost, productUpdate, count }) => {
   const filteredAdmin = user
     ?.filter(({ roles }) => roles?.author)
     .map((r) => r.email);
-  console.log(filteredAdmin);
   return (
     <div className="parentContainer">
       <div className="dashBoardDiv">

@@ -39,6 +39,7 @@ const Scorpion = () => {
               <img
                 src="https://cdn.britannica.com/27/122527-050-F96A4001/Scorpion-tail.jpg"
                 alt=""
+                className="tail"
               />
             </div>
             <p>
