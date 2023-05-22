@@ -966,7 +966,6 @@ footer img {
 }
 .slide-container {
   @apply w-[84000px] h-[73vh] border-b-[1px];
-  box-shadow: 10px 7px 0px black;
   position: relative;
   margin: 0px 9900rem 0px -9750px;
   animation-name: slide_image;

@@ -128,8 +128,7 @@ const Footer = () => {
           </a>
 
           <a
-            href="http://"
-            target="_blank"
+            href="https://instagram.com/ir_ehv"
             title="Instagram"
             rel="noopener noreferrer"
           >
@@ -145,8 +144,7 @@ const Footer = () => {
           </a>
 
           <a
-            href="http://"
-            target="_blank"
+            href="mailto:inamurahmanventures2020@gmail.com"
             title="Email"
             rel="noopener noreferrer"
           >
@@ -164,8 +162,7 @@ const Footer = () => {
 
           <a
             href="http://"
-            target="_blank"
-            title="whatsApp"
+            title="whatsApp_number:08144632165"
             rel="noopener noreferrer"
           >
             <BsWhatsapp

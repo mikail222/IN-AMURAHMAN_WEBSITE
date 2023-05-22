@@ -28,6 +28,8 @@ const Pest_control = ({ checkList }) => {
       day: new Date().toDateString(),
       timestamp: serverTimestamp(),
     });
+
+    alert("uploaded");
   };
 
   return (
@@ -159,6 +161,7 @@ const Pest_control = ({ checkList }) => {
             ))}
           </div>
         </div>
+        <p> </p>
       </div>
       <Footer />
     </div>
