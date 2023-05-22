@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useRef, useState } from "react";
 import Footer from "../Footer";
 import { addDoc, collection } from "firebase/firestore";
 import { db } from "../firebaseconfig";
@@ -15,7 +15,7 @@ import { Link } from "react-router-dom";
 
 const Disinfect = () => {
   const [consultanceData, setConsultanceData] = useState({});
-
+  const clearTxt = useRef();
   const handleChange = (e) => {
     const newInput = { [e.target.name]: e.target.value };
     setConsultanceData({ ...consultanceData, ...newInput });
@@ -30,6 +30,7 @@ const Disinfect = () => {
       timestamp: serverTimestamp(),
     });
     console.log("booked");
+    clearTxt.current.reset();
   };
   return (
     <div className="">
@@ -140,7 +141,11 @@ const Disinfect = () => {
         <aside>
           <div className="consultform">
             <h4>Booking</h4>
-            <form className="form" onChange={(e) => handleChange(e)}>
+            <form
+              ref={clearTxt}
+              className="form"
+              onChange={(e) => handleChange(e)}
+            >
               <label htmlFor="">Full Name</label>
               <input type="text" name="fullName" required />
               <label htmlFor="">Email</label>

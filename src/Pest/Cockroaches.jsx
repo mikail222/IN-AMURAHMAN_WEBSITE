@@ -132,7 +132,6 @@ const Cockroaches = () => {
           </p>
         </main>
         <aside>
-          <div className="clueVideo"></div>
           <div className="frame">
             <img src={Cockroache} alt="" />
           </div>

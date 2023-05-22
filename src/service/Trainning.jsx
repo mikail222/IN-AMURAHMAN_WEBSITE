@@ -1,12 +1,12 @@
 import { addDoc, collection, serverTimestamp } from "firebase/firestore";
-import React, { useState } from "react";
+import React, { useRef, useState } from "react";
 import trainImg from "../asset/sincerely-media-dGxOgeXAXm8-unsplash.jpg";
 import { db } from "../firebaseconfig";
 import Footer from "../Footer";
 
 const Trainning = () => {
   const [trainData, setTrainData] = useState({});
-
+  const clearTxt = useRef();
   const handleChange = (e) => {
     const newInput = { [e.target.name]: e.target.value };
     setTrainData({ ...trainData, ...newInput });
@@ -20,6 +20,8 @@ const Trainning = () => {
       day: new Date().toDateString,
       timestamp: serverTimestamp(),
     });
+    alert("uploaded");
+    clearTxt.current.reset();
   };
 
   return (
@@ -62,7 +64,11 @@ const Trainning = () => {
         <aside>
           <div>
             <h4>Enquiry</h4>
-            <form onChange={(e) => handleChange(e)} className="form">
+            <form
+              ref={clearTxt}
+              onChange={(e) => handleChange(e)}
+              className="form"
+            >
               <label htmlFor="">Full Name</label>
               <input type="text" name="fullName" required />
               <label htmlFor="">Email</label>

@@ -6,7 +6,7 @@ import { addDoc, collection, serverTimestamp } from "firebase/firestore";
 const Booking = () => {
   const [Booking, setBooking] = useState({});
   const navigate = useNavigate();
-  const ref = useRef(null);
+  const clearBooking = useRef();
   const consultanceCollRef = collection(db, "Booking");
 
   const handleChange = (e) => {
@@ -23,7 +23,7 @@ const Booking = () => {
       day: new Date().toDateString(),
       timestamp: serverTimestamp(),
     });
-    ref.current.value = "";
+    clearBooking.current.reset();
 
     alert("booked");
   };
@@ -34,7 +34,11 @@ const Booking = () => {
   console.log(Booking);
   return (
     <div>
-      <form className="BookingForm" onChange={(e) => handleChange(e)}>
+      <form
+        className="BookingForm"
+        onChange={(e) => handleChange(e)}
+        ref={clearBooking}
+      >
         <div className="BookingOverlay">
           <div className="productUpdateForm">
             <h4 className="updateheader">Booking Form</h4>

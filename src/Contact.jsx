@@ -1,26 +1,27 @@
+import React, { useRef, useState } from "react";
 import { addDoc, collection } from "firebase/firestore";
-import React from "react";
-import { useState } from "react";
 import { db } from "./firebaseconfig";
 import Footer from "./Footer";
+import attendant from "./asset/kisspng-call-centre-customer-service-callcenteragent-stock-Ремонт-окон-в-Новосибирске-5b65152a726c58.1422831315333512104687-removebg-preview.png";
 
 const Contact = () => {
   const [contactData, setContactData] = useState({});
-
+  const clearTxt = useRef();
   const handleChange = (e) => {
     const newInput = { [e.target.name]: e.target.value };
     setContactData({ ...contactData, ...newInput });
   };
-  const contactCollRef = collection(db, "Contact");
+  const contactCollRef = collection(db, "Booking");
 
   const addContact = async (e) => {
     e.preventDefault();
     await addDoc(contactCollRef, {
       ...contactData,
-      day: new Date().toDateString,
+      day: new Date().toDateString(),
       timestamp: new Date(),
     });
-    console.log(new Date());
+    alert("uploaded");
+    clearTxt.current.reset();
   };
 
   return (
@@ -49,7 +50,24 @@ const Contact = () => {
           <p>Nigeria.</p>
         </div>
         <div>
-          <form onChange={(e) => handleChange(e)} className="form">
+          <img src={attendant} alt="" />
+        </div>
+        <div>
+          <h3
+            style={{
+              marginLeft: "2rem",
+              color: "blue",
+              fontSize: "2rem",
+              fontWeight: "bold",
+            }}
+          >
+            Book here...!
+          </h3>
+          <form
+            ref={clearTxt}
+            onChange={(e) => handleChange(e)}
+            className="form"
+          >
             <label htmlFor="">Full Name</label>
             <input type="text" name="fullName" required />
             <label htmlFor="">Email</label>

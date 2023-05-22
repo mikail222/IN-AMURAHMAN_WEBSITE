@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useRef, useState } from "react";
 import pest1 from "../asset/ed-van-duijn-UUdJ-0LQs0M-unsplash.jpg";
 import pest2 from "../asset/peter-f-wolf-XG8eYNYdz54-unsplash.jpg";
 import pest3 from "../asset/312226385_1797629957237115_964696407549559286_n.jpg";
@@ -14,7 +14,7 @@ import { db } from "../firebaseconfig";
 import Footer from "../Footer";
 const Pest_control = ({ checkList }) => {
   const [pestData, setPestData] = useState({});
-
+  const txtInput = useRef();
   const handleChange = (e) => {
     const newInput = { [e.target.name]: e.target.value };
     setPestData({ ...pestData, ...newInput });
@@ -28,8 +28,8 @@ const Pest_control = ({ checkList }) => {
       day: new Date().toDateString(),
       timestamp: serverTimestamp(),
     });
-
     alert("uploaded");
+    txtInput.current.reset();
   };
 
   return (
@@ -48,6 +48,7 @@ const Pest_control = ({ checkList }) => {
         <div className="pestForm">
           <h4 style={{ marginTop: "2rem" }}>Enquiry</h4>
           <form
+            ref={txtInput}
             className="form"
             onChange={(e) => handleChange(e)}
             style={{ height: "80%", marginTop: "1rem" }}
@@ -161,7 +162,6 @@ const Pest_control = ({ checkList }) => {
             ))}
           </div>
         </div>
-        <p> </p>
       </div>
       <Footer />
     </div>

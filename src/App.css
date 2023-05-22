@@ -694,7 +694,7 @@
   @apply ml-[1rem] text-[1rem] font-bold text-[gray] lg:text-[1.1rem];
 }
 .contact-align {
-  @apply flex flex-col w-[100%] lg:mt-[4rem];
+  @apply flex flex-col w-[100%] lg:mt-[3rem];
 }
 .text {
   @apply text-center text-[1.9rem] mt-[3rem]  font-serif;
@@ -719,21 +719,23 @@
   @apply h-[100%];
 }
 .contactFeedback {
-  border-radius: 0px 0px 70% 0px;
-  @apply bg-[#0f0326] flex flex-col justify-center items-center h-[30vh] lg:leading-[2.5rem];
+  border-radius: 0px 0px 30% 0px;
+  @apply bg-[#0f0326] flex flex-col justify-center items-center lg:h-[20vh] lg:leading-[2.5rem] pt-[3%] lg:pt-[0px];
 }
 .contactFeedback p,
 .contactFeedback i {
-  @apply text-[0.90rem] px-[2rem] text-center lg:text-[20px];
+  @apply text-[0.80rem] px-[2rem] text-center lg:text-[20px];
 }
 .contact {
-  @apply flex flex-row lg:gap-[13rem] lg:my-[5rem]  justify-center  w-[100%] h-[100vh] lg:py-[5rem];
+  @apply flex flex-row lg:gap-[1rem] lg:my-[5rem]  justify-center w-[100%] h-[100vh] lg:py-[5rem];
 }
 @media screen and (max-width: 480px) {
   .contact {
     display: flex;
     flex-direction: column;
-    gap: 5rem;
+    justify-content: center;
+    align-items: center;
+    gap: 2rem;
     width: 100%;
     height: 100%;
   }
@@ -748,7 +750,8 @@
     font-size: 1rem;
     color: gray;
     font-weight: bold;
-    margin-bottom: 15%;
+    margin-bottom: 5%;
+    margin-top: 5%;
   }
 }
 .address p {
@@ -1275,7 +1278,7 @@ footer img {
 .scorpion,
 .flies,
 .snake {
-  @apply flex flex-col-reverse  lg:flex-row gap-[2rem] w-[98%] text-center mt-[2rem];
+  @apply flex flex-col-reverse  lg:flex-row lg:gap-[2rem] w-[98%] text-center lg:mt-[2rem];
 }
 .bedbugs main,
 .ants main,
@@ -1287,7 +1290,7 @@ footer img {
 .scorpion main,
 .filter main,
 .snake main {
-  @apply lg:w-[70%] mx-[3%] mb-[5%];
+  @apply lg:w-[70%] mx-[3%] lg:mb-[5%];
 }
 .text_picture {
   @apply flex  flex-row  justify-center gap-[1rem] items-center;
@@ -1379,7 +1382,7 @@ footer img {
   @apply flex flex-col;
 }
 .frame img {
-  @apply w-[100%] h-[60vh] lg:h-[60vh] mt-[1.5rem] rounded-[10px] object-contain;
+  @apply w-[100%] h-[60vh] lg:h-[60vh]  mt-[1.5rem] rounded-[10px] object-contain;
 }
 .tail {
   @apply w-[30vw] h-[60vh] lg:h-[60vh] mt-[1.5rem] rounded-[10px] items-center  object-contain;

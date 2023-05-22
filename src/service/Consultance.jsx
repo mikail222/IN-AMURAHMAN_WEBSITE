@@ -1,5 +1,5 @@
 import { addDoc, collection, serverTimestamp } from "firebase/firestore";
-import React, { useState } from "react";
+import React, { useRef, useState } from "react";
 import { GiCheckMark } from "react-icons/gi";
 import { db } from "../firebaseconfig";
 import Footer from "../Footer";
@@ -16,6 +16,7 @@ import pest9 from "../asset/chris-curry-N4AFGRPZGk4-unsplash.jpg";
 
 const Consultance = () => {
   const [consultanceData, setConsultanceData] = useState({});
+  const clearTxt = useRef();
 
   const handleChange = (e) => {
     const newInput = { [e.target.name]: e.target.value };
@@ -30,7 +31,8 @@ const Consultance = () => {
       day: new Date().toDateString(),
       timestamp: serverTimestamp(),
     });
-    console.log("booked");
+    alert("booked");
+    clearTxt.current.reset();
   };
   console.log(consultanceData);
   return (
@@ -117,7 +119,11 @@ const Consultance = () => {
           <div className="drainAdvert">
             <div className="consultform">
               <h4>Book here</h4>
-              <form className="form" onChange={(e) => handleChange(e)}>
+              <form
+                ref={clearTxt}
+                className="form"
+                onChange={(e) => handleChange(e)}
+              >
                 <label htmlFor="">Full Name</label>
                 <input type="text" name="fullName" required />
                 <label htmlFor="">Email</label>
