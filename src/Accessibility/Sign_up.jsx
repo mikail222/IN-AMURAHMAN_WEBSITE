@@ -178,9 +178,9 @@ const Sign_up = ({ navigate, user }) => {
                 onClick={togglePassword}
               >
                 {passwordType === "password" ? (
-                  <BiShow className="iconEye" />
+                  <BiShow className="show_password" />
                 ) : (
-                  <AiOutlineEyeInvisible className="iconEye" />
+                  <AiOutlineEyeInvisible className="show_password" />
                 )}
               </button>
             </div>

@@ -1975,10 +1975,10 @@ nav i {
   @apply w-[96%]  ml-[2%] flex flex-col justify-start mt-[5%] bg-[white] rounded-[10px];
 }
 .serviceDetail {
-  @apply w-[96%] ml-[2%] flex flex-col gap-[2rem] lg:flex-row justify-evenly mt-[5%] bg-[white] rounded-[10px];
+  @apply w-[95vw] lg:w-[96%]  px-[2%] lg:ml-[2%] flex flex-col gap-[2rem] lg:flex-row lg:justify-evenly mt-[5%] bg-[white] rounded-[10px];
 }
 .serviceDetail div {
-  @apply w-[96%] flex flex-col justify-start mt-[1%];
+  @apply lg:w-[96%] flex flex-col justify-start mt-[1%];
 }
 .serviceDetail div h3 {
   @apply mx-[2%] mt-[1%] text-[purple] font-bold;
@@ -2002,6 +2002,10 @@ nav i {
   @apply fill-[lightgray] w-[25px] h-[25px] cursor-pointer hover:fill-[green];
 }
 .info {
+  background-color: rgb(0, 0, 0, 0.3);
+  @apply w-[98%] flex flex-col  justify-start items-start lg:w-[95%] p-[2%] font-bold rounded-[10px] my-[2%];
+}
+.post_info {
   @apply w-[98%] flex flex-col  justify-start items-start lg:w-[95%] p-[2%] font-bold;
 }
 .comment_info {
@@ -2093,4 +2097,10 @@ nav i {
 }
 .bordering p b {
   @apply text-[4rem]  text-[white];
+}
+.show_password {
+  @apply fill-[white];
+}
+.show_passwordbtn {
+  @apply outline-0;
 }

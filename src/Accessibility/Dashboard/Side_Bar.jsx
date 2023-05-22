@@ -16,6 +16,7 @@ import { CgProfile } from "react-icons/cg";
 
 const Side_Bar = ({ currentUser, filteredAdmin, setShow, show }) => {
   console.log(filteredAdmin);
+
   const navigate = useNavigate();
   return (
     <aside className="dash_aside">
@@ -42,7 +43,7 @@ const Side_Bar = ({ currentUser, filteredAdmin, setShow, show }) => {
         </div>
       </div>
       <div className="dash">
-        {currentUser?.email == filteredAdmin ? (
+        {filteredAdmin ? (
           <div onClick={() => navigate("Data_analysis_page")}>
             <MdMonitor className="dashboardIcon" />
             <i>Dashboard</i>
@@ -57,7 +58,7 @@ const Side_Bar = ({ currentUser, filteredAdmin, setShow, show }) => {
           <CgProfile className="dashboardIcon" />
           <i>Profile</i>
         </div>
-        {currentUser?.email == filteredAdmin ? (
+        {filteredAdmin === true ? (
           <>
             <div onClick={() => navigate("User_Table")}>
               <FcCalendar className="dashboardIcon" />
@@ -97,9 +98,7 @@ const Side_Bar = ({ currentUser, filteredAdmin, setShow, show }) => {
         <div
           onClick={() =>
             navigate(
-              currentUser?.email == filteredAdmin
-                ? "Data_analysis_page"
-                : "User_data"
+              filteredAdmin === true ? "Data_analysis_page" : "User_data"
             )
           }
         >

@@ -36,7 +36,7 @@ const Mobile_Side_Bar = ({ currentUser, setDrawer, filteredAdmin }) => {
         </div>
       </div>
       <div className="dash">
-        {currentUser?.email == filteredAdmin ? (
+        {filteredAdmin ? (
           <div onClick={() => navigate("Data_analysis_page")}>
             <MdMonitor className="dashboardIcon" />
             <i>Dashboard</i>
@@ -51,7 +51,7 @@ const Mobile_Side_Bar = ({ currentUser, setDrawer, filteredAdmin }) => {
           <CgProfile className="dashboardIcon" />
           <i>Profile</i>
         </div>
-        {currentUser?.email == filteredAdmin && (
+        {filteredAdmin ? (
           <>
             {" "}
             <div onClick={() => navigate("User_Table")}>
@@ -86,6 +86,8 @@ const Mobile_Side_Bar = ({ currentUser, setDrawer, filteredAdmin }) => {
               <i>Enquiry</i>
             </div>
           </>
+        ) : (
+          ""
         )}
         <div onClick={() => setDrawer(true)}>
           <MdOutlineClear className="menuBar " title="dashboardIcon" />{" "}

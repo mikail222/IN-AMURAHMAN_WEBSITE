@@ -82,7 +82,7 @@ const Login = ({ navigate, user }) => {
             <label htmlFor="" className="label">
               Password
             </label>{" "}
-            <div>
+            <div className="passwordclass">
               {" "}
               <input
                 type={passwordType}
@@ -93,12 +93,12 @@ const Login = ({ navigate, user }) => {
               <button
                 type="button"
                 onClick={tooglePassword}
-                className="outline-0"
+                className="show_passwordbtn"
               >
                 {passwordType === "password" ? (
-                  <BiShow />
+                  <BiShow className="show_password" />
                 ) : (
-                  <AiOutlineEyeInvisible />
+                  <AiOutlineEyeInvisible className="show_password" />
                 )}
               </button>
             </div>

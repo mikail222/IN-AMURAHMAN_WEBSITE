@@ -12,7 +12,11 @@ const Consult = ({ consult }) => {
             {fullName ? <p>{fullName}</p> : <p>anonimous</p>}
             <p>{mail}</p>
             <p>{number}</p>
-            {msg ? <p className="info_text">{msg}</p> : <p>No Content</p>}
+            {msg === true ? (
+              <p className="info_text">{msg}</p>
+            ) : (
+              <p>No Content</p>
+            )}
             <p className="date">{day}</p>
           </div>
         ))}

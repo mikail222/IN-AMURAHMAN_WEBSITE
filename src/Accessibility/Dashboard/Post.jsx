@@ -84,7 +84,7 @@ const Post = () => {
   return (
     <div className="postForm">
       {adminPost.map(({ text, photo, day, i }) => (
-        <div key={i} className="info">
+        <div key={i} className="post_info">
           <img src={photo} alt="" className="postPhotos" />
           <p className="info_text">{text}</p>
           <p className="date">{day}</p>
