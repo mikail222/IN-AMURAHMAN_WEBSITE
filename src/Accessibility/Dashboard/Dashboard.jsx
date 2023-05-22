@@ -100,7 +100,7 @@ const Dashboard = ({ adminPost, productUpdate, count }) => {
           />
           <main className="mainClass">
             <BiMenu
-              className="menuBar "
+              className="menuBar"
               style={{ marginTop: "3rem" }}
               title="Menu Bar"
               onClick={(e) => setDrawer(false)}
@@ -122,7 +122,17 @@ const Dashboard = ({ adminPost, productUpdate, count }) => {
                   />
                 }
               />
-              <Route path="User_Data" element={<User_Data />} />
+              <Route
+                path="User_Data"
+                element={
+                  <User_Data
+                    booking={booking}
+                    enquiry={enquiry}
+                    consult={consult}
+                    sales={sales}
+                  />
+                }
+              />
 
               <Route
                 path="User_Profile"

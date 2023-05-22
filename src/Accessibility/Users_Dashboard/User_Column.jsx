@@ -3,8 +3,9 @@ import { AiOutlineShoppingCart, AiOutlineUserAdd } from "react-icons/ai";
 import { BiUserCheck } from "react-icons/bi";
 import { GrProductHunt } from "react-icons/gr";
 import { TbCurrencyNaira } from "react-icons/tb";
+import { auth } from "../../firebaseconfig";
 
-const User_Column = () => {
+const User_Column = ({ booked, consultation, findings, acquiredItem }) => {
   return (
     <div className="user_col">
       <div className="container">
@@ -14,13 +15,14 @@ const User_Column = () => {
               <p>SERVICE INFO</p>
               <nav>
                 <p>
-                  Booking : <i></i>{" "}
+                  Booking : <i>{booked == true ? booked?.lenght : 0}</i>
                 </p>
                 <p>
-                  Consult : <i></i>{" "}
+                  Consult :{" "}
+                  <i>{consultation == true ? consultation?.lenght : 0}</i>
                 </p>{" "}
                 <p>
-                  Enquiry : <i></i>{" "}
+                  Enquiry : <i>{findings == true ? findings?.lenght : 0}</i>
                 </p>{" "}
               </nav>
             </article>
@@ -46,7 +48,8 @@ const User_Column = () => {
               <p>TODAY'S PURCHASE</p>
               <nav>
                 <p>
-                  Bought item : <i></i>{" "}
+                  Bought item :
+                  <i>{acquiredItem == true ? acquiredItem?.lenght : 0}</i>
                 </p>
 
                 <p
@@ -64,7 +67,7 @@ const User_Column = () => {
                       alignItems: "center",
                     }}
                   >
-                    <TbCurrencyNaira />
+                    <TbCurrencyNaira />0
                   </i>
                 </p>
                 <p
@@ -82,7 +85,7 @@ const User_Column = () => {
                       alignItems: "center",
                     }}
                   >
-                    <TbCurrencyNaira />
+                    <TbCurrencyNaira />0
                   </i>
                 </p>
               </nav>

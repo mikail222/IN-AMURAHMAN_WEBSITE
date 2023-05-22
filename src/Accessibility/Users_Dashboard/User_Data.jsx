@@ -1,8 +1,21 @@
 import React from "react";
 import User_Column from "./User_Column";
 import Comment from "./Comment";
+import { auth } from "../../firebaseconfig";
 
-const User_Data = () => {
+const User_Data = ({ booking, enquiry, consult, sales }) => {
+  const currentUser = auth.currentUser;
+  const acquiredItem = sales?.filter(
+    ({ email }) => email === currentUser?.email
+  );
+
+  const booked = booking?.filter(({ email }) => email === currentUser?.email);
+
+  const findings = enquiry?.filter(({ email }) => email === currentUser?.email);
+
+  const consultation = consult?.filter(
+    ({ email }) => email === currentUser?.email
+  );
   const data = [
     { argument: "Monday", value: 30 },
     { argument: "Tuesday", value: 20 },
@@ -12,7 +25,12 @@ const User_Data = () => {
   ];
   return (
     <div className="data_analysis">
-      <User_Column />
+      <User_Column
+        acquiredItem={acquiredItem}
+        findings={findings}
+        consultation={consultation}
+        booked={booked}
+      />
       <div className="analytics">
         <div className="field">
           <aside className="graphField">

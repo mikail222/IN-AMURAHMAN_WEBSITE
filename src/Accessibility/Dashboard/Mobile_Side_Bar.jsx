@@ -63,24 +63,24 @@ const Mobile_Side_Bar = ({ currentUser, setDrawer, filteredAdmin }) => {
               <i>Product update</i>
             </div>
             <div onClick={() => navigate("Sales_Details")}>
-              <FcSalesPerformance className="menuBar " title="dashboardIcon" />{" "}
+              <FcSalesPerformance className="menuBar2 " title="dashboardIcon" />{" "}
               <i>Sales</i>
             </div>{" "}
             <div onClick={() => navigate("Post")}>
-              <MdPostAdd className="menuBar " title="dashboardIcon" />{" "}
+              <MdPostAdd className="menuBar2 " title="dashboardIcon" />{" "}
               <i>Post</i>
             </div>{" "}
             <div onClick={() => navigate("Booking")}>
-              <TbBrandBooking className="menuBar " title="dashboardIcon" />
+              <TbBrandBooking className="menuBar2 " title="dashboardIcon" />
               <i>Booking</i>
             </div>{" "}
             <div onClick={() => navigate("Consult")}>
-              <TbBrandTripadvisor className="menuBar " title="dashboardIcon" />
+              <TbBrandTripadvisor className="menuBar2 " title="dashboardIcon" />
               <i>Consult</i>
             </div>{" "}
             <div onClick={() => navigate("Enquiry")}>
               <AiFillQuestionCircle
-                className="menuBar "
+                className="menuBar2 "
                 title="dashboardIcon"
               />{" "}
               <i>Enquiry</i>
@@ -90,7 +90,7 @@ const Mobile_Side_Bar = ({ currentUser, setDrawer, filteredAdmin }) => {
           ""
         )}
         <div onClick={() => setDrawer(true)}>
-          <MdOutlineClear className="menuBar " title="dashboardIcon" />{" "}
+          <MdOutlineClear className="menuBar2 " title="dashboardIcon" />{" "}
           <i>Back</i>
         </div>
       </div>

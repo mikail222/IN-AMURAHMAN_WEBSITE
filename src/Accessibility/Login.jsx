@@ -53,7 +53,7 @@ const Login = ({ navigate, user }) => {
         displayName:
           currentUserDetails?.first + " " + currentUserDetails?.LastName,
         photoURL: currentUserDetails?.img,
-        phoneNumber: currentUser.phone,
+        phoneNumber: currentUserDetails?.phone,
       }).then(() => {});
     }
   }, [loggedInUser]);

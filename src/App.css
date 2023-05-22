@@ -1570,7 +1570,7 @@ footer img {
   @apply text-left;
 }
 .mainClass {
-  @apply lg:w-[78vw]  mt-[20%] lg:mt-[0px] lg:relative lg:ml-[17rem];
+  @apply lg:w-[78vw]  mt-[20%] lg:mt-[10%] lg:relative lg:ml-[17rem];
 }
 .mainClass::-webkit-scrollbar {
   @apply flex-none;
@@ -1815,6 +1815,9 @@ nav i {
 }
 
 .menuBar {
+  @apply lg:hidden w-[2rem] h-[1.8rem] fill-[black];
+}
+.menuBar2 {
   @apply w-[2rem] h-[1.8rem] fill-[black];
 }
 .mobile {
@@ -1871,9 +1874,7 @@ nav i {
 .usersContainer {
   @apply w-[100%] bg-[lightgray] h-[300vh];
 }
-.user_col {
-  @apply pt-[5%];
-}
+
 .dashBoardDiv {
   background-image: url("https://www.dcu.ie/sites/default/files/styles/widescreen_television/public/media/2018/08/11/why_dcu_connected.jpg?itok=Ff-67EpB");
   background-size: cover;
