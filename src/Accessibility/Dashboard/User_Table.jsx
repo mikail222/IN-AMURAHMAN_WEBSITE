@@ -14,6 +14,9 @@ const User_Table = ({ user }) => {
       })
       .catch((error) => {
         setErr(error.message);
+        setTimeout(() => {
+          setErr(null);
+        }, 5000);
       });
   };
   const currentUser = auth.currentUser?.email;

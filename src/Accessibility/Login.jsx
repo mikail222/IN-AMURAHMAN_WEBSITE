@@ -9,19 +9,22 @@ import {
   signInWithEmailAndPassword,
   updateProfile,
 } from "firebase/auth";
-import { auth } from "../firebaseconfig";
+import { auth, storage } from "../firebaseconfig";
 import Login_button from "./Login_button";
 
 const Login = ({ navigate, user }) => {
   const [check, setCheck] = useState(false);
   const [userErr, setUserErr] = useState(false);
-  const [email, setEmail] = useState("");
+  const [email, setEmail] = useState();
+  const [verifyEmail, setVerifyEmail] = useState();
+  const [emailVerification, setEmailVerification] = useState();
   const [password, setPassword] = useState("");
+  const [success, setSuccess] = useState();
   const [loggedInUser, setLoggedInUser] = useState();
   const [passwordType, setPasswordType] = useState("password");
   const currentUser = auth.currentUser;
   const currentUserDetails = user.filter((m) => m.id === currentUser?.uid);
-
+  console.log(window.localStorage);
   const handleSubmit = (e) => {
     e.preventDefault();
     signInWithEmailAndPassword(auth, email, password)
@@ -30,19 +33,32 @@ const Login = ({ navigate, user }) => {
         setLoggedInUser(user);
       })
       .catch((error) => {
-        const errorCode = error.code;
-        setUserErr(error.message);
+        setUserErr(error);
+        setTimeout(() => {
+          setUserErr(null);
+        }, 5000);
       });
   };
   useEffect(() => {
     sendEmailVerification(currentUser).then(() => {
-      alert("Email verification sent!");
+      setEmailVerification("Email verification sent!");
+      setTimeout(() => {
+        setEmailVerification(null);
+      }, 3000);
       if (currentUser.emailVerified === false) {
-        alert("please verify your are the owner of the  email provided");
+        setVerifyEmail(
+          "please verify your are the owner of the  email provided"
+        );
+        setTimeout(() => {
+          setVerifyEmail(null);
+        }, 5000);
       } else {
+        setSuccess("You're successfully logged in");
+        setTimeout(() => {
+          setSuccess(null);
+        }, 3000);
         navigate("/User_modal");
       }
-      // ...
     });
     if (loggedInUser) {
       console.log({ loggedInUser });
@@ -69,6 +85,11 @@ const Login = ({ navigate, user }) => {
   return (
     <div className="sign_up_form_container">
       <div className="login_overlay">
+        <div className="loginNotification">
+          {success && <p>{success}</p>}
+          {verifyEmail && <p>{verifyEmail}</p>}
+          {emailVerification && <p>{emailVerification}</p>}
+        </div>
         <form onSubmit={handleSubmit} className="accessibilityLogin">
           <div className="styleInputSectionLogin ">
             <label htmlFor="" className="label">

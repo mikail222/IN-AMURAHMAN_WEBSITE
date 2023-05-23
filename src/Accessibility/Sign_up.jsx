@@ -16,6 +16,8 @@ const Sign_up = ({ navigate, user }) => {
   const [fileUpload, setFileUpload] = useState(null);
   const [passwordType, setPasswordType] = useState("password");
   const [check, setCheck] = useState(false);
+  const [success, setSuccess] = useState("");
+
   const [trackupload, setTrackUpload] = useState(null);
   const [loggedInUser, setLoggedInUser] = useState();
 
@@ -96,6 +98,9 @@ const Sign_up = ({ navigate, user }) => {
       console.log(res.user);
     } catch (err) {
       setError(err.message);
+      setTimeout(() => {
+        setError(null);
+      }, 5000);
     }
     if (loggedInUser) {
       console.log({ loggedInUser });
@@ -108,11 +113,13 @@ const Sign_up = ({ navigate, user }) => {
         photoURL: currentUserDetails?.img,
         phoneNumber: currentUser.phone,
       }).then(() => {
-        alert(
-          `You are successfully signed in as ${
-            data?.first + " " + data?.LastName
-          }`
-        );
+        setTimeout(() => {
+          setSuccess(
+            `You are successfully signed in as ${
+              data?.first + " " + data?.LastName
+            }`
+          );
+        }, 5000);
         navigate("/User_modal");
       });
     }
@@ -121,6 +128,7 @@ const Sign_up = ({ navigate, user }) => {
   return (
     <div className=" sign_up_form_container ">
       <div className="login_overlay">
+        <p>{success}</p>
         <form
           onChange={(e) => handleChange(e)}
           onSubmit={handleSubmit}

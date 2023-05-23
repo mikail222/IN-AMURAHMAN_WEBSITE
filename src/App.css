@@ -1408,12 +1408,14 @@ footer img {
   background-size: cover;
   @apply w-[100%] lg:h-[60vh] flex flex-col ml-[1%] justify-center items-center lg:ml-[1rem];
 }
-
+.modalCol {
+  @apply flex  flex-col justify-center items-center mt-[12%] lg:mt-[0px];
+}
 .accessibility {
-  @apply flex flex-col justify-center items-center max-w-[98%] lg:w-[33vw] h-[88vh] lg:h-[90vh] rounded-[15px] pb-[2rem]  mt-[10%] lg:mt-[4%]  border-[1px];
+  @apply flex flex-col justify-center items-center max-w-[98%] lg:w-[33vw] h-[88vh] lg:h-[90vh] rounded-[15px] pb-[2rem]  mt-[6%] lg:mt-[2%]  border-[1px];
 }
 .accessibilityLogin {
-  @apply w-[90%] flex flex-col justify-center items-center max-w-[95%] lg:w-[33vw] h-[60vh] lg:h-[80vh] rounded-[15px] pb-[5rem] border-[1px] lg:mt-[4%];
+  @apply w-[90%] flex flex-col justify-center items-center max-w-[95%] lg:w-[33vw] h-[60vh] lg:h-[80vh] rounded-[15px] pb-[5rem] border-[1px] lg:mt-[2%];
 }
 .accessibility input,
 .travel input,
@@ -1437,6 +1439,12 @@ footer img {
 .login_overlay {
   background-color: rgba(20, 3, 20, 0.8);
   @apply w-[100%] h-[100vh]  flex  flex-col  justify-center  items-center;
+}
+.loginNotification {
+  @apply w-[80%]  mt-[5%] flex flex-col justify-center items-center;
+}
+.loginNotification p {
+  @apply w-[100%] rounded-[15px] bg-[green] text-[white] font-bold text-center py-[1%];
 }
 .styleInputSection {
   @apply w-[85%] h-[52vh] lg:w-[90%] lg:h-[76vh] flex flex-col justify-center rounded-[20px] pb-[10px] mt-[15%]  lg:mt-[0px];
@@ -1639,14 +1647,14 @@ footer img {
   @apply hidden w-[26vw] h-auto lg:flex;
 }
 .modal {
-  @apply w-[100%] h-[75vh] lg:w-[100%] lg:h-[100vh] flex  flex-row  justify-center  items-center  mt-[10%]  lg:mt-[0px];
+  @apply w-[100%] h-[73vh] lg:w-[100%] lg:h-[90vh] flex  flex-row  justify-center  items-center  mt-[2%]  lg:mt-[0px];
 }
 .modalBg {
   background-image: url("https://assets-us-01.kc-usercontent.com/338e61a8-25d7-0035-f3a0-cea86e563aa1/b1f9189b-5ada-40ca-b8e9-445b5120f86e/procare-homepage-mosquito-control.jpg?w=760&h=480&auto=format&fit=crop");
   background-size: cover;
   background-repeat: no-repeat;
   background-position: bottom;
-  @apply w-[85%] lg:w-[50%] h-[80%] rounded-[5%]  lg:mt-[3%] text-white object-contain;
+  @apply w-[85%] lg:w-[50%] h-[80%] rounded-[5%] text-white object-contain;
 }
 .modalContainer {
   background-color: rgb(0, 0, 0, 0.5);

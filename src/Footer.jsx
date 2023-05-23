@@ -204,7 +204,7 @@ const Footer = () => {
             </p>
           </div>
           <div className="producer">
-            <p>web design by: M&K TEC</p>
+            <p>web design by: M&K Tech</p>
             <a
               href="https://web.facebook.com/mikail.abdulraheem.3"
               target="_blank"
