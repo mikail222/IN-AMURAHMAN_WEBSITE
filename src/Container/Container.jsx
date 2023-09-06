@@ -48,31 +48,54 @@ import { collection, getDocs } from "firebase/firestore";
 import { db } from "../firebaseconfig";
 import Scorpion from "../Pest/Scorpion";
 import Flies from "../Pest/Flies";
+import About_Us from "../Accessibility/About_Us";
+import { useDispatch, useSelector } from "react-redux";
+import Blog_Details from "../Blog_Details";
+import Pest_Categories from "../Blog_Category/Pest_Categories";
+import Rodient from "../Blog_Category/Rodient";
+import Environment from "../Blog_Category/Environment";
+import Next_to_Read from "../Blog_Category/Next_to_Read";
+import { productData } from "../Reducers/ProductSlice";
+import { blogData } from "../Reducers/BlogReducer";
 
 const Container = ({ user, setShowNav }) => {
+  const dispatch = useDispatch();
   const [findProduct, setFindProduct] = useState("");
-  const [productUpdate, setProductUpdate] = useState([]);
   const navigate = useNavigate();
   const [count, setCount] = useState(0);
 
+  console.log(user);
+  const getProduct = async () => {
+    const collProductUpdate = collection(db, "Products");
+    const Products = await getDocs(collProductUpdate);
+    dispatch(
+      productData(Products.docs.map((doc) => ({ ...doc.data(), id: doc.id })))
+    );
+  };
+  getProduct();
+
+  const getBlogs = async () => {
+    const collBlogUpdate = collection(db, "Blogs");
+    const Blog = await getDocs(collBlogUpdate);
+    dispatch(
+      blogData(Blog.docs.map((doc) => ({ ...doc.data(), ids: doc.id })))
+    );
+  };
+  getBlogs();
+
+  const productUpdate = useSelector(
+    (state) => state.products.product.addProduct[0]
+  );
+  const blogList = useSelector((state) => state.products.blog.blogs[0]);
+
+  const { id } = useParams();
+  const userId = productUpdate?.filter((p) => p.id === id);
+
   const checkList = productUpdate?.filter((p) =>
-    p.product_name.toLowerCase().includes(findProduct.toLowerCase())
+    p.product_name?.toLowerCase().includes(findProduct?.toLowerCase())
   );
 
-  useEffect(() => {
-    const getProduct = async () => {
-      const collProductUpdate = collection(db, "Products");
-      const Products = await getDocs(collProductUpdate);
-      setProductUpdate(
-        Products.docs.map((doc) => ({ ...doc.data(), id: doc.id }))
-      );
-    };
-    getProduct();
-  }, []);
-  const { id } = useParams();
-  const userId = productUpdate.filter((p) => p.id === id);
-  const total = userId.map(({ price }) => price * count);
-
+  const total = userId?.map(({ price }) => price * count);
   return (
     <div className="toogle_Nav">
       <Mobile_nav setShowNav={setShowNav} />
@@ -92,23 +115,67 @@ const Container = ({ user, setShowNav }) => {
               />
             }
           />
+          <Route path="/About_Us" element={<About_Us blogList={blogList} />} />
           <Route path="/Googlepay" element={<Googlepay />} />
           <Route path="/Booking" element={<Booking />} />
-          <Route path="/" element={<Home productUpdate={productUpdate} />} />
+          <Route
+            path="/"
+            element={<Home productUpdate={productUpdate} blogList={blogList} />}
+          />
           <Route path="Clues" element={<Clues />} />
           <Route path="Hire" element={<Hire />} />
           <Route
             path="Show_Room"
             element={
-              <Show_Room
-                checkList={checkList}
-                findProduct={findProduct}
-                setFindProduct={setFindProduct}
-                productUpdate={productUpdate}
-              />
+              <Show_Room blogList={blogList} productUpdate={productUpdate} />
             }
           />
-          <Route path="/Blog" element={<Blog />} />
+          <Route path="Blog/*" element={<Blog blogList={blogList} />} />
+          <Route
+            path="/Pests"
+            element={<Pest_Categories blogList={blogList} />}
+          />
+          <Route path="/Rodient" element={<Rodient blogList={blogList} />} />{" "}
+          <Route
+            path="/Environment"
+            element={<Environment blogList={blogList} />}
+          />
+          <Route
+            path="//Blog_Details/:id"
+            element={<Blog_Details blogList={blogList} />}
+          />{" "}
+          <Route
+            path="Blog_Details"
+            element={<Blog_Details blogList={blogList} />}
+          />
+          <Route
+            path="Blog_Details/Blog_Details/:id"
+            element={<Blog_Details blogList={blogList} />}
+          />{" "}
+          <Route
+            path="Show_Room/Blog_Details/:id"
+            element={<Blog_Details blogList={blogList} />}
+          />{" "}
+          <Route
+            path="About_Us/Blog_Details/:id"
+            element={<Blog_Details blogList={blogList} />}
+          />{" "}
+          <Route
+            path="Pests/Blog_Details/:id"
+            element={<Blog_Details blogList={blogList} />}
+          />{" "}
+          <Route
+            path="Rodient/Blog_Details/:id"
+            element={<Blog_Details blogList={blogList} />}
+          />
+          <Route
+            path="Environment/Blog_Details/:id"
+            element={<Blog_Details blogList={blogList} />}
+          />
+          <Route
+            path="Blog/Blog_Details/:id"
+            element={<Blog_Details blogList={blogList} />}
+          />
           <Route
             path="/Reset_Password"
             element={<Reset_Password user={user} />}

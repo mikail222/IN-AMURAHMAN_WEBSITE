@@ -7,7 +7,6 @@ import { db } from "./firebaseconfig";
 const App = () => {
   const [user, setUser] = useState([]);
   const [showNav, setShowNav] = useState(false);
-
   useEffect(() => {
     const getUser = async () => {
       const collectionOfUser = collection(db, "Admin");
@@ -17,6 +16,7 @@ const App = () => {
     };
     getUser();
   }, []);
+
   return (
     <div>
       <Container user={user} showNav={showNav} setShowNav={setShowNav} />

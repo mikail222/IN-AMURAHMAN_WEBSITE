@@ -14,6 +14,7 @@ import Consult from "./Consult";
 import Enquiry from "./Enquiry";
 import User_Data from "../Users_Dashboard/User_Data";
 import User_Profile from "../Users_Dashboard/User_Profile";
+import Blog_Update from "./Blog_Update";
 
 const Dashboard = ({ adminPost, productUpdate, count }) => {
   const [consult, setConsult] = useState([]);
@@ -144,6 +145,7 @@ const Dashboard = ({ adminPost, productUpdate, count }) => {
                   <Sales_Details sales={sales} productUpdate={productUpdate} />
                 }
               />
+              <Route path="Blog_Update" element={<Blog_Update />} />
               <Route path="Post" element={<Post adminPost={adminPost} />} />
               <Route path="Booking" element={<Booking booking={booking} />} />
               <Route path="Consult" element={<Consult consult={consult} />} />

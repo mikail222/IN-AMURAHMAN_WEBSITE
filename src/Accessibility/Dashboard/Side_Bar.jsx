@@ -7,7 +7,7 @@ import {
 } from "react-icons/md";
 import { FcCalendar, FcSalesPerformance } from "react-icons/fc";
 import { AiFillQuestionCircle, AiOutlineLogout } from "react-icons/ai";
-import { GrUpdate } from "react-icons/gr";
+import { GrBlog, GrUpdate } from "react-icons/gr";
 import { useNavigate } from "react-router-dom";
 import { signOut } from "firebase/auth";
 import { auth } from "../../firebaseconfig";
@@ -71,7 +71,11 @@ const Side_Bar = ({ currentUser, filteredAdmin, setShow, show }) => {
             <div onClick={() => navigate("Sales_Details")}>
               <FcSalesPerformance className="menuBar2 " title="dashboardIcon" />{" "}
               <i>Sales</i>
-            </div>{" "}
+            </div>
+            <div onClick={() => navigate("Blog_Update")}>
+              <GrBlog className="menuBar2 " title="dashboardIcon" />{" "}
+              <i>Blogs</i>
+            </div>
             <div onClick={() => navigate("Post")}>
               <MdPostAdd className="menuBar2 " title="dashboardIcon" />{" "}
               <i>Post</i>

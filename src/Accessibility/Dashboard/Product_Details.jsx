@@ -1,7 +1,9 @@
 import React from "react";
+import { useSelector } from "react-redux";
+import { useParams } from "react-router-dom";
 
-const Product_Details = ({ product_detail, count }) => {
-  console.log(product_detail);
+const Product_Details = ({ productId }) => {
+  console.log(productId.id);
   return (
     <div className="productWrapper">
       <h2>Stock List</h2>
@@ -15,7 +17,7 @@ const Product_Details = ({ product_detail, count }) => {
           </tr>
         </thead>
         <tbody>
-          {product_detail
+          {productId
             // .filter(
             //   (m) =>
             //     m.email.toLowerCase().includes(search_user.toLowerCase()) ||

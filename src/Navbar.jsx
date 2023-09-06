@@ -1,6 +1,6 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import irehv from "./asset/irehv-low-resolution-logo-color-on-transparent-background.png";
+import irehv from "./asset/BrandName_Logo.svg";
 import { useState } from "react";
 import { auth } from "./firebaseconfig";
 
@@ -108,7 +108,7 @@ const Navbar = ({ navigate, setShowNav }) => {
               <p>Hire</p>
             </Link>
             <Link to="Show_Room">
-              <p>Show Room</p>
+              <p>Products</p>
             </Link>
             <Link to="Booking">
               <p>Book</p>
@@ -122,12 +122,12 @@ const Navbar = ({ navigate, setShowNav }) => {
             <div className="userStatus">
               {currentUser === null ? (
                 <i onClick={() => navigate("/Login")} className="logout">
-                  Login
+                  LOGIN
                 </i>
               ) : (
                 <div className="dropdown">
                   <i onClick={handleLogOut} className="logout">
-                    LogOut
+                    LOGOUT
                   </i>
 
                   <div className="dropdown-content">
@@ -150,13 +150,9 @@ const Navbar = ({ navigate, setShowNav }) => {
                 </div>
               )}
             </div>
-            <div
-              onClick={() => navigate("/Sign_up")}
-              className="getIntouch"
-              style={{ marginRight: "1.2rem", height: "7vh" }}
-            >
+            <div onClick={() => navigate("/Sign_up")} className="getIntouch">
               <p>
-                <em className="client">Sign up</em>
+                <em>SIGN UP</em>
               </p>
             </div>
           </div>

@@ -1,5 +1,6 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import Columns from "./Columns";
+// import Chart from "react-apexcharts";
 
 const Data_analysis_page = ({
   user,
@@ -10,13 +11,20 @@ const Data_analysis_page = ({
   sales,
   totalamount,
 }) => {
-  const data = [
-    { argument: "Monday", value: 30 },
-    { argument: "Tuesday", value: 20 },
-    { argument: "Wednesday", value: 10 },
-    { argument: "Thursday", value: 50 },
-    { argument: "Friday", value: 60 },
-  ];
+  // const [option, setChart] = useState({
+  //   chart: {
+  //     id: "apexchart-example",
+  //   },
+  //   xaxis: {
+  //     categories: [1991, 1992, 1993, 1994, 1995, 1996, 1997, 1998, 1999],
+  //   },
+  // });
+  // const [series, setSeries] = useState([
+  //   {
+  //     name: "series-1",
+  //     data: [30, 40, 35, 50, 49, 60, 70, 91, 125],
+  //   },
+  // ]);
 
   return (
     <div className="data_analysis">
@@ -32,14 +40,13 @@ const Data_analysis_page = ({
       <div className="analytics">
         <div className="field">
           <aside className="graphField">
-            {/* <Paper>
-              <Chart data={data}>
-                <ArgumentAxis />
-                <ValueAxis />
-
-                <BarSeries valueField="value" argumentField="argument" />
-              </Chart>
-            </Paper> */}
+            {/* <Chart
+              option={option}
+              series={series}
+              type="bar"
+              width={500}
+              height={320}
+            /> */}
           </aside>
         </div>
         <aside className="revenue"></aside>

@@ -117,10 +117,10 @@ const Service = () => {
                   textAlign: "left",
                 }}
               >
-                <h3>Wast Management</h3>
+                <h3>Waste Management</h3>
                 <p>
                   our service also provide you the access to get ride of your
-                  load of garbages and maintain with you a high degree of wast
+                  load of garbages and maintain with you a high degree of waste
                   Management
                 </p>
               </div>

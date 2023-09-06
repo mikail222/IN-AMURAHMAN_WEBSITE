@@ -24,7 +24,7 @@ const Login = ({ navigate, user }) => {
   const [passwordType, setPasswordType] = useState("password");
   const currentUser = auth.currentUser;
   const currentUserDetails = user.filter((m) => m.id === currentUser?.uid);
-  console.log(window.localStorage);
+  // console.log(window.localStorage);
   const handleSubmit = (e) => {
     e.preventDefault();
     signInWithEmailAndPassword(auth, email, password)
@@ -33,7 +33,7 @@ const Login = ({ navigate, user }) => {
         setLoggedInUser(user);
       })
       .catch((error) => {
-        setUserErr(error);
+        setUserErr(error.message);
         setTimeout(() => {
           setUserErr(null);
         }, 5000);
@@ -45,7 +45,7 @@ const Login = ({ navigate, user }) => {
       setTimeout(() => {
         setEmailVerification(null);
       }, 3000);
-      if (currentUser.emailVerified === false) {
+      if (currentUser.emailVerified == false) {
         setVerifyEmail(
           "please verify your are the owner of the  email provided"
         );

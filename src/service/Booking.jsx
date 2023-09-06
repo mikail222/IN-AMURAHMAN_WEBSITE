@@ -43,24 +43,24 @@ const Booking = () => {
           <div className="productUpdateForm">
             <h4 className="updateheader">Booking Form</h4>
 
-            <label htmlFor=""> First Name</label>
+            <label htmlFor=""></label>
             <input
               type="text"
               placeholder="First Name"
               required
               name="firstName"
             />
-            <label htmlFor="">Last Name</label>
+            <label htmlFor=""></label>
             <input
               type="text"
               placeholder=" Last Name"
               name="lastName"
               required
             />
-            <label htmlFor="">Email</label>
+            <label htmlFor=""></label>
             <input type="Email" placeholder="Email" name="email" required />
 
-            <label htmlFor="">Contact</label>
+            <label htmlFor=""></label>
             <input
               type="number"
               placeholder="Contact"

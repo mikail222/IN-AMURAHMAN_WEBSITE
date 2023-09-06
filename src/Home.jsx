@@ -1,208 +1,379 @@
-import React, { useEffect } from "react";
-import img from "./asset/annie-spratt-0ZPSX_mQ3xI-unsplash.jpg";
-import logo1 from "./asset/312243133_467283241883125_709980892638630759_n.png";
-import img0 from "./asset/house-spider-two-column-removebg-preview.png";
-import img1 from "./asset/identify-and-get-rid-of-venmous-snakes-removebg-preview.png";
-import img2 from "./asset/images-removebgs-previews.png";
-import img3 from "./asset/granulated-thick-tailed-scorpion-parabuthus-granu-2021-10-20-09-18-22-utc-removebg-preview.png";
-import img4 from "./asset/29-house-fly-npma-removebg-preview.png";
-import img5 from "./asset/ghows-LK-e952682d-6d11-44d7-9c25-672b5a76f663-9d1e73dd-removebg-preview.png";
-import img6 from "./asset/american-cockroach-dorsal-removebg-preview.png";
-import img7 from "./asset/800px-Bed_bug__Cimex_lectularius-removebg-preview.png";
-import img8 from "./asset/312137280_520182353281868_4450230382255186139_n.jpg";
-import img10 from "./asset/neven-krcmarek-HWbxSLvmSww-unsplash.jpg";
-import { Link } from "react-router-dom";
-import Service from "./Service";
+import React, { useEffect, useState } from "react";
+import img from "./asset/Heading.svg";
+import faqs from "./asset/fineTouch.svg";
+import demoVideo from "./asset/Fram 1000001673.svg";
+import satisfaction from "./asset/satisfaction.svg";
+import icon1 from "./asset/Mask group.svg";
+import icon2 from "./asset/Mask group (1).svg";
+import icon3 from "./asset/Mask group (2).svg";
+import icon4 from "./asset/Mask group (3).svg";
+import img1 from "./asset/Frame 1000001682.svg";
+import img2 from "./asset/Frame 1000001682 (1).svg";
+import img3 from "./asset/Frame 1000001682 (2).svg";
+import img4 from "./asset/Frame 1000001682 (3).svg";
+import cleanTouch from "./asset/Ready to GIVE YOUR HOUSES & OFFICE A CLEAN TOUCH_ BOOK A FREE SESSION today.svg";
+import { TbCurrencyNaira } from "react-icons/tb";
+import videoClue from "./asset/Rectangle 102.svg";
+import Irehv_pro from "./asset/IREHV Pro.svg";
+import Irehv_plus from "./asset/IREHV Plus.svg";
+import Irehv_starter from "./asset/IREHV Starter.svg";
+import { Link, useNavigate } from "react-router-dom";
 import Footer from "./Footer";
 import AOS from "aos";
 import "aos/dist/aos.css";
 import Our_Team from "./Accessibility/Our_Team";
+import professional from "./asset/Head.svg";
+import book from "./asset/BOOK A SESSION.svg";
+import demo from "./asset/SEE A DEMO.svg";
+import star from "./asset/Group 7842.svg";
+import stars from "./asset/Group 7843.svg";
+import rate from "./Accessibility/Users_Dashboard/ABOUT/MENUS.svg";
+import Content from "./Accessibility/Users_Dashboard/ABOUT/Frame 1000001679.svg";
+import aboutUsHeader from "./Accessibility/Users_Dashboard/ABOUT/Frame 1000001673.svg";
+import proccess from "./asset/PROCESS.svg";
+import ourService from "./asset/Frame 1000001673.svg";
+import product2 from "./asset/878 (masking shape).svg";
+import product1 from "./asset/4252-removebg-preview.png";
+import { BsStars } from "react-icons/bs";
+import irehv_Content from "./asset/Frame 1000001668.svg";
+import { GrStar } from "react-icons/gr";
+import {
+  MdKeyboardArrowDown,
+  MdOutlineKeyboardArrowRight,
+} from "react-icons/md";
+import irehv_content2 from "./asset/Frame 1000001668 (1).svg";
+import Our_Products from "./Accessibility/Our_Products";
+import Customer from "./Customer";
+import BlogAds from "./BlogAds";
 
-const Home = ({ productUpdate }) => {
-  const picture = [
-    {
-      image: img1,
-    },
-    {
-      image: img2,
-      name: "Termite",
-    },
-    {
-      image: img3,
-      name: "Scorpion",
-    },
-    { image: img4, name: "Flies" },
-    { image: img0, name: "Spider" },
-    {
-      image: img5,
-      name: "Ant",
-    },
-    {
-      image: img6,
-      name: "Cockroach",
-    },
-    {
-      image: img7,
-      name: "Bed Bug",
-    },
-    {
-      image:
-        "https://res.cloudinary.com/dk-find-out/image/upload/q_80,w_960,f_auto/MA_00030970_dffkdc.jpg",
-      name: "Rodient",
-    },
-  ];
+const Home = ({ blogList }) => {
+  const [show1, setShow1] = useState(false);
+  const [show2, setShow2] = useState(false);
+  const [show3, setShow3] = useState(false);
+  const [show4, setShow4] = useState(false);
+  const [counter, setCounter] = useState(1);
 
-  const sumArrayValues = (arr) => {
-    let sum = 0;
-    for (let i = 0; i < arr.length; i++) {
-      sum = sum + arr[i];
-    }
-    return sum;
-  };
-  const numbers = [1, 2, 3, 4, 5];
-  //calling a function
+  const navigate = useNavigate();
+
   useEffect(() => {
     AOS.init({ duration: 1000 });
   }, []);
+
+  // var numArray = [];
+  // for (var i = 0; i < 5; i++) {
+  //   numArray.push(i);
+  //   setTimeout(() => {
+  //     console.log(numArray);
+  //   }, 3000);
+  // }
+  // console.log(i);
 
   return (
     <div>
       <div className="logo1">
         <div className="overlay">
-          <div
-            style={{
-              display: "flex",
-              flexDirection: "row",
-              margin: "0",
-              alignItems: "center",
-              justifyContent: "center",
-            }}
-            className="brand"
-          >
-            {" "}
-            <h1>𝐼𝑅𝐸𝐻𝒱</h1>
-            <p style={{ marginTop: "2rem" }}>BN:3466674</p>
-          </div>
-          <h2 style={{ color: " #f57f80" }}>INAMURAHMAN</h2>
-          <h4>𝓔𝓝𝓥𝓘𝓡𝓞𝓜𝓔𝓝𝓣𝓐𝓛 𝓗𝓨𝓖𝓘𝓔𝓝𝓘𝓒 𝓥𝓔𝓝𝓣𝓤𝓡𝓔</h4>
-          <i>...𝖊𝖗𝖆𝖉𝖎𝖈𝖆𝖙𝖎𝖓𝖌 𝖊𝖓𝖛𝖎𝖗𝖔𝖓𝖒𝖊𝖓𝖙𝖆𝖑 𝖍𝖆𝖟𝖆𝖗𝖉</i>
-        </div>
-      </div>
-      <div className="slider">
-        <div className="slide-container">
-          {picture.map(({ image, name }, i) => (
-            <div key={i} className="image">
-              <img src={image} alt="" />
+          <div className="brand">
+            <div className="alignStars">
+              <img src={star} alt="" className="star" />
+              <img src={professional} alt="" className="profession" />
+              <img src={stars} alt="" className="stars" />
             </div>
-          ))}
+            <div className="btns">
+              <img
+                src={book}
+                alt=""
+                onClick={() => navigate("/Booking")}
+                className="book"
+              />
+              <img
+                src={demo}
+                alt=""
+                className="demo"
+                onClick={() => navigate("/Clues")}
+              />
+            </div>
+          </div>
         </div>
-        <p className="Advert"> Advertise here</p>
-        <Link to="Contact" className="getIntouch">
-          Get in Touch
-        </Link>
       </div>
-      <div className="company-info">
-        <div className="company-info-overlay">
-          <h2 className="environment">𝒜𝒷𝑜𝓊𝓉 𝓊𝓈</h2>
+      <div className="aboutUs" data-aos="zoom-in">
+        <div className="ProductDesignContainer">
+          <div className="productDesign">
+            <div className="product1">
+              <img src={product1} alt="" className="productImg" />
+              <BsStars className="BsStar" />
+            </div>
+            <div className="product2">
+              <BsStars className="BsStar2" style={{ marginTop: "15rem" }} />
+              <img src={product2} alt="" className="cleanImg" />
+            </div>
+            <div className="satisfiedClient">
+              <img src={satisfaction} alt="" />
+            </div>
+          </div>
 
-          <div className="profile_wrap">
-            <main className="c_profile">
-              <p>
-                <b> IREHV</b> is a registered and accredited Environmental
-                Protection service Company, certified by the Kwara State
-                Ministry of Environment for Pest Control and fumigation Service
-                and managed with highly professional skills to meet the demand
-                of its client.
-              </p>
-              <p>
-                The director of the company is blessed with several years of
-                professional experience in fumigation and pest control service,
-                and in forming an exceptionally strong management team, the
-                company is operating with expert, effective design tools, and
-                excellent support systems that allow it to compete with the very
-                best and work effectively on projects of all sizes.
-              </p>
-              <p>
-                The company is known for excellent reputation in delivering a
-                high-quality, professional service and thus enjoys long-term
-                relationships, with established clients.
-              </p>
-              <p>
-                It is a common saying that health is wealth. To be healthy, it
-                takes constant effort in watching our surroundings - at least,
-                by observing strict hygiene! The life expectancy of man has
-                dropped significantly today, compared to what was obtained some
-                decades ago. This negative omen is connected with a long time of
-                neglect of our surroundings which has led to pests and diseases
-                taking over our abode. As a result, people have their immune
-                systems under regular attacks and fall sick more often than not,
-                leading to sickness and/or death. It is high time we took both
-                preventive and proactive measures to forestall a worsening
-                situation.
-              </p>
-            </main>
-            <aside style={{ width: "40%" }} className="demo">
-              <div className="display_frame"></div>
-            </aside>
+          <div className="aboutIrehv">
+            <img src={aboutUsHeader} alt="" />
+            <img src={Content} alt="" />
+            <img src={rate} alt="" />
+            <button onClick={() => navigate("/About_Us")}>LEARN MORE</button>
           </div>
         </div>
       </div>
-      <div className="our_Service">
-        <Service />
-        <h2
-          style={{ textAlign: "center", marginTop: "1rem" }}
-          className="environment"
-        >
-          𝕺𝖚𝖗 𝖋𝖊𝖆𝖙𝖚𝖗𝖊 𝕻𝖗𝖔𝖉𝖚𝖈𝖙
-        </h2>
-        <div className="cleaning_equip">
-          {productUpdate.map(({ img, product_name }, i) => (
-            <div key={i} style={{ margin: "1rem 0px" }}>
-              <Link className="first" data-aos="slide-up">
-                <i>Buy Now</i>
-                <img className="imgs" src={img} alt="" />
-                <p>{product_name}</p>
-              </Link>
-            </div>
-          ))}
+      <div className="ourServiceContainer" data-aos="zoom-in">
+        <img src={ourService} alt="" />
+        <div className="serviceList">
+          <div>
+            <img src={icon1} alt="" />
+            <img src={img1} alt="" />
+          </div>
+          <div>
+            <img src={icon2} alt="" />
+            <img src={img2} alt="" />
+          </div>
+          <div>
+            <img src={icon3} alt="" />
+            <img src={img3} alt="" />
+          </div>
+          <div>
+            <img src={icon4} alt="" />
+            <img src={img4} alt="" />
+          </div>
         </div>
-        <Our_Team />
-        <div className="performanceContainer">
-          <div className="performanceOverlay">
-            <h1>Client side Compatibility</h1>
-            <div className="performanceDescription">
-              <p>
-                " The more effortless the hazard eradication looks, the more
-                effort the conscious mind actually put into the process.
-              </p>
-              <p>
-                We pay absolute attention to our Client environmental distress
-                and wage tremendous war again pathogenic visitor.
-              </p>
-              <p>Alway with IREHV, is the environmemtal solace you want" </p>
+        <button onClick={() => navigate("/Service")}>VIEW ALL SERVICES</button>
+      </div>
+      <div className="process">
+        <img src={proccess} alt="" data-aos="zoom-in" />
+      </div>
+      <Customer />
+      <div className="who_we_are" data-aos="zoom-in">
+        <img src={demoVideo} alt="" />
+        <img src={videoClue} alt="" />
+        <button className="galery" onClick={() => navigate("/Clues")}>
+          VIEW OUR GALERY
+        </button>
+      </div>
+      <Our_Team />
+      <div className="pricing" data-aos="zoom-in">
+        <img src={img} alt="" />
+        <div className="pricingplan">
+          <span className="span">
+            <img src={Irehv_starter} alt="" className="irehvImg" />
+            <img src={irehv_Content} alt="" className="irehvImg2" />
+            <h5>Free</h5>
+
+            <button className="BookNow" onClick={() => navigate("/Booking")}>
+              BOOK NOW
+            </button>
+          </span>
+          <span className="gradiant">
+            <img src={Irehv_pro} alt="" className="irehvImg" />
+            <img src={irehv_content2} alt="" className="irehvImg2" />
+            <div className="price">
+              <TbCurrencyNaira style={{ fill: "white" }} /> <p>0</p>
             </div>
-            <div className="performance">
-              <div className="bordering">
-                <p>
-                  <b>90%</b> <i>Integrity</i>
-                </p>
+            <button
+              className="cleanTouchBook"
+              onClick={() => navigate("/Booking")}
+            >
+              BOOK NOW
+            </button>
+          </span>
+          <span className="span">
+            <img src={Irehv_plus} alt="" className="irehvImg" />
+            <img src={irehv_Content} alt="" className="irehvImg2" />
+            <div className="price">
+              <TbCurrencyNaira style={{ fill: "white" }} /> <p>0</p>
+            </div>
+
+            <button className="BookNow" onClick={() => navigate("/Booking")}>
+              BOOK NOW
+            </button>
+          </span>{" "}
+        </div>
+      </div>
+      <Our_Products />
+      <div className="aboutFaq" data-aos="zoom-in">
+        <div className="faq">
+          <div className="faqform">
+            <img src={faqs} alt="" className="answer" />
+            <div className="toggleDetails">
+              <div>
+                <span>
+                  <h6>What do you not clean? </h6>
+                  {!show1 && (
+                    <MdOutlineKeyboardArrowRight
+                      className="arrow"
+                      onClick={() => setShow1(true)}
+                    />
+                  )}
+                  {show1 && (
+                    <MdKeyboardArrowDown
+                      onClick={() => setShow1(false)}
+                      className="arrow"
+                    />
+                  )}
+                </span>
+                {show1 && (
+                  <div>
+                    <p>
+                      Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                      Sapiente laborum similique quam iste, minus nam provident!
+                      Ipsa quod dignissimos nulla nihil, qui magnam placeat
+                      reiciendis aliquam, mollitia, ipsam minus dolorum!
+                    </p>
+                  </div>
+                )}
+              </div>{" "}
+              <div>
+                <span>
+                  <h6>Do I need to home for every cleaning service? </h6>
+                  {!show2 && (
+                    <MdOutlineKeyboardArrowRight
+                      className="arrow"
+                      onClick={() => setShow2(true)}
+                    />
+                  )}
+                  {show2 && (
+                    <MdKeyboardArrowDown
+                      onClick={() => setShow2(false)}
+                      className="arrow"
+                    />
+                  )}
+                </span>
+                {show2 && (
+                  <div>
+                    <p>
+                      Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                      Sapiente laborum similique quam iste, minus nam provident!
+                      Ipsa quod dignissimos nulla nihil, qui magnam placeat
+                      reiciendis aliquam, mollitia, ipsam minus dolorum!
+                    </p>
+                  </div>
+                )}
+              </div>{" "}
+              <div>
+                <span>
+                  <h6>How will Our relationship work? </h6>
+                  {!show3 && (
+                    <MdOutlineKeyboardArrowRight
+                      className="arrow"
+                      onClick={() => setShow3(true)}
+                    />
+                  )}
+                  {show3 && (
+                    <MdKeyboardArrowDown
+                      onClick={() => setShow3(false)}
+                      className="arrow"
+                    />
+                  )}
+                </span>
+                {show3 && (
+                  <div>
+                    <p>
+                      Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                      Sapiente laborum similique quam iste, minus nam provident!
+                      Ipsa quod dignissimos nulla nihil, qui magnam placeat
+                      reiciendis aliquam, mollitia, ipsam minus dolorum!
+                    </p>
+                  </div>
+                )}
+              </div>{" "}
+              <div>
+                <span>
+                  <h6>what time does your Team arrive? </h6>
+                  {!show4 && (
+                    <MdOutlineKeyboardArrowRight
+                      className="arrow"
+                      onClick={() => setShow4(true)}
+                    />
+                  )}
+                  {show4 && (
+                    <MdKeyboardArrowDown
+                      onClick={() => setShow4(false)}
+                      className="arrow"
+                    />
+                  )}
+                </span>
+                {show4 && (
+                  <div>
+                    <p>
+                      Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                      Sapiente laborum similique quam iste, minus nam provident!
+                      Ipsa quod dignissimos nulla nihil, qui magnam placeat
+                      reiciendis aliquam, mollitia, ipsam minus dolorum!
+                    </p>
+                  </div>
+                )}
               </div>
-              <div className="bordering">
-                <p>
-                  <b>95%</b> <i>Bravo</i>
-                </p>
-              </div>
-              <div className="bordering">
-                <p>
-                  <b>90%</b>
-                  <br />
-                  <i>Intuitive</i>
-                </p>
-              </div>
+              <nav className="btnRow">
+                <button className="" onClick={() => navigate("/")}>
+                  VIEW ALL FAQs
+                </button>
+                <button className="enquirybtn" onClick={() => navigate("/")}>
+                  MAKE AN ENQUIRY
+                </button>
+              </nav>
+            </div>
+          </div>
+          <div className="productDesign">
+            <div className="product1">
+              <img src={product1} alt="" className="productImg" />
+              <BsStars className="BsStar" />
+            </div>
+            <div className="faqProduct2">
+              <BsStars className="BsStar2" style={{ marginTop: "15rem" }} />
+              <img src={product2} alt="" className="cleanImg" />
             </div>
           </div>
         </div>
       </div>
+
+      <div className="cleanTouchContainer" data-aos="zoom-in">
+        <div className="cleanTouch">
+          <div className="cleanTouchText">
+            <img src={cleanTouch} alt="" className="cleanTouchImg" />
+            <img src={stars} alt="" className="cleanTouchstar" />
+          </div>
+          <div className="cleanTouchButton">
+            <button
+              className="cleanTouchDemo"
+              onClick={() => navigate("/Clues")}
+            >
+              SEE A DEMO
+            </button>
+            <button
+              className="cleanTouchBook"
+              onClick={() => navigate("/Booking")}
+            >
+              BOOK SESSION
+            </button>
+          </div>
+        </div>
+      </div>
+      <BlogAds blogList={blogList} />
+      <div className="cleanTouchContainer" data-aos="zoom-in">
+        <div className="cleanTouch">
+          <div className="cleanTouchText">
+            <img src={cleanTouch} alt="" className="cleanTouchImg" />
+            <img src={stars} alt="" className="cleanTouchstar" />
+          </div>
+          <div className="cleanTouchButton">
+            <button
+              className="cleanTouchDemo"
+              onClick={() => navigate("/Clues")}
+            >
+              SEE A DEMO
+            </button>
+            <button
+              className="cleanTouchBook"
+              onClick={() => navigate("/Booking")}
+            >
+              BOOK SESSION
+            </button>
+          </div>
+        </div>
+      </div>
+
       <Footer />
     </div>
   );

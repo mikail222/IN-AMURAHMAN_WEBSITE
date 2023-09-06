@@ -66,6 +66,10 @@ const Mobile_Side_Bar = ({ currentUser, setDrawer, filteredAdmin }) => {
               <FcSalesPerformance className="menuBar2 " title="dashboardIcon" />{" "}
               <i>Sales</i>
             </div>{" "}
+            <div onClick={() => navigate("Blog_Update")}>
+              <MdPostAdd className="menuBar2 " title="dashboardIcon" />{" "}
+              <i>Blogs</i>
+            </div>
             <div onClick={() => navigate("Post")}>
               <MdPostAdd className="menuBar2 " title="dashboardIcon" />{" "}
               <i>Post</i>

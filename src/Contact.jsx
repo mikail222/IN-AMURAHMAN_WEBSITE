@@ -39,6 +39,15 @@ const Contact = () => {
           or get in tounch on our social medial official handle bellow
         </i>
       </div>
+      <iframe
+        width="450"
+        height="250"
+        frameBorder="0"
+        style={{ border: 0 }}
+        referrerPolicy="no-referrer-when-downgrade"
+        src="https://www.google.com/maps/embed/v1/placeq?key=YOUR_API_KEY&PARAMETERS"
+        allowFullScreen
+      ></iframe>
       <div className="contact">
         <div className="address">
           <h2 style={{ color: "blue" }}>IREHV</h2>
@@ -48,6 +57,7 @@ const Contact = () => {
           <p> Agbo-Oba Road Ilorin,</p>
           <p> Kwara State,</p>
           <p>Nigeria.</p>
+          <p>Contact: +234-8144632165</p>
         </div>
         <div>
           <img src={attendant} alt="" />

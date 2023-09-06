@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import { auth, storage } from "../../firebaseconfig";
+import { auth, db, storage } from "../../firebaseconfig";
 import { MdLocationOn } from "react-icons/md";
 import { getDownloadURL, ref, uploadBytesResumable } from "firebase/storage";
 import { updateProfile } from "firebase/auth";
@@ -21,13 +21,14 @@ const User_Profile = ({ user }) => {
     setProfileUpdate({ ...profileUpdate, ...newInput });
   };
 
-  const handleSubmit = (e) => {
+  const handleSubmit = (e, id) => {
     e.preventDefault();
     if (loggedInUser) {
       console.log({ loggedInUser });
       const currentUserDetails = user.find(
         (m) => m.email === loggedInUser?.email
       );
+      const userDoc = doc(db, "Admin user", id);
       updateProfile(me, {
         displayName:
           currentUserDetails?.first + " " + currentUserDetails?.LastName,
