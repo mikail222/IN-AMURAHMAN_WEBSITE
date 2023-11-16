@@ -58,11 +58,11 @@ const Mobile_nav = ({ show, setShowNav }) => {
         </div>
       ) : (
         <div
-          // data-aos="slide-right"
-          data-aos-offset="300"
-          data-aos-anchor-placement="center-center"
-          data-aos-easing="ease-in-sine"
-          style={{ width: open ? "500px" : "100px" }}
+        // data-aos="slide-left"
+        // data-aos-offset="300"
+        // data-aos-anchor-placement="left"
+        // data-aos-easing="ease-in-sine"
+        // style={{ width: open ? "500px" : "10px" }}
         >
           <div className="mbnavoverlay">
             <div className="mobile_navs">
@@ -81,87 +81,20 @@ const Mobile_nav = ({ show, setShowNav }) => {
                 />
               </div>
               <div className="dropdown">
-                <div className="rowwing">
+                <div
+                  className="rowwing"
+                  onClick={() => navigate("/Service") || setDrawer(true)}
+                >
                   <FcServices className="icon" />
                   <span>Service</span>
-                </div>
-                <div className="dropdown-content">
-                  <ul>
-                    <li>
-                      <Link to="/Domestic_cleaning">Domestic cleaning</Link>
-                    </li>
-                    <li>
-                      <Link to="/Commercial">Commercial cleaning</Link>
-                    </li>
-                    <div className="subdropdown">
-                      <li>
-                        <Link to="/Pest_control">Pest control</Link>
-                      </li>
-                      <div className="subdropdown-content">
-                        <li>
-                          <Link to="/Ants">Ant control</Link>
-                        </li>
-                        <li>
-                          <Link to="/Scorpion">Scorpion control</Link>
-                        </li>
-                        <li>
-                          <Link to="/Flies">Flies control</Link>
-                        </li>
-                        <li>
-                          <Link to="/Bedbugs">Bedbugs control</Link>
-                        </li>
-                        <li>
-                          <Link to="/Cockroaches">Cockroaches control</Link>
-                        </li>
-                        <li>
-                          <Link to="Mosquitoes">Mosquitoes control</Link>
-                        </li>
-                        <li>
-                          <Link to="/Rodents">Rodents control</Link>
-                        </li>
-                        <li>
-                          <Link to="/Spider">Spider control</Link>
-                        </li>
-                        <li>
-                          <Link to="/Termites">Termites control</Link>
-                        </li>
-                        <li>
-                          <Link to="/Snakes">Snakes control</Link>
-                        </li>
-                      </div>
-                    </div>
-                    <li>
-                      <Link to="/Plank_pest_control"> Plank pest control</Link>
-                    </li>
-                    <li>
-                      <Link to="/Drainage">Drainage Maintainance</Link>
-                    </li>
-                    <li>
-                      <Link to="/Trainning">Training service</Link>
-                    </li>
-                    <li>
-                      <Link to="/Event_maintainance">
-                        Event hygienic Maintainance
-                      </Link>
-                    </li>
-                    <li>
-                      <Link to="/Wast_management">Wast Management</Link>
-                    </li>
-                    <li>
-                      <Link to="/Disinfect">Disinfect</Link>
-                    </li>
-                    <li>
-                      <Link to="/Consultance">Consultance</Link>
-                    </li>
-                  </ul>
                 </div>
               </div>
               <div
                 className="rowwing"
-                onClick={() => navigate("/Hire") || setDrawer(true)}
+                onClick={() => navigate("/About_us") || setDrawer(true)}
               >
                 <FcBusinessContact className="icon" />
-                <p>Hire</p>
+                <p>About us</p>
               </div>{" "}
               <div
                 className="rowwing"
@@ -195,12 +128,12 @@ const Mobile_nav = ({ show, setShowNav }) => {
                 {currentUser === null ? (
                   <div className="rowwing">
                     <AiOutlineLogin className="icon" />
-                    <i
+                    <p
                       onClick={() => navigate("/Login") || setDrawer(true)}
                       className="logout"
                     >
                       Login
-                    </i>
+                    </p>
                   </div>
                 ) : (
                   <div className="rowwing">
@@ -215,7 +148,7 @@ const Mobile_nav = ({ show, setShowNav }) => {
                 <div className="rowwing">
                   <RiLoginCircleFill className="icon" />
                   <p>
-                    <em className="client">Sign up</em>
+                    <p>Sign up</p>
                   </p>
                 </div>
               </div>

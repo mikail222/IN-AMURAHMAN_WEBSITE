@@ -53,7 +53,7 @@ const User_modal = ({ user, setShowNav }) => {
                 className=" avartaIcon "
               />
             )}
-            <h6>welcome :</h6>
+            <p>welcome :</p>
             <h3 className="userText">{currentUser?.displayName}</h3>
             <div className="buttonContainer">
               <button type="button" onClick={() => navigate("/Update")}>

@@ -4,26 +4,28 @@ import mission from "../asset/MISSION.svg";
 import vission from "../asset/VISION.svg";
 import expert from "../asset/expertise.svg";
 import disinfect_man from "../asset/person-disinfecting-restricted-area.jpg";
-import proccess from "../asset/PROCESS.svg";
+import proccess1 from "../asset/Group 1.svg";
+import proccess2 from "../asset/Group 2.svg";
+import proccess3 from "../asset/Group 3.svg";
+import proccess4 from "../asset/Group4.svg";
+import proccess from "../asset/procees.svg";
+import serviceMode from "../asset/service_modality.svg";
+import howItWorks from "../asset/Our Work Flow shows our Professionalism in Cleaning and our hygienic Services.svg";
+
 import img1 from "../asset/Frame 1000001682.svg";
 import img2 from "../asset/Frame 1000001682 (1).svg";
 import img3 from "../asset/Frame 1000001682 (2).svg";
 import img4 from "../asset/Frame 1000001682 (3).svg";
 import ourService from "../asset/Frame 1000001673.svg";
-import rodient from "../asset/pexels-rodient.jpg";
-import cocroach from "../asset/240_F_392124281_6KyIoUorbphrNQ0GuIMuz84QuZDDOIxL.jpg";
-import blogHeading from "../asset/blog.svg";
+import img5 from "../asset/Frame 1000001686.svg";
 import cleanTouch from "../asset/Ready to GIVE YOUR HOUSES & OFFICE A CLEAN TOUCH_ BOOK A FREE SESSION today.svg";
-import mosquito from "../asset/pexels-mosquito.jpg";
 import stars from "../asset/Group 7843.svg";
 import icon1 from "../asset/Mask group.svg";
 import icon2 from "../asset/Mask group (1).svg";
 import icon3 from "../asset/Mask group (2).svg";
 import icon4 from "../asset/Mask group (3).svg";
 import Our_Team from "./Our_Team";
-import { BsFillCalendarWeekFill } from "react-icons/bs";
-import { MdRemoveRedEye } from "react-icons/md";
-import { AiOutlineWechat } from "react-icons/ai";
+
 import { useNavigate } from "react-router-dom";
 import Footer from "../Footer";
 import BlogAds from "../BlogAds";
@@ -49,8 +51,19 @@ const About_Us = ({ blogList }) => {
           <img src={expert} alt="" />
           <img src={disinfect_man} alt="" />
         </div>
-        <div className="process">
-          <img src={proccess} alt="" data-aos="zoom-in" />
+
+        <div className="processClass">
+          <img src={serviceMode} alt="" />
+          <img src={howItWorks} alt="" />
+          <div className="proccess2">
+            <img src={proccess} alt="" />
+          </div>
+          <div className="process">
+            <img src={proccess1} alt="" data-aos="zoom-in" />{" "}
+            <img src={proccess2} alt="" data-aos="slide-right" />{" "}
+            <img src={proccess3} alt="" data-aos="slide-left" />{" "}
+            <img src={proccess4} alt="" data-aos="zoom-in" />
+          </div>
         </div>
         <div className="ourServiceContainer" data-aos="zoom-in">
           <img src={ourService} alt="" />
@@ -71,6 +84,9 @@ const About_Us = ({ blogList }) => {
               <img src={icon4} alt="" />
               <img src={img4} alt="" />
             </div>
+          </div>
+          <div className="img5">
+            <img src={img5} alt="" />
           </div>
         </div>
         <Our_Team />

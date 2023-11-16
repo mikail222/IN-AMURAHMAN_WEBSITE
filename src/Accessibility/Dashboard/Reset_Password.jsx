@@ -37,7 +37,7 @@ const Reset_Password = ({ user }) => {
             alt=""
             className=" avartaIcon "
           />
-          <h6>Forget Password? </h6>
+          <p>Forget Password? </p>
           <div className="resetArrow">
             <RiLockPasswordLine className="resetArrowIcon" />
             <input

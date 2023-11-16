@@ -26,42 +26,21 @@ const Domestic_cleaning = ({ checkList }) => {
           <div className="pictorial">
             <div className="dropdown">
               <p>Wordrobe</p>
-              <span className="dropdown-content">
-                <img src={wordrobe} alt="" />
-              </span>
             </div>
             <div className="dropdown">
               <p>Bed Room</p>
-              <span className="dropdown-content">
-                <img src={bedRoom} alt="" />
-              </span>
             </div>
             <div className="dropdown">
               <p>Kitchen</p>
-              <span className="dropdown-content">
-                <img src={kitchen} alt="" />
-              </span>
             </div>
             <div className="dropdown">
               <p>Living Room</p>
-              <span className="dropdown-content">
-                <img src={sittingRoom} alt="" />
-              </span>
             </div>
             <div className="dropdown">
               <p>Toilet</p>
-              <span className="dropdown-content">
-                <img src={toilet} alt="" />
-              </span>
             </div>
             <div className="dropdown">
               <p>Soakaway</p>
-              <span className="dropdown-content">
-                <img
-                  src="https://media.istockphoto.com/id/177365225/photo/black-hose-in-a-manhole.jpg?s=612x612&w=0&k=20&c=DaIZUuwcC14MCOdISiokSJ_aCkjbdizUtSd0SnbMOFk="
-                  alt=""
-                />
-              </span>
             </div>
           </div>
         </main>

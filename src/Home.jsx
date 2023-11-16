@@ -13,7 +13,8 @@ import img3 from "./asset/Frame 1000001682 (2).svg";
 import img4 from "./asset/Frame 1000001682 (3).svg";
 import cleanTouch from "./asset/Ready to GIVE YOUR HOUSES & OFFICE A CLEAN TOUCH_ BOOK A FREE SESSION today.svg";
 import { TbCurrencyNaira } from "react-icons/tb";
-import videoClue from "./asset/Rectangle 102.svg";
+import videoClues from "./asset/Rectangle 102.svg";
+import videoClue from "./asset/312118183_5972964576056640_4024777849847619886_n.mp4";
 import Irehv_pro from "./asset/IREHV Pro.svg";
 import Irehv_plus from "./asset/IREHV Plus.svg";
 import Irehv_starter from "./asset/IREHV Starter.svg";
@@ -30,7 +31,13 @@ import stars from "./asset/Group 7843.svg";
 import rate from "./Accessibility/Users_Dashboard/ABOUT/MENUS.svg";
 import Content from "./Accessibility/Users_Dashboard/ABOUT/Frame 1000001679.svg";
 import aboutUsHeader from "./Accessibility/Users_Dashboard/ABOUT/Frame 1000001673.svg";
-import proccess from "./asset/PROCESS.svg";
+import proccess1 from "./asset/Group 1.svg";
+import proccess2 from "./asset/Group 2.svg";
+import proccess3 from "./asset/Group 3.svg";
+import proccess4 from "./asset/Group4.svg";
+import proccess from "./asset/procees.svg";
+import serviceMode from "./asset/service_modality.svg";
+import howItWorks from "./asset/Our Work Flow shows our Professionalism in Cleaning and our hygienic Services.svg";
 import ourService from "./asset/Frame 1000001673.svg";
 import product2 from "./asset/878 (masking shape).svg";
 import product1 from "./asset/4252-removebg-preview.png";
@@ -141,12 +148,27 @@ const Home = ({ blogList }) => {
         </div>
         <button onClick={() => navigate("/Service")}>VIEW ALL SERVICES</button>
       </div>
-      <div className="process">
-        <img src={proccess} alt="" data-aos="zoom-in" />
+      <div className="processClass">
+        <img src={serviceMode} alt="" />
+        <p className="howItWorks">
+          {" "}
+          Our Work Flow shows Professionalism in Cleaning and our hygienic
+          service{" "}
+        </p>
+        <div className="proccess2">
+          <img src={proccess} alt="" />
+        </div>
+        <div className="process">
+          <img src={proccess1} alt="" data-aos="zoom-in" />
+          <img src={proccess2} alt="" data-aos="slide-right" />{" "}
+          <img src={proccess3} alt="" data-aos="slide-left" />{" "}
+          <img src={proccess4} alt="" data-aos="zoom-in" />
+        </div>
       </div>
       <Customer />
       <div className="who_we_are" data-aos="zoom-in">
         <img src={demoVideo} alt="" />
+        <video src={videoClue} width="250" controls muted autoPlay></video>
         <img src={videoClue} alt="" />
         <button className="galery" onClick={() => navigate("/Clues")}>
           VIEW OUR GALERY
@@ -214,19 +236,21 @@ const Home = ({ blogList }) => {
                   )}
                 </span>
                 {show1 && (
-                  <div>
+                  <nav>
                     <p>
                       Lorem ipsum dolor sit amet consectetur adipisicing elit.
                       Sapiente laborum similique quam iste, minus nam provident!
                       Ipsa quod dignissimos nulla nihil, qui magnam placeat
                       reiciendis aliquam, mollitia, ipsam minus dolorum!
                     </p>
-                  </div>
+                  </nav>
                 )}
               </div>{" "}
               <div>
                 <span>
-                  <h6>Do I need to home for every cleaning service? </h6>
+                  <h6>
+                    Do I need to be available for every cleaning service?{" "}
+                  </h6>
                   {!show2 && (
                     <MdOutlineKeyboardArrowRight
                       className="arrow"
@@ -241,14 +265,14 @@ const Home = ({ blogList }) => {
                   )}
                 </span>
                 {show2 && (
-                  <div>
+                  <nav>
                     <p>
                       Lorem ipsum dolor sit amet consectetur adipisicing elit.
                       Sapiente laborum similique quam iste, minus nam provident!
                       Ipsa quod dignissimos nulla nihil, qui magnam placeat
                       reiciendis aliquam, mollitia, ipsam minus dolorum!
                     </p>
-                  </div>
+                  </nav>
                 )}
               </div>{" "}
               <div>
@@ -268,14 +292,14 @@ const Home = ({ blogList }) => {
                   )}
                 </span>
                 {show3 && (
-                  <div>
+                  <nav>
                     <p>
                       Lorem ipsum dolor sit amet consectetur adipisicing elit.
                       Sapiente laborum similique quam iste, minus nam provident!
                       Ipsa quod dignissimos nulla nihil, qui magnam placeat
                       reiciendis aliquam, mollitia, ipsam minus dolorum!
                     </p>
-                  </div>
+                  </nav>
                 )}
               </div>{" "}
               <div>
@@ -295,14 +319,14 @@ const Home = ({ blogList }) => {
                   )}
                 </span>
                 {show4 && (
-                  <div>
+                  <nav>
                     <p>
                       Lorem ipsum dolor sit amet consectetur adipisicing elit.
                       Sapiente laborum similique quam iste, minus nam provident!
                       Ipsa quod dignissimos nulla nihil, qui magnam placeat
                       reiciendis aliquam, mollitia, ipsam minus dolorum!
                     </p>
-                  </div>
+                  </nav>
                 )}
               </div>
               <nav className="btnRow">

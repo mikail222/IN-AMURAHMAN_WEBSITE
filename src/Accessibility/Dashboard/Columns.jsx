@@ -126,7 +126,7 @@ const Columns = ({
               <p>PRODUCTS & OTHERS</p>
               <nav>
                 <p>
-                  Products in Stock: <i>{productUpdate.length}</i>
+                  Products in Stock: <i>{productUpdate?.length}</i>
                 </p>
               </nav>
               <nav>

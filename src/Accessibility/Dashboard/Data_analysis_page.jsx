@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from "react";
 import Columns from "./Columns";
+import Sales_Details from "./Sales_Details";
 // import Chart from "react-apexcharts";
 
 const Data_analysis_page = ({
@@ -51,6 +52,7 @@ const Data_analysis_page = ({
         </div>
         <aside className="revenue"></aside>
       </div>
+      <Sales_Details sales={sales} productUpdate={productUpdate} />
     </div>
   );
 };

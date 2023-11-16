@@ -128,30 +128,6 @@ const Footer = () => {
               ALL RIGHT RESERVED WITH LOVE BY: M&K TECH & DARA KREATIVE
               INNOVATION AGENCY
             </p>
-            {/* <a
-              href="https://web.facebook.com/mikail.abdulraheem.3"
-              target="_blank"
-              title="Facebook"
-              rel="noopener noreferrer"
-            >
-              <SiFacebook />
-            </a>
-            <a
-              href="mailto:abdulraheemmukaila6@gmail.com"
-              target="_blank"
-              title="Email"
-              rel="noopener noreferrer"
-            >
-              <AiOutlineMail />
-            </a>
-            <a
-              href="https://www.linkedin.com/feed/"
-              target="_blank"
-              title="Linkedin"
-              rel="noopener noreferrer"
-            >
-              <GrLinkedinOption />
-            </a> */}
           </div>
         </div>
       </div>

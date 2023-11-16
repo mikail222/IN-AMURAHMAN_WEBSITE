@@ -23,14 +23,21 @@ const Login = ({ navigate, user }) => {
   const [loggedInUser, setLoggedInUser] = useState();
   const [passwordType, setPasswordType] = useState("password");
   const currentUser = auth.currentUser;
-  const currentUserDetails = user.filter((m) => m.id === currentUser?.uid);
-  // console.log(window.localStorage);
+  // https://fb.watch/nCtEjfMy4W/?mibextid=6aamW6
+
   const handleSubmit = (e) => {
     e.preventDefault();
     signInWithEmailAndPassword(auth, email, password)
       .then((userCredential) => {
         const user = userCredential.user;
         setLoggedInUser(user);
+        setSuccess("You're successfully logged in");
+        setTimeout(() => {
+          setSuccess(null);
+        }, 2000);
+        setTimeout(() => {
+          navigate("/User_modal");
+        }, 6000);
       })
       .catch((error) => {
         setUserErr(error.message);
@@ -39,29 +46,24 @@ const Login = ({ navigate, user }) => {
         }, 5000);
       });
   };
+
   useEffect(() => {
-    sendEmailVerification(currentUser).then(() => {
-      setEmailVerification("Email verification sent!");
+    const checkmail = loggedInUser?.emailVerified;
+    if (checkmail == false) {
+      setVerifyEmail("please verify your are the owner of the  email provided");
       setTimeout(() => {
-        setEmailVerification(null);
-      }, 3000);
-      if (currentUser.emailVerified == false) {
-        setVerifyEmail(
-          "please verify your are the owner of the  email provided"
-        );
-        setTimeout(() => {
-          setVerifyEmail(null);
-        }, 5000);
-      } else {
-        setSuccess("You're successfully logged in");
-        setTimeout(() => {
-          setSuccess(null);
+        setVerifyEmail(null);
+      }, 5000);
+    } else {
+      sendEmailVerification(currentUser).then(() => {
+        setEmailVerification("Email verification sent!");
+        setInterval(() => {
+          setEmailVerification(null);
         }, 3000);
-        navigate("/User_modal");
-      }
-    });
+        clearInterval();
+      });
+    }
     if (loggedInUser) {
-      console.log({ loggedInUser });
       const currentUserDetails = user.find(
         (m) => m.email === loggedInUser?.email
       );
@@ -154,7 +156,7 @@ const Login = ({ navigate, user }) => {
               {userErr && <p className="errorMsg">Oops! {userErr}</p>}
               <p className="mt-[3%]">Don't have an account</p>
               <p
-                onClick={() => setTimeout(navigate("/Sign_up"), 30000)}
+                onClick={() => setTimeout(navigate("/Sign_up"), 3000)}
                 className="loginText"
               >
                 Create account

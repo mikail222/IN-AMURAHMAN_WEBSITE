@@ -105,6 +105,7 @@ const Customer = () => {
         >
           1
         </p>
+
         <p
           onClick={() =>
             setCustomer2(true) || setCustomer1(false) || setCustomer3(false)

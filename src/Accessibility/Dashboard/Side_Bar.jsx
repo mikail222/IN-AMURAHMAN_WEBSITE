@@ -15,8 +15,6 @@ import { TbBrandBooking, TbBrandTripadvisor } from "react-icons/tb";
 import { CgProfile } from "react-icons/cg";
 
 const Side_Bar = ({ currentUser, filteredAdmin, setShow, show }) => {
-  console.log(filteredAdmin);
-
   const navigate = useNavigate();
   return (
     <aside className="dash_aside">
@@ -41,6 +39,7 @@ const Side_Bar = ({ currentUser, filteredAdmin, setShow, show }) => {
             {currentUser?.displayName}
           </p>
         </div>
+        <p>{currentUser?.day}</p>
       </div>
       <div className="dash">
         {filteredAdmin ? (
@@ -67,10 +66,6 @@ const Side_Bar = ({ currentUser, filteredAdmin, setShow, show }) => {
             <div onClick={() => navigate("Product_UpdateForm")}>
               <GrUpdate />
               <i>Product update</i>
-            </div>
-            <div onClick={() => navigate("Sales_Details")}>
-              <FcSalesPerformance className="menuBar2 " title="dashboardIcon" />{" "}
-              <i>Sales</i>
             </div>
             <div onClick={() => navigate("Blog_Update")}>
               <GrBlog className="menuBar2 " title="dashboardIcon" />{" "}

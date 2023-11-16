@@ -11,7 +11,6 @@ import { MdOutlineDriveFolderUpload } from "react-icons/md";
 import Button from "./Button";
 
 const Sign_up = ({ navigate, user }) => {
-  const [data, setData] = useState([]);
   const [error, setError] = useState(false);
   const [fileUpload, setFileUpload] = useState(null);
   const [passwordType, setPasswordType] = useState("password");
@@ -20,9 +19,17 @@ const Sign_up = ({ navigate, user }) => {
 
   const [trackupload, setTrackUpload] = useState(null);
   const [loggedInUser, setLoggedInUser] = useState();
-
-  console.log(fileUpload);
-  console.log(data);
+  const intialValue = {
+    first: "",
+    LastName: "",
+    email: "",
+    phone: "",
+    password: "",
+    // fileUpload: "",
+  };
+  const [data, setData] = useState(intialValue);
+  const [formError, setFormError] = useState({});
+  const [isSubmit, setIsSubmit] = useState(false);
   const currentUser = auth.currentUser;
 
   useEffect(() => {
@@ -66,11 +73,15 @@ const Sign_up = ({ navigate, user }) => {
   }, [fileUpload]);
 
   const handleChange = (e) => {
-    const newInput = {
+    e.preventDefault();
+    const { name, value } = e.target;
+    setData({
+      ...data,
       ...fileUpload,
-      [e.target.name]: e.target.value,
-    };
-    setData({ ...data, ...newInput });
+      [name]: value,
+      day: new Date().toDateString(),
+      time: serverTimestamp(),
+    });
   };
   const togglePassword = () => {
     if (passwordType === "password") {
@@ -82,20 +93,16 @@ const Sign_up = ({ navigate, user }) => {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
+    setFormError(validate(data));
+    setIsSubmit(true);
     try {
       const res = await createUserWithEmailAndPassword(
         auth,
         data.email,
         data.password
       );
-      await setDoc(doc(db, "Admin", res.user.uid), {
-        ...data,
-        day: new Date().toDateString(),
-        timeStamp: serverTimestamp(),
-      });
-
+      // await setDoc(doc(db, "Admin", res.user.uid), ...data);
       setLoggedInUser(res.user);
-      console.log(res.user);
     } catch (err) {
       setError(err.message);
       setTimeout(() => {
@@ -124,16 +131,43 @@ const Sign_up = ({ navigate, user }) => {
       });
     }
   };
-  console.log(data);
+  console.log(formError);
+  useEffect(() => {
+    console.log(data);
+    if (Object.keys(formError).length === 0 && isSubmit) {
+      console.log(formError);
+    }
+  }, [formError]);
+  const validate = (values) => {
+    const error = {};
+    const regex = /^[^\$@]+@[^\$@]+\.[^\$@]{2,}$/i;
+    if (!values.first) {
+      error.first = "Name is required";
+    }
+    if (!values.LastName) {
+      error.LastName = "Last Name is required";
+    }
+    if (!values.email) {
+      error.email = "email is required";
+    } else if (!regex.test(values.email)) {
+      error.email = "This is not a valid email format";
+    }
+    if (!values.password) {
+      error.password = "password is required";
+    } else if (values.password.length < 6) {
+      error.password = "password  should not be less than 6 digit";
+    }
+    if (!values.phone) {
+      error.phone = "contact is required";
+    }
+
+    return error;
+  };
   return (
     <div className=" sign_up_form_container ">
       <div className="login_overlay">
         <p>{success}</p>
-        <form
-          onChange={(e) => handleChange(e)}
-          onSubmit={handleSubmit}
-          className="accessibility "
-        >
+        <form onSubmit={handleSubmit} className="accessibility ">
           <div className="styleInputSection">
             <div className="uploadFileInput">
               <label htmlFor="fileInput" className="fileLabel ">
@@ -142,7 +176,6 @@ const Sign_up = ({ navigate, user }) => {
               </label>
               <input
                 accept="image/*,capture=camera"
-                capture="”camera"
                 type="file"
                 id="fileInput"
                 name="file"
@@ -159,27 +192,57 @@ const Sign_up = ({ navigate, user }) => {
                 />
               )}
             </div>
-            <label htmlFor="" className="label">
-              First Name
+            <label htmlFor="" className="changeColor">
+              {formError.first}
             </label>
-            <input type="text" name="first" />
-            <label htmlFor="" className="label">
-              Last Name
+            <input
+              type="text"
+              name="first"
+              value={data.first}
+              placeholder="First"
+              onChange={(e) => handleChange(e)}
+            />
+            <label htmlFor="" className="changeColor">
+              {formError.LastName}
             </label>
-            <input type="text" name="LastName" />
-            <label htmlFor="" className="label">
-              Phone Number
+            <input
+              type="text"
+              name="LastName"
+              value={data.LastName}
+              placeholder="Last Name"
+              onChange={(e) => handleChange(e)}
+            />
+            <label htmlFor="" className="changeColor">
+              {formError.phone}
             </label>
-            <input type="number" name="phone" />
-            <label htmlFor="" className="label">
-              Email
+            <input
+              type="number"
+              name="phone"
+              value={data.phone}
+              placeholder="Phone"
+              onChange={(e) => handleChange(e)}
+            />
+            <label htmlFor="" className="changeColor">
+              {formError.email}
             </label>
-            <input type={"email"} required name="email" />
-            <label htmlFor="" className="label">
-              Password
+            <input
+              type={"email"}
+              name="email"
+              value={data.email}
+              placeholder="Email"
+              onChange={(e) => handleChange(e)}
+            />
+            <label htmlFor="" className="changeColor">
+              {formError.password}
             </label>{" "}
             <div>
-              <input type={passwordType} required name="password" />
+              <input
+                type={passwordType}
+                name="password"
+                value={data.password}
+                placeholder="Password"
+                onChange={(e) => handleChange(e)}
+              />
               <button
                 type="button"
                 className="outline-0"

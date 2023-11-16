@@ -3,8 +3,10 @@ import cleanTouch from "./asset/Ready to GIVE YOUR HOUSES & OFFICE A CLEAN TOUCH
 import "aos/dist/aos.css";
 import AOS from "aos";
 import stars from "./asset/Group 7843.svg";
+import { useNavigate } from "react-router-dom";
 
-const Clean_touch = ({ navigate }) => {
+const Clean_touch = () => {
+  const navigate = useNavigate();
   useEffect(() => {
     AOS.init({ duration: 1000 });
   }, []);

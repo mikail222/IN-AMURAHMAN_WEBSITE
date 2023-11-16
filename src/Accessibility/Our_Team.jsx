@@ -1,5 +1,5 @@
 import React from "react";
-import mikail from "../asset/Screenshot from 2021-12-08 17-09-10.png";
+import mikail from "../asset/mikail.png";
 import { AiOutlineTwitter } from "react-icons/ai";
 import { GrFacebookOption } from "react-icons/gr";
 import { RiLinkedinFill } from "react-icons/ri";

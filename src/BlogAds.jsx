@@ -23,7 +23,7 @@ const BlogAds = ({ blogList }) => {
 
       <div className="blogContainer">
         {blogList
-          ?.slice(1, 2)
+          ?.slice(4, 5)
           .map(
             ({
               img,

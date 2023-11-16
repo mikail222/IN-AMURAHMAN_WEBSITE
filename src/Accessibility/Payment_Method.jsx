@@ -4,39 +4,77 @@ import AOS from "aos";
 import "aos/dist/aos.css";
 import { addDoc, collection, serverTimestamp } from "firebase/firestore";
 import { db } from "../firebaseconfig";
-import { TbCurrencyNaira } from "react-icons/tb";
+import Googlepay from "./Googlepay";
 
-const Payment_Method = ({ total, product_name, product_img, count }) => {
-  const [firstName, setFirstName] = useState("");
-  const [lastName, setLastName] = useState("");
-  const [email, setEmail] = useState(" ");
-  const [contact, setContact] = useState(" ");
+const Payment_Method = ({ setTogglePage }) => {
   const [payment, setPayment] = useState({});
+  const [item, setItem] = useState(false);
+  const intialValue = { firstName: "", lastName: "", email: "", contact: "" };
+  const [formValue, setFormValue] = useState(intialValue);
+  const [formError, setFormError] = useState({});
+  const [isSubmit, setIsSubmit] = useState(false);
+
   const navigate = useNavigate();
+  const cartItem = JSON.parse(localStorage.getItem("cartItems") || "[]");
+  const [cart, setCart] = useState(cartItem);
+  const total = cart
+    .map(({ price, qty }) => Number(price * qty))
+    .reduce((a, b) => a + b, 0);
 
   const collPayRef = collection(db, "Payment-details");
+  const handleChange = (e) => {
+    e.preventDefault();
+    const product_name = cart.map(({ product_name }) => product_name);
+    const num = cart.map(({ qty }) => qty);
+    const { name, value } = e.target;
+    setFormValue({
+      ...formValue,
+      [name]: value,
+      day: new Date().toDateString(),
+      qtys: num,
+      items: product_name,
+      amount: total,
+    });
+  };
 
   const update_Payment = async (e) => {
     e.preventDefault();
-    const newPayment = {
-      firstName: firstName,
-      lastName: lastName,
-      email: email,
-      amount: total,
-      contact: contact,
-      items: product_name,
-      day: new Date().toDateString(),
-    };
-    await addDoc(collPayRef, {
-      ...newPayment,
-      timestamp: serverTimestamp(),
-    });
-    alert("Payment successfully uploaded");
-    navigate("/Googlepay");
+    setFormError(validate(formValue));
+    setIsSubmit(true);
+    await addDoc(collPayRef, formValue);
+    if (Object.keys(formError).length === 0 && isSubmit) {
+      window.confirm("Payment successfully uploaded");
+      // navigate("/Googlepay");
+    }
   };
+
+  console.log(formError);
   useEffect(() => {
+    console.log(formValue);
+    if (Object.keys(formError).length === 0 && isSubmit) {
+    }
     AOS.init({ duration: 3000 });
-  }, []);
+  }, [formError]);
+  const validate = (values) => {
+    const error = {};
+    const regex = /^[^\$@]+@[^\$@]+\.[^\$@]{2,}$/i;
+    if (!values.firstName) {
+      error.firstName = "Name is required";
+    }
+    if (!values.lastName) {
+      error.lastName = "Last Name is required";
+    }
+    if (!values.email) {
+      error.email = "email is required";
+    } else if (!regex.test(values.email)) {
+      error.email = "This is not a valid email format";
+    }
+    if (!values.contact) {
+      error.contact = "contact is required";
+    }
+    return error;
+  };
+
   return (
     <div
       className="paymentUpdate"
@@ -44,52 +82,54 @@ const Payment_Method = ({ total, product_name, product_img, count }) => {
       data-aos-offset="300"
       data-aos-easing="ease-in-sine"
     >
-      <form className="productUpdateForm">
-        <img src={product_img} alt="" />
-        <h2>{product_name}</h2>
-        <h4
-          style={{
-            display: "flex",
-            flexDirection: "row",
-            alignItems: "center",
-          }}
-        >
-          <TbCurrencyNaira />
-          {total}
-        </h4>
-        <h4 className="updateheader">Payment Form</h4>
-        <input
-          type="text"
-          placeholder="First Name"
-          required
-          value={firstName}
-          onChange={(e) => setFirstName(e.target.value)}
-        />
-        <input
-          type="text"
-          placeholder=" Last Name"
-          value={lastName}
-          onChange={(e) => setLastName(e.target.value)}
-          required
-        />
-        <input
-          type="Email"
-          placeholder="Email"
-          value={email}
-          onChange={(e) => setEmail(e.target.value)}
-          required
-        />{" "}
-        <input
-          type="number"
-          placeholder="Contact"
-          value={contact}
-          required
-          onChange={(e) => setContact(e.target.value)}
-        />
-        <button type="button" onClick={update_Payment} className="button">
-          Pay
-        </button>
-      </form>
+      {item == true ? (
+        <div className="">
+          <Googlepay />
+          <button>confirm payment</button>
+        </div>
+      ) : (
+        <form className="productUpdateForm" onSubmit={update_Payment}>
+          <h4 className="updateheader">Payment Form</h4>
+          <p>please input your details correctly for better transaction</p>
+          <p> Thanks</p>
+          <input
+            type="text"
+            placeholder="First Name"
+            value={formValue.firstName}
+            name="firstName"
+            onChange={(e) => handleChange(e)}
+          />
+          <i>{formError.firstName}</i>
+          <input
+            type="text"
+            placeholder=" Last Name"
+            value={formValue.lastName}
+            name="lastName"
+            onChange={(e) => handleChange(e)}
+          />
+          <i>{formError.lastName}</i>
+          <input
+            // type="email"
+            placeholder="Email"
+            value={formValue.email}
+            name="email"
+            onChange={(e) => handleChange(e)}
+          />{" "}
+          <i>{formError.email}</i>
+          <input
+            type="number"
+            placeholder="Contact"
+            value={formValue.contact}
+            name="contact"
+            onChange={(e) => handleChange(e)}
+          />
+          <i>{formError.contact}</i>
+          <div className="button">
+            <button type="submit">Pay</button>
+            {/* <button onClick={() => setItem(true)}>Items</button> */}
+          </div>
+        </form>
+      )}
       <div className="productSidebg">
         <div>
           <h3>"Health is Wealth"</h3>

@@ -9,9 +9,9 @@ import Footer from "./Footer";
 const Clues = () => {
   return (
     <div className="clue">
-      <div className="clueVideo">
+      {/* <div className="clueVideo">
         <video src={video2} width="250" controls muted autoPlay></video>
-      </div>
+      </div> */}
       <div className="clueImg">
         <img src={img1} alt="" />
         <img src={img2} alt="" />

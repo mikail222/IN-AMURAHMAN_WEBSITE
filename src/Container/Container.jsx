@@ -57,6 +57,8 @@ import Environment from "../Blog_Category/Environment";
 import Next_to_Read from "../Blog_Category/Next_to_Read";
 import { productData } from "../Reducers/ProductSlice";
 import { blogData } from "../Reducers/BlogReducer";
+import PageNotFound from "../PageNotFound";
+import Payment_Method from "../Accessibility/Payment_Method";
 
 const Container = ({ user, setShowNav }) => {
   const dispatch = useDispatch();
@@ -64,7 +66,6 @@ const Container = ({ user, setShowNav }) => {
   const navigate = useNavigate();
   const [count, setCount] = useState(0);
 
-  console.log(user);
   const getProduct = async () => {
     const collProductUpdate = collection(db, "Products");
     const Products = await getDocs(collProductUpdate);
@@ -117,6 +118,7 @@ const Container = ({ user, setShowNav }) => {
           />
           <Route path="/About_Us" element={<About_Us blogList={blogList} />} />
           <Route path="/Googlepay" element={<Googlepay />} />
+          <Route path="/PaymentDetail" element={<Payment_Method />} />
           <Route path="/Booking" element={<Booking />} />
           <Route
             path="/"
@@ -160,6 +162,12 @@ const Container = ({ user, setShowNav }) => {
             path="About_Us/Blog_Details/:id"
             element={<Blog_Details blogList={blogList} />}
           />{" "}
+          <Route
+            path="Service/Blog_Details/:id"
+            element={<Blog_Details blogList={blogList} />}
+          />
+          <Route path="Service/Product_detail/:id" element={<Service />} />
+          <Route path="Service" element={<Service blogList={blogList} />} />
           <Route
             path="Pests/Blog_Details/:id"
             element={<Blog_Details blogList={blogList} />}
@@ -306,7 +314,7 @@ const Container = ({ user, setShowNav }) => {
           />
           <Route path="Drainage" element={<Drainage />} />
           <Route path="Consultance" element={<Consultance />} />
-          <Route path="Ants" element={<Ants />} />
+          <Route path="*" element={<PageNotFound />} />
           <Route path="Scorpion" element={<Scorpion />} />
           <Route path="Flies" element={<Flies />} />
           <Route path="Spider" element={<Spider />} />
@@ -316,7 +324,6 @@ const Container = ({ user, setShowNav }) => {
           <Route path="Cockroaches" element={<Cockroaches />} />
           <Route path="Termites" element={<Termites />} />
           <Route path="Snakes" element={<Snakes />} />
-          <Route path="Service" element={<Service />} />
           <Route path="Bed_Room" element={<Bed_Room />} />
           <Route path="Sitting_Room" element={<Sitting_Room />} />
           <Route path="Kitchen" element={<Kitchen />} />

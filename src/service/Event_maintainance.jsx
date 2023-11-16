@@ -1,6 +1,7 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import Footer from "../Footer";
+import Our_Products from "../Accessibility/Our_Products";
 
 const Event_maintainance = ({ checkList }) => {
   const hiringItems = [
@@ -53,53 +54,39 @@ const Event_maintainance = ({ checkList }) => {
 
   return (
     <div className="event-container">
-      <div className="event">
-        <main>
-          <div className="event_managemnt">
-            <h4>Event Management Service</h4>
-          </div>
-          <div>
-            <p>
-              Experience has shown how difficult it is to respond simutaniously
-              to many need in an event and this has mirror the level of
-              negligence of the people toward the hygienic aspect of numerious
-              ceremonial environment.
-            </p>
-            <p>
-              Therefore,to alivate this stress explain the reason why{" "}
-              <b>IREHV</b> has design this particular services to celebrate with
-              our client in an hygienic event environment,before,during,and
-              after the event.
-            </p>
-            <h4 style={{ marginTop: "2rem" }}>
-              ESSENTIAL DUTIES AND RESPONSIBILITIES{" "}
-            </h4>
-            <p>
-              Duties include, but are not limited to, setting up and tearing
-              down rooms for meetings, recreation activities, conventions and
-              conferences, performing daily and monthly periodic maintenance of
-              the facility including carpet care, tile floor care, restroom
-              cleaning, kitchen cleaning, exterior building cleanup, assist in
-              supervising some parttime workers engaged in maintenance, and
-              other duties as assigned.
-            </p>
-          </div>
-        </main>
-        <aside>
-          <Link to="/Show_Room">
-            <p className="ads_Link"> Check out for our Products</p>
-          </Link>
-          {checkList.slice(3, 6).map(({ img, product_name, id }, i) => (
-            <div className="event_ads" key={i}>
-              <Link className="first" to={`Product_detail/${id}`}>
-                <i>Buy Now</i>
-                <img className="first_class_img" src={img} alt="" />
-                <p>{product_name}</p>
-              </Link>
-            </div>
-          ))}
-        </aside>
-      </div>
+      <main>
+        <div className="event_managemnt">
+          <h4>Event Management Service</h4>
+        </div>
+        <div>
+          <p>
+            Experience has shown how difficult it is to respond simutaniously to
+            many need in an event and this has mirror the level of negligence of
+            the people toward the hygienic aspect of numerious ceremonial
+            environment.
+          </p>
+          <p>
+            Therefore,to alivate this stress explain the reason why <b>IREHV</b>{" "}
+            has design this particular services to celebrate with our client in
+            an hygienic event environment,before,during,and after the event.
+          </p>
+          <h4 style={{ marginTop: "2rem" }}>
+            ESSENTIAL DUTIES AND RESPONSIBILITIES{" "}
+          </h4>
+          <p>
+            Duties include, but are not limited to, setting up and tearing down
+            rooms for meetings, recreation activities, conventions and
+            conferences, performing daily and monthly periodic maintenance of
+            the facility including carpet care, tile floor care, restroom
+            cleaning, kitchen cleaning, exterior building cleanup, assist in
+            supervising some parttime workers engaged in maintenance, and other
+            duties as assigned.
+          </p>
+        </div>
+      </main>
+
+      <Our_Products className="proAds" />
+
       <div className="hireEquipment">
         <div style={{ marginTop: "2.5rem", width: "100%" }}>
           <h4

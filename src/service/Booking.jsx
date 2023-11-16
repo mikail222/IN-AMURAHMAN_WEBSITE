@@ -18,14 +18,18 @@ const Booking = () => {
   };
   const update_Payment = async (e) => {
     e.preventDefault();
-    await addDoc(consultanceCollRef, {
-      ...Booking,
-      day: new Date().toDateString(),
-      timestamp: serverTimestamp(),
-    });
-    clearBooking.current.reset();
+    if (Booking.lenght == 5) {
+      await addDoc(consultanceCollRef, {
+        ...Booking,
+        day: new Date().toDateString(),
+        timestamp: serverTimestamp(),
+      });
+      clearBooking.current.reset();
 
-    alert("booked");
+      alert("booked");
+    } else {
+      return console.log(Booking.lenght);
+    }
   };
 
   // useEffect(() => {
@@ -40,9 +44,12 @@ const Booking = () => {
         ref={clearBooking}
       >
         <div className="BookingOverlay">
-          <div className="productUpdateForm">
-            <h4 className="updateheader">Booking Form</h4>
-
+          <div className="bookingUpdateForm">
+            <h4 className="updateheader">How can we Help?</h4>
+            <p className="BookingText">
+              IREHV is professionally proud to acknowledge your Environmental
+              issues, please just specify bellow.
+            </p>
             <label htmlFor=""></label>
             <input
               type="text"
@@ -67,24 +74,19 @@ const Booking = () => {
               name="contact"
               required
             />
+            <label htmlFor="booking"></label>
+            <textarea
+              name="message"
+              placeholder="purpose"
+              id="booking"
+              cols="30"
+              rows="10"
+              className="textarea"
+            ></textarea>
 
             <button type="button" onClick={update_Payment} className="button">
               Book
             </button>
-          </div>
-          <div className="productUpdateForm">
-            <h4 className="updateheader">How can we Help?</h4>
-            <p className="BookingText">
-              IREHV is professionally proud to acknowledge your Environmental
-              issues, please just specify bellow.
-            </p>
-            <label htmlFor="booking">purpose</label>
-            <textarea
-              name="message"
-              id="booking"
-              cols="30"
-              rows="10"
-            ></textarea>
           </div>
         </div>
       </form>

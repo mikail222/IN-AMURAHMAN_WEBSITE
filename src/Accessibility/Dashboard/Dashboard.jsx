@@ -72,7 +72,7 @@ const Dashboard = ({ adminPost, productUpdate, count }) => {
     getUser();
   }, [currentUser]);
   const filteredAdmin = user
-    ?.filter(({ roles }) => roles?.author)
+    ?.filter(({ roles }) => roles == "author")
     .some((r) => r.email === currentUser?.email);
   return (
     <div className="parentContainer">
@@ -138,12 +138,6 @@ const Dashboard = ({ adminPost, productUpdate, count }) => {
               <Route
                 path="User_Profile"
                 element={<User_Profile user={user} />}
-              />
-              <Route
-                path="Sales_Details"
-                element={
-                  <Sales_Details sales={sales} productUpdate={productUpdate} />
-                }
               />
               <Route path="Blog_Update" element={<Blog_Update />} />
               <Route path="Post" element={<Post adminPost={adminPost} />} />

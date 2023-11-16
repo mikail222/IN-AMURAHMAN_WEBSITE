@@ -10,8 +10,7 @@ const Consult = ({ consult }) => {
         {consult.map(({ fullName, msg, day, number, mail, i }) => (
           <div key={i} className="info">
             {fullName ? <p>{fullName}</p> : <p>anonimous</p>}
-            <p>{mail}</p>
-            <p>{number}</p>
+            <a href="mailto:{mail}">{mail}</a> <p>{number}</p>
             {msg === true ? (
               <p className="info_text">{msg}</p>
             ) : (

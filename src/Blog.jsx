@@ -15,17 +15,15 @@ import { AiOutlineWechat } from "react-icons/ai";
 import { Link, Route, Routes, useNavigate, useParams } from "react-router-dom";
 import { BiSearch, BiTimer } from "react-icons/bi";
 import Clean_touch from "./Clean_touch";
-const Blog = ({ blogList }) => {
+import { useSelector } from "react-redux";
+const Blog = () => {
   const [count, setCount] = useState(0);
   const [toggleBlog, setToggleBlog] = useState(false);
   const [findBlog, setFindBlog] = useState("");
-  const [blogLists, setBlogLists] = useState(null);
-  useEffect(() => {
-    setBlogLists(blogList);
-  }, [blogList]);
-  console.log(blogLists);
-  const navigate = useNavigate();
 
+  const blogList = useSelector((state) => state.products.blog.blogs[0]);
+
+  const navigate = useNavigate();
   const features = [
     { name: "Featured", pathTo: "" },
     { name: "Environment", pathTo: "Environment" },
@@ -40,6 +38,7 @@ const Blog = ({ blogList }) => {
     { name: "Sewage", pathTo: "" },
     { name: "Recycling", pathTo: "" },
   ];
+
   const handleNextBtn = (e) => {
     e.preventDefault();
     if (toggleBlog) {
@@ -59,20 +58,18 @@ const Blog = ({ blogList }) => {
     }
     setToggleBlog(false);
   };
-  const SearchBlog = blogLists?.filter(
+  const SearchBlog = blogList?.filter(
     (p) =>
-      p.title.toLowerCase().includes(findBlog.toLocaleLowerCase()) ||
-      p.writer_name.toLocaleLowerCase().includes(findBlog.toLocaleLowerCase())
+      p.title?.toLowerCase().includes(findBlog.toLowerCase()) ||
+      p.writer_name?.toLowerCase().includes(findBlog.toLowerCase())
   );
 
   return (
     <div>
       <div className="logo2">
         <div className="overlay">
-          <div className="brand">
-            <div className="alignStars">
-              <img src={blogInfo} alt="" className="profession" />
-            </div>
+          <div className="alignStars">
+            <img src={blogInfo} alt="" className="profession" />
           </div>
         </div>
       </div>
@@ -91,7 +88,7 @@ const Blog = ({ blogList }) => {
 
       <div className="allBlogParentContainer">
         <div className="allBlogContainer">
-          {blogLists == null && <h3>please check your internet connection</h3>}
+          {!blogList && <h3>please check your internet connection</h3>}
           {!toggleBlog &&
             SearchBlog?.map(
               ({
@@ -212,8 +209,12 @@ const Blog = ({ blogList }) => {
           <h3>Explore more of what matter to you</h3>{" "}
           <div className="categories">
             {features.map(({ name, pathTo }, i) => (
-              <div key={i} className="category">
-                <a href={pathTo} className="" style={{ cursor: "pointer" }}>
+              <div key={i}>
+                <a
+                  href={pathTo}
+                  className="category"
+                  style={{ cursor: "pointer" }}
+                >
                   <p>{name}</p>
                 </a>
               </div>

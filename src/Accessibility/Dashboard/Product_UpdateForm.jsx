@@ -65,6 +65,7 @@ const Product_UpdateForm = ({ product_detail, count }) => {
     await addDoc(collProductRef, {
       ...product,
       day: new Date().toDateString(),
+      qty: 1,
       timesStamp: new Date(),
     });
     alert("product successfully added");
@@ -96,7 +97,7 @@ const Product_UpdateForm = ({ product_detail, count }) => {
           <label htmlFor=""></label>
           <input type="text" placeholder="Product Name" name="product_name" />
           <label htmlFor=""></label>
-          <input type="number" placeholder="Quantity" name="quantity" />
+          <input type="number" placeholder="Stock" name="stock" />
           <label htmlFor=""></label>
           <input type="number" placeholder="Price" name="price" />
           <button type="button" onClick={update_Products} className="button">

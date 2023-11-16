@@ -14,7 +14,7 @@ const Booking = ({ booking }) => {
               ) : (
                 <p>anonimous</p>
               )}
-              <p>{email}</p>
+              <a href="mailto:{email}">{email}</a>
               <p>{contact}</p>
               {message ? (
                 <p className="info_text">{message}</p>
