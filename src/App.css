@@ -2246,9 +2246,11 @@ nav i {
 .userTableHeader {
   @apply text-[#344767] font-bold mt-[15%] border-b-[1px] lg:w-[73vw];
 }
-
-.Authoricon {
-  @apply w-[50px] h-[50px] object-cover rounded-[5px] border-[1px] border-[#344767];
+.Authoronline {
+  @apply w-[60px] h-[60px] object-cover rounded-[55px]  border-[2px] border-[lightgreen];
+}
+.AuthoriOffline {
+  @apply w-[50px] h-[50px] object-cover rounded-[55px];
 }
 .AuthorAlign {
   @apply min-w-[30%] lg:w-[100%] flex flex-row items-center gap-[1rem] text-[1.2rem];

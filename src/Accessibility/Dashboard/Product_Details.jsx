@@ -2,8 +2,7 @@ import React from "react";
 import { useSelector } from "react-redux";
 import { useParams } from "react-router-dom";
 
-const Product_Details = ({ productId }) => {
-  console.log(productId.id);
+const Product_Details = ({ product_detail }) => {
   return (
     <div className="productWrapper">
       <h2>Stock List</h2>
@@ -17,13 +16,13 @@ const Product_Details = ({ productId }) => {
           </tr>
         </thead>
         <tbody>
-          {productId
+          {product_detail
             // .filter(
             //   (m) =>
             //     m.email.toLowerCase().includes(search_user.toLowerCase()) ||
             //     m.first.includes(search_user.toLocaleLowerCase())
             // )
-            .map(({ img, price, product_name, qty, day }, i) => (
+            .map(({ img, price, product_name, stock, day }, i) => (
               <tr key={i} className="userTableHeader">
                 <td className="AuthorAlign">
                   <img src={img} alt="" className="Authoricon" />
@@ -32,7 +31,7 @@ const Product_Details = ({ productId }) => {
 
                 <td>{price}</td>
                 <td>{day}</td>
-                <td>{qty}</td>
+                <td>{stock}</td>
               </tr>
             ))}
         </tbody>

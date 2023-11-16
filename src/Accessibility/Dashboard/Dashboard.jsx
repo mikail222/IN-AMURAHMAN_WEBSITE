@@ -45,7 +45,7 @@ const Dashboard = ({ adminPost, productUpdate, count }) => {
       const collectionOfUser = collection(db, "Admin");
       const collBooking = collection(db, "Booking");
       const collSales = collection(db, "Payment-details");
-      const collTotalAmount = collection(db, "Paymeny_details");
+      const collTotalAmount = collection(db, "Payment-details");
       const collConsult = collection(db, "Consultance");
       const collEnquiry = collection(db, "Enquiry");
       const collProductUpdate = collection(db, "Products");
@@ -74,6 +74,7 @@ const Dashboard = ({ adminPost, productUpdate, count }) => {
   const filteredAdmin = user
     ?.filter(({ roles }) => roles == "author")
     .some((r) => r.email === currentUser?.email);
+
   return (
     <div className="parentContainer">
       <div className="dashBoardDiv">
@@ -118,7 +119,7 @@ const Dashboard = ({ adminPost, productUpdate, count }) => {
                     consult={consult}
                     productUpdate={productUpdate}
                     sales={sales}
-                    totalamount={sales}
+                    totalamount={totalamount}
                     adminPost={adminPost}
                   />
                 }

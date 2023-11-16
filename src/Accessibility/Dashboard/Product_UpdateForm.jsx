@@ -65,7 +65,7 @@ const Product_UpdateForm = ({ product_detail, count }) => {
     await addDoc(collProductRef, {
       ...product,
       day: new Date().toDateString(),
-      qty: 1,
+      stock: 1,
       timesStamp: new Date(),
     });
     alert("product successfully added");

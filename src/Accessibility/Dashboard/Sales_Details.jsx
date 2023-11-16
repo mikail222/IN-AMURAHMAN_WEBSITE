@@ -1,18 +1,22 @@
 import React, { useEffect } from "react";
 import { TbCurrencyNaira } from "react-icons/tb";
+import { useSelector } from "react-redux";
 
-const Sales_Details = ({ sales, productUpdate }) => {
+const Sales_Details = ({ sales }) => {
+  const productUpdate = useSelector(
+    (state) => state.products.product.addProduct[0]
+  );
   const findItem = Object.values(sales).map(({ items }) => items[0]);
   const findamount = Object.values(sales).map(({ amount }) => amount[0]);
-  const findprice = productUpdate.map(({ price }) => price);
-  const findName = productUpdate.map(({ product_name }) => product_name);
+  const findprice = productUpdate?.map(({ price }) => price);
+  const findName = productUpdate?.map(({ product_name }) => product_name);
 
   useEffect(() => {
     const filtterQuantity = () => {
-      if (sales.filter((a) => a.items[0].toLowerCase().includes(findName))) {
+      if (sales?.filter((a) => a.items[0].toLowerCase().includes(findName))) {
         return console.log(
           sales.map(({ amount }) => amount[0]) /
-            productUpdate.map(({ price }) => price)
+            productUpdate?.map(({ price }) => price)
         );
       }
     };
@@ -34,6 +38,7 @@ const Sales_Details = ({ sales, productUpdate }) => {
             <th className="naira">
               <TbCurrencyNaira />
             </th>
+            <th>Quantity</th>
           </tr>
         </thead>
         <tbody>
@@ -43,15 +48,21 @@ const Sales_Details = ({ sales, productUpdate }) => {
             //     m.email.toLowerCase().includes(search_user.toLowerCase()) ||
             //     m.first.includes(search_user.toLocaleLowerCase())
             // )
-            .map(({ amount, items, firstName, lastName, day, contact }, i) => (
-              <tr key={i} className="userTableHeader">
-                <td className="AuthorAlign">{firstName}</td>
-                <td className="hide">{contact}</td>
-                <td>{day}</td>
-                <td>{items}</td>
-                <td>{amount}</td>
-              </tr>
-            ))}
+            .map(
+              (
+                { amount, items, firstName, lastName, day, contact, qtys },
+                i
+              ) => (
+                <tr key={i} className="userTableHeader">
+                  <td className="AuthorAlign">{firstName}</td>
+                  <td className="hide">{contact}</td>
+                  <td>{day}</td>
+                  <td>{items}</td>
+                  <td>{amount}</td>
+                  <td>{qtys}</td>
+                </tr>
+              )
+            )}
         </tbody>
       </table>
     </div>

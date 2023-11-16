@@ -19,8 +19,9 @@ const User_Table = ({ user }) => {
         }, 5000);
       });
   };
+
   const currentUser = auth.currentUser?.email;
-  // const userStatus = user.filter(({ email }) => email === currentUser);
+  const filterImg = user.filter(({ img }) => img === img);
 
   return (
     <div className="user">
@@ -58,42 +59,24 @@ const User_Table = ({ user }) => {
                 .map(({ img, first, LastName, email, phone, day }, i) => (
                   <tr key={i} className="userTableHeader">
                     <td className="AuthorAlign">
-                      <img src={img} alt="" className="Authoricon" />
+                      <img
+                        src={filterImg ? img : "no image"}
+                        alt=""
+                        className={
+                          email === currentUser
+                            ? "Authoronline"
+                            : "AuthoriOffline"
+                        }
+                      />
                     </td>
-
                     <td>
-                      <p>
-                        <i>Name</i>
-                      </p>
                       {first} {LastName}
                     </td>
-                    <td>
-                      <p>
-                        <i>Mail</i>
-                      </p>{" "}
-                      {email}
-                    </td>
-                    <td>
-                      <p>
-                        <i>Date join</i>
-                      </p>
-
-                      {day}
-                    </td>
-                    <td>
-                      {" "}
-                      <p>
-                        <i>Contact</i>
-                      </p>
-                      {phone}
-                    </td>
+                    <td>{email}</td>
+                    <td>{day}</td>
+                    <td> {phone}</td>
                     {email !== currentUser && (
-                      <td className="offline">
-                        <p>
-                          <i>Status</i>
-                        </p>
-                        Offline
-                      </td>
+                      <td className="offline">Offline</td>
                     )}
                     {email === currentUser && (
                       <td className="online">online</td>

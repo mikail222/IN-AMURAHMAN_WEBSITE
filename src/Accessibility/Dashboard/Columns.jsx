@@ -25,7 +25,6 @@ const Columns = ({
   const [comment, setComment] = useState([]);
 
   const lastMonth = new Date(new Date().setMonth(day.getMonth() - 1));
-  console.log(lastMonth);
 
   useEffect(() => {
     const getLastMonth = async () => {
@@ -53,21 +52,22 @@ const Columns = ({
   }, []);
 
   const today = new Date().toDateString();
-  const findCommentCount = comment.filter(({ day }) => day === today);
-  const findNewUser = user.filter((m) => m.day === today);
-  const findEnquire = enquiry.filter((m) => m.day === today);
-  const findBooking = booking.filter((m) => m.day === today);
-  const findConsult = consult.filter((m) => m.day === today);
-  const finduser = enquiry.filter((m) => m.day === today);
+  const findCommentCount = comment?.filter(({ day }) => day === today);
+  const findNewUser = user?.filter((m) => m.day === today);
+  const findEnquire = enquiry?.filter((m) => m.day === today);
+  const findBooking = booking?.filter((m) => m.day === today);
+  const findConsult = consult?.filter((m) => m.day === today);
+  const finduser = enquiry?.filter((m) => m.day === today);
 
   const newSale = sales?.filter((d) => d.day === today);
   const totalSales = newSale
-    .map(({ amount }) => amount[0])
+    .map(({ amount }) => amount)
     .reduce((a, b) => a + b, 0);
   const grossTotalSales = totalamount
-    .map(({ amount }) => amount[0])
+    ?.map(({ amount }) => amount)
     .reduce((a, b) => a + b, 0);
 
+  console.log(grossTotalSales);
   return (
     <div>
       <div className="container">
