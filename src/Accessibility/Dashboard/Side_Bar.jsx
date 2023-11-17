@@ -45,50 +45,50 @@ const Side_Bar = ({ currentUser, filteredAdmin, setShow, show }) => {
         {filteredAdmin ? (
           <div onClick={() => navigate("Data_analysis_page")}>
             <MdMonitor className="dashboardIcon" />
-            <i>Dashboard</i>
+            <p>Dashboard</p>
           </div>
         ) : (
           <div onClick={() => navigate("User_Data") || setShow(false)}>
             <MdMonitor className="dashboardIcon" />
-            <i>Dashboard</i>
+            <p>Dashboard</p>
           </div>
         )}
         <div onClick={() => navigate("User_Profile")}>
           <CgProfile className="dashboardIcon" />
-          <i>Profile</i>
+          <p>Profile</p>
         </div>
         {filteredAdmin === true ? (
           <>
             <div onClick={() => navigate("User_Table")}>
               <FcCalendar className="dashboardIcon" />
-              <i>User Table</i>
+              <p>User Table</p>
             </div>
             <div onClick={() => navigate("Product_UpdateForm")}>
               <GrUpdate />
-              <i>Product update</i>
+              <p>Product update</p>
             </div>
             <div onClick={() => navigate("Blog_Update")}>
               <GrBlog className="menuBar2 " title="dashboardIcon" />{" "}
-              <i>Blogs</i>
+              <p>Blogs</p>
             </div>
             <div onClick={() => navigate("Post")}>
               <MdPostAdd className="menuBar2 " title="dashboardIcon" />{" "}
-              <i>Post</i>
+              <p>Post</p>
             </div>
             <div onClick={() => navigate("Booking")}>
               <TbBrandBooking className="menuBar2 " title="dashboardIcon" />
-              <i>Booking</i>
+              <p>Booking</p>
             </div>{" "}
             <div onClick={() => navigate("Consult")}>
               <TbBrandTripadvisor className="menuBar2 " title="dashboardIcon" />
-              <i>Consult</i>
+              <p>Consult</p>
             </div>{" "}
             <div onClick={() => navigate("Enquiry")}>
               <AiFillQuestionCircle
                 className="menuBar2 "
                 title="dashboardIcon"
               />{" "}
-              <i>Enquiry</i>
+              <p>Enquiry</p>
             </div>{" "}
           </>
         ) : (
@@ -102,7 +102,7 @@ const Side_Bar = ({ currentUser, filteredAdmin, setShow, show }) => {
           }
         >
           <MdOutlineClear className="menuBar2 " title="dashboardIcon" />{" "}
-          <i>Back</i>
+          <p>Back</p>
         </div>
       </div>
     </aside>

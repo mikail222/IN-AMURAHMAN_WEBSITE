@@ -69,7 +69,7 @@ const Post = () => {
         },
 
         (error) => {
-          console.log(error);
+          alert(error);
         },
 
         () => {
@@ -83,14 +83,14 @@ const Post = () => {
   }, [photoFileUpload]);
   return (
     <div className="postForm">
-      {adminPost.map(({ text, photo, day, i }) => (
+      {adminPost.map(({ text, photo, day }, i) => (
         <div key={i} className="post_info">
           <img src={photo} alt="" className="postPhotos" />
           <p className="info_text">{text}</p>
           <p className="date">{day}</p>
         </div>
       ))}
-      {comment.map(({ text, photo, day, name, profilePics, i }) => (
+      {comment.map(({ text, photo, day, name, profilePics }, i) => (
         <div key={i} className="comment_info">
           {profilePics && (
             <img src={profilePics} alt="" className="Authoricon" />
@@ -121,7 +121,7 @@ const Post = () => {
             {trackupload !== null && trackupload < 100 ? (
               <i> loading...</i>
             ) : (
-              "Add photos"
+              <p>Add photos</p>
             )}
           </label>
           <BiSend

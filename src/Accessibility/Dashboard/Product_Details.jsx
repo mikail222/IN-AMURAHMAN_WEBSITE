@@ -7,33 +7,27 @@ const Product_Details = ({ product_detail }) => {
     <div className="productWrapper">
       <h2>Stock List</h2>
       <table className="Author">
-        <thead>
+        {/* <thead>
           <tr className="tableHeader">
             <th>Product Name</th>
             <th>Price</th>
             <th>Updated</th>
             <th>Qty</th>
           </tr>
-        </thead>
+        </thead> */}
         <tbody>
-          {product_detail
-            // .filter(
-            //   (m) =>
-            //     m.email.toLowerCase().includes(search_user.toLowerCase()) ||
-            //     m.first.includes(search_user.toLocaleLowerCase())
-            // )
-            .map(({ img, price, product_name, stock, day }, i) => (
-              <tr key={i} className="userTableHeader">
-                <td className="AuthorAlign">
-                  <img src={img} alt="" className="Authoricon" />
-                  <p>{product_name}</p>
-                </td>
+          {product_detail.map(({ img, price, product_name, stock, day }, i) => (
+            <tr key={i} className="userTableHeader">
+              <td className="AuthorAlign">
+                <img src={img} alt="" className="Authoricon" />
+                <p>{product_name}</p>
+              </td>
 
-                <td>{price}</td>
-                <td>{day}</td>
-                <td>{stock}</td>
-              </tr>
-            ))}
+              <td>{price}</td>
+              <td>{day}</td>
+              <td>{stock}</td>
+            </tr>
+          ))}
         </tbody>
       </table>
     </div>
