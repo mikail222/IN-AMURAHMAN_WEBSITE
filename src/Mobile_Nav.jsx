@@ -57,13 +57,7 @@ const Mobile_nav = ({ show, setShowNav }) => {
           />
         </div>
       ) : (
-        <div
-        // data-aos="slide-left"
-        // data-aos-offset="300"
-        // data-aos-anchor-placement="left"
-        // data-aos-easing="ease-in-sine"
-        // style={{ width: open ? "500px" : "10px" }}
-        >
+        <div>
           <div className="mbnavoverlay">
             <div className="mobile_navs">
               {" "}

@@ -194,14 +194,6 @@ const Show_Room = ({ blogList }) => {
                   </button>
                 </nav>
               </div>
-              // <CartModal
-              //   setTogglePage={setTogglePage}
-              //   cart={cart}
-              //   total={total}
-              //   setCart={setCart}
-              //   removeCart={removeCart}
-              //   cartLenght={cartLenght}
-              // />
             )}
           </div>
 
@@ -385,15 +377,6 @@ const Show_Room = ({ blogList }) => {
             </div>
           </div>
         </div>
-        // <CartSummary
-        //   setTogglePage={setTogglePage}
-        //   cart={cart}
-        //   total={total}
-        //   navigate={navigate}
-        //   setRemove={setRemove}
-        //   cartLenght={cartLenght}
-        //   removeCart={removeCart}
-        // />
       )}
 
       <Customer />

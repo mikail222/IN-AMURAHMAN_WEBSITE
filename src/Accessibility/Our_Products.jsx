@@ -24,7 +24,11 @@ const Our_Products = () => {
     <div className="our-products-container" data-aos="zoom-in">
       <div className="chartHeadClass">
         <img src={chartHead} alt="" />
-        <img src={chartText} alt="" />
+        <p>
+          Make Order for our quality product for various Fumigation,Pest Control
+          and Environmental cleaning purpose at your finger tips and get them
+          delivered to your Door step
+        </p>
       </div>
       <div className="cleaning_equip">
         {productAds?.slice(0, 4).map(({ img, product_name, price }, i) => (
@@ -49,13 +53,6 @@ const Our_Products = () => {
                 <button className="chartBtn" onClick={"thanks"}>
                   ADD TO CHART
                 </button>
-                {/* <div className="chartCountBtn">
-                  <button onClick={() => setCounter((d) => (!d ? 1 : d - 1))}>
-                    -
-                  </button>
-                  <p>{counter}</p>
-                  <button onClick={() => setCounter(counter + 1)}>+</button>
-                </div> */}
               </div>
             </Link>
           </div>

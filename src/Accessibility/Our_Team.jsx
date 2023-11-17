@@ -43,7 +43,7 @@ const Our_Team = () => {
             </article>
           </div>
           <div>
-            <img src={defaultprofilepics} alt="" />{" "}
+            <img src={defaultprofilepics} alt="" />
             <p className="name">Umar Suleiman</p>{" "}
             <p className="rank">Operation Manager</p>
             <i>
@@ -75,8 +75,7 @@ const Our_Team = () => {
             <p className="name">Mikail Abdulraheem</p>{" "}
             <p className="rank">web Developer</p>
             <i>
-              professional soft-ware engineers, with world class web and mobile
-              Application building experience.
+              Expert in overwhelming web and mobile Application development.
             </i>
             <article className="social-medial">
               <a href="https://web.facebook.com/mikail.abdulraheem.3">

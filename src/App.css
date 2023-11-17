@@ -69,17 +69,17 @@
   @apply flex flex-col items-center;
 }
 .serviceList img:nth-child(1) {
-  @apply w-[95px] h-[85px] lg:w-auto h-auto;
+  @apply w-[95px] h-[85px] lg:w-auto;
 }
 .serviceList img:nth-child(2) {
   @apply w-[250px]  lg:w-auto;
 }
 .customer {
-  @apply flex flex-col lg:flex-row justify-center items-center gap-[30px];
+  @apply flex flex-col lg:flex-row justify-center items-center gap-[30px] md:gap-[20px] md:flex md:flex-row;
 }
 .customer div {
   box-shadow: 1px 1px 6px gray;
-  @apply flex flex-col justify-center items-center w-[80vw] lg:w-[25vw]  h-[50vh] bg-[white] rounded-[10px];
+  @apply flex flex-col justify-center items-center w-[80vw] lg:w-[25vw] md:w-[30vw] md:h-[40vh] lg:h-[50vh] h-[50vh]  bg-[white] rounded-[10px];
 }
 .customer div .clientName {
   @apply text-[#133063] font-bold;
@@ -94,10 +94,10 @@
   @apply w-[80%] lg:w-[40%] my-[5%] lg:my-0;
 }
 .pricingplan {
-  @apply w-[100%] flex  flex-col  justify-center  items-center gap-[1rem]  my-[3%];
+  @apply w-[100%] flex  flex-col  justify-center  items-center gap-[0.5rem] lg:gap-[1rem]  my-[3%];
 }
 .pricingplan .span {
-  @apply flex flex-row  gap-[4%]  justify-around items-center w-[98%] lg:w-[70%] h-[15vh] border-[2px] bg-[#EDF5FA] rounded-[15px] lg:pr-[2%] relative  border-[#133063];
+  @apply flex flex-row  gap-[4%]  justify-around items-center w-[98%] lg:w-[70%] h-[10vh] md:h-[12vh]  lg:h-[15vh] border-[2px] bg-[#EDF5FA] rounded-[15px] lg:pr-[2%] relative  border-[#133063];
 }
 .irehvImg {
   @apply h-[15px];
@@ -107,16 +107,16 @@
 }
 .gradiant {
   background-image: linear-gradient(to right, #133063, #56a4cc);
-  @apply flex flex-row  gap-[4%]  justify-around items-center w-[98%] lg:w-[70%] h-[13vh] rounded-[10px] bg-[#EDF5FA]  pr-[2%];
+  @apply flex flex-row  gap-[4%]  justify-around items-center w-[98%] lg:w-[70%] h-[10vh] lg:h-[13vh] rounded-[10px] bg-[#EDF5FA]  pr-[2%];
 }
 .faq {
-  @apply flex flex-col lg:flex-row justify-center;
+  @apply flex flex-col md:flex-row lg:flex-row justify-center;
 }
 .answer {
   @apply w-[90%]  ml-[2%];
 }
 .faqform {
-  @apply w-[100%] lg:w-[60%];
+  @apply w-[100%] md:w-[60%] lg:w-[60%];
 }
 .faqform div {
   @apply w-[100%] px-[5px] lg:px-[20px] py-[10px] rounded-[8px];
@@ -131,7 +131,7 @@
   @apply w-[100%] flex  flex-row justify-center  items-center;
 }
 .cleanTouch {
-  @apply flex flex-col lg:flex-row justify-center items-center bg-[#133063] mb-[6%] lg:w-[97%] h-[20vh] lg:h-[25vh] gap-[1rem]  lg:gap-[0px];
+  @apply flex flex-col md:flex-row lg:flex-row justify-center items-center bg-[#133063] mb-[6%] lg:w-[97%] h-[20vh] lg:h-[25vh] gap-[1rem]  lg:gap-[0px] md:w-[98%] md:justify-evenly;
 }
 .cleanTouchImg {
   @apply w-[100%] lg:w-[60%];
@@ -152,7 +152,7 @@
   @apply text-[0.85rem] bg-[white] w-[130px] lg:w-[10vw] h-[30px] rounded-[20px] text-[#133063];
 }
 .BookNow {
-  @apply text-center lg:text-[0.90rem] text-[white] w-[130px] mr-[5px]  lg:w-[8vw] h-[30px] rounded-[20px] bg-[#133063];
+  @apply text-center text-[0.85rem] lg:text-[0.90rem] text-[white] w-[130px] mr-[5px]  lg:w-[8vw] h-[30px] rounded-[20px] bg-[#133063];
 }
 .blogparentcontainer {
   @apply flex  flex-col  justify-center  items-center gap-[2rem];
@@ -214,9 +214,7 @@
   box-shadow: 1px 2px 6px lightgray;
   @apply rounded-[20px];
 }
-/* .searchblogDetail {
-  @apply flex flex-row justify-between items-center border-[#97b8f0]  py-[3%] border-b-[1px];
-} */
+
 .searchBlogs {
   @apply lg:mx-[5%] flex flex-row justify-between items-center border-[#97b8f0] py-[6%] lg:py-[3%] mb-[30px] border-b-[1px];
 }
@@ -507,7 +505,7 @@
   @apply relative text-center text-[0.80rem] top-[-16.5rem] bg-[#F1870AA6] rounded-[10px] w-[80px] ml-[65%];
 }
 .ProductDesignContainer {
-  @apply flex flex-col lg:flex-row h-[80%] gap-[1rem] pt-[10%] ml-[2%] lg:ml-[10%];
+  @apply flex flex-col md:flex-row lg:flex-row h-[80%] gap-[1rem] pt-[10%] ml-[2%] lg:ml-[10%];
 }
 .productDesign {
   @apply w-[50%]  h-[20%] flex flex-col;
@@ -523,7 +521,7 @@
   @apply lg:w-[70%];
 }
 .aboutIrehv {
-  @apply lg:w-[50%] flex flex-col gap-[1rem] mb-[20%];
+  @apply md:w-[50%] lg:w-[50%] flex flex-col gap-[1rem] mb-[20%];
 }
 .aboutIrehv button {
   font-family: "darker grotesque";
@@ -531,7 +529,7 @@
 }
 
 .productDesign {
-  @apply hidden lg:flex lg:w-[50%];
+  @apply hidden md:flex md:w-[50%] lg:flex lg:w-[50%];
 }
 .productImg {
   @apply w-[60%]  bg-[#45a4de];
@@ -540,14 +538,14 @@
   @apply w-[50%];
 }
 .product2 {
-  @apply w-[100%] flex  flex-row justify-around z-[1] relative lg:top-[-10rem];
+  @apply w-[100%] flex  flex-row justify-around z-[1] relative md:top-[-10rem] lg:top-[-10rem];
 }
 .product1,
 .product2 {
   @apply w-[100%] flex  flex-row justify-around;
 }
 .satisfiedClient {
-  @apply lg:pr-[6%] top-[-17rem] lg:top-[-15rem] flex  flex-row justify-end items-end relative z-[1];
+  @apply md:pr-[4%] md:top-[-16rem] lg:pr-[6%] top-[-17rem] lg:top-[-15rem] flex  flex-row justify-end items-end relative z-[1];
 }
 .satisfiedClient img {
   @apply w-[22%];
@@ -689,18 +687,6 @@
   transform: skew(50deg, 10deg);
   background: linear-gradient(to bottom, #45a4de, #eff8fc, #fee5ad);
   @apply w-[80vw] h-[45vh] lg:w-[20vw]  lg:h-[50vh] flex  flex-col justify-center items-center lg:mb-[2rem] bg-[white];
-}
-
-@media screen and (max-width: 480px) {
-  .cleaning_equip {
-    display: flex;
-    flex-direction: column;
-    /*grid-template-columns: repeat(1, 1fr); */
-    align-items: center;
-    place-items: center;
-    width: 100%;
-    padding: 1rem;
-  }
 }
 
 .rent {
@@ -1082,19 +1068,22 @@
   @apply px-[2rem] mb-[4rem];
 }
 .cleaning_equip {
-  @apply my-[5%] w-[90%] ml-[5%] flex flex-col gap-[25px] lg:flex-row
-    justify-center items-center;
+  @apply my-[5%] w-[90%] ml-[5%] lg:ml-[0px] flex flex-col lg:gap-[30px] gap-[25px] lg:flex lg:flex-row md:grid md:grid-cols-2
+    justify-center items-center md:gap-[0px];
 }
 
 .first {
   box-shadow: 0px 6px 9px 1px lightgray;
-  @apply w-[80vw] h-[60%] lg:w-[21vw]  lg:h-[100%]  flex  flex-col bg-[white] my-[5%] rounded-[15px] py-[6%] px-[5%];
+  @apply w-[80vw] h-[60%] lg:w-[21vw] md:w-[40vw] lg:h-[100%]  flex  flex-col bg-[white] my-[5%] rounded-[15px] py-[6%] px-[5%];
 }
 .proAds {
   @apply h-[100%] lg:hidden flex;
 }
 .chartHeadClass {
-  @apply flex  flex-col justify-center items-center  gap-[2rem] my-[5%] lg:my-0 lg:w-[70%];
+  @apply flex  flex-col justify-center items-center text-center md:text-[1.3rem] text-[0.8rem]  lg:text-[1.5rem] text-[#4FA0CA] gap-[2rem] my-[5%] lg:my-0 lg:w-[70%]  md:w-[80%];
+}
+.chartHeadClass p {
+  @apply w-[80%];
 }
 .chartClass {
   @apply w-[100%] flex  flex-row  items-center gap-[7%];
@@ -1116,7 +1105,7 @@
   @apply lg:text-[1.2rem] font-bold text-[#4FA0CA] w-[100%] py-[0.25rem];
 }
 .heartIcon {
-  @apply relative top-[-11rem] lg:top-[-14rem] lg:ml-[90%]  ml-[85%] fill-[orange];
+  @apply relative top-[-11rem] lg:top-[-14rem] lg:ml-[90%] md:top-[-14rem] ml-[85%] fill-[orange];
 }
 .firstStarIcon {
   @apply fill-[orange];
@@ -1126,7 +1115,7 @@
 }
 
 .imgs {
-  @apply w-[100%] lg:h-[15rem] object-contain  items-center rounded-[10px] bg-[#F2F3FB];
+  @apply w-[100%] md:h-[15rem] lg:h-[15rem] object-contain  items-center rounded-[10px] bg-[#F2F3FB];
 }
 @media screen and (max-width: 480px) {
   .first img {
@@ -2610,21 +2599,21 @@ nav i {
   @apply w-[90%] pb-[10%] flex flex-col justify-center  items-center  gap-[2.5rem];
 }
 .our-team {
-  @apply flex  flex-col lg:grid lg:grid-cols-5 place-items-center gap-[2rem] lg:gap-[0px]  w-[100%];
+  @apply flex  flex-col md:grid md:grid-cols-3 lg:grid lg:grid-cols-5 place-items-center gap-[2rem] md:gap-[0px] lg:gap-[0px]  w-[100%];
 }
 
 .our-team div {
   box-shadow: 1px 9px 9px lightgray;
-  @apply w-[80vw] h-[80vh] lg:w-[93%] lg:h-[65vh] bg-[white] rounded-[15px] flex flex-col items-center  text-center gap-[0.25rem];
+  @apply w-[80vw] h-[70vh] lg:w-[93%] lg:h-[65vh] bg-[white] rounded-[15px] md:w-[95%] md:h-[60vh] flex flex-col items-center md:my-[2%] text-center;
 }
 .btnRow {
   @apply flex  flex-row gap-[4%] items-center;
 }
 .our-team div i {
-  @apply w-[90%] text-center text-[1rem] text-[#56a9d5] lg:leading-[18px] font-bold;
+  @apply w-[90%] text-center text-[1rem] text-[#56a9d5] lg:leading-[18px] lg:font-bold;
 }
 .our-team div img {
-  @apply my-[5%]  rounded-[10px]  h-[40vh] md:h-[19vh] w-[90%] lg:h-[30vh] object-cover;
+  @apply my-[5%]  rounded-[10px]  h-[35vh] md:h-[30vh] w-[90%] lg:h-[30vh] object-cover;
 }
 .rank {
   @apply text-[gray] font-bold;

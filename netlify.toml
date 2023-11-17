@@ -8,5 +8,5 @@ base="/"
 form ="/*"
 to ="/index.html"
 status = 200
-
-
+force = false
+query = {path = ":path"}
