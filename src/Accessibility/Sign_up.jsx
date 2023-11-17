@@ -57,14 +57,11 @@ const Sign_up = ({ navigate, user }) => {
           }
         },
 
-        (error) => {
-          console.log(error);
-        },
+        (error) => {},
 
         () => {
           getDownloadURL(uploadTask.snapshot.ref).then((downloadURL) => {
             setData({ ...data, img: downloadURL });
-            console.log(data);
           });
         }
       );
@@ -101,13 +98,11 @@ const Sign_up = ({ navigate, user }) => {
         data.email,
         data.password
       );
-      // await setDoc(doc(db, "Admin", res.user.uid), ...data);
+      await setDoc(doc(db, "Admin", res.user.uid), ...data);
       setLoggedInUser(res.user);
     } catch (err) {
       setError(err.message);
-      setTimeout(() => {
-        setError(null);
-      }, 5000);
+      alert(error);
     }
     if (loggedInUser) {
       console.log({ loggedInUser });
@@ -141,6 +136,7 @@ const Sign_up = ({ navigate, user }) => {
   const validate = (values) => {
     const error = {};
     const regex = /^[^\$@]+@[^\$@]+\.[^\$@]{2,}$/i;
+    const contactRegex = /^[0-9]/i;
     if (!values.first) {
       error.first = "Name is required";
     }
@@ -159,6 +155,8 @@ const Sign_up = ({ navigate, user }) => {
     }
     if (!values.phone) {
       error.phone = "contact is required";
+    } else if (!contactRegex.test(values.phone)) {
+      error.phone = "This is not a valid contact it  must be a number";
     }
 
     return error;
@@ -216,7 +214,6 @@ const Sign_up = ({ navigate, user }) => {
               {formError.phone}
             </label>
             <input
-              type="number"
               name="phone"
               value={data.phone}
               placeholder="Phone"
@@ -284,7 +281,6 @@ const Sign_up = ({ navigate, user }) => {
               "
             >
               {!error ? <Button trackupload={trackupload} /> : <Button />}
-              {error && <p className="erroeMsg ">{error}</p>}
               <p className="terms">Already have an account</p>
               <p onClick={() => navigate("/Login")} className="loginText">
                 Login

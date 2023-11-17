@@ -1,56 +1,75 @@
-import React, { useRef, useState } from "react";
-import { addDoc, collection } from "firebase/firestore";
+import React, { useEffect, useRef, useState } from "react";
+import { addDoc, collection, serverTimestamp } from "firebase/firestore";
 import { db } from "./firebaseconfig";
 import Footer from "./Footer";
 import attendant from "./asset/kisspng-call-centre-customer-service-callcenteragent-stock-Ремонт-окон-в-Новосибирске-5b65152a726c58.1422831315333512104687-removebg-preview.png";
 
 const Contact = () => {
-  const [contactData, setContactData] = useState({});
+  const intialValue = { fullName: "", mail: "", number: "", msg: "" };
+  const [contactData, setContactData] = useState(intialValue);
+  const [formError, setFormError] = useState({});
+  const [isSubmit, setIsSubmit] = useState(false);
   const clearTxt = useRef();
   const handleChange = (e) => {
-    const newInput = { [e.target.name]: e.target.value };
-    setContactData({ ...contactData, ...newInput });
+    const { name, value } = e.target;
+    setContactData({
+      ...contactData,
+      [name]: value,
+      day: new Date().toDateString(),
+      time: serverTimestamp(),
+    });
   };
   const contactCollRef = collection(db, "Booking");
 
   const addContact = async (e) => {
     e.preventDefault();
-    await addDoc(contactCollRef, {
-      ...contactData,
-      day: new Date().toDateString(),
-      timestamp: new Date(),
-    });
-    alert("uploaded");
+    setFormError(validate(contactData));
+    setIsSubmit(true);
+    await addDoc(contactCollRef, contactData);
+    if (Object.keys(formError).length === 0 && isSubmit) {
+      window.confirm("Uploaded successfully");
+    }
     clearTxt.current.reset();
+  };
+  console.log(formError);
+  console.log(contactData);
+  useEffect(() => {
+    if (Object.keys(formError).length === 0 && isSubmit) {
+    }
+  }, [formError]);
+  const validate = (values) => {
+    const error = {};
+    const regex = /^[^\$@]+@[^\$@]+\.[^\$@]{2,}$/i;
+    const contactRegex = /^[0-9]/i;
+    if (!values.fullName) {
+      error.fullName = "Enter your full name";
+    }
+    if (!values.msg) {
+      error.msg = " drop a message";
+    }
+    if (!values.mail) {
+      error.mail = "email is required";
+    } else if (!regex.test(values.mail)) {
+      error.mail = "This is not a valid email format";
+    }
+    if (!values.number) {
+      error.number = "contact is required";
+    } else if (!contactRegex.test(values.number)) {
+      error.number = "This is not a valid contact it  must be a number";
+    }
+    return error;
   };
 
   return (
     <div className="contact-align">
       <div className="contactFeedback">
-        <p style={{ color: "#8ccaf3" }}>
-          For feedback and request please kindly fill the form below
-        </p>
-        <i
-          style={{
-            color: "gray",
-            fontWeight: "bold",
-          }}
-        >
-          or get in tounch on our social medial official handle bellow
-        </i>
+        <i>For feedback and request please kindly fill the form </i>
+        <i>or get in tounch on our social medial official handle bellow</i>
       </div>
-      <iframe
-        width="450"
-        height="250"
-        frameBorder="0"
-        style={{ border: 0 }}
-        referrerPolicy="no-referrer-when-downgrade"
-        src="https://www.google.com/maps/embed/v1/placeq?key=YOUR_API_KEY&PARAMETERS"
-        allowFullScreen
-      ></iframe>
+
       <div className="contact">
         <div className="address">
-          <h2 style={{ color: "blue" }}>IREHV</h2>
+          <h2 style={{ color: "#133063" }}>IREHV</h2>
           <h3 style={{ color: "#f57f80" }}>IN'AMURAHMAN </h3>
           <h4>ENVIRONMENTAL HYGIENIC VENTURE</h4>
           <p>beside Blue-Mist Water, </p>
@@ -65,30 +84,48 @@ const Contact = () => {
         <div>
           <h3
             style={{
-              marginLeft: "2rem",
-              color: "blue",
-              fontSize: "2rem",
-              fontWeight: "bold",
+              color: "#00668B",
+              padding: "1rem",
             }}
           >
-            Book here...!
+            You can reach out to us here...!
           </h3>
-          <form
-            ref={clearTxt}
-            onChange={(e) => handleChange(e)}
-            className="form"
-          >
-            <label htmlFor="">Full Name</label>
-            <input type="text" name="fullName" required />
-            <label htmlFor="">Email</label>
-            <input type="email" name="mail" required />
-            <label htmlFor="">Contact</label>
-            <input type="number" name="number" required />
-            <label htmlFor="">Message</label>
-            <textarea name="msg" id="msgs" cols="50" rows="4"></textarea>
-            <button type="submit" onClick={addContact}>
-              submit
-            </button>
+          <form ref={clearTxt} onSubmit={addContact} className="form">
+            <label htmlFor=""> {formError && formError.fullName}</label>
+            <input
+              type="text"
+              name="fullName"
+              placeholder="Full Name"
+              value={contactData.fullName}
+              onChange={(e) => handleChange(e)}
+            />
+            <label htmlFor="">{formError && formError.mail}</label>
+            <input
+              type="email"
+              name="mail"
+              placeholder="Email"
+              value={contactData.mail}
+              onChange={(e) => handleChange(e)}
+            />
+            <label htmlFor="">{formError && formError.number}</label>
+            <input
+              // type="number"
+              name="number"
+              placeholder="Contact"
+              value={contactData.number}
+              onChange={(e) => handleChange(e)}
+            />
+            <label htmlFor=""> {formError && formError.msg}</label>
+            <textarea
+              name="msg"
+              value={contactData.msg}
+              id="msgs"
+              cols="50"
+              rows="4"
+              placeholder="Message"
+              onChange={(e) => handleChange(e)}
+            ></textarea>
+            <button type="submit">submit</button>
           </form>
         </div>
       </div>

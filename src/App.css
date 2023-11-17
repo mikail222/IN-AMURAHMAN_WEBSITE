@@ -210,11 +210,6 @@
 .pageNotFound {
   @apply flex  flex-col justify-center items-center h-[100vh];
 }
-.pageNotFound img {
-  box-shadow: 1px 2px 6px lightgray;
-  @apply rounded-[20px];
-}
-
 .searchBlogs {
   @apply lg:mx-[5%] flex flex-row justify-between items-center border-[#97b8f0] py-[6%] lg:py-[3%] mb-[30px] border-b-[1px];
 }
@@ -1220,9 +1215,8 @@
 .form input {
   border-radius: 10px;
   border-bottom: 1px solid lightgray;
-  box-shadow: 1px 2px 1px black;
-  @apply p-[0.45rem] w-[95%] ml-2 m-[0.25rem]
-    bg-[transparent];
+  @apply p-[0.45rem] w-[95%] ml-2 my-[0.5rem]
+  bg-[transparent];
 }
 .form input:focus {
   outline: none;
@@ -1237,7 +1231,6 @@
 .form textarea {
   border-radius: 13px 0px;
   border-bottom: 1px solid lightgray;
-  box-shadow: 1px 2px 1px black;
   @apply w-[95%] ml-2 bg-[transparent];
 }
 .form textarea::-webkit-scrollbar {
@@ -1246,13 +1239,13 @@
 .form button {
   border-radius: 15px;
   font-family: "darker grotesque";
-  @apply bg-[#0f0326] w-[95%] ml-[0.5rem] text-[1.3rem] text-white font-bold p-[0.5rem] mt-[1.5rem];
+  @apply bg-[#133063] w-[95%] ml-[0.5rem] text-[1.3rem] text-white font-bold p-[0.5rem] mt-[1.5rem];
 }
 .form button:focus {
   outline: 0;
 }
 .form label {
-  @apply ml-[1rem] text-[1rem] font-bold text-[gray] lg:text-[1.1rem];
+  @apply ml-[0.5rem] text-[1rem] text-[red] lg:text-[1.1rem];
 }
 .contact-align {
   @apply flex flex-col w-[100%] lg:mt-[3rem];
@@ -1281,14 +1274,14 @@
 }
 .contactFeedback {
   border-radius: 0px 0px 30% 0px;
-  @apply bg-[#0f0326] flex flex-col justify-center items-center lg:h-[20vh] lg:leading-[2.5rem] pt-[3%] lg:pt-[0px];
+  @apply bg-[#133063] flex flex-col lg:flex-row justify-center items-center lg:h-[15vh] lg:leading-[2.5rem] py-[3%] lg:pt-[0px];
 }
-.contactFeedback p,
+
 .contactFeedback i {
-  @apply text-[0.80rem] px-[2rem] text-center lg:text-[20px];
+  @apply text-[white] text-[0.80rem] px-[1rem] text-center lg:text-[20px];
 }
 .contact {
-  @apply flex flex-row lg:gap-[1rem] lg:my-[5rem]  justify-center w-[100%] h-[100vh] lg:py-[5rem];
+  @apply flex flex-row lg:gap-[2rem] lg:my-[5rem]  justify-center w-[100%] h-[100vh] lg:py-[5rem];
 }
 @media screen and (max-width: 480px) {
   .contact {
@@ -1296,7 +1289,7 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    gap: 2rem;
+    gap: 5rem;
     width: 100%;
     height: 100%;
   }
@@ -1308,8 +1301,6 @@
     width: 100%;
     height: auto;
     text-align: center;
-    font-size: 1rem;
-    color: gray;
     font-weight: bold;
     margin-bottom: 5%;
     margin-top: 5%;
@@ -1317,7 +1308,8 @@
 }
 .address p {
   line-height: 2rem;
-  @apply text-[1.2rem]  tracking-[0.20rem];
+  @apply text-[0.8rem]  text-[#00668B]
+ lg:text-[1.2rem]  tracking-[0.20rem];
 }
 .footer-container {
   @apply flex  flex-col  justify-center items-center;
@@ -1934,7 +1926,7 @@ footer li {
 }
 .accessibility input,
 .travel input {
-  @apply outline-none  w-[80%] border-b-[1px] bg-[transparent]  mt-[3%] ml-[10%] text-white lg:leading-[1.8rem];
+  @apply outline-none  w-[80%] border-b-[1px] bg-[transparent]  mt-[2%] ml-[10%] text-white lg:leading-[1.8rem];
 }
 .accessibilityLogin input {
   @apply outline-none  w-[80%] border-b-[1px] bg-[transparent] ml-[10%] text-white lg:leading-[1.8rem];
@@ -1954,14 +1946,14 @@ footer li {
   @apply flex flex-col justify-center items-center w-[100%] h-[100%];
 }
 .login_overlay {
-  background-color: rgba(0, 0, 0, 0.7);
+  background-color: rgba(0, 0, 0, 0.8);
   @apply w-[100%] h-[100vh] lg:h-[120vh]  flex  flex-col  justify-center  items-center;
 }
 .loginNotification {
-  @apply w-[80%] my-[10%] lg:my-[0px] lg:mt-[5%] flex flex-col justify-center items-center;
+  @apply w-[80%] lg:w-[30%] my-[10%] lg:my-[0px] lg:mt-[5%] flex flex-col justify-center items-center;
 }
 .loginNotification p {
-  @apply w-[100%] rounded-[15px] bg-[green] text-[white] font-bold text-center py-[1%];
+  @apply w-[100%] rounded-[10px] bg-[green] text-[white] font-bold text-center py-[1%];
 }
 .styleInputSection {
   @apply w-[85%] h-[52vh] lg:w-[90%] lg:h-[76vh] flex flex-col justify-center rounded-[20px] pb-[10px] mt-[15%]  lg:mt-[0px];
@@ -2323,7 +2315,7 @@ nav i {
 }
 .productUpdateForm i,
 .changeColor {
-  @apply pl-[25px] lg:pl-[50px] lg:text-[0.90rem] text-[red] lg:font-bold text-[0.60rem];
+  @apply pl-[25px] lg:pl-[35px] lg:text-[1rem] text-[red] text-[0.60rem];
 }
 .bookingUpdateForm {
   @apply w-[90%] h-[100%] mt-[22%] md:mt-[15%] lg:mt-[4px] mb-[5%] lg:w-[40%] lg:h-[95vh] flex  flex-col justify-center items-center  gap-[0.5rem];
@@ -2678,7 +2670,7 @@ nav i {
   @apply text-[4rem]  text-[white];
 }
 .show_password {
-  @apply fill-[white];
+  @apply fill-[white] relative right-[15px];
 }
 .show_passwordbtn {
   @apply outline-0;

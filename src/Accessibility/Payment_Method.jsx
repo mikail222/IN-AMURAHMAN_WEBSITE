@@ -48,9 +48,7 @@ const Payment_Method = ({ setTogglePage }) => {
     }
   };
 
-  console.log(formError);
   useEffect(() => {
-    console.log(formValue);
     if (Object.keys(formError).length === 0 && isSubmit) {
     }
     AOS.init({ duration: 3000 });

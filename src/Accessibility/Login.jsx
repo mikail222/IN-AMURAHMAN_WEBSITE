@@ -89,7 +89,6 @@ const Login = ({ navigate, user }) => {
       <div className="login_overlay">
         <div className="loginNotification">
           {success && <p>{success}</p>}
-          {verifyEmail && <p>{verifyEmail}</p>}
           {emailVerification && <p>{emailVerification}</p>}
         </div>
         <form onSubmit={handleSubmit} className="accessibilityLogin">
