@@ -5,6 +5,7 @@ import { auth } from "./firebaseconfig";
 import { Link, useNavigate } from "react-router-dom";
 import {
   FcBusinessContact,
+  FcContacts,
   FcServices,
   FcShop,
   FcSoundRecordingCopyright,
@@ -14,7 +15,7 @@ import "aos/dist/aos.css";
 import { GrBlog } from "react-icons/gr";
 import { AiOutlineLogin } from "react-icons/ai";
 import { RiLoginCircleFill, RiLogoutBoxRLine } from "react-icons/ri";
-import { MdOutlineClear } from "react-icons/md";
+import { MdContacts, MdOutlineClear } from "react-icons/md";
 import { TbBrandBooking } from "react-icons/tb";
 
 const Mobile_nav = ({ show, setShowNav }) => {
@@ -69,19 +70,17 @@ const Mobile_nav = ({ show, setShowNav }) => {
                   onClick={() => navigate("/") || setDrawer(true)}
                 />
                 <MdOutlineClear
-                  className="menuBar "
+                  className="menuBar5 "
                   title="Menu Bar"
                   onClick={(e) => setDrawer(true)}
                 />
               </div>
-              <div className="dropdown">
-                <div
-                  className="rowwing"
-                  onClick={() => navigate("/Service") || setDrawer(true)}
-                >
-                  <FcServices className="icon" />
-                  <span>Service</span>
-                </div>
+              <div
+                className="rowwing"
+                onClick={() => navigate("/Service") || setDrawer(true)}
+              >
+                <FcServices className="icon" />
+                <span>Service</span>
               </div>
               <div
                 className="rowwing"
@@ -117,6 +116,13 @@ const Mobile_nav = ({ show, setShowNav }) => {
               >
                 <FcSoundRecordingCopyright className="icon" />
                 <p>Clues</p>
+              </div>
+              <div
+                className="rowwing"
+                onClick={() => navigate("/Contact") || setDrawer(true)}
+              >
+                <MdContacts className="icon" />
+                <p>Ask us</p>
               </div>
               <div className="userStatus">
                 {currentUser === null ? (

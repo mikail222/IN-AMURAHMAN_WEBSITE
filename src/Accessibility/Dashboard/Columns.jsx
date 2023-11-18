@@ -207,7 +207,8 @@ const Columns = ({
                   New user : <i>{findNewUser.length}</i>{" "}
                 </p>{" "}
                 <p>
-                  current User : <i>0</i>{" "}
+                  current User :{" "}
+                  <i>{currentUser.emailVerified === user.email}</i>
                 </p>{" "}
               </nav>
             </article>

@@ -52,23 +52,23 @@ const Footer = () => {
 
         <ul>
           <h5>Who We Are</h5>
-          <Link to="/">
+          <Link to="/About_us">
             <li> About Us</li>
           </Link>
           <Link to="/Clues">
             <li> Career</li>
           </Link>
-          <Link to="/Policy">
+          <Link to="/">
             <li> Privacy</li>
           </Link>
-          <Link to="/Policy">
+          <Link to="/">
             <li> Terms Of Service</li>
           </Link>
         </ul>
         <ul>
           <h5> What we Do</h5>
           <li>
-            <Link to="Service">Service</Link>
+            <Link to="/Service">Service</Link>
           </li>
           <li>
             <Link to="/Show_Room"> Products</Link>
@@ -82,16 +82,16 @@ const Footer = () => {
         </ul>
         <ul>
           <h5> Our Policy</h5>
-          <Link to="/Policy">
+          <Link to="/">
             <li>Privacy </li>
           </Link>
-          <Link to="/Policy">
+          <Link to="/">
             <li>Pricing </li>
           </Link>
-          <Link to="/Policy">
+          <Link to="/">
             <li>Payment </li>
           </Link>
-          <Link to="/Policy">
+          <Link to="/">
             <li> Delivery </li>
           </Link>
         </ul>

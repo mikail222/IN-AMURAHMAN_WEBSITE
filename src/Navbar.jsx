@@ -49,6 +49,9 @@ const Navbar = ({ navigate, setShowNav }) => {
             <Link to="Clues">
               <p>Clues</p>
             </Link>
+            <Link to="./Contact">
+              <p>Ask us</p>
+            </Link>
             <div className="userStatus">
               {currentUser === null ? (
                 <p onClick={() => navigate("/Login")} className="logout">
