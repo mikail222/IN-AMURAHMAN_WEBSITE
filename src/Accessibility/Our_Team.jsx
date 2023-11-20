@@ -1,5 +1,8 @@
 import React from "react";
 import mikail from "../asset/mikail.png";
+import umar from "../asset/Umar.jpg";
+import CEO from "../asset/CEO.jpg";
+
 import { AiOutlineTwitter } from "react-icons/ai";
 import { GrFacebookOption } from "react-icons/gr";
 import { RiLinkedinFill } from "react-icons/ri";
@@ -19,7 +22,7 @@ const Our_Team = () => {
 
         <div className="our-team">
           <div>
-            <img src={defaultprofilepics} alt="" />
+            <img src={CEO} alt="" />
             <p className="name">Bello Abdulrahman</p>
             <p className="rank">Chief Executive Officer</p>{" "}
             <i>Expert in Pest control and Environmental Hygen maintainance.</i>
@@ -43,7 +46,7 @@ const Our_Team = () => {
             </article>
           </div>
           <div>
-            <img src={defaultprofilepics} alt="" />
+            <img src={umar} alt="" />
             <p className="name">Umar Suleiman</p>{" "}
             <p className="rank">Operation Manager</p>
             <i>

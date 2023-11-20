@@ -40,7 +40,7 @@
   @apply ml-[2rem];
 }
 .navs p {
-  @apply w-[5.5rem] flex flex-col justify-center  items-center text-center;
+  @apply w-[5rem] flex flex-col justify-center  items-center text-center;
 }
 @media screen and (max-width: 480px) {
   .nav p {
@@ -2294,7 +2294,7 @@ nav i {
 }
 
 .textarea {
-  @apply p-[10px] w-[100%] outline-0  border-[1px];
+  @apply p-[10px] w-[100%] outline-0  border-[2px];
 }
 .BookingOverlay {
   @apply w-[100%] bg-white flex  flex-col pb-[3rem] lg:pb-[0px] justify-center items-center lg:mt-[4%];
@@ -2333,7 +2333,7 @@ nav i {
   @apply w-[98%]  md:w-[60%] lg:w-[85%] h-[50px] outline-0 pl-[10px] border-[1px];
 }
 .bookingUpdateForm form input {
-  @apply w-[100%] h-[50px] outline-0 pl-[10px] border-[1px];
+  @apply w-[100%] h-[50px] outline-0 pl-[10px] border-[2px];
 }
 .productUpdateForm label,
 .blogUpdateForm label {
