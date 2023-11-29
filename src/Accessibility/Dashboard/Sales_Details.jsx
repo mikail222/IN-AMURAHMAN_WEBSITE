@@ -11,17 +11,6 @@ const Sales_Details = ({ sales }) => {
   // const findprice = productUpdate?.map(({ price }) => price);
   const findName = productUpdate?.map(({ product_name }) => product_name);
 
-  useEffect(() => {
-    const filtterQuantity = () => {
-      if (sales?.filter((a) => a.items[0].toLowerCase().includes(findName))) {
-        return console.log(
-          sales.map(({ amount }) => amount) /
-            productUpdate?.map(({ price }) => price)
-        );
-      }
-    };
-    filtterQuantity();
-  }, []);
   return (
     <div className="productWrapper">
       <h2>Sales Detail</h2>

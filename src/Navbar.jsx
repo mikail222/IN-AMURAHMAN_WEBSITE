@@ -53,11 +53,12 @@ const Navbar = ({ navigate, setShowNav }) => {
               <p>Ask us</p>
             </Link>
             <div className="userStatus">
-              {currentUser === null ? (
+              {currentUser === null && (
                 <p onClick={() => navigate("/Login")} className="logout">
                   LOGIN
                 </p>
-              ) : (
+              )}{" "}
+              {currentUser && currentUser?.emailVerified === true && (
                 <div className="dropdown">
                   <p onClick={handleLogOut} className="logout">
                     LOGOUT

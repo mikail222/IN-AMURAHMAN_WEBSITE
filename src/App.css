@@ -2577,6 +2577,9 @@ nav i {
   background-color: rgb(0, 0, 0, 0.3);
   @apply w-[98%] flex flex-col  justify-start items-start lg:w-[95%] p-[2%] font-bold rounded-[10px] my-[2%];
 }
+.wraper {
+  white-space-collapse: break-spaces;
+}
 .post_info {
   @apply w-[98%] flex flex-col  justify-start items-start lg:w-[80%] p-[2%] rounded-[16px];
 }

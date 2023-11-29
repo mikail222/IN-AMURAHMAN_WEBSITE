@@ -11,9 +11,12 @@ import Next_to_Read from "./Blog_Category/Next_to_Read";
 
 const Blog_Details = ({ blogList }) => {
   const { id } = useParams();
-  const blogId = blogList.filter((p) => p.ids === id);
+  const blogId = blogList?.filter((p) => p.ids === id);
+  const contactRegex = /[0-9]/i;
+  const contents = blogId?.map(({ content }) => content);
+  const check = contactRegex.test(contents);
+  console.log(blogId?.map(({ content }) => content == check && <br />));
 
-  console.log(blogId);
   const [count, setCount] = useState();
   return (
     <div>
@@ -74,7 +77,7 @@ const Blog_Details = ({ blogList }) => {
                     </div>
                     <img src={img} alt="" className="allblogDetailSpider" />
                   </div>
-                  <p>{content}</p>
+                  <div className="wraper">{content}</div>
                 </div>
               )
             )}

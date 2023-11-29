@@ -18,7 +18,7 @@ const Sign_up = ({ navigate, user }) => {
   const [success, setSuccess] = useState("");
 
   const [trackupload, setTrackUpload] = useState(null);
-  const [loggedInUser, setLoggedInUser] = useState();
+  const [loggedInUser, setLoggedInUser] = useState([]);
   const intialValue = {
     first: "",
     LastName: "",
@@ -79,6 +79,7 @@ const Sign_up = ({ navigate, user }) => {
       day: new Date().toDateString(),
       time: serverTimestamp(),
     });
+    console.log(data);
   };
   const togglePassword = () => {
     if (passwordType === "password") {
@@ -98,39 +99,37 @@ const Sign_up = ({ navigate, user }) => {
         data.email,
         data.password
       );
-      await setDoc(doc(db, "Admin", res.user.uid), ...data);
+      await setDoc(doc(db, "Admin", res.user.uid), { ...data });
       setLoggedInUser(res.user);
+      if (loggedInUser) {
+        console.log({ loggedInUser });
+        const currentUserDetails = user.find(
+          (m) => m.email === loggedInUser?.email
+        );
+        updateProfile(currentUser, {
+          displayName:
+            currentUserDetails?.first + " " + currentUserDetails?.LastName,
+          photoURL: currentUserDetails?.img,
+          phoneNumber: currentUserDetails?.phone,
+        }).then(() => {
+          setTimeout(() => {
+            setSuccess(
+              `You are successfully signed in as ${
+                data?.first + " " + data?.LastName
+              }`
+            );
+          }, 5000);
+          navigate("/User_modal");
+        });
+      }
     } catch (err) {
       setError(err.message);
-      alert(error);
-    }
-    if (loggedInUser) {
-      console.log({ loggedInUser });
-      const currentUserDetails = user.find(
-        (m) => m.email === loggedInUser?.email
-      );
-      updateProfile(currentUser, {
-        displayName:
-          currentUserDetails?.first + " " + currentUserDetails?.LastName,
-        photoURL: currentUserDetails?.img,
-        phoneNumber: currentUser.phone,
-      }).then(() => {
-        setTimeout(() => {
-          setSuccess(
-            `You are successfully signed in as ${
-              data?.first + " " + data?.LastName
-            }`
-          );
-        }, 5000);
-        navigate("/User_modal");
-      });
+      console.log(err);
     }
   };
-  console.log(formError);
   useEffect(() => {
     console.log(data);
     if (Object.keys(formError).length === 0 && isSubmit) {
-      console.log(formError);
     }
   }, [formError]);
   const validate = (values) => {

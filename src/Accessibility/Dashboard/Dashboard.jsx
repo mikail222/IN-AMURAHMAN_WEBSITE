@@ -72,7 +72,7 @@ const Dashboard = ({ adminPost, productUpdate, count }) => {
     getUser();
   }, [currentUser]);
   const filteredAdmin = user
-    ?.filter(({ roles }) => roles == "author")
+    ?.filter(({ role }) => role == "author")
     .some((r) => r.email === currentUser?.email);
 
   return (
