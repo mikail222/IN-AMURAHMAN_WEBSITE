@@ -58,7 +58,7 @@ const Service = ({ blogList, productUpdate }) => {
         <img src={ourService} alt="" />
       </div>
       <div className="service">
-        <Link to="Domestic_cleaning">
+        <Link>
           <div data-aos="fade-down">
             <img className="serviceIcon" src={domestic} alt="domestic" />
 
@@ -78,7 +78,7 @@ const Service = ({ blogList, productUpdate }) => {
             </div>
           </div>
         </Link>
-        <Link to="Commercial">
+        <Link>
           <div data-aos="fade-down">
             <img className="serviceIcon" src={commercial} alt="commercial" />
             <div
@@ -97,7 +97,7 @@ const Service = ({ blogList, productUpdate }) => {
             </div>
           </div>
         </Link>
-        <Link to="Pest_control">
+        <Link>
           <div data-aos="fade-down">
             <img className="serviceIcon" src={fumigation} alt="" />
             <div
@@ -116,7 +116,7 @@ const Service = ({ blogList, productUpdate }) => {
             </div>
           </div>
         </Link>
-        <Link to="Disinfect">
+        <Link>
           <div data-aos="fade-down">
             <img
               className="serviceIcon"
@@ -140,7 +140,7 @@ const Service = ({ blogList, productUpdate }) => {
             </div>
           </div>
         </Link>
-        <Link to="Wast_management">
+        <Link>
           <div data-aos="fade-down">
             <img
               src="https://eco-bali.com/wp-content/uploads/2017/01/ecobali-wastemanagement.svg"
@@ -163,7 +163,7 @@ const Service = ({ blogList, productUpdate }) => {
             </div>
           </div>
         </Link>
-        <Link to="Plank_pest_control">
+        <Link>
           <div data-aos="fade-down">
             <img src={plank} alt="termite" className="serviceIcon" />
             <div
@@ -182,7 +182,7 @@ const Service = ({ blogList, productUpdate }) => {
             </div>
           </div>
         </Link>
-        <Link to="Drainage">
+        <Link>
           <div data-aos="fade-down">
             <img src={drainage} alt="" className="serviceIcon" />
             <div
@@ -201,7 +201,7 @@ const Service = ({ blogList, productUpdate }) => {
             </div>
           </div>
         </Link>
-        <Link to="Event_Maintainance">
+        <Link>
           <div data-aos="fade-down">
             <img src={event} alt="" className="serviceIcon" />
             <div
@@ -219,7 +219,7 @@ const Service = ({ blogList, productUpdate }) => {
             </div>
           </div>
         </Link>
-        <Link to="Consultance">
+        <Link>
           <div data-aos="fade-down">
             <img src={consult} alt="" className="serviceIcon" />
             <div
@@ -238,7 +238,7 @@ const Service = ({ blogList, productUpdate }) => {
             </div>
           </div>
         </Link>
-        <Link to="Trainning">
+        <Link>
           <div data-aos="fade-down">
             <img
               src="http://cdn.onlinewebfonts.com/svg/img_461424.png"

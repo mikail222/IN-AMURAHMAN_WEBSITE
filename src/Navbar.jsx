@@ -35,7 +35,7 @@ const Navbar = ({ navigate, setShowNav }) => {
               <p>Service</p>
             </Link>
             <Link to="About_Us">
-              <p>About</p>
+              <p>About us</p>
             </Link>
             <Link to="Show_Room">
               <p>Products</p>

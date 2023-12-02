@@ -75,11 +75,11 @@
   @apply w-[250px]  lg:w-auto;
 }
 .customer {
-  @apply flex flex-row justify-center items-center gap-[30px] w-[95%] h-[85%];
+  @apply flex flex-row justify-center items-center gap-[30px] w-[80%] h-[85%];
 }
 .customer div {
   box-shadow: 1px 1px 6px gray;
-  @apply flex flex-row  justify-center items-center items-center w-[50vw] bg-[white] rounded-[10px];
+  @apply flex flex-col  justify-center items-center  w-[50vw] bg-[white] rounded-[10px] h-[50vh]  my-[5%];
 }
 .customer div .clientName {
   @apply text-[#133063] font-bold;
@@ -2235,10 +2235,10 @@ nav i {
   @apply hidden lg:flex w-[100%] text-[#5e72e4]  text-[1rem] lg:text-[1.2rem] m-[0];
 }
 .userTableHeader {
-  @apply flex flex-col lg:flex-row lg:gap-[5px] lg:items-center text-[#344767] font-bold  py-[5%] lg:py-[0px]  border-b-[1px] lg:w-[73vw];
+  @apply flex flex-col lg:flex-row  justify-between  lg:gap-[5px] lg:items-center text-[#344767] font-bold  py-[5%] lg:py-[0px]  border-b-[1px] lg:w-[73vw];
 }
 .userTableHeader td {
-  @apply w-[65%] items-start mx-2 lg:text-[1rem];
+  @apply items-start mx-2 lg:text-[1rem];
 }
 .Authoronline {
   @apply w-[60px] h-[60px] object-cover rounded-[55px]  border-[2px] border-[lightgreen];

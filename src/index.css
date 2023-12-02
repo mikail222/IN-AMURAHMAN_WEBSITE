@@ -11,7 +11,7 @@ body {
   scroll-behavior: smooth;
   scroll-padding: 10rem;
 }
-.slick-slide > div {
+.slick-slide > nav {
   margin: 0 10px;
 }
 

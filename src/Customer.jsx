@@ -8,24 +8,24 @@ import "slick-carousel/slick/slick-theme.css";
 
 const Customer = () => {
   const customer = [
-    // {
-    //   paragraph:
-    //     " IREHV is an excellent Pest  Control Company so far we've ever deal with",
-    //   picture: "",
-    //   rate: "GrStar",
-    //   rate_limit: "MdStarOutline",
-    //   client_name: "Blue Mist Water Corporation",
-    //   statuses: "Customer",
-    // },
-    // {
-    //   paragraph:
-    //     " Trust Worthy Company with 100 Percent timely  service delivery",
-    //   picture: "",
-    //   rate: "GrStar",
-    //   rate_limit: "MdStarOutline",
-    //   client_name: "Inamurahman Fashion House",
-    //   statuses: "Customer",
-    // },
+    {
+      paragraph:
+        " IREHV is an excellent Pest  Control Company so far we've ever deal with",
+      picture: "",
+      rate: "GrStar",
+      rate_limit: "MdStarOutline",
+      client_name: "Blue Mist Water Corporation",
+      statuses: "Customer",
+    },
+    {
+      paragraph:
+        " Trust Worthy Company with 100 Percent timely  service delivery",
+      picture: "",
+      rate: "GrStar",
+      rate_limit: "MdStarOutline",
+      client_name: "Inamurahman Fashion House",
+      statuses: "Customer",
+    },
     {
       paragraph:
         "One in a million Proffesional Pest and Hazard  Eradication company ",
@@ -84,23 +84,23 @@ const Customer = () => {
         want"
       </p>
       <div className="customer">
-        <Slider {...settings}>
-          {customer.map(({ paragraph, client_name, statuses }, i) => (
-            <div key={i}>
-              <p>{paragraph}</p>
-              <nav className="pics"></nav>
-              <span>
-                <GrStar className="starr" />
-                <GrStar className="starr" />
-                <GrStar className="starr" />
-                <GrStar className="starr" />
-                <MdStarOutline className="starr" />
-              </span>
-              <p className="clientName">{client_name}</p>
-              <p style={{ color: "gray", fontWeight: "bold" }}>{statuses}</p>
-            </div>
-          ))}
-        </Slider>
+        {/* <Slider {...settings}> */}
+        {customer.map(({ paragraph, client_name, statuses }, i) => (
+          <div key={i}>
+            <p>{paragraph}</p>
+            <nav className="pics"></nav>
+            <span>
+              <GrStar className="starr" />
+              <GrStar className="starr" />
+              <GrStar className="starr" />
+              <GrStar className="starr" />
+              <MdStarOutline className="starr" />
+            </span>
+            <p className="clientName">{client_name}</p>
+            <p style={{ color: "gray", fontWeight: "bold" }}>{statuses}</p>
+          </div>
+        ))}
+        {/* </Slider> */}
       </div>
     </div>
   );
