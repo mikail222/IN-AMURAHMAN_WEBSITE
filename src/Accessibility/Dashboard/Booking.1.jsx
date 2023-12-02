@@ -1,5 +1,6 @@
 import React from "react";
-const Booking = ({ booking }) => {
+
+export const Booking = ({ booking }) => {
   const today = new Date().toDateString();
   const findBooking = booking.filter((m) => m.day === today);
   return (
@@ -14,7 +15,7 @@ const Booking = ({ booking }) => {
               ) : (
                 <p>anonimous</p>
               )}
-              <a href="mailto:{email}">{email}</a>
+              <p onClick={() => window.open(`mailto:${email}`)}>{email}</p>
               <p>{contact}</p>
               {message ? (
                 <p className="info_text">{message}</p>
@@ -57,5 +58,4 @@ const Booking = ({ booking }) => {
     </div>
   );
 };
-
 export default Booking;

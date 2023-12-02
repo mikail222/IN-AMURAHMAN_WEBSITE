@@ -16,7 +16,7 @@ const Booking = () => {
   const [isSubmit, setIsSubmit] = useState(false);
   const navigate = useNavigate();
   const clearBooking = useRef();
-  const consultanceCollRef = collection(db, "Booking");
+  const bookCollRef = collection(db, "Booking");
 
   const handleChange = (e) => {
     const { name, value } = e.target;
@@ -26,15 +26,24 @@ const Booking = () => {
       day: new Date().toDateString(),
       time: serverTimestamp(),
     });
+    clearBooking.current.reset();
   };
   const update_Payment = async (e) => {
     e.preventDefault();
     setFormError(validate(Booking));
     setIsSubmit(true);
     if (Object.keys(formError).length === 0 && isSubmit) {
-      window.confirm("Booking uploaded successfully");
+      if (
+        window.confirm(
+          "Please verify your details and the content of your Booking for any error or omission"
+        )
+      ) {
+        await addDoc(bookCollRef, Booking);
+        alert(
+          "uploaded...! you will receive an email in  regard of your Booking, Thanks."
+        );
+      }
     }
-    clearBooking.current.reset();
   };
   useEffect(() => {
     if (Object.keys(formError).length === 0 && isSubmit) {
@@ -55,7 +64,7 @@ const Booking = () => {
     }
     if (!values.email) {
       error.email = "email is required";
-    } else if (!regex.test(values.mail)) {
+    } else if (!regex.test(values.email)) {
       error.email = "This is not a valid email format";
     }
     if (!values.contact) {

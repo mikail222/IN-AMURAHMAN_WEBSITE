@@ -2,30 +2,30 @@ import React, { useState } from "react";
 import who_we_are from "./asset/Frames 1000001673.svg";
 import { GrStar } from "react-icons/gr";
 import { MdStarOutline } from "react-icons/md";
+import Slider from "react-slick";
+import "slick-carousel/slick/slick.css";
+import "slick-carousel/slick/slick-theme.css";
 
 const Customer = () => {
-  const [customer1, setCustomer1] = useState(true);
-  const [customer2, setCustomer2] = useState(false);
-  const [customer3, setCustomer3] = useState(false);
   const customer = [
-    {
-      paragraph:
-        " IREHV is an excellent Pest  Control Company so far we've ever deal with",
-      picture: "",
-      rate: "GrStar",
-      rate_limit: "MdStarOutline",
-      client_name: "Blue Mist Water Corporation",
-      status: "Customer",
-    },
-    {
-      paragraph:
-        " Trust Worthy Company with 100 Percent timely  service delivery",
-      picture: "",
-      rate: "GrStar",
-      rate_limit: "MdStarOutline",
-      client_name: "Inamurahman Fashion House",
-      status: "Customer",
-    },
+    // {
+    //   paragraph:
+    //     " IREHV is an excellent Pest  Control Company so far we've ever deal with",
+    //   picture: "",
+    //   rate: "GrStar",
+    //   rate_limit: "MdStarOutline",
+    //   client_name: "Blue Mist Water Corporation",
+    //   statuses: "Customer",
+    // },
+    // {
+    //   paragraph:
+    //     " Trust Worthy Company with 100 Percent timely  service delivery",
+    //   picture: "",
+    //   rate: "GrStar",
+    //   rate_limit: "MdStarOutline",
+    //   client_name: "Inamurahman Fashion House",
+    //   statuses: "Customer",
+    // },
     {
       paragraph:
         "One in a million Proffesional Pest and Hazard  Eradication company ",
@@ -33,9 +33,46 @@ const Customer = () => {
       rate: "GrStar",
       rate_limit: "MdStarOutline",
       client_name: "Vission and Mission Limted",
-      status: "Customer",
+      statuses: "Customer",
     },
   ];
+  const settings = {
+    dots: false,
+    infinite: true,
+    slidesToShow: 2,
+    slidesToScroll: 1,
+    autoplay: true,
+    autoplaySpeed: 5000,
+    className: "center",
+    centerPadding: "610px",
+    pauseOnHover: false,
+    responsive: [
+      {
+        breakpoint: 1024,
+        settings: {
+          slidesToShow: 3,
+          slidesToScroll: 3,
+          infinite: true,
+          dots: true,
+        },
+      },
+      {
+        breakpoint: 600,
+        settings: {
+          slidesToShow: 2,
+          slidesToScroll: 2,
+          initialSlide: 2,
+        },
+      },
+      {
+        breakpoint: 480,
+        settings: {
+          slidesToShow: 1,
+          slidesToScroll: 1,
+        },
+      },
+    ],
+  };
   return (
     <div className="who_we_are">
       <img src={who_we_are} alt="" />
@@ -47,11 +84,11 @@ const Customer = () => {
         want"
       </p>
       <div className="customer">
-        {customer1 &&
-          customer.map(({ picture, paragraph, client_name, status }) => (
-            <div data-aos="zoom-in">
+        <Slider {...settings}>
+          {customer.map(({ paragraph, client_name, statuses }, i) => (
+            <div key={i}>
               <p>{paragraph}</p>
-              <nav className="pics">{picture}</nav>
+              <nav className="pics"></nav>
               <span>
                 <GrStar className="starr" />
                 <GrStar className="starr" />
@@ -60,66 +97,10 @@ const Customer = () => {
                 <MdStarOutline className="starr" />
               </span>
               <p className="clientName">{client_name}</p>
-              <p style={{ color: "gray", fontWeight: "bold" }}>{status}</p>
+              <p style={{ color: "gray", fontWeight: "bold" }}>{statuses}</p>
             </div>
           ))}
-
-        {customer2 &&
-          customer.map(({ picture, paragraph, client_name, status }) => (
-            <div data-aos="zoom-in">
-              <p>{paragraph}</p>
-              <nav className="pics">{picture}</nav>
-              <span>
-                <GrStar className="starr" />
-                <GrStar className="starr" />
-                <GrStar className="starr" />
-                <GrStar className="starr" />
-                <MdStarOutline className="starr" />
-              </span>
-              <p className="clientName">{client_name}</p>
-              <p style={{ color: "gray", fontWeight: "bold" }}>{status}</p>
-            </div>
-          ))}
-        {customer3 &&
-          customer.map(({ picture, paragraph, client_name, status }) => (
-            <div data-aos="zoom-in">
-              <p>{paragraph}</p>
-              <nav className="pics">{picture}</nav>
-              <span>
-                <GrStar className="starr" />
-                <GrStar className="starr" />
-                <GrStar className="starr" />
-                <GrStar className="starr" />
-                <MdStarOutline className="starr" />
-              </span>
-              <p className="clientName">{client_name}</p>
-              <p style={{ color: "gray", fontWeight: "bold" }}>{status}</p>
-            </div>
-          ))}
-      </div>
-      <div className="dot">
-        <p
-          onClick={() =>
-            setCustomer1(true) || setCustomer2(false) || setCustomer3(false)
-          }
-        >
-          1
-        </p>
-
-        <p
-          onClick={() =>
-            setCustomer2(true) || setCustomer1(false) || setCustomer3(false)
-          }
-        >
-          2
-        </p>
-        <p
-          onClick={() =>
-            setCustomer3(true) || setCustomer1(false) || setCustomer2(false)
-          }
-        >
-          3
-        </p>
+        </Slider>
       </div>
     </div>
   );

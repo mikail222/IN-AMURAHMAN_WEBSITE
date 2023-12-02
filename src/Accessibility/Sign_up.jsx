@@ -101,37 +101,37 @@ const Sign_up = ({ navigate, user }) => {
       );
       await setDoc(doc(db, "Admin", res.user.uid), { ...data });
       setLoggedInUser(res.user);
-      if (loggedInUser) {
-        console.log({ loggedInUser });
-        const currentUserDetails = user.find(
-          (m) => m.email === loggedInUser?.email
-        );
-        updateProfile(currentUser, {
-          displayName:
-            currentUserDetails?.first + " " + currentUserDetails?.LastName,
-          photoURL: currentUserDetails?.img,
-          phoneNumber: currentUserDetails?.phone,
-        }).then(() => {
-          setTimeout(() => {
-            setSuccess(
-              `You are successfully signed in as ${
-                data?.first + " " + data?.LastName
-              }`
-            );
-          }, 5000);
-          navigate("/User_modal");
-        });
-      }
     } catch (err) {
       setError(err.message);
       console.log(err);
     }
   };
   useEffect(() => {
+    if (loggedInUser) {
+      console.log({ loggedInUser });
+      const currentUserDetails = user.find(
+        (m) => m.email === loggedInUser?.email
+      );
+      updateProfile(currentUser, {
+        displayName:
+          currentUserDetails?.first + " " + currentUserDetails?.LastName,
+        photoURL: currentUserDetails?.img,
+        phoneNumber: currentUserDetails?.phone,
+      }).then(() => {
+        setTimeout(() => {
+          setSuccess(
+            `You are successfully signed in as ${
+              data?.first + " " + data?.LastName
+            }`
+          );
+        }, 5000);
+        navigate("/User_modal");
+      });
+    }
     console.log(data);
     if (Object.keys(formError).length === 0 && isSubmit) {
     }
-  }, [formError]);
+  }, [formError || handleSubmit]);
   const validate = (values) => {
     const error = {};
     const regex = /^[^\$@]+@[^\$@]+\.[^\$@]{2,}$/i;

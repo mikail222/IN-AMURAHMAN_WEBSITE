@@ -16,14 +16,6 @@ const User_Table = () => {
   const client = auth.currentUser;
   console.log();
   useEffect(() => {
-    // const getUser = async () => {
-    //   try {
-    //     const querySnapshot = await getDocs(collection(db, "Admin"));
-
-    //     // console.log(list);
-    //   }
-    // };
-    // getUser();
     const unsub = onSnapshot(
       collection(db, "Admin"),
       (snapShot) => {
@@ -41,18 +33,25 @@ const User_Table = () => {
       unsub();
     };
   }, []);
-  console.log(users);
   const Search_user = users?.filter(
     (m) =>
       m.email?.toLowerCase().includes(search_user.toLowerCase()) ||
       m.first?.includes(search_user.toLowerCase())
   );
   const handleDeleteUser = async (id) => {
+    const checkPersonsName = Search_user.find((person) => person.id === id);
     try {
-      await deleteDoc(doc(db, "Admin", id));
-      deleteUser(client);
-      setDelete_User(Search_user.filter(({ id }) => id !== id));
-      alert("deleted");
+      if (
+        window.confirm(
+          `are sure you want  to  delete  ${
+            checkPersonsName.first + " " + checkPersonsName.LastName
+          } ?`
+        )
+      ) {
+        await deleteDoc(doc(db, "Admin", id));
+        deleteUser(client);
+        setDelete_User(Search_user.filter(({ id }) => id !== id));
+      }
     } catch (err) {
       setErr(err.message);
       setTimeout(() => {

@@ -208,7 +208,7 @@ const Columns = ({
                 </p>{" "}
                 <p>
                   current User :{" "}
-                  <i>{currentUser.emailVerified === user.email}</i>
+                  <i>{currentUser?.emailVerified === user?.email}</i>
                 </p>{" "}
               </nav>
             </article>

@@ -31,8 +31,10 @@ const Sales_Details = ({ sales }) => {
           {sales.map(
             ({ amount, items, firstName, lastName, day, contact, qtys }, i) => (
               <tr key={i} className="userTableHeader">
-                <td className="AuthorAlign">{firstName}</td>
-                <td className="hide">{contact}</td>
+                <td className="AuthorAlign">
+                  {firstName} {lastName}
+                </td>{" "}
+                <td>{contact}</td>
                 <td>{day}</td>
                 <td>{items}</td>
                 <td>{amount}</td>

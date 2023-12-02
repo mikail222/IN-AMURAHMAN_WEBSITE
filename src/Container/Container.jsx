@@ -26,11 +26,6 @@ import Cockroaches from "../Pest/Cockroaches";
 import Termites from "../Pest/Termites";
 import Mosquitoes from "../Pest/Mosquitoes";
 import Snakes from "../Pest/Snakes";
-import Bed_Room from "../Domestic_service/Bed_Room";
-import Sitting_Room from "../Domestic_service/Sitting_Room";
-import Kitchen from "../Domestic_service/Kitchen";
-import Toilet from "../Domestic_service/Toilet";
-import Wardrobe from "../Domestic_service/Wardrobe";
 import Policy from "../Information/Policy";
 import Terms from "../Information/Terms";
 import Login from "../Accessibility/Login";
@@ -252,6 +247,17 @@ const Container = ({ user, setShowNav }) => {
               <ProductDetail
                 productUpdate={productUpdate}
                 userId={userId}
+                count={count}
+                setCount={setCount}
+              />
+            }
+          />
+          <Route
+            path="Commercial/Product_detail/:id"
+            element={
+              <ProductDetail
+                productUpdate={productUpdate}
+                userId={userId}
                 total={total}
                 count={count}
                 setCount={setCount}
@@ -324,11 +330,6 @@ const Container = ({ user, setShowNav }) => {
           <Route path="Cockroaches" element={<Cockroaches />} />
           <Route path="Termites" element={<Termites />} />
           <Route path="Snakes" element={<Snakes />} />
-          <Route path="Bed_Room" element={<Bed_Room />} />
-          <Route path="Sitting_Room" element={<Sitting_Room />} />
-          <Route path="Kitchen" element={<Kitchen />} />
-          <Route path="Toilet" element={<Toilet />} />
-          <Route path="Wardrobe" element={<Wardrobe />} />
           <Route path="Terms" element={<Terms />} />
           <Route path="Policy" element={<Policy />} />
         </Routes>

@@ -11,6 +11,9 @@ body {
   scroll-behavior: smooth;
   scroll-padding: 10rem;
 }
+.slick-slide > div {
+  margin: 0 10px;
+}
 
 @media screen and (max-width: 480px) {
   body {

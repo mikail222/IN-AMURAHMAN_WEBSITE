@@ -75,11 +75,11 @@
   @apply w-[250px]  lg:w-auto;
 }
 .customer {
-  @apply flex flex-col lg:flex-row justify-center items-center gap-[30px] md:gap-[20px] md:flex md:flex-row;
+  @apply flex flex-row justify-center items-center gap-[30px] w-[95%] h-[85%];
 }
 .customer div {
   box-shadow: 1px 1px 6px gray;
-  @apply flex flex-col justify-center items-center w-[80vw] lg:w-[25vw] md:w-[30vw] md:h-[40vh] lg:h-[50vh] h-[50vh]  bg-[white] rounded-[10px];
+  @apply flex flex-row  justify-center items-center items-center w-[50vw] bg-[white] rounded-[10px];
 }
 .customer div .clientName {
   @apply text-[#133063] font-bold;
@@ -371,6 +371,20 @@
 }
 .allBlogClasses {
   @apply flex flex-col lg:flex-row items-center w-[90vw] lg:w-[90%] rounded-[15px] gap-[1rem] lg:h-[50%]  lg:px-[2%];
+}
+.blogBtn {
+  @apply flex flex-row my-[5%] justify-between items-center;
+}
+.blogUpdateViewBtn {
+  box-shadow: 1px 1px 2px gray;
+  @apply py-[5px] rounded-[50px] font-bold  text-[gray] px-[5%];
+}
+.blogUpdateDeleteBtn {
+  box-shadow: 1px 1px 2px gray;
+  @apply py-[5px] rounded-[50px] text-[red] px-[5%];
+}
+.blogUpdateDeleteBtn:active {
+  @apply py-[5px] rounded-[50px] text-[20px] font-bold bg-[red] text-white  px-[5%];
 }
 .blogSpider1 {
   @apply w-[94%] my-[4%] h-[45%] rounded-[15px];
@@ -2083,8 +2097,8 @@ footer li {
 .dash {
   @apply flex flex-col text-left gap-[0.15rem] mt-[0.5rem];
 }
-.dash div {
-  @apply w-[95%] flex  flex-row gap-[1.7rem]  items-center  ml-[0.5rem] lg:ml-[0.75rem] lg:gap-[15%] py-[0.3rem] cursor-pointer  hover:bg-[#133063] hover:text-[white] rounded-[10px] px-[6%];
+.dash button {
+  @apply w-[95%] flex  flex-row gap-[1.7rem]  items-center  ml-[0.5rem] lg:ml-[0.75rem] lg:gap-[15%] py-[0.3rem] cursor-pointer  active:bg-[#133063] active:text-[white] rounded-[10px] px-[6%];
 }
 
 .mainClass {
@@ -2218,10 +2232,13 @@ nav i {
   @apply w-[95%] my-[5%];
 }
 .tableHeader {
-  @apply w-[100%] text-[#5e72e4]  text-[1rem] lg:text-[1.2rem] m-[0];
+  @apply hidden lg:flex w-[100%] text-[#5e72e4]  text-[1rem] lg:text-[1.2rem] m-[0];
 }
 .userTableHeader {
-  @apply text-[#344767] font-bold mt-[15%] border-b-[1px] lg:w-[73vw];
+  @apply flex flex-col lg:flex-row lg:gap-[5px] lg:items-center text-[#344767] font-bold  py-[5%] lg:py-[0px]  border-b-[1px] lg:w-[73vw];
+}
+.userTableHeader td {
+  @apply w-[65%] items-start mx-2 lg:text-[1rem];
 }
 .Authoronline {
   @apply w-[60px] h-[60px] object-cover rounded-[55px]  border-[2px] border-[lightgreen];
@@ -2233,7 +2250,7 @@ nav i {
   @apply w-[50px] h-[50px] object-cover rounded-[55px];
 }
 .AuthorAlign {
-  @apply min-w-[30%] lg:w-[100%] flex flex-row items-center gap-[1rem] text-[1.2rem];
+  @apply flex flex-row items-center gap-[1rem] text-[1.2rem];
 }
 .offline {
   @apply rounded-[5px] text-center text-[lightgray];
@@ -2309,7 +2326,7 @@ nav i {
 .productUpdateForm {
   @apply w-[90%] h-[100%] mt-[22%] md:mt-[15%] lg:mt-[4px] mb-[5%] lg:w-[40%] lg:h-[95vh] flex  flex-col justify-center gap-[0.5rem];
 }
-.productUpdateForm i,
+/* .productUpdateForm, */
 .changeColor {
   @apply pl-[25px] lg:pl-[35px] lg:text-[1rem] text-[red] text-[0.60rem];
 }
@@ -2319,8 +2336,9 @@ nav i {
 .blogUpdateForm {
   @apply w-[90%] h-[100%] mt-[22%] md:mt-[15%] lg:mt-[4px] mb-[5%] lg:w-[45%] lg:h-[95vh] flex  flex-col justify-center items-center  gap-[0.5rem];
 }
+.productUpdateForm textarea,
 .blogUpdateForm textarea {
-  @apply w-[85%]  outline-0 border-[1px] rounded-[10px];
+  @apply w-[85%]  outline-0 border-b-[1px];
 }
 .blogFileClass {
   @apply w-[90%] flex  flex-row justify-around items-center;
@@ -2328,16 +2346,19 @@ nav i {
 .row {
   @apply flex  flex-row-reverse;
 }
+.heading {
+  @apply flex  flex-col justify-center items-center;
+}
 .productUpdateForm input,
 .blogUpdateForm input {
-  @apply w-[98%]  md:w-[60%] lg:w-[85%] h-[50px] outline-0 pl-[10px] border-[1px];
+  @apply w-[98%]  md:w-[60%] lg:w-[85%] h-[50px] outline-0 pl-[10px] border-b-[1px];
 }
 .bookingUpdateForm form input {
   @apply w-[100%] h-[50px] outline-0 pl-[10px] border-[2px];
 }
 .productUpdateForm label,
 .blogUpdateForm label {
-  @apply pl-[10px] mr-[60%] text-[0.60rem] lg:font-bold lg:text-[0.90rem];
+  @apply text-left mr-[60%] text-[0.60rem] lg:font-bold lg:text-[0.90rem] text-[red];
 }
 .bookingUpdateForm form label {
   @apply text-[0.90rem] text-[red] lg:text-[1rem]  relative top-[0.3rem];
@@ -2356,14 +2377,15 @@ nav i {
 .productUpdateForm .button {
   @apply w-[95%] lg:w-[85%] flex flex-row  justify-around items-center gap-[1rem] mb-[20%];
 }
-.productUpdateForm button,
+.blogUpdateViewBtn:hover,
+.productUpdateForm button:hover,
 .blogUpdateForm button:hover {
   transition: 0.8s ease-in-out;
   box-shadow: 1px 1px 5px lightgray;
-  @apply bg-[white] text-[#344767];
+  @apply bg-[lightgreen] text-[white];
 }
 .irehvupdateform {
-  @apply w-[30%]  h-[7%] my-[1%] lg:my-[5%];
+  @apply w-[30%]  h-[65px] my-[1%] lg:my-[5%];
 }
 .updateheader {
   @apply text-[#5e72e4] text-center;

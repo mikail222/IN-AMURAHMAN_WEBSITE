@@ -43,58 +43,58 @@ const Side_Bar = ({ currentUser, filteredAdmin, setShow, show }) => {
       </div>
       <div className="dash">
         {filteredAdmin ? (
-          <div onClick={() => navigate("Data_analysis_page")}>
+          <button onClick={() => navigate("Data_analysis_page")}>
             <MdMonitor className="dashboardIcon" />
             <p>Dashboard</p>
-          </div>
+          </button>
         ) : (
-          <div onClick={() => navigate("User_Data") || setShow(false)}>
+          <button onClick={() => navigate("User_Data") || setShow(false)}>
             <MdMonitor className="dashboardIcon" />
             <p>Dashboard</p>
-          </div>
+          </button>
         )}
-        <div onClick={() => navigate("User_Profile")}>
+        <button onClick={() => navigate("User_Profile")}>
           <CgProfile className="dashboardIcon" />
           <p>Profile</p>
-        </div>
+        </button>
         {filteredAdmin === true ? (
           <>
-            <div onClick={() => navigate("User_Table")}>
+            <button onClick={() => navigate("User_Table")}>
               <FcCalendar className="dashboardIcon" />
               <p>User Table</p>
-            </div>
-            <div onClick={() => navigate("Product_UpdateForm")}>
+            </button>
+            <button onClick={() => navigate("Product_UpdateForm")}>
               <GrUpdate />
               <p>Product update</p>
-            </div>
-            <div onClick={() => navigate("Blog_Update")}>
+            </button>
+            <button onClick={() => navigate("Blog_Update")}>
               <GrBlog className="menuBar2 " title="dashboardIcon" />{" "}
               <p>Blogs</p>
-            </div>
-            <div onClick={() => navigate("Post")}>
+            </button>
+            <button onClick={() => navigate("Post")}>
               <MdPostAdd className="menuBar2 " title="dashboardIcon" />{" "}
               <p>Post</p>
-            </div>
-            <div onClick={() => navigate("Booking")}>
+            </button>
+            <button onClick={() => navigate("Booking")}>
               <TbBrandBooking className="menuBar2 " title="dashboardIcon" />
               <p>Booking</p>
-            </div>{" "}
-            <div onClick={() => navigate("Consult")}>
+            </button>{" "}
+            <button onClick={() => navigate("Consult")}>
               <TbBrandTripadvisor className="menuBar2 " title="dashboardIcon" />
               <p>Consult</p>
-            </div>{" "}
-            <div onClick={() => navigate("Enquiry")}>
+            </button>{" "}
+            <button onClick={() => navigate("Enquiry")}>
               <AiFillQuestionCircle
                 className="menuBar2 "
                 title="dashboardIcon"
               />{" "}
               <p>Enquiry</p>
-            </div>{" "}
+            </button>{" "}
           </>
         ) : (
           ""
         )}
-        <div
+        <button
           onClick={() =>
             navigate(
               filteredAdmin === true ? "Data_analysis_page" : "User_data"
@@ -103,7 +103,7 @@ const Side_Bar = ({ currentUser, filteredAdmin, setShow, show }) => {
         >
           <MdOutlineClear className="menuBar2 " title="dashboardIcon" />{" "}
           <p>Back</p>
-        </div>
+        </button>
       </div>
     </aside>
   );

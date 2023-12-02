@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import { auth } from "../../firebaseconfig";
+import { auth, db } from "../../firebaseconfig";
 import { Route, Routes } from "react-router-dom";
 import Data_analysis_page from "./Data_analysis_page";
 import User_Table from "./User_Table";
@@ -9,12 +9,13 @@ import { BiMenu } from "react-icons/bi";
 import Mobile_Side_Bar from "./Mobile_Side_Bar";
 import Sales_Details from "./Sales_Details";
 import Post from "./Post";
-import Booking from "./Booking";
 import Consult from "./Consult";
 import Enquiry from "./Enquiry";
 import User_Data from "../Users_Dashboard/User_Data";
 import User_Profile from "../Users_Dashboard/User_Profile";
 import Blog_Update from "./Blog_Update";
+import { collection, onSnapshot } from "firebase/firestore";
+import Booking from "./Booking.1";
 
 const Dashboard = ({ adminPost, productUpdate, count }) => {
   const [consult, setConsult] = useState([]);
@@ -48,7 +49,6 @@ const Dashboard = ({ adminPost, productUpdate, count }) => {
       const collTotalAmount = collection(db, "Payment-details");
       const collConsult = collection(db, "Consultance");
       const collEnquiry = collection(db, "Enquiry");
-      const collProductUpdate = collection(db, "Products");
 
       const data = await getDocs(collectionOfUser);
       const Booking = await getDocs(collBooking);
@@ -56,7 +56,6 @@ const Dashboard = ({ adminPost, productUpdate, count }) => {
       const totalAmount = await getDocs(collTotalAmount);
       const Consult = await getDocs(collConsult);
       const Enquiry = await getDocs(collEnquiry);
-      const Products = await getDocs(collProductUpdate);
       setBooking(Booking.docs.map((doc) => ({ ...doc.data(), id: doc.id })));
       setSales(sales.docs.map((doc) => ({ ...doc.data(), id: doc.id })));
       setTotalamount(
@@ -65,11 +64,24 @@ const Dashboard = ({ adminPost, productUpdate, count }) => {
       setEnquiry(Enquiry.docs.map((doc) => ({ ...doc.data(), id: doc.id })));
       setConsult(Consult.docs.map((doc) => ({ ...doc.data(), id: doc.id })));
       setUser(data.docs.map((doc) => ({ ...doc.data(), id: doc.id })));
-      setProduct_detail(
-        Products.docs.map((doc) => ({ ...doc.data(), id: doc.id }))
-      );
     };
     getUser();
+    const unsub = onSnapshot(
+      collection(db, "Products"),
+      (snapShot) => {
+        const list = [];
+        snapShot.forEach((doc) => {
+          list.push({ id: doc.id, ...doc.data() });
+        });
+        setProduct_detail(list);
+      },
+      (error) => {
+        alert(error);
+      }
+    );
+    return () => {
+      unsub();
+    };
   }, [currentUser]);
   const filteredAdmin = user
     ?.filter(({ role }) => role == "author")
@@ -148,12 +160,7 @@ const Dashboard = ({ adminPost, productUpdate, count }) => {
               <Route path="User_Table" element={<User_Table user={user} />} />
               <Route
                 path="Product_UpdateForm"
-                element={
-                  <Product_UpdateForm
-                    product_detail={product_detail}
-                    count={count}
-                  />
-                }
+                element={<Product_UpdateForm count={count} />}
               />
             </Routes>
           </main>
