@@ -75,11 +75,11 @@
   @apply w-[250px]  lg:w-auto;
 }
 .customer {
-  @apply flex flex-row justify-center items-center gap-[30px] w-[80%] h-[85%];
+  @apply flex flex-col lg:flex-row justify-center items-center gap-[30px] w-[80%] h-[85%];
 }
 .customer div {
   box-shadow: 1px 1px 6px gray;
-  @apply flex flex-col  justify-center items-center  w-[50vw] bg-[white] rounded-[10px] h-[50vh]  my-[5%];
+  @apply flex flex-col  justify-center items-center  lg:w-[50vw] bg-[white] rounded-[10px] h-[50vh]  my-[5%];
 }
 .customer div .clientName {
   @apply text-[#133063] font-bold;
@@ -370,7 +370,7 @@
   @apply w-auto flex flex-row justify-center lg:bg-[#133063] lg:text-[white] text-[2rem] font-semibold text-[#133063] lg:text-[1rem] rounded-[10px] lg:rounded-[15px] px-[10px] lg:py-[0px] lg:px-[0px];
 }
 .allBlogClasses {
-  @apply flex flex-col lg:flex-row items-center w-[90vw] lg:w-[90%] rounded-[15px] gap-[1rem] lg:h-[50%]  lg:px-[2%];
+  @apply flex flex-col lg:flex-row justify-center w-[90vw] lg:w-[90%] rounded-[15px] gap-[1rem] lg:h-[50%]  lg:px-[2%];
 }
 .blogBtn {
   @apply flex flex-row my-[5%] justify-between items-center;
@@ -393,7 +393,7 @@
   @apply lg:w-[40%] mt-[2rem] lg:mt-[0px] h-[95%] object-cover rounded-[15px];
 }
 .allblogSpider {
-  @apply w-[95vw] lg:w-[35%] lg:h-[28vh] my-[2%] rounded-[15px];
+  @apply w-[95vw] lg:w-[35%] lg:h-[28vh] my-[2%] rounded-[15px] bg-[orange];
 }
 .whatToReadClass {
   @apply lg:w-[95%] lg:h-[30vh] my-[2%] rounded-[10px];
@@ -2097,6 +2097,7 @@ footer li {
 .dash {
   @apply flex flex-col text-left gap-[0.15rem] mt-[0.5rem];
 }
+.dash div,
 .dash button {
   @apply w-[95%] flex  flex-row gap-[1.7rem]  items-center  ml-[0.5rem] lg:ml-[0.75rem] lg:gap-[15%] py-[0.3rem] cursor-pointer  active:bg-[#133063] active:text-[white] rounded-[10px] px-[6%];
 }
@@ -2265,9 +2266,9 @@ nav i {
   @apply w-[100%] lg:w-[100%] lg:ml-[0.3rem];
 }
 .filter-user {
-  box-shadow: 1px 5px 12px black;
+  box-shadow: 1px 1px 2px black;
   right: 0;
-  @apply lg:w-[60%] outline-0 border-b-[1px] bg-[transparent] rounded-[10px] h-[40px] m-[1rem];
+  @apply w-[100%] lg:w-[60%] outline-0 border-b-[1px] bg-[transparent] rounded-[10px] h-[40px] m-[1rem];
 }
 .filter-user::placeholder {
   @apply text-[gray]  text-[1rem]  px-[1rem];

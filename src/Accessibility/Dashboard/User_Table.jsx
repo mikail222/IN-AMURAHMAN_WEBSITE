@@ -59,7 +59,7 @@ const User_Table = () => {
       }, 5000);
     }
   };
-  console.log(delete_User);
+  console.log(auth.currentUser.metadata.lastSignInTime.charAt(12, 21));
   const currentUser = auth.currentUser?.email;
   const filterImg = users.filter(({ img }) => img === img);
 

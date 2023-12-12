@@ -16,9 +16,9 @@ import {
 } from "react-icons/md";
 import { ref, uploadBytesResumable, getDownloadURL } from "firebase/storage";
 import irehv from "../../asset/irehv-low-resolution-logo-color-on-transparent-background.png";
-import Blog from "../../Blog";
 import { AiOutlineWechat } from "react-icons/ai";
 import { BsFillCalendarWeekFill } from "react-icons/bs";
+import { useParams } from "react-router-dom";
 
 const Blog_Update = () => {
   const intialValue = {
@@ -31,6 +31,7 @@ const Blog_Update = () => {
   const [blogPost, setBlogPost] = useState(intialValue);
   const [list, setList] = useState(false);
   const [view, setView] = useState(false);
+  const [viewContent, setViewContent] = useState([]);
   const [blogs, setBlogs] = useState([]);
   const [formError, setFormError] = useState({});
   const [isSubmit, setIsSubmit] = useState(false);
@@ -98,6 +99,19 @@ const Blog_Update = () => {
     };
   }, []);
 
+  const Content = viewContent.map((p) => p.content);
+  const handleToggleViewContent = (id) => {
+    setViewContent(blogs?.filter((p) => p.id === id));
+    if (blogs?.filter((p) => p.id === id)) {
+      setView(true);
+    }
+  };
+  const handleToggleCloseContent = (id) => {
+    setViewContent(blogs?.filter((p) => p.id === id));
+    if (blogs?.filter((p) => p.id === id)) {
+      setView(false);
+    }
+  };
   useEffect(() => {
     const writerUploadfile = () => {
       const writerIdentity = new Date().getTime() + writerFileUpload.name;
@@ -213,7 +227,6 @@ const Blog_Update = () => {
     }
     return error;
   };
-  // console.log(blogPost.map(({ title }) => title));
   return (
     <div>
       <div className="productUpdate">
@@ -381,31 +394,20 @@ const Blog_Update = () => {
                         <MdOutlineBookmarkAdd className="blogIcon" />
                       </nav>{" "}
                     </div>
-                    {view && (
-                      <p>
-                        {content ? (
-                          content
-                        ) : (
-                          <p style={{ color: "red" }}>
-                            {" "}
-                            No content please update content
-                          </p>
-                        )}
-                      </p>
-                    )}
-
+                    {view && content && <p>{Content}</p>}
                     <div className="blogBtn">
                       {" "}
-                      {view == false ? (
+                      {view === false && (
                         <button
-                          onClick={() => setView(true)}
+                          onClick={() => handleToggleViewContent(id)}
                           className="blogUpdateViewBtn"
                         >
                           View content
                         </button>
-                      ) : (
+                      )}
+                      {view == true && (
                         <button
-                          onClick={() => setView(false)}
+                          onClick={() => handleToggleCloseContent(id)}
                           className="blogUpdateViewBtn"
                         >
                           Close content

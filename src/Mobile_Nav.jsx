@@ -125,7 +125,7 @@ const Mobile_nav = ({ show, setShowNav }) => {
                 <p>Ask us</p>
               </div>
               <div className="userStatus">
-                {currentUser === null ? (
+                {currentUser === null && (
                   <div className="rowwing">
                     <AiOutlineLogin className="icon" />
                     <p
@@ -135,12 +135,28 @@ const Mobile_nav = ({ show, setShowNav }) => {
                       Login
                     </p>
                   </div>
-                ) : (
-                  <div className="rowwing">
-                    <RiLogoutBoxRLine className="icon" />
-                    <i onClick={handleLogOut} className="logout">
-                      LogOut
-                    </i>
+                )}
+                {currentUser && currentUser?.emailVerified === true && (
+                  <div className="dropdown">
+                    <div className="rowwing">
+                      <RiLogoutBoxRLine className="icon" />
+                      <i>Logout</i>
+                    </div>
+                    <div className="dropdown-content">
+                      <ul>
+                        <li>
+                          <Link to="/Dashboard">Dashboard</Link>
+                        </li>
+                        <li>
+                          <Link
+                            to="Users_Dashboard/User_Profile"
+                            className="row"
+                          >
+                            <p onClick={handleLogOut}>logout</p>
+                          </Link>
+                        </li>
+                      </ul>
+                    </div>
                   </div>
                 )}
               </div>

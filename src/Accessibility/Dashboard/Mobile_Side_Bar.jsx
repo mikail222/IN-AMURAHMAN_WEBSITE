@@ -12,7 +12,7 @@ import { CgProfile } from "react-icons/cg";
 const Mobile_Side_Bar = ({ currentUser, setDrawer, filteredAdmin }) => {
   const navigate = useNavigate();
   return (
-    <aside className="mobile_dash_asides">
+    <aside className="mobile_dash_asides" onMouseLeave={() => setDrawer(true)}>
       {" "}
       <div className="statusManager">
         {currentUser ? (
@@ -39,7 +39,7 @@ const Mobile_Side_Bar = ({ currentUser, setDrawer, filteredAdmin }) => {
         {filteredAdmin ? (
           <div onClick={() => navigate("Data_analysis_page")}>
             <MdMonitor className="dashboardIcon" />
-            <i>Dashboard</i>
+            <p>Dashboard</p>
           </div>
         ) : (
           <div onClick={() => navigate("User_data")}>
@@ -89,10 +89,6 @@ const Mobile_Side_Bar = ({ currentUser, setDrawer, filteredAdmin }) => {
         ) : (
           ""
         )}
-        <div onClick={() => setDrawer(true)}>
-          <MdOutlineClear className="menuBar2 " title="dashboardIcon" />{" "}
-          <p>Back</p>
-        </div>
       </div>
     </aside>
   );
