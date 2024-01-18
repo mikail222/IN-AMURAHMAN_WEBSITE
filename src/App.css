@@ -2524,7 +2524,7 @@ nav i {
   @apply flex  flex-col  justify-center items-center w-[100%] h-[30vh];
 }
 .myPics img {
-  @apply lg:mt-[15rem] w-[5rem] h-[14vh] rounded-[100%] border-[white] border-[3px] mt-[12rem];
+  @apply lg:mt-[12rem] w-[90px] h-[90px] rounded-[100%] border-[white] object-cover border-[3px] mt-[12rem];
 }
 .location {
   @apply animate-bounce mt-[1rem] w-[25px] h-[25px] fill-[#3c4e6d];
