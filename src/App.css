@@ -2141,22 +2141,17 @@ footer li {
   gap: 0.75rem;
 }
 .graphField {
-  @apply w-[93vw] ml-[1%] lg:ml-[0px] lg:px-[2rem] overflow-x-auto lg:w-[48vw] h-[60vh] bg-[white] rounded-[20px] border-[1px];
+  @apply w-[93vw] ml-[1%] lg:ml-[0px] lg:px-[2rem] overflow-x-auto lg:w-[55vw] h-[60vh] bg-[white] rounded-[5px] border-[1px] pt-[5%];
 }
 .graphField::-webkit-scrollbar {
   @apply flex-none;
 }
 
 .revenue {
-  width: 25.9vw;
+  width: 20vw;
   height: auto;
   margin-top: 0.5rem;
-  background-image: url("./asset/ed-van-duijn-UUdJ-0LQs0M-unsplash.jpg");
-  background-position: left;
-  background-size: cover;
-  object-fit: cover;
-  border-radius: 15px;
-  @apply hidden  lg:flex;
+  @apply hidden shadow-lg lg:flex flex-col items-center bg-[white] rounded-[5px];
 }
 .Image {
   margin-top: 0.5rem;
@@ -2227,7 +2222,7 @@ nav i {
   @apply flex  flex-col justify-center items-center w-[95%] lg:w-[77vw] bg-[white] mt-[5%] lg:ml-[1rem] rounded-[15px];
 }
 .productWrapper {
-  @apply flex  flex-col justify-center items-center w-[95%] ml-[2%] lg:w-[76vw] bg-[white] mt-[5%] lg:ml-[1rem] rounded-[15px];
+  @apply flex  flex-col justify-start items-start w-[95%] ml-[2%] lg:w-[76vw] bg-[white] mt-[5%] lg:ml-[1rem] rounded-[15px];
 }
 .Author {
   @apply w-[95%] my-[5%];
@@ -2712,4 +2707,13 @@ nav i {
 }
 .show_passwordbtn {
   @apply outline-0;
+}
+.progressbar {
+  @apply w-[150px] h-[150px] flex flex-col  justify-center items-center px-[2%] my-[5%];
+}
+.bar {
+  @apply flex flex-row justify-between items-center w-[100%] p-[3%];
+}
+.tableHead {
+  @apply mt-[5%] bg-[lightgreen] text-[1.5rem];
 }

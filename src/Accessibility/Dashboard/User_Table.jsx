@@ -8,6 +8,15 @@ import {
   getDocs,
   onSnapshot,
 } from "firebase/firestore";
+import {
+  Paper,
+  Table,
+  TableBody,
+  TableCell,
+  TableContainer,
+  TableHead,
+  TableRow,
+} from "@mui/material";
 const User_Table = () => {
   const [search_user, setSearch_user] = useState(" ");
   const [users, setUsers] = useState([]);
@@ -78,22 +87,30 @@ const User_Table = () => {
       <div className="productWrapper">
         {delete_User && <p className="">{delete_User}</p>}
         {/* {err & <p className="err">{err}</p>} */}
-
-        <div className="tableDiv">
-          <div>User Details</div>
-          {/* <div>Email</div>
-          <div>dated</div>
-          <div>Contact</div>
-          <div> Status</div> */}
-          <div>Action</div>
-        </div>
-        <table className="Author">
-          <tbody>
-            {users &&
-              Search_user?.map(
-                ({ img, first, LastName, email, phone, day, id }, i) => (
-                  <tr key={i} className="userTableHeader">
-                    <td className="AuthorAlign">
+        <TableContainer component={Paper}>
+          <Table sx={{ minWidth: 650 }} aria-label="simple table">
+            <TableHead>
+              <TableRow className="bg-[lightgreen] text-[1.5rem]">
+                <TableCell>Image</TableCell>
+                <TableCell align="left">Name</TableCell>
+                <TableCell align="left">Last name</TableCell>
+                <TableCell align="left">Email</TableCell>
+                <TableCell align="left">Contact</TableCell>
+                <TableCell align="left">Details</TableCell>
+                <TableCell align="left">Status</TableCell>
+                <TableCell align="left">Action</TableCell>
+              </TableRow>
+            </TableHead>
+            <TableBody>
+              {Search_user?.map(
+                ({ img, first, LastName, email, phone, id }, i) => (
+                  <TableRow
+                    key={i}
+                    sx={{
+                      "&:last-child td, &:last-child th": { border: 0 },
+                    }}
+                  >
+                    <TableCell component="th" scope="row">
                       <img
                         src={filterImg ? img : "no image"}
                         alt=""
@@ -103,33 +120,35 @@ const User_Table = () => {
                             : "AuthoriOffline"
                         }
                       />
-                    </td>
-                    <td>
-                      {first} {LastName}
-                    </td>
-                    <td>{email}</td>
-                    <td>{day}</td>
-                    <td> {phone}</td>
-                    {email !== currentUser && (
-                      <td className="offline">Offline</td>
-                    )}
-                    {email === currentUser && (
-                      <td className="online">online</td>
-                    )}
-                    <td onClick={() => handleDeleteUser(id)} className="delete">
-                      delete
-                    </td>
-                  </tr>
+                    </TableCell>
+                    <TableCell align="left">{first}</TableCell>
+                    <TableCell align="left"> {LastName}</TableCell>{" "}
+                    <TableCell align="left">{email}</TableCell>
+                    <TableCell align="center">{phone}</TableCell>{" "}
+                    <TableCell align="left"></TableCell>
+                    <TableCell align="left">
+                      {" "}
+                      {email !== currentUser && (
+                        <td className="offline">Offline</td>
+                      )}
+                      {email === currentUser && (
+                        <td className="online">online</td>
+                      )}
+                    </TableCell>
+                    <TableCell align="left">
+                      <button
+                        onClick={() => handleDeleteUser(id)}
+                        className="delete"
+                      >
+                        delete
+                      </button>
+                    </TableCell>
+                  </TableRow>
                 )
               )}
-            {!users == null && (
-              <div className="loaderDiv">
-                <p> sorry trying to upload user,please wait a minute</p>
-                <p className="loader"></p>
-              </div>
-            )}
-          </tbody>
-        </table>
+            </TableBody>
+          </Table>
+        </TableContainer>
       </div>
     </div>
   );

@@ -1,6 +1,15 @@
 import React, { useEffect } from "react";
 import { TbCurrencyNaira } from "react-icons/tb";
 import { useSelector } from "react-redux";
+import {
+  Paper,
+  Table,
+  TableBody,
+  TableCell,
+  TableContainer,
+  TableHead,
+  TableRow,
+} from "@mui/material";
 
 const Sales_Details = ({ sales }) => {
   const productUpdate = useSelector(
@@ -14,36 +23,45 @@ const Sales_Details = ({ sales }) => {
   return (
     <div className="productWrapper">
       <h2>Sales Detail</h2>
-      <table className="Author">
-        <thead>
-          <tr className="tableHeader">
-            <th> Buyer</th>
-            <th>Dated</th>
-            <th>Product</th>
-            <th className="hide">Amount</th>
-            <th className="naira">
-              <TbCurrencyNaira />
-            </th>
-            <th>Quantity</th>
-          </tr>
-        </thead>
-        <tbody>
-          {sales.map(
-            ({ amount, items, firstName, lastName, day, contact, qtys }, i) => (
-              <tr key={i} className="userTableHeader">
-                <td className="AuthorAlign">
-                  {firstName} {lastName}
-                </td>{" "}
-                <td>{contact}</td>
-                <td>{day}</td>
-                <td>{items}</td>
-                <td>{amount}</td>
-                <td>{qtys}</td>
-              </tr>
-            )
-          )}
-        </tbody>
-      </table>
+      {/* {delete_User && <p className="">{delete_User}</p>} */}
+      <TableContainer component={Paper}>
+        <Table sx={{ minWidth: 650 }} aria-label="simple table">
+          <TableHead>
+            <TableRow className="tableHead">
+              <TableCell align="left">Name</TableCell>
+              <TableCell align="left">Last name</TableCell>
+              <TableCell align="left">Contact</TableCell>
+              <TableCell align="left">Item</TableCell>
+              <TableCell align="left">Amount</TableCell>
+              <TableCell align="left">Date</TableCell>
+              <TableCell align="left">Quantity</TableCell>
+            </TableRow>
+          </TableHead>
+          <TableBody>
+            {sales?.map(
+              (
+                { amount, items, firstName, lastName, day, contact, qtys },
+                i
+              ) => (
+                <TableRow
+                  key={i}
+                  sx={{
+                    "&:last-child td, &:last-child th": { border: 0 },
+                  }}
+                >
+                  <TableCell align="left">{firstName}</TableCell>
+                  <TableCell align="left"> {lastName}</TableCell>{" "}
+                  <TableCell align="left">{contact}</TableCell>
+                  <TableCell align="left">{items}</TableCell>
+                  <TableCell align="center">{amount}</TableCell>{" "}
+                  <TableCell align="left">{day}</TableCell>
+                  <TableCell align="left">{qtys}</TableCell>
+                </TableRow>
+              )
+            )}
+          </TableBody>
+        </Table>
+      </TableContainer>
     </div>
   );
 };
