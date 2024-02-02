@@ -2016,6 +2016,9 @@ footer li {
 .icon {
   @apply w-[20px] h-[25px] outline-0;
 }
+.passwordicon {
+  @apply w-[20px] h-[25px] outline-0  fill-[gray];
+}
 .errorMsg {
   @apply bg-[red] rounded-[15px] py-[0.5rem] px-[1rem] mt-[3px]  text-[white];
 }
@@ -2141,7 +2144,7 @@ footer li {
   gap: 0.75rem;
 }
 .graphField {
-  @apply w-[93vw] ml-[1%] lg:ml-[0px] lg:px-[2rem] overflow-x-auto lg:w-[55vw] h-[60vh] bg-[white] rounded-[5px] border-[1px] pt-[5%];
+  @apply w-[93vw] ml-[1%] lg:ml-[0px] lg:px-[2rem] overflow-x-auto lg:w-[55vw] lg:h-[60vh] bg-[white] rounded-[5px] border-[1px] pt-[5%];
 }
 .graphField::-webkit-scrollbar {
   @apply flex-none;
@@ -2514,7 +2517,7 @@ nav i {
   @apply flex  flex-row;
 }
 .profileImage {
-  @apply w-[80%] lg:w-[32%] h-[80vh] bg-[white] rounded-[15px] ml-[2%];
+  @apply w-[80%] lg:w-[32%] h-auto pb-[5%] bg-[white] rounded-[15px] ml-[2%];
 }
 .myPics {
   background-image: url("https://kwarastate.gov.ng/wp-content/uploads/Screen-Shot-2021-12-17-at-11.52.18-PM.jpeg");
@@ -2721,4 +2724,40 @@ nav i {
 }
 .tableHead {
   @apply mt-[5%] bg-[lightgreen] text-[1.5rem];
+}
+.password {
+  @apply my-[3%] px-[3%];
+}
+.password {
+  @apply w-[100%] h-[100vh]  flex flex-col lg:flex-row justify-around items-center px-[2%] bg-white lg:ml-[1.5%] md:ml-[2.5%] py-[5%]  rounded-lg;
+}
+.password input {
+  @apply outline-0 bg-[transparent] w-[90%];
+}
+.password form div {
+  @apply flex  flex-row justify-between items-center p-[10px] border-[1px];
+}
+.password form label {
+  @apply text-[red];
+}
+.password .img {
+  @apply object-contain w-[30%] hidden  lg:flex  bg-[transparent];
+}
+.passwordDiv {
+  @apply lg:w-[50%] px-[5%];
+}
+.passwordul {
+  @apply bg-[yellow] p-[1rem] my-[5%];
+}
+.passwordul .div {
+  @apply flex flex-row items-center gap-[2%];
+}
+.passwordul .div p {
+  @apply text-[1rem];
+}
+.password form {
+  @apply flex flex-col gap-[.7rem] my-[3%];
+}
+.password form button {
+  @apply bg-[orange] text-white p-[10px]  my-[5%] text-[1.2rem] font-bold;
 }

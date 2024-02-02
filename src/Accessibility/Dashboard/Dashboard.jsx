@@ -154,7 +154,7 @@ const Dashboard = ({ adminPost, productUpdate, count }) => {
                 element={<User_Profile user={user} />}
               />
               <Route
-                path="/ChangePasword"
+                path="ChangePassword"
                 element={<ChangePassword user={user} />}
               />
               <Route path="Blog_Update" element={<Blog_Update />} />

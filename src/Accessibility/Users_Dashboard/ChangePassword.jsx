@@ -2,9 +2,9 @@ import { updatePassword } from "firebase/auth";
 import React, { useEffect, useState } from "react";
 import { AiFillWarning, AiOutlineEyeInvisible } from "react-icons/ai";
 import { useNavigate } from "react-router-dom";
-import { auth } from "../f";
 import { BiShow } from "react-icons/bi";
-import passwordReset from "../assets/reset_password.jpg";
+import passwordReset from "../../asset/reset_password.jpg";
+import { auth } from "../../firebaseconfig";
 
 const ChangePassword = ({ user }) => {
   const [passwordType, setPasswordType] = useState("password");
@@ -40,7 +40,7 @@ const ChangePassword = ({ user }) => {
         updatePassword(user, newPassword)
           .then(() => {
             alert(
-              "Password is  changed successfully,  please go ahead and login with your new password"
+              "Password is changed successfully,  please go ahead and login with your new password"
             );
           })
           .catch((error) => {
@@ -78,20 +78,16 @@ const ChangePassword = ({ user }) => {
     return error;
   };
   return (
-    <div className="password  w-[100%] h-[100vh]  flex flex-col lg:flex-row justify-around items-center px-[2%] bg-white">
-      <img
-        src={passwordReset}
-        alt=""
-        className="object-contain w-[30%] hidden  lg:flex  bg-[transparent]"
-      />
-      <div className=" lg:w-[50%] px-[5%]">
+    <div className="password">
+      <img src={passwordReset} alt="" className="img" />
+      <div className="passwordDiv">
         <h3>Change Password</h3>
         <div>
-          <ul className="bg-[yellow] p-[1rem] my-[5%]">
-            <div className="flex flex-row items-center gap-[2%] ">
+          <ul className="passwordul">
+            <div className="div">
               {" "}
               <AiFillWarning />
-              <p className="text-[1rem]">Password must contain</p>
+              <p>Password must contain</p>
             </div>
             <li>length must be minimum of 6 character</li>
             <li>Must be minimum of of 1 uppercase letter</li>
@@ -101,7 +97,6 @@ const ChangePassword = ({ user }) => {
           <form
             onChange={(e) => handleChange(e)}
             onSubmit={(e) => handleResetPassword(e)}
-            className="flex flex-col gap-[.7rem] my-[3%]"
           >
             <label htmlFor="">{formError.email}</label>
             <div>
@@ -126,17 +121,13 @@ const ChangePassword = ({ user }) => {
                 value={password.confirm}
                 onChange={(e) => handleChange(e)}
               />{" "}
-              <button
-                type="button"
-                className="outline-0"
-                onClick={togglePassword}
-              >
+              <nav className="outline-0" onClick={togglePassword}>
                 {passwordType === "password" ? (
-                  <BiShow className="fill-[gray]" />
+                  <BiShow className="passwordicon" />
                 ) : (
-                  <AiOutlineEyeInvisible className="fill-[gray]" />
+                  <AiOutlineEyeInvisible className="passwordicon" />
                 )}
-              </button>
+              </nav>
             </div>
             <label htmlFor="">{formError.new}</label>
             <div>
@@ -148,25 +139,16 @@ const ChangePassword = ({ user }) => {
                 placeholder="new password"
                 onChange={(e) => handleChange(e)}
               />
-              <button
-                type="button"
-                className="outline-0"
-                onClick={togglePassword}
-              >
+              <nav className="outline-0" onClick={togglePassword}>
                 {passwordType === "password" ? (
-                  <BiShow className="fill-[gray]" />
+                  <BiShow className="passwordicon" />
                 ) : (
-                  <AiOutlineEyeInvisible className="fill-[gray]" />
+                  <AiOutlineEyeInvisible className="passwordicon" />
                 )}
-              </button>
+              </nav>
             </div>
 
-            <button
-              type="submit"
-              className="bg-[orange] text-white p-[10px]  my-[5%] text-[1.2rem] font-bold "
-            >
-              Change password
-            </button>
+            <button type="submit">Change password</button>
           </form>
         </div>
       </div>

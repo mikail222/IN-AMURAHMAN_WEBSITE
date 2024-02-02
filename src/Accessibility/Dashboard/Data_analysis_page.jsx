@@ -79,7 +79,7 @@ const Data_analysis_page = ({
       <div className="analytics">
         <div className="field">
           <aside className="graphField">
-            <h5 className="my-[3%] px-[3%]">Last 6 month Registration</h5>
+            <h5 className="">Last 6 month Registration</h5>
             <ResponsiveContainer width="100%" aspect={2 / 1}>
               <AreaChart
                 width={730}
