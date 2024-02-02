@@ -3,6 +3,15 @@ import { useSelector } from "react-redux";
 import { useParams } from "react-router-dom";
 import { db } from "../../firebaseconfig";
 import { collection, doc, deleteDoc, onSnapshot } from "firebase/firestore";
+import {
+  Paper,
+  Table,
+  TableBody,
+  TableCell,
+  TableContainer,
+  TableHead,
+  TableRow,
+} from "@mui/material";
 
 const Product_Details = () => {
   const [err, setErr] = useState(" ");
@@ -48,36 +57,46 @@ const Product_Details = () => {
   console.log(product_detail);
   return (
     <div className="productWrapper">
-      <h2>Stock List</h2>
-      <table className="Author">
-        {/* <thead>
-          <tr className="tableHeader">
-            <th>Product Name</th>
-            <th>Price</th>
-            <th>Updated</th>
-            <th>Qty</th>
-          </tr>
-        </thead> */}
-        <tbody>
-          {product_detail.map(
-            ({ img, price, product_name, stock, day, id }, i) => (
-              <tr key={i} className="userTableHeader">
-                <td className="AuthorAlign">
-                  <img src={img} alt="" className="Authoricon" />
-                  <p>{product_name}</p>
-                </td>
-
-                <td>{price}</td>
-                <td>{day}</td>
-                <td>{stock}</td>
-                <td className="delete" onClick={() => handleDelete(id)}>
-                  delete
-                </td>
-              </tr>
-            )
-          )}
-        </tbody>
-      </table>
+      <h2 className="productHead">Stock List</h2>
+      <TableContainer component={Paper}>
+        <Table sx={{ minWidth: 650 }} aria-label="simple table">
+          <TableHead>
+            <TableRow className="bg-[lightgreen] text-[1.5rem]">
+              <TableCell>Image</TableCell>
+              <TableCell align="left">Name</TableCell>
+              <TableCell align="left">Price</TableCell>
+              <TableCell align="left">Date</TableCell>
+              <TableCell align="left">Stock</TableCell>
+              <TableCell align="left">Action</TableCell>
+            </TableRow>
+          </TableHead>
+          <TableBody>
+            {product_detail?.map(
+              ({ img, price, product_name, stock, day, id }, i) => (
+                <TableRow
+                  key={i}
+                  sx={{
+                    "&:last-child td, &:last-child th": { border: 0 },
+                  }}
+                >
+                  <TableCell component="th" scope="row">
+                    <img src={img} alt="" className="AuthoriOffline" />
+                  </TableCell>
+                  <TableCell align="left">{product_name}</TableCell>
+                  <TableCell align="left"> {price}</TableCell>{" "}
+                  <TableCell align="left">{day}</TableCell>
+                  <TableCell align="center">{stock}</TableCell>{" "}
+                  <TableCell align="left">
+                    <button onClick={() => handleDelete(id)} className="delete">
+                      delete
+                    </button>
+                  </TableCell>
+                </TableRow>
+              )
+            )}
+          </TableBody>
+        </Table>
+      </TableContainer>
     </div>
   );
 };

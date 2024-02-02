@@ -2761,3 +2761,6 @@ nav i {
 .password form button {
   @apply bg-[orange] text-white p-[10px]  my-[5%] text-[1.2rem] font-bold;
 }
+.productHead {
+  @apply m-[21px];
+}
