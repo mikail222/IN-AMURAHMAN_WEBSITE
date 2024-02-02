@@ -7,7 +7,7 @@ import { useNavigate } from "react-router-dom";
 import { signOut } from "firebase/auth";
 import { auth } from "../../firebaseconfig";
 import { TbBrandBooking, TbBrandTripadvisor } from "react-icons/tb";
-import { CgProfile } from "react-icons/cg";
+import { CgPassword, CgProfile } from "react-icons/cg";
 
 const Mobile_Side_Bar = ({ currentUser, setDrawer, filteredAdmin }) => {
   const navigate = useNavigate();
@@ -50,6 +50,10 @@ const Mobile_Side_Bar = ({ currentUser, setDrawer, filteredAdmin }) => {
         <div onClick={() => navigate("User_Profile")}>
           <CgProfile className="dashboardIcon" />
           <p>Profile</p>
+        </div>{" "}
+        <div onClick={() => navigate("ChangePassword")}>
+          <CgPassword className="dashboardIcon" />
+          <p>Change Password</p>
         </div>
         {filteredAdmin ? (
           <>

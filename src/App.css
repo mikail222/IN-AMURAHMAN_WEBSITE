@@ -2479,7 +2479,12 @@ nav i {
 .profileForm h6 {
   @apply my-[1rem];
 }
-.formDiv label,
+.profileForm > form label {
+  @apply text-[0.85rem] text-[red] font-bold;
+}
+.profileForm > form input {
+  @apply px-[5%];
+}
 .contactInfo label,
 .contactContainer label {
   @apply text-[0.85rem] text-[#3c4e6d] font-bold;

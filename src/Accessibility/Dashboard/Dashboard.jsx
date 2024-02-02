@@ -16,6 +16,7 @@ import User_Profile from "../Users_Dashboard/User_Profile";
 import Blog_Update from "./Blog_Update";
 import { collection, onSnapshot } from "firebase/firestore";
 import Booking from "./Booking.1";
+import ChangePassword from "../Users_Dashboard/ChangePassword";
 
 const Dashboard = ({ adminPost, productUpdate, count }) => {
   const [consult, setConsult] = useState([]);
@@ -151,6 +152,10 @@ const Dashboard = ({ adminPost, productUpdate, count }) => {
               <Route
                 path="User_Profile"
                 element={<User_Profile user={user} />}
+              />
+              <Route
+                path="/ChangePasword"
+                element={<ChangePassword user={user} />}
               />
               <Route path="Blog_Update" element={<Blog_Update />} />
               <Route path="Post" element={<Post adminPost={adminPost} />} />
